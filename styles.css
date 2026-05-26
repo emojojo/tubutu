@@ -1304,11 +1304,10 @@ footer {
 
 /* Redesigned Premium Modal for Operations */
 .op-glass-modal {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    background: #ffffff;
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     max-width: 420px;
     padding: 0;
     overflow: hidden;
@@ -1316,41 +1315,49 @@ footer {
 }
 
 .op-glass-modal .close-btn {
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(4px);
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.2s;
+    backdrop-filter: none;
+}
+.op-glass-modal .close-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
 }
 
 .op-modal-header {
-    background: linear-gradient(135deg, rgba(22, 101, 52, 0.1) 0%, rgba(22, 101, 52, 0.02) 100%);
-    padding: 25px 30px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background: #ffffff;
+    padding: 30px 30px 20px;
     text-align: center;
+    border-bottom: none;
 }
 
 .op-modal-header h3 {
     margin: 0;
-    color: #166534;
+    color: #1e293b;
     font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 0;
 }
 
 .op-modal-header p {
-    margin: 5px 0 0 0;
-    color: #4b5563;
+    margin: 6px 0 0 0;
+    color: #64748b;
     font-size: 0.9rem;
 }
 
 .op-form-content {
-    padding: 25px 30px 30px;
+    padding: 0 30px 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
 .op-form-group {
@@ -1360,32 +1367,33 @@ footer {
 }
 
 .op-form-group label {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
 }
 
 .op-input {
-    padding: 12px 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.9);
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
     font-size: 1rem;
     font-family: inherit;
-    color: #1f2937;
+    color: #1e293b;
     transition: all 0.2s ease;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: none;
 }
 
 .op-input:focus {
     outline: none;
-    border-color: #86efac;
-    box-shadow: 0 0 0 3px rgba(134, 239, 172, 0.2), inset 0 2px 4px rgba(0,0,0,0.02);
+    border-color: #10b981;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 .op-textarea {
-    resize: vertical;
-    min-height: 80px;
+    resize: none;
+    min-height: 100px;
 }
 
 .op-glass-modal .op-type-grid {
@@ -1399,27 +1407,27 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 14px;
-    padding: 12px 5px;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 12px 4px;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .op-glass-modal .op-type-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.06);
-    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    border-color: #cbd5e1;
 }
 
 .op-glass-modal .op-type-btn.active {
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-    border-color: transparent;
-    color: white;
-    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+    background: #f0fdf4;
+    border-color: #22c55e;
+    color: #15803d;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
 }
 
 .op-glass-modal .op-type-btn.active .op-icon-large {
@@ -1428,30 +1436,37 @@ footer {
 
 .op-glass-modal .op-type-text {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
+    color: #475569;
 }
 
 .op-glass-modal .op-type-btn.active .op-type-text {
-    color: white;
+    color: #15803d;
+    font-weight: 600;
 }
 
 .op-submit-btn {
     margin-top: 10px;
-    padding: 14px;
-    border-radius: 12px;
+    padding: 16px;
+    border-radius: 16px;
     border: none;
-    background: linear-gradient(135deg, #166534 0%, #14532d 100%);
+    background: #10b981;
     color: white;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 10px 20px rgba(22, 101, 52, 0.2);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .op-submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 25px rgba(22, 101, 52, 0.3);
+    background: #059669;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
 }
 
 .op-icon-img {
