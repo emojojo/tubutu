@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+venv/
+.DS_Store
+
+# AI tracking, memory, and prompt files
+.agents/
+.cursorrules
+MEMORY.md
+subagent_*
+output*.txt
+scratch/
+
+# Python generation scripts (except the necessary GitHub actions weather script)
+*.py
+!update_weather.py
+
+# Temp, test, and backup files
+test_*
+*~
+*.log

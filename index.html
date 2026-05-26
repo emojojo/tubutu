@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土不土生态农场 | 开启种植生活</title>
+    <meta name="description" content="告别繁琐的农业术语，根据你所在的城市，定制最轻松的从种子到餐桌的种植计划。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=48">
+</head>
+<body>
+    <header class="hero">
+        <div class="top-left-nav">
+            <div class="nav-label">📍 种植地区:</div>
+            <div class="custom-select-wrapper nav-select">
+                <div class="custom-select" id="custom-region-select">
+                    <div class="select-trigger" id="region-select-trigger">
+                        <span class="trigger-text">请选择地区</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="custom-options" id="region-options">
+                        <!-- populated by js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-right-nav" id="auth-container">
+            <button id="show-login-modal-btn" class="auth-btn">
+                <span style="margin-right:5px;">👤</span> 登录 / 注册
+            </button>
+            <div id="user-info" style="display:none; align-items:center; gap:10px;">
+                <img id="user-avatar" src="" alt="Avatar" style="width:32px; height:32px; border-radius:50%; border:2px solid white;">
+                <span id="user-name" style="color:white; font-size:0.9rem; font-weight:500;"></span>
+                <button id="logout-btn" class="auth-btn" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:15px; cursor:pointer;">退出</button>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="images/logo_tubutu_cartoon.png" alt="土不土" class="site-logo">
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="main-search" class="search-input" placeholder="🔍 搜索蔬菜或病虫害 (如: 白菜、蚜虫)...">
+            </div>
+            
+            <div id="region-desc" class="region-desc" style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Main Tabs -->
+        <div class="main-tabs">
+            <button class="main-tab-btn" data-target="mygarden-section">🧑‍🌾 我的菜园</button>
+            <button class="main-tab-btn active" data-target="veg-section">🥗 蔬果种植</button>
+            <button class="main-tab-btn" data-target="fert-section">💩 自制肥料</button>
+            <button class="main-tab-btn" data-target="protection-section">🛡️ 生态防虫</button>
+            <button class="main-tab-btn" data-target="model-section">🔄 循环农业模型</button>
+            <button class="main-tab-btn" data-target="calendar-section">📅 农事日历</button>
+        </div>
+
+        <div id="veg-section">
+            <section class="filter-section">
+                <div class="category-filters" id="category-filters">
+                <button class="filter-btn active" data-id="all">全部蔬果</button>
+                <!-- Categories will be populated by JS -->
+            </div>
+        </section>
+
+        <section class="vegetable-grid" id="vegetable-grid">
+            <!-- Vegetable cards will be populated by JS -->
+        </section>
+        </div>
+
+        <!-- Fertilizer Section -->
+        <div id="fert-section" class="tab-content" style="display: none;">
+            <section class="fertilizer-section">
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">自给自足的生态循环体系，让你的植物更健康。</p>
+                <div class="vegetable-grid" id="fert-grid">
+                    <!-- Fertilizer cards will be populated by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Protection Section -->
+        <div id="protection-section" class="tab-content" style="display: none;">
+            <div class="vegetable-grid" id="protection-grid">
+                <!-- Pest control cards will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Farming Models Section -->
+        <div id="model-section" class="tab-content" style="display: none;">
+            <div class="vegetable-grid" id="model-grid">
+                <!-- Farming models cards will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- New Calendar Section -->
+        <div id="calendar-section" class="tab-content" style="display: none;">
+            <section class="calendar-wrapper">
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">
+                    根据当前选择的地区 <strong id="calendar-region-name"></strong>，生成全年月历。
+                </p>
+                <div class="calendar-grid" id="calendar-grid">
+                    <!-- Calendar months will be populated by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- My Garden Section -->
+        <div id="mygarden-section" class="tab-content" style="display: none;">
+            <section class="mygarden-wrapper" style="padding: 20px 0;">
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="mygarden-empty-msg">
+                    你的菜园空空如也，快去“蔬果种植”里挑选想种的植物吧！
+                </p>
+                <div class="vegetable-grid" id="mygarden-grid">
+                    <!-- My Garden cards will be populated by JS -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <button class="close-btn" id="close-btn">&times;</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Modal content will be populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 土不土生态农场 | 种下种子，收获生活</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="login-modal-overlay">
+        <div class="modal" style="max-width: 400px; text-align: center; padding: 20px;">
+            <button class="close-btn" id="login-close-btn">&times;</button>
+            <h2 style="margin-top: 0; margin-bottom: 20px; color: #1b4332;">登录 / 注册</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+                <input type="email" id="auth-email" placeholder="邮箱地址" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+                <input type="password" id="auth-password" placeholder="密码 (最少6位)" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button id="email-login-btn" class="primary-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px;">登 录</button>
+                <button id="email-register-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px; background: #f0f0f0; color: #333; border: 1px solid #ccc; cursor: pointer;">注 册</button>
+            </div>
+
+            <div style="display: flex; align-items: center; margin: 20px 0;">
+                <div style="flex: 1; height: 1px; background: #eee;"></div>
+                <div style="padding: 0 10px; color: #999; font-size: 0.9rem;">或</div>
+                <div style="flex: 1; height: 1px; background: #eee;"></div>
+            </div>
+
+            <button id="google-login-btn" class="auth-btn" style="width: 100%; justify-content: center; padding: 12px; font-size: 1rem; border: 1px solid #ddd;">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width:20px;height:20px;margin-right:10px;">
+                使用 Google 账号继续
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js?v=69"></script>
+</body>
+</html>

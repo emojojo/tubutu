@@ -1,0 +1,43 @@
+name: Update Weather Data
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # Runs at 18:00 UTC every day (02:00 CST)
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history so push to gh-pages works correctly
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          
+      - name: Run Weather Update Script
+        run: python update_weather.py
+        
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add weather_data.js
+          
+          # Only commit and push if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: auto-update weather data"
+            git push origin main
+            
+            # Update gh-pages branch as well
+            git checkout -B gh-pages
+            git push -f origin gh-pages
+            git checkout main
+          fi
