@@ -1154,7 +1154,7 @@ footer {
 
 .operations-timeline-title {
     font-size: 1.2rem;
-    color: var(--primary-dark);
+    color: #f5c542; /* Softer, paler lemon yellow */
     font-weight: 500;
     margin-bottom: 15px;
     display: flex;
