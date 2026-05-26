@@ -38,6 +38,7 @@ export const vegetables = [
   // ================= 水果 (Fruits) =================
   {
     id: 'watermelon',
+    avatar: 'assets/icons/icon_watermelon.png',
     name: '西瓜',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍉',
@@ -106,6 +107,7 @@ export const vegetables = [
   },
   {
     id: 'melon',
+    avatar: 'assets/icons/icon_melon.png',
     name: '羊角蜜/甜瓜',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍈',
@@ -174,6 +176,7 @@ export const vegetables = [
   },
   {
     id: 'strawberry',
+    avatar: 'assets/icons/icon_strawberry.png',
     name: '草莓',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍓',
@@ -249,6 +252,7 @@ export const vegetables = [
   // ================= 甘蓝花菜类 (Brassicas) =================
   {
     id: 'broccoli',
+    avatar: 'assets/icons/icon_broccoli.png',
     name: '西兰花',
     baseTemp: 5, categoryId: 'brassica',
     icon: '🥦',
@@ -321,6 +325,7 @@ export const vegetables = [
   },
   {
     id: 'cabbage_head',
+    avatar: 'assets/icons/icon_cabbage_head.png',
     name: '包菜 (结球甘蓝)',
     baseTemp: 5, categoryId: 'brassica',
     icon: '🥬',
@@ -393,6 +398,7 @@ export const vegetables = [
   },
   {
     id: 'cauliflower',
+    avatar: 'assets/icons/icon_cauliflower.png',
     name: '花菜 (花椰菜)',
     baseTemp: 5, categoryId: 'brassica',
     icon: '🥦',
@@ -467,6 +473,7 @@ export const vegetables = [
   // ================= 叶菜类 (Leafy) =================
   {
     id: 'leek_chinese',
+    avatar: 'assets/icons/icon_leek_chinese.png',
     name: '韭菜',
     baseTemp: 5, categoryId: 'leafy',
     icon: '🌿',
@@ -527,6 +534,7 @@ export const vegetables = [
   },
   {
     id: 'water_spinach',
+    avatar: 'assets/icons/icon_water_spinach.png',
     name: '空心菜 (蕹菜)',
     baseTemp: 5, categoryId: 'leafy',
     icon: '🥬',
@@ -648,6 +656,7 @@ export const vegetables = [
   },
   {
     id: 'crown_daisy',
+    avatar: 'assets/icons/icon_crown_daisy.png',
     name: '茼蒿',
     baseTemp: 5, categoryId: 'leafy',
     icon: '🌿',
@@ -710,6 +719,7 @@ export const vegetables = [
   // ================= 茄果类 (Solanaceous) =================
   {
     id: 'tomato',
+    avatar: 'assets/icons/icon_tomato.png',
     name: '番茄 (西红柿)',
     baseTemp: 12, categoryId: 'solanaceous',
     icon: '🍅',
@@ -796,6 +806,7 @@ export const vegetables = [
   },
   {
     id: 'okra',
+    avatar: 'assets/icons/icon_okra.png',
     name: '秋葵 (黄秋葵)',
     baseTemp: 12, categoryId: 'solanaceous',
     icon: '🌿',
@@ -857,6 +868,7 @@ export const vegetables = [
   },
   {
     id: 'eggplant',
+    avatar: 'assets/icons/icon_eggplant.png',
     name: '茄子',
     baseTemp: 12, categoryId: 'solanaceous',
     icon: '🍆',
@@ -930,6 +942,7 @@ export const vegetables = [
   },
   {
     id: 'pepper',
+    avatar: 'assets/icons/icon_pepper.png',
     name: '辣椒',
     baseTemp: 12, categoryId: 'solanaceous',
     icon: '🌶️',
@@ -1005,6 +1018,7 @@ export const vegetables = [
   // ================= 根茎类 (Root) =================
   {
     id: 'radish',
+    avatar: 'assets/icons/icon_radish.png',
     name: '萝卜',
     baseTemp: 5, categoryId: 'root',
     icon: '🥕',
@@ -1071,6 +1085,7 @@ export const vegetables = [
   },
   {
     id: 'carrot',
+    avatar: 'assets/icons/icon_carrot.png',
     name: '胡萝卜',
     baseTemp: 5, categoryId: 'root',
     icon: '🥕',
@@ -1125,6 +1140,7 @@ export const vegetables = [
   },
   {
     id: 'potato',
+    avatar: 'assets/icons/icon_potato.png',
     name: '马铃薯 (土豆)',
     baseTemp: 5, categoryId: 'root',
     icon: '🥔',
@@ -1186,6 +1202,7 @@ export const vegetables = [
   },
   {
     id: 'sweetpotato',
+    avatar: 'assets/icons/icon_sweetpotato.png',
     name: '红薯 (地瓜)',
     baseTemp: 5, categoryId: 'root',
     icon: '🍠',
@@ -1240,6 +1257,7 @@ export const vegetables = [
   },
   {
     id: 'ginger',
+    avatar: 'assets/icons/icon_ginger.png',
     name: '生姜',
     baseTemp: 5, categoryId: 'root',
     icon: '🫚',
@@ -1292,6 +1310,7 @@ export const vegetables = [
   },
   {
     id: 'onion',
+    avatar: 'assets/icons/icon_onion.png',
     name: '洋葱',
     baseTemp: 5, categoryId: 'root',
     icon: '🧅',
@@ -1343,6 +1362,7 @@ export const vegetables = [
   },
   {
     id: 'yam',
+    avatar: 'assets/icons/icon_yam.png',
     name: '山药 (淮山)',
     baseTemp: 5, categoryId: 'root',
     icon: '🥔',
@@ -1397,6 +1417,7 @@ export const vegetables = [
   // ================= 瓜菜类 (Cucurbits) =================
   {
     id: 'cucumber',
+    avatar: 'assets/icons/icon_cucumber.png',
     name: '黄瓜',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🥒',
@@ -1464,6 +1485,7 @@ export const vegetables = [
   },
   {
     id: 'pumpkin',
+    avatar: 'assets/icons/icon_pumpkin.png',
     name: '南瓜 (老南瓜/金瓜)',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🎃',
@@ -1526,6 +1548,7 @@ export const vegetables = [
   },
   {
     id: 'zucchini',
+    avatar: 'assets/icons/icon_zucchini.png',
     name: '西葫芦',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🥒',
@@ -1649,6 +1672,7 @@ export const vegetables = [
   },
   {
     id: 'winter_melon',
+    avatar: 'assets/icons/icon_winter_melon.png',
     name: '冬瓜',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🍉',
@@ -1710,6 +1734,7 @@ export const vegetables = [
   },
   {
     id: 'luffa',
+    avatar: 'assets/icons/icon_luffa.png',
     name: '丝瓜',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🥒',
@@ -1777,6 +1802,7 @@ export const vegetables = [
   },
   {
     id: 'calabash',
+    avatar: 'assets/icons/icon_calabash.png',
     name: '葫芦/瓠子',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🍐',
@@ -1846,6 +1872,7 @@ export const vegetables = [
   // ================= 豆类 (Legumes) =================
   {
     id: 'cowpea',
+    avatar: 'assets/icons/icon_cowpea.png',
     name: '豇豆 (长豆角)',
     baseTemp: 12, categoryId: 'legumes',
     icon: '🫘',
@@ -1907,6 +1934,7 @@ export const vegetables = [
   },
   {
     id: 'green_bean',
+    avatar: 'assets/icons/icon_green_bean.png',
     name: '四季豆 (菜豆/扁豆)',
     baseTemp: 12, categoryId: 'legumes',
     icon: '🫛',
@@ -1974,6 +2002,7 @@ export const vegetables = [
   },
   {
     id: 'broad_bean',
+    avatar: 'assets/icons/icon_broad_bean.png',
     name: '蚕豆',
     baseTemp: 12, categoryId: 'legumes',
     icon: '🫘',
@@ -2037,6 +2066,7 @@ export const vegetables = [
   // ================= 葱蒜类 (Allium) =================
   {
     id: 'garlic',
+    avatar: 'assets/icons/icon_garlic.png',
     name: '大蒜',
     baseTemp: 5, categoryId: 'allium',
     icon: '🧄',
@@ -2091,6 +2121,7 @@ export const vegetables = [
   },
   {
     id: 'greenonion',
+    avatar: 'assets/icons/icon_greenonion.png',
     name: '大葱/小葱',
     baseTemp: 5, categoryId: 'allium',
     icon: '🧅',
@@ -2145,6 +2176,7 @@ export const vegetables = [
   },
   {
     id: 'everbearing_strawberry',
+    avatar: 'assets/icons/icon_everbearing_strawberry.png',
     name: '四季草莓',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍓',
@@ -2183,6 +2215,7 @@ export const vegetables = [
   // ================= 补充的新增蔬菜 =================
   {
     id: 'napacabbage',
+    avatar: 'assets/icons/icon_napacabbage.png',
     name: '大白菜',
     baseTemp: 5, categoryId: 'leafy',
     icon: '🥬',
@@ -2233,6 +2266,7 @@ export const vegetables = [
   },
   {
     id: 'spinach',
+    avatar: 'assets/icons/icon_spinach.png',
     name: '菠菜',
     baseTemp: 2, categoryId: 'leafy',
     icon: '🥬',
@@ -2256,6 +2290,7 @@ export const vegetables = [
   },
   {
     id: 'lettuce',
+    avatar: 'assets/icons/icon_lettuce.png',
     name: '生菜/莴笋',
     baseTemp: 4, categoryId: 'leafy',
     icon: '🥬',
