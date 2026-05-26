@@ -996,14 +996,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img src="images/op_water.png" class="op-icon-small" alt="water">', label: '浇水' },
-                    'weed': { icon: '<img src="images/op_weed.png" class="op-icon-small" alt="weed">', label: '除草' },
-                    'fertilize': { icon: '<img src="images/op_fertilize.png" class="op-icon-small" alt="fertilize">', label: '施肥' },
-                    'pest': { icon: '<img src="images/op_pest.png" class="op-icon-small" alt="pest">', label: '杀虫' },
-                    'prune': { icon: '<img src="images/op_prune.png" class="op-icon-small" alt="prune">', label: '修剪' },
-                    'trellis': { icon: '<img src="images/op_trellis.png" class="op-icon-small" alt="trellis">', label: '搭架' },
-                    'pollinate': { icon: '<img src="images/op_pollinate.png" class="op-icon-small" alt="pollinate">', label: '授粉' },
-                    'other': { icon: '<img src="images/op_other.png" class="op-icon-small" alt="other">', label: '其他' }
+                    'water': { icon: '💧', label: '浇水' },
+                    'weed': { icon: '🌿', label: '除草' },
+                    'fertilize': { icon: '🧪', label: '施肥' },
+                    'pest': { icon: '🐛', label: '杀虫' },
+                    'prune': { icon: '✂️', label: '修剪' },
+                    'trellis': { icon: '🎋', label: '搭架' },
+                    'pollinate': { icon: '🐝', label: '授粉' },
+                    'other': { icon: '📌', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
