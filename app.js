@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginModalOverlay.classList.remove('active');
             } catch (error) {
                 console.error("Login failed:", error);
-                alert("登录失败，请重试！");
+                alert("登录失败：" + error.message);
             }
         });
     }
@@ -107,8 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Registration failed:", error);
                 if (error.code === 'auth/email-already-in-use') {
                     alert("该邮箱已被注册！");
+                } else if (error.code === 'auth/operation-not-allowed') {
+                    alert("管理员未开启邮箱注册功能，请在 Firebase 控制台开启。");
                 } else {
-                    alert("注册失败，请检查邮箱格式或稍后再试。");
+                    alert("注册失败：" + error.message);
                 }
             }
         });
@@ -130,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 authPasswordInput.value = '';
             } catch (error) {
                 console.error("Email Login failed:", error);
-                alert("账号或密码错误，请重试！");
+                alert("登录失败：" + error.message);
             }
         });
     }
