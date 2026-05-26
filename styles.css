@@ -1154,9 +1154,8 @@ footer {
 
 .operations-timeline-title {
     font-size: 1.2rem;
-    color: #eab308;
-    font-weight: 900;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    color: var(--primary-dark);
+    font-weight: 500;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -1271,23 +1270,20 @@ footer {
 
 .add-op-btn {
     width: 100%;
-    background: linear-gradient(135deg, rgba(220, 252, 231, 0.8) 0%, rgba(187, 247, 208, 0.6) 100%);
+    background: rgba(220, 252, 231, 0.5);
     color: #166534;
     border: 1px dashed rgba(34, 197, 94, 0.5);
-    padding: 14px;
+    padding: 10px 14px;
     border-radius: 12px;
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
 }
 
 .add-op-btn:hover {
-    background: linear-gradient(135deg, rgba(187, 247, 208, 1) 0%, rgba(134, 239, 172, 0.8) 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(22, 101, 52, 0.1);
+    background: rgba(220, 252, 231, 0.9);
+    transform: translateY(-1px);
     border-color: #22c55e;
 }
 
