@@ -600,9 +600,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const item = document.createElement('div');
                     item.className = 'calendar-veg-item';
                     const iconHtml = veg.avatar
-                        ? `<div style="width: 28px; height: 28px; border-radius: 4px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: white;"><img src="${veg.avatar}" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.2);"></div>`
+                        ? `<div style="width: 28px; height: 28px; border-radius: 4px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: white;"><img src="${veg.avatar}?v=2" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.2);"></div>`
                         : (veg.image 
-                            ? `<img src="${veg.image}" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
+                            ? `<img src="${veg.image}?v=2" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
                             : `<span>${veg.icon}</span>`);
                     item.innerHTML = `${iconHtml} <span>${veg.name}</span>`;
                     item.addEventListener('click', () => openModal(veg, false));
