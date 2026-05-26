@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=2';
-import { weatherData } from './weather_data.js?v=2';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1779820249816';
+import { weatherData } from './weather_data.js?v=1779820249816';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -1003,14 +1003,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '💧', label: '浇水' },
-                    'weed': { icon: '🌿', label: '除草' },
-                    'fertilize': { icon: '🧪', label: '施肥' },
-                    'pest': { icon: '🐛', label: '杀虫' },
-                    'prune': { icon: '✂️', label: '修剪' },
-                    'trellis': { icon: '🎋', label: '搭架' },
-                    'pollinate': { icon: '🐝', label: '授粉' },
-                    'other': { icon: '📌', label: '其他' }
+                    'water': { icon: '<img src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
