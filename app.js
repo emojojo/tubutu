@@ -599,9 +599,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 matchedVegs.forEach(veg => {
                     const item = document.createElement('div');
                     item.className = 'calendar-veg-item';
-                    const iconHtml = veg.image 
-                        ? `<img src="${veg.image}" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">`
-                        : `<span>${veg.icon}</span>`;
+                    const iconHtml = veg.avatar
+                        ? `<img src="${veg.avatar}" style="width: 24px; height: 24px; object-fit: contain; background: white; border-radius: 4px;">`
+                        : (veg.image 
+                            ? `<img src="${veg.image}" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
+                            : `<span>${veg.icon}</span>`);
                     item.innerHTML = `${iconHtml} <span>${veg.name}</span>`;
                     item.addEventListener('click', () => openModal(veg, false));
                     body.appendChild(item);
