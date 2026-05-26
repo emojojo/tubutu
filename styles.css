@@ -1145,3 +1145,304 @@ footer {
     }
 }
 
+/* Operation Timeline & Modal Styles */
+.operations-timeline {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px dashed rgba(22, 101, 52, 0.2);
+}
+
+.operations-timeline-title {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.op-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.op-list::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: rgba(22, 101, 52, 0.15);
+}
+
+.op-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.op-marker {
+    position: absolute;
+    left: -20px;
+    top: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.op-date {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.op-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(22, 101, 52, 0.1);
+    color: #166534;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.op-remark {
+    font-size: 0.95rem;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.op-type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.op-type-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 10px 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+    color: #4b5563;
+}
+
+.op-type-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.op-type-btn.active {
+    background: #dcfce7;
+    border-color: #86efac;
+    color: #166534;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.op-icon-large {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.add-op-btn {
+    width: 100%;
+    background: rgba(220, 252, 231, 0.4);
+    color: var(--primary);
+    border: 1px dashed var(--primary);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-op-btn:hover {
+    background: rgba(220, 252, 231, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.glass-modal {
+    background: rgba(245, 250, 245, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Redesigned Premium Modal for Operations */
+.op-glass-modal {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    max-width: 420px;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.op-glass-modal .close-btn {
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.op-modal-header {
+    background: linear-gradient(135deg, rgba(22, 101, 52, 0.1) 0%, rgba(22, 101, 52, 0.02) 100%);
+    padding: 25px 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.op-modal-header h3 {
+    margin: 0;
+    color: #166534;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.op-modal-header p {
+    margin: 5px 0 0 0;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+.op-form-content {
+    padding: 25px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.op-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.op-form-group label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #374151;
+}
+
+.op-input {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-family: inherit;
+    color: #1f2937;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.op-input:focus {
+    outline: none;
+    border-color: #86efac;
+    box-shadow: 0 0 0 3px rgba(134, 239, 172, 0.2), inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.op-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.op-glass-modal .op-type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.op-glass-modal .op-type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    padding: 12px 5px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.op-glass-modal .op-type-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+    background: #fff;
+}
+
+.op-glass-modal .op-type-btn.active {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+}
+
+.op-glass-modal .op-type-btn.active .op-icon-large {
+    transform: scale(1.1);
+}
+
+.op-glass-modal .op-type-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.op-glass-modal .op-type-btn.active .op-type-text {
+    color: white;
+}
+
+.op-submit-btn {
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #166534 0%, #14532d 100%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(22, 101, 52, 0.2);
+}
+
+.op-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(22, 101, 52, 0.3);
+}

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=48">
+    <link rel="stylesheet" href="styles.css?v=51">
 </head>
 <body>
     <header class="hero">
@@ -166,6 +166,61 @@
         </div>
     </div>
 
-    <script type="module" src="app.js?v=69"></script>
+    <!-- Operation Modal -->
+    <div class="modal-overlay" id="op-modal-overlay">
+        <div class="modal op-glass-modal" id="op-modal">
+            <button class="close-btn" id="op-close-btn">&times;</button>
+            <div class="op-modal-header">
+                <h3>添加农事记录</h3>
+                <p>记录植物成长的点滴</p>
+            </div>
+            
+            <div class="op-form-content">
+                <div class="op-form-group">
+                    <label>📅 操作日期</label>
+                    <input type="date" id="op-date-input" class="op-input">
+                </div>
+                
+                <div class="op-form-group">
+                    <label>✨ 操作类型</label>
+                    <div class="op-type-grid" id="op-type-selector">
+                        <div class="op-type-btn active" data-type="water">
+                            <span class="op-icon-large op-water">💧</span><span class="op-type-text">浇水</span>
+                        </div>
+                        <div class="op-type-btn" data-type="weed">
+                            <span class="op-icon-large op-weed">🌿</span><span class="op-type-text">除草</span>
+                        </div>
+                        <div class="op-type-btn" data-type="fertilize">
+                            <span class="op-icon-large op-fertilize">🧪</span><span class="op-type-text">施肥</span>
+                        </div>
+                        <div class="op-type-btn" data-type="pest">
+                            <span class="op-icon-large op-pest">🐛</span><span class="op-type-text">杀虫</span>
+                        </div>
+                        <div class="op-type-btn" data-type="prune">
+                            <span class="op-icon-large op-prune">✂️</span><span class="op-type-text">修剪</span>
+                        </div>
+                        <div class="op-type-btn" data-type="trellis">
+                            <span class="op-icon-large op-trellis">🎋</span><span class="op-type-text">搭架</span>
+                        </div>
+                        <div class="op-type-btn" data-type="pollinate">
+                            <span class="op-icon-large op-pollinate">🐝</span><span class="op-type-text">授粉</span>
+                        </div>
+                        <div class="op-type-btn" data-type="other">
+                            <span class="op-icon-large op-other">📌</span><span class="op-type-text">其他</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="op-form-group">
+                    <label>📝 备注内容 (选填)</label>
+                    <textarea id="op-remark-input" rows="3" class="op-input op-textarea" placeholder="记录一下今天的细节，例如：施了自制厨余堆肥..."></textarea>
+                </div>
+                
+                <button id="op-save-btn" class="op-submit-btn">💾 保存记录</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js?v=73"></script>
 </body>
 </html>

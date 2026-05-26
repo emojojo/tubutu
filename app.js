@@ -991,6 +991,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let gddPercentage = Math.min(100, (status.accumulatedGdd / status.overallTotalGdd) * 100).toFixed(1);
 
+            let operationsHtml = '';
+            const ops = gardenItem.operations || [];
+            if (ops.length > 0) {
+                const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
+                const typeMap = {
+                    'water': { icon: '💧', label: '浇水' },
+                    'weed': { icon: '🌿', label: '除草' },
+                    'fertilize': { icon: '🧪', label: '施肥' },
+                    'pest': { icon: '🐛', label: '杀虫' },
+                    'prune': { icon: '✂️', label: '修剪' },
+                    'trellis': { icon: '🎋', label: '搭架' },
+                    'pollinate': { icon: '🐝', label: '授粉' },
+                    'other': { icon: '📌', label: '其他' }
+                };
+                operationsHtml = `
+                    <div class="operations-timeline">
+                        <div class="operations-timeline-title">📝 农事记录</div>
+                        <div class="op-list">
+                            ${sortedOps.map(op => {
+                                const t = typeMap[op.type] || typeMap['other'];
+                                return `
+                                    <div class="op-item">
+                                        <div class="op-marker"></div>
+                                        <div class="op-date">${op.date} <span class="op-type-badge">${t.icon} ${t.label}</span></div>
+                                        ${op.remark ? `<div class="op-remark">${op.remark}</div>` : ''}
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                 operationsHtml = `
+                    <div class="operations-timeline">
+                        <div class="operations-timeline-title">📝 农事记录</div>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 5px;">暂无记录，点击下方按钮添加。</p>
+                    </div>
+                 `;
+            }
+            operationsHtml += `<button class="add-op-btn" style="margin-top: 10px;">➕ 添加农事记录</button>`;
+
             const cardHtml = `
                 <div class="mygarden-card">
                     <div class="row-number">${index + 1}</div>
@@ -1013,6 +1054,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </span>
                         </div>
                         ${timelineHtml}
+                        ${operationsHtml}
                     </div>
                 </div>
             `;
@@ -1024,8 +1066,87 @@ document.addEventListener('DOMContentLoaded', () => {
             const wrapper = document.createElement('div');
             wrapper.innerHTML = c.html.trim();
             const cardEl = wrapper.firstChild;
-            cardEl.addEventListener('click', () => openModal(c.veg, false));
+            
+            cardEl.addEventListener('click', (e) => {
+                if (e.target.closest('.add-op-btn')) return;
+                openModal(c.veg, false);
+            });
+
+            const addOpBtn = cardEl.querySelector('.add-op-btn');
+            if (addOpBtn) {
+                addOpBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openOperationModal(c.veg.id);
+                });
+            }
+
             grid.appendChild(cardEl);
+        });
+    }
+
+    // Op Modal Logic
+    const opModalOverlay = document.getElementById('op-modal-overlay');
+    const opCloseBtn = document.getElementById('op-close-btn');
+    const opDateInput = document.getElementById('op-date-input');
+    const opRemarkInput = document.getElementById('op-remark-input');
+    const opSaveBtn = document.getElementById('op-save-btn');
+    const opTypeBtns = document.querySelectorAll('.op-type-btn');
+    let currentOpVegId = null;
+
+    if (opTypeBtns) {
+        opTypeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                opTypeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    }
+
+    if (opCloseBtn) {
+        opCloseBtn.addEventListener('click', () => {
+            if (opModalOverlay) opModalOverlay.classList.remove('active');
+        });
+    }
+
+    window.openOperationModal = function(vegId) {
+        currentOpVegId = vegId;
+        if (opDateInput) opDateInput.value = new Date().toISOString().split('T')[0];
+        if (opRemarkInput) opRemarkInput.value = '';
+        if (opTypeBtns && opTypeBtns.length > 0) {
+            opTypeBtns.forEach(b => b.classList.remove('active'));
+            opTypeBtns[0].classList.add('active');
+        }
+        if (opModalOverlay) opModalOverlay.classList.add('active');
+    };
+
+    if (opSaveBtn) {
+        opSaveBtn.addEventListener('click', () => {
+            if (!opDateInput) return;
+            const dateVal = opDateInput.value;
+            const remarkVal = opRemarkInput ? opRemarkInput.value.trim() : '';
+            const activeBtn = document.querySelector('.op-type-btn.active');
+            const typeVal = activeBtn ? activeBtn.dataset.type : 'other';
+
+            if (!dateVal) {
+                alert('请选择操作日期');
+                return;
+            }
+
+            const existingIndex = myGarden.findIndex(g => g.vegId === currentOpVegId);
+            if (existingIndex >= 0) {
+                if (!myGarden[existingIndex].operations) {
+                    myGarden[existingIndex].operations = [];
+                }
+                myGarden[existingIndex].operations.push({
+                    id: Date.now().toString(),
+                    date: dateVal,
+                    type: typeVal,
+                    remark: remarkVal
+                });
+                saveGarden();
+                if (opModalOverlay) opModalOverlay.classList.remove('active');
+                renderMyGarden();
+            }
         });
     }
 
