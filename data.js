@@ -548,8 +548,8 @@ export const vegetables = [
       northwest: '5-6月播种。'
     },
     stages: [
-      { name: '割后管理', content: '收割（“割韭菜”）时留茬 2-3cm，绝不可贴地或挖根收割，以免损伤鳞茎。收割后切忌立即浇水，必须等待2-3天伤口彻底愈合后再浇水施肥，防止烂根。' , image: 'images/stages/leek_chinese_0_v3_1779514047175.png' },
-      { name: '特殊追肥 🌟', content: '每收割一茬并缓苗后，必须重施一次腐熟人畜粪肥或豆饼水，俗称“刀刀肥”，才能保证下一茬依然粗壮翠绿。' , image: 'images/stages/leek_chinese_1_v3_1779514061576.png' }
+      { name: '割后管理', content: '收割（“割韭菜”）时留茬 2-3cm，绝不可贴地或挖根收割，以免损伤鳞茎。收割后切忌立即浇水，必须等待2-3天伤口彻底愈合后再浇水施肥，防止烂根。' , image: 'images/stages/leek_chinese_harvest_v3.png' },
+      { name: '特殊追肥 🌟', content: '每收割一茬并缓苗后，必须重施一次腐熟人畜粪肥或豆饼水，俗称“刀刀肥”，才能保证下一茬依然粗壮翠绿。' , image: 'images/stages/leek_chinese_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/leek_v3_stage_1_1779690617984.png' },
@@ -609,8 +609,8 @@ export const vegetables = [
       northwest: '6-7月（生长期短）。'
     },
     stages: [
-      { name: '采收打顶', content: '主茎长至25-30cm时进行第一次采摘，注意采摘时基部必须留 2-3 个节位，以促发侧枝。后续采摘同样保留新长出的侧枝基部节位。' , image: 'images/stages/water_spinach_0_v3_1779514077629.png' },
-      { name: '特殊追肥 🌟', content: '空心菜极度喜水喜氮。基本原则是“每采收一次，追施一次速效氮肥液”，只要水分充足、氮肥跟上，即可实现无限采收。' , image: 'images/stages/water_spinach_1_v3_1779514094494.png' }
+      { name: '采收打顶', content: '主茎长至25-30cm时进行第一次采摘，注意采摘时基部必须留 2-3 个节位，以促发侧枝。后续采摘同样保留新长出的侧枝基部节位。' , image: 'images/stages/water_spinach_harvest_v3.png' },
+      { name: '特殊追肥 🌟', content: '空心菜极度喜水喜氮。基本原则是“每采收一次，追施一次速效氮肥液”，只要水分充足、氮肥跟上，即可实现无限采收。' , image: 'images/stages/water_spinach_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/water_spinach_v3_stage_1_1779690721705.png' },
@@ -670,8 +670,8 @@ export const vegetables = [
       northwest: '5-7月。'
     },
     stages: [
-      { name: '间拔采收', content: '生长较快，株高15-20cm时即可开始采收。通常采用“间拔”方式，先拔除密集的、较大的植株，留下小苗继续生长。' , image: 'images/stages/amaranth_0_v3_1779514110304.png' },
-      { name: '特殊追肥 🌟', content: '以速效氮肥为主，遵循“多次少量”原则。结合浇水施用腐熟的稀薄粪水，可使叶片更为鲜嫩。' , image: 'images/stages/amaranth_1_v3_1779514123931.png' }
+      { name: '间拔采收', content: '生长较快，株高15-20cm时即可开始采收。通常采用“间拔”方式，先拔除密集的、较大的植株，留下小苗继续生长。' , image: 'images/stages/amaranth_harvest_v3.png' },
+      { name: '特殊追肥 🌟', content: '以速效氮肥为主，遵循“多次少量”原则。结合浇水施用腐熟的稀薄粪水，可使叶片更为鲜嫩。' , image: 'images/stages/amaranth_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/amaranth_v3_stage_1_1779655355486.png' },
@@ -731,8 +731,8 @@ export const vegetables = [
       northwest: '5-7月。'
     },
     stages: [
-      { name: '采收方式', content: '可分为一次性连根拔起采收，或在株高20cm时在离地2-3cm处平茬割收（类似韭菜），割收后会迅速萌发新侧枝。' , image: 'images/stages/crowndaisy_0_v3_1779513851570.png' },
-      { name: '特殊追肥 🌟', content: '若是割收品种，每采收一次并等待伤口愈合后，需追施一次清淡的有机氮肥液以促生新芽。' , image: 'images/stages/crowndaisy_1_v3_1779513865834.png' }
+      { name: '采收方式', content: '可分为一次性连根拔起采收，或在株高20cm时在离地2-3cm处平茬割收（类似韭菜），割收后会迅速萌发新侧枝。' , image: 'images/stages/crown_daisy_harvest_v3.png' },
+      { name: '特殊追肥 🌟', content: '若是割收品种，每采收一次并等待伤口愈合后，需追施一次清淡的有机氮肥液以促生新芽。' , image: 'images/stages/crown_daisy_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/crown_daisy_v3_stage_1_1779655458123.png' },
@@ -2335,8 +2335,8 @@ export const vegetables = [
     description: '北方冬储菜主力，生长周期长，包心紧实。',
     calendar: { north: '秋季', south: '秋冬季', east: '秋季', southwest: '秋冬季', northwest: '秋季' },
     stages: [
-      { name: '莲座期追肥', content: '莲座期是大白菜外叶生长高峰，需要大量氮肥，应重施一次“发棵肥”。', image: 'images/stages/napacabbage_0.png' },
-      { name: '结球期水肥', content: '进入结球期，需水量极大，必须保持土壤湿润，并增施钾肥促进叶片紧实。', image: 'images/stages/napacabbage_1.png' }
+      { name: '莲座期追肥', content: '莲座期是大白菜外叶生长高峰，需要大量氮肥，应重施一次“发棵肥”。', image: 'images/stages/napacabbage_fertilize_v3.png' },
+      { name: '结球期水肥', content: '进入结球期，需水量极大，必须保持土壤湿润，并增施钾肥促进叶片紧实。', image: 'images/stages/napacabbage_water_v3.png' }
     ],
     growthSequence: [
       { name: '种子', image: 'images/napacabbage_stage_1.png', days: 5, gdd: 80 },
@@ -2361,8 +2361,8 @@ export const vegetables = [
     description: '南方四季常青，生长迅速，叶柄宽厚肥嫩。',
     calendar: { north: '春夏秋', south: '全年', east: '春夏秋', southwest: '全年', northwest: '春秋' },
     stages: [
-      { name: '间苗', content: '播种出苗后，由于苗密争抢养分，需及时间苗，保持合理的株距。', image: 'images/stages/bokchoy_0.png' },
-      { name: '追施速效氮', content: '小白菜生长期短，以营养生长为主，需在3-4片真叶时追施一次速效氮肥。', image: 'images/stages/bokchoy_1.png' }
+      { name: '间苗', content: '播种出苗后，由于苗密争抢养分，需及时间苗，保持合理的株距。', image: 'images/stages/bokchoy_thinning_v3.png' },
+      { name: '追施速效氮', content: '小白菜生长期短，以营养生长为主，需在3-4片真叶时追施一次速效氮肥。', image: 'images/stages/bokchoy_fertilize_v3.png' }
     ],
     growthSequence: [
       { name: '种子', image: 'images/bokchoy_stage_1.png', days: 3, gdd: 50 },
@@ -2386,8 +2386,8 @@ export const vegetables = [
     description: '极耐寒的绿叶菜，富含铁元素，喜冷凉。',
     calendar: { north: '春秋', south: '秋冬', east: '秋冬', southwest: '秋冬', northwest: '春秋' },
     stages: [
-      { name: '浸种催芽', content: '菠菜种子果皮坚硬，播前最好浸种12-24小时，放于冷凉处催芽。', image: 'images/stages/spinach_0.png' },
-      { name: '防抽薹', content: '春季栽培遇到长日照和高温易抽薹开花，需选择耐抽薹品种并及时采收。', image: 'images/stages/spinach_1.png' }
+      { name: '浸种催芽', content: '菠菜种子果皮坚硬，播前最好浸种12-24小时，放于冷凉处催芽。', image: 'images/stages/spinach_seed_soak_v3.png' },
+      { name: '防抽薹', content: '春季栽培遇到长日照和高温易抽薹开花，需选择耐抽薹品种并及时采收。', image: 'images/stages/spinach_harvest_v3.png' }
     ],
     growthSequence: [
       { name: '种子', image: 'images/spinach_stage_1.png', days: 7, gdd: 70 },
@@ -2410,8 +2410,8 @@ export const vegetables = [
     description: '菊科蔬菜，生菜食叶，莴笋食茎，喜冷凉忌高温。',
     calendar: { north: '春秋', south: '秋冬', east: '春秋', southwest: '四季', northwest: '春秋' },
     stages: [
-      { name: '浅播喜光', content: '莴苣类种子发芽需光，播种后只需覆盖极薄的一层土或不覆土。', image: 'images/stages/lettuce_0.png' },
-      { name: '防高温抽薹', content: '生长后期遇到高温易导致茎秆拔高开花（抽薹）或产生苦味。', image: 'images/stages/lettuce_1.png' }
+      { name: '浅播喜光', content: '莴苣类种子发芽需光，播种后只需覆盖极薄的一层土或不覆土。', image: 'images/stages/lettuce_surface_sow_v3.png' },
+      { name: '防高温抽薹', content: '生长后期遇到高温易导致茎秆拔高开花（抽薹）或产生苦味。', image: 'images/stages/lettuce_harvest_v3.png' }
     ],
     growthSequence: [
       { name: '种子', image: 'images/lettuce_stage_1.png', days: 4, gdd: 60 },
@@ -2435,8 +2435,8 @@ export const vegetables = [
     description: '伞形科蔬菜，带有特殊芳香，喜冷凉湿润。',
     calendar: { north: '春秋', south: '秋冬', east: '秋冬', southwest: '四季', northwest: '春秋' },
     stages: [
-      { name: '缓慢发芽', content: '芹菜种子小且发芽极慢，出苗前需始终保持土壤湿润，可覆盖遮阳网保墒。', image: 'images/stages/celery_0.png' },
-      { name: '防空心', content: '缺水缺肥或过晚采收会导致茎秆空心，纤维增多，失去食用价值。', image: 'images/stages/celery_1.png' }
+      { name: '缓慢发芽', content: '芹菜种子小且发芽极慢，出苗前需始终保持土壤湿润，可覆盖遮阳网保墒。', image: 'images/stages/celery_shade_v3.png' },
+      { name: '防空心', content: '缺水缺肥或过晚采收会导致茎秆空心，纤维增多，失去食用价值。', image: 'images/stages/celery_water_v3.png' }
     ],
     growthSequence: [
       { name: '种子', image: 'images/celery_stage_1.png', days: 10, gdd: 120 },
@@ -2459,8 +2459,8 @@ export const vegetables = [
     description: '带有特殊香气的提味蔬菜，喜冷凉，不耐热。',
     calendar: { north: '春秋', south: '秋冬', east: '春秋', southwest: '四季', northwest: '春秋' },
     stages: [
-      { name: '搓外壳', content: '香菜种子外包着一层坚硬的壳（实为果实），播种前需将双圆半球的壳搓开，发芽率才高。', image: 'images/stages/coriander_0.png' },
-      { name: '防高温', content: '气温超过30℃时生长极度缓慢，极易直接抽薹开花。', image: 'images/stages/coriander_1.png' }
+      { name: '搓外壳', content: '香菜种子外包着一层坚硬的壳（实为果实），播种前需将双圆半球的壳搓开，发芽率才高。', image: 'images/stages/coriander_seed_crush_v3.png' },
+      { name: '防高温', content: '气温超过30℃时生长极度缓慢，极易直接抽薹开花。', image: 'images/stages/coriander_harvest_v3.png' }
     ],
     growthSequence: [
       { name: '种子', image: 'images/coriander_stage_1.png', days: 10, gdd: 120 },
