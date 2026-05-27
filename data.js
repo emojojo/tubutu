@@ -2461,7 +2461,7 @@ export const vegetables = [
       {
         name: '拔节孕穗期 (大喇叭口期)',
         water_fertilizer: '当长到第11-12片叶时（顶部呈喇叭口状），是需水需肥高峰期，需重施氮肥，并充足浇水。',
-        water_image: 'images/stages/corn_fertilize_v2.png',
+        water_image: 'images/stages/corn_fertilize_v3.png',
         pest_management: '玉米螟幼虫极易钻入心叶啃食，需在大喇叭口期向心叶内撒施Bt颗粒剂防治。',
         pruning_trellising: null
       },
@@ -2470,7 +2470,7 @@ export const vegetables = [
         water_fertilizer: '保持土壤湿润，不可缺水，防止花粉枯萎或灌浆不足。后期防涝。',
         pest_management: '防范黏虫、草地贪夜蛾。',
         pruning_trellising: '玉米靠风力授粉，方阵种植下微风吹过雄花花粉能顺利落在果穗花丝上。如遇连续阴雨，可进行人工辅助授粉。',
-        pruning_image: 'images/stages/corn_pollinate_v2.png'
+        pruning_image: 'images/stages/corn_pollinate_v3.png'
       }
     ],
     growthSequence: [
