@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1779892122351';
-import { weatherData } from './weather_data.js?v=1779892122351';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1779892344089';
+import { weatherData } from './weather_data.js?v=1779892344089';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -716,10 +716,22 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <h4 style="color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; margin-bottom: 10px;">阶段 ${index + 1}: ${stage.name}</h4>
                                         
                                         ${hasNewStructure ? `
-                                            <div class="stage-details" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
-                                                ${stage.water_fertilizer ? `<div class="stage-detail-item"><strong>💧 水肥管理：</strong>${stage.water_fertilizer}</div>` : ''}
-                                                ${stage.pruning_trellising ? `<div class="stage-detail-item"><strong>✂️ 整枝搭架：</strong>${stage.pruning_trellising}</div>` : ''}
-                                                ${stage.pest_management ? `<div class="stage-detail-item"><strong>🛡️ 病虫害管理：</strong>${stage.pest_management}</div>` : ''}
+                                            <div class="stage-details" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                                                ${stage.water_fertilizer ? `
+                                                    <div class="stage-detail-item">
+                                                        <strong>💧 水肥管理：</strong>${stage.water_fertilizer}
+                                                        ${stage.water_image ? `<img src="${stage.water_image}" alt="水肥管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                    </div>` : ''}
+                                                ${stage.pruning_trellising ? `
+                                                    <div class="stage-detail-item">
+                                                        <strong>✂️ 整枝搭架：</strong>${stage.pruning_trellising}
+                                                        ${stage.pruning_image ? `<img src="${stage.pruning_image}" alt="整枝搭架" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                    </div>` : ''}
+                                                ${stage.pest_management ? `
+                                                    <div class="stage-detail-item">
+                                                        <strong>🛡️ 病虫害管理：</strong>${stage.pest_management}
+                                                        ${stage.pest_image ? `<img src="${stage.pest_image}" alt="病虫害管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                    </div>` : ''}
                                                 ${stage.content ? `<div class="stage-detail-item"><strong>📌 其他要点：</strong>${stage.content}</div>` : ''}
                                             </div>
                                         ` : `<p>${stage.content}</p>`}

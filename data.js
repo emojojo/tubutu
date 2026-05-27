@@ -56,29 +56,29 @@ export const vegetables = [
         name: '发芽与出苗期',
         water_fertilizer: '播种前浇透底水，出苗前保持土壤湿润。出苗后适当控水，防止徒长。',
         pest_management: '注意防范苗期猝倒病，可通过撒施干草木灰降低湿度。',
-        pruning_trellising: null,
-        image: 'images/stages/stage_watermelon_plant.png'
+        pruning_trellising: null
       },
       {
         name: '幼苗期 (定植与蹲苗)',
         water_fertilizer: '定植缓苗后浇一次稀薄缓苗水。之后严格控水“蹲苗”，促进根系深扎。',
         pest_management: '预防蚜虫传播病毒病，可悬挂黄板。',
         pruning_trellising: '定植可地爬（株距0.8-1m）或搭架（立体种植，节约空间，搭设1.5-2m高人字架）。',
-        image: null
+        pruning_image: 'images/stages/stage_watermelon_plant.png'
       },
       {
         name: '抽蔓期',
         water_fertilizer: '蔓长30cm左右时，追施一次促蔓肥（以氮钾为主），并配合浇水。之后再次控水。',
         pest_management: '重点预防蔓枯病，注意田间通风，发现病斑可用草木灰涂抹。',
         pruning_trellising: '【地爬】采用“三蔓整枝”（主蔓+2侧蔓）；【搭架】采用“双蔓整枝”（主蔓+1侧蔓）。多余侧蔓尽早剪除。搭架需及时绑蔓。',
-        image: 'images/stages/stage_watermelon_prune.png'
+        pruning_image: 'images/stages/stage_watermelon_prune.png'
       },
       {
         name: '开花结果期',
         water_fertilizer: '开花期控水防化瓜；当果实膨大至鸡蛋大小时，重施高钾水溶肥或草木灰水（膨瓜肥）；采收前10天严格控水以提高糖度。忌偏施氮肥。',
+        water_image: 'images/stages/stage_watermelon_fertilize.png',
         pest_management: '防范枯萎病、白粉病和瓜实蝇。及时清理黄叶老叶改善通风。',
         pruning_trellising: '清晨6-9点进行人工辅助授粉。每株保留1-2个形态周正的瓜，其余幼瓜及早摘除以集中养分。主蔓长至25节左右打顶摘心。',
-        image: 'images/stages/stage_watermelon_pollinate.png'
+        pruning_image: 'images/stages/stage_watermelon_pollinate.png'
       }
     ],
     growthSequence: [
