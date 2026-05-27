@@ -327,8 +327,41 @@ export const vegetables = [
       northwest: '5-6月播种。'
     },
     stages: [
-      { name: '水肥管理', content: '需水量大，全生育期需保持土壤见干见湿，避免极度干旱。' , image: 'images/stages/broccoli_water_v3.png' },
-      { name: '特殊追肥 🌟', content: '当中心花球出现（约纽扣大小）时，是需肥临界期，必须重施一次速效高氮高钾有机肥，以促使花球迅速膨大、紧实。缺肥会导致花球松散早生花。' , image: 'images/stages/broccoli_harvest_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '播种前浇透底水，出苗前保持土壤湿润，出苗后适度控水防徒长。',
+        pest_management: '注意苗床通风透光，防范猝倒病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '定植前控水“蹲苗”，定植时浇透缓苗水，成活后追施一次稀薄氮肥。',
+        pest_management: '重点防治跳甲、菜青虫，可悬挂黄板或防虫网隔离。',
+        pruning_trellising: null,
+      },
+      {
+        name: '莲座期',
+        water_fertilizer: '进入外叶旺盛生长期，需水量大，重施一次氮钾复合肥，促使形成强大同化器官。',
+        pest_management: '重点防范菜青虫、小菜蛾和蚜虫。',
+        pruning_trellising: '结合除草进行中耕培土，防止植株倒伏。',
+        pruning_image: '',
+      },
+      {
+        name: '现蕾与膨大期',
+        water_fertilizer: '需水肥最高峰。现蕾时追施磷钾肥，补充硼肥以防茎秆空心。保持土壤始终湿润，但忌积水。',
+        water_image: '',
+        pest_management: '注意防范软腐病及钻心虫，发现病叶及时摘除烧毁。',
+        disease_image: '',
+        pruning_trellising: null,
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收前5天停止浇水，以延长花球保鲜期。',
+        pest_management: '严禁使用任何化学药剂。',
+        pruning_trellising: '当花蕾边缘尚未散开时采收。斜切主茎，保留基部侧芽以继续收获侧花球。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/broccoli_v3_stage_1_1779704201963.png' },
@@ -400,8 +433,42 @@ export const vegetables = [
       northwest: '5-6月播种。'
     },
     stages: [
-      { name: '水分控制', content: '结球前期叶面积急速扩张，需水最多，必须保持土壤湿润；但在结球后期必须严格控制水分，防止水分过大导致菜头开裂（裂球）。' , image: 'images/stages/cabbage_water_v3.png' },
-      { name: '特殊追肥 🌟', content: '在“莲座期”（外层叶片大量展开铺满地）和“结球初期”，是干物质积累关键期，需连续重施2次富含氮钾的腐熟液肥。' , image: 'images/stages/cabbage_harvest_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '播后保持土壤湿润，出苗后及时间苗，防止拥挤徒长。',
+        pest_management: '防止地下害虫如蝼蛄、地老虎咬断幼苗。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '定植前控水锻炼，定植后浇缓苗水，随后进行蹲苗，促进根系下扎。',
+        pest_management: '重点防范菜青虫和蚜虫。',
+        pruning_trellising: null,
+      },
+      {
+        name: '莲座期',
+        water_fertilizer: '结束蹲苗，重施氮肥（“发棵肥”），浇透水，促使莲座叶快速同化养分。',
+        pest_management: '防治霜霉病，及时清理田间杂草。',
+        pruning_trellising: '中耕除草，深锄保墒。',
+        pruning_image: '',
+      },
+      {
+        name: '结球期 (初期与盛期)',
+        water_fertilizer: '需水量达到顶峰，要求土壤始终湿润（结球盛期）。重施钾肥和适量氮肥（“结球肥”），缺钙会导致“干烧心”，可补充钙肥。',
+        water_image: '',
+        pest_management: '严防菜青虫钻入叶球内部，一旦结球极难施药，须在结球初期彻底防治。防范软腐病。',
+        disease_image: '',
+        pruning_trellising: '及时剥除植株基部的老叶、黄叶，增加通风透光，减少病害滋生。',
+        pruning_image: '',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收前10天停止浇水，防止裂球。',
+        pest_management: '安全间隔期停止用药。',
+        pruning_trellising: '叶球紧实度达到最大时贴地平割，保留外层2-3片莲座叶保护叶球。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/cabbage_head_v3_stage_1_1779704310656.png' },
@@ -473,8 +540,42 @@ export const vegetables = [
       northwest: '4-5月播种。'
     },
     stages: [
-      { name: '折叶盖花', content: '花菜特有步骤：当白色花球长至拳头大小时，需折断1-2片外部老叶，将其覆盖在花球上，防止阳光直射导致白花球变黄、变散，影响品质。' , image: 'images/stages/cauliflower_cover_v3.png' },
-      { name: '特殊追肥 🌟', content: '花球初现时追施膨大肥。花椰菜对【硼元素】极度敏感，缺硼极易导致花球空心、茎部开裂或表面褐斑，强烈建议在结球期叶面喷施硼砂溶液2-3次。' , image: 'images/stages/cauliflower_harvest_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '穴盘育苗浇透水，出苗后见干见湿，防徒长。',
+        pest_management: '防范猝倒病和立枯病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '定植后浇足定根水，缓苗后薄施速效氮肥，促进根系发育。',
+        pest_management: '防范跳甲危害幼叶。',
+        pruning_trellising: null,
+      },
+      {
+        name: '莲座期',
+        water_fertilizer: '叶片迅速扩大期，需水量增加，追施高氮高钾肥料。',
+        pest_management: '防治小菜蛾、斜纹夜蛾，可使用苏云金杆菌(Bt)等生物制剂。',
+        pruning_trellising: '进行中耕松土和培土，促进根系深扎。',
+        pruning_image: '',
+      },
+      {
+        name: '现蕾与膨大期',
+        water_fertilizer: '花球膨大期需水肥极大，重施钾肥和硼肥，充足的水分是花球紧实的关键。',
+        water_image: '',
+        pest_management: '防范黑腐病，注意雨后排水。',
+        disease_image: '',
+        pruning_trellising: '【关键操作】折叶盖花：将靠近花球的1-2片内叶折断覆盖在花球上，防止阳光直射导致花球变黄。',
+        pruning_image: '',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '适度控水。',
+        pest_management: '停止用药。',
+        pruning_trellising: '花球充分长大、表面紧密洁白时连同外围3-4片保护叶一起砍下。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/cauliflower_v3_stage_1_1779704407223.png' },
