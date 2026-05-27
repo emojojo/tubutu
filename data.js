@@ -333,11 +333,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/broccoli_v3_stage_1_1779704201963.png' },
       { days: 5, gdd: 75, name: '出苗期', image: 'images/broccoli_v3_stage_2_1779704217121.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/broccoli_v3_stage_3_1779704230584.png' },
-      { days: 35, gdd: 525, name: '莲座期', image: 'images/broccoli_v3_stage_4_1779704248062.png' },
-      { days: 55, gdd: 825, name: '现蕾期', image: 'images/broccoli_v3_stage_5_1779704266920.png' },
-      { days: 70, gdd: 1050, name: '膨大期', image: 'images/broccoli_v3_stage_6_1779704281851.png' },
-      { days: 85, gdd: 1275, name: '采收期', image: 'images/broccoli_v3_stage_7_1779704297567.png' }
+      { days: 10, gdd: 150, name: '幼苗期', image: 'images/broccoli_v3_stage_3_1779704230584.png' },
+      { days: 20, gdd: 300, name: '莲座期', image: 'images/broccoli_v3_stage_4_1779704248062.png' },
+      { days: 20, gdd: 300, name: '现蕾期', image: 'images/broccoli_v3_stage_5_1779704266920.png' },
+      { days: 15, gdd: 225, name: '膨大期', image: 'images/broccoli_v3_stage_6_1779704281851.png' },
+      { days: 15, gdd: 225, name: '采收期', image: 'images/broccoli_v3_stage_7_1779704297567.png' }
     ],
     pests: [
             {
@@ -406,11 +406,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/cabbage_head_v3_stage_1_1779704310656.png' },
       { days: 5, gdd: 75, name: '出苗期', image: 'images/cabbage_head_v3_stage_2_1779704323314.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/cabbage_head_v3_stage_3_1779704336903.png' },
-      { days: 35, gdd: 525, name: '莲座期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png' },
-      { days: 55, gdd: 825, name: '结球初期', image: 'images/cabbage_head_v3_stage_5_1779704364071.png' },
-      { days: 75, gdd: 1125, name: '结球盛期', image: 'images/cabbage_head_v3_stage_6_1779704378100.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/cabbage_head_v3_stage_7_1779704391362.png' }
+      { days: 10, gdd: 150, name: '幼苗期', image: 'images/cabbage_head_v3_stage_3_1779704336903.png' },
+      { days: 20, gdd: 300, name: '莲座期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png' },
+      { days: 20, gdd: 300, name: '结球初期', image: 'images/cabbage_head_v3_stage_5_1779704364071.png' },
+      { days: 20, gdd: 300, name: '结球盛期', image: 'images/cabbage_head_v3_stage_6_1779704378100.png' },
+      { days: 15, gdd: 225, name: '采收期', image: 'images/cabbage_head_v3_stage_7_1779704391362.png' }
     ],
     pests: [
             {
@@ -479,11 +479,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/cauliflower_v3_stage_1_1779704407223.png' },
       { days: 5, gdd: 75, name: '出苗期', image: 'images/cauliflower_v3_stage_2_1779704421992.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/cauliflower_v3_stage_3_1779704437834.png' },
-      { days: 35, gdd: 525, name: '莲座期', image: 'images/cauliflower_v3_stage_4_1779704451766.png' },
-      { days: 55, gdd: 825, name: '现蕾期', image: 'images/cauliflower_v3_stage_5_1779704466832.png' },
-      { days: 75, gdd: 1125, name: '膨大期', image: 'images/cauliflower_v3_stage_6_1779704487261.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/cauliflower_v3_stage_7_1779704502215.png' }
+      { days: 10, gdd: 150, name: '幼苗期', image: 'images/cauliflower_v3_stage_3_1779704437834.png' },
+      { days: 20, gdd: 300, name: '莲座期', image: 'images/cauliflower_v3_stage_4_1779704451766.png' },
+      { days: 20, gdd: 300, name: '现蕾期', image: 'images/cauliflower_v3_stage_5_1779704466832.png' },
+      { days: 20, gdd: 300, name: '膨大期', image: 'images/cauliflower_v3_stage_6_1779704487261.png' },
+      { days: 15, gdd: 225, name: '采收期', image: 'images/cauliflower_v3_stage_7_1779704502215.png' }
     ],
     pests: [
             {
@@ -554,11 +554,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/leek_v3_stage_1_1779690617984.png' },
       { days: 10, gdd: 150, name: '出苗期', image: 'images/leek_v3_stage_2_1779690631513.png' },
-      { days: 25, gdd: 375, name: '幼苗前期', image: 'images/leek_v3_stage_3_1779690646498.png' },
-      { days: 40, gdd: 600, name: '幼苗后期', image: 'images/leek_v3_stage_4_1779690660722.png' },
-      { days: 60, gdd: 900, name: '旺盛生长期', image: 'images/leek_v3_stage_5_1779690678105.png' },
-      { days: 80, gdd: 1200, name: '初收期', image: 'images/leek_v3_stage_6_1779690693708.png' },
-      { days: 100, gdd: 1500, name: '盛收期', image: 'images/leek_v3_stage_7_1779690708238.png' }
+      { days: 15, gdd: 225, name: '幼苗前期', image: 'images/leek_v3_stage_3_1779690646498.png' },
+      { days: 15, gdd: 225, name: '幼苗后期', image: 'images/leek_v3_stage_4_1779690660722.png' },
+      { days: 20, gdd: 300, name: '旺盛生长期', image: 'images/leek_v3_stage_5_1779690678105.png' },
+      { days: 20, gdd: 300, name: '初收期', image: 'images/leek_v3_stage_6_1779690693708.png' },
+      { days: 20, gdd: 300, name: '盛收期', image: 'images/leek_v3_stage_7_1779690708238.png' }
     ],
     pests: [
             {
@@ -615,11 +615,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/water_spinach_v3_stage_1_1779690721705.png' },
       { days: 5, gdd: 75, name: '出苗期', image: 'images/water_spinach_v3_stage_2_1779690735412.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/water_spinach_v3_stage_3_1779690751351.png' },
-      { days: 25, gdd: 375, name: '拔节生长期', image: 'images/water_spinach_v3_stage_4_1779690766117.png' },
-      { days: 35, gdd: 525, name: '旺盛生长期', image: 'images/water_spinach_v3_stage_5_1779690780220.png' },
-      { days: 45, gdd: 675, name: '初收期', image: 'images/water_spinach_v3_stage_6_1779690794433.png' },
-      { days: 55, gdd: 825, name: '分枝生长期', image: 'images/water_spinach_v3_stage_7_1779690808205.png' }
+      { days: 10, gdd: 150, name: '幼苗期', image: 'images/water_spinach_v3_stage_3_1779690751351.png' },
+      { days: 10, gdd: 150, name: '拔节生长期', image: 'images/water_spinach_v3_stage_4_1779690766117.png' },
+      { days: 10, gdd: 150, name: '旺盛生长期', image: 'images/water_spinach_v3_stage_5_1779690780220.png' },
+      { days: 10, gdd: 150, name: '初收期', image: 'images/water_spinach_v3_stage_6_1779690794433.png' },
+      { days: 10, gdd: 150, name: '分枝生长期', image: 'images/water_spinach_v3_stage_7_1779690808205.png' }
     ],
     pests: [
             {
@@ -737,11 +737,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/crown_daisy_v3_stage_1_1779655458123.png' },
       { days: 5, gdd: 75, name: '出苗期', image: 'images/crown_daisy_v3_stage_2_1779655470884.png' },
-      { days: 10, gdd: 150, name: '幼苗期', image: 'images/crown_daisy_v3_stage_3_1779655483598.png' },
-      { days: 20, gdd: 300, name: '生长期', image: 'images/crown_daisy_v3_stage_4_1779655500605.png' },
-      { days: 30, gdd: 450, name: '旺盛生长期', image: 'images/crown_daisy_v3_stage_5_1779655513349.png' },
-      { days: 40, gdd: 600, name: '初收期', image: 'images/crown_daisy_v3_stage_6_1779655525467.png' },
-      { days: 50, gdd: 750, name: '采收期', image: 'images/crown_daisy_v3_stage_7_1779655541072.png' }
+      { days: 5, gdd: 75, name: '幼苗期', image: 'images/crown_daisy_v3_stage_3_1779655483598.png' },
+      { days: 10, gdd: 150, name: '生长期', image: 'images/crown_daisy_v3_stage_4_1779655500605.png' },
+      { days: 10, gdd: 150, name: '旺盛生长期', image: 'images/crown_daisy_v3_stage_5_1779655513349.png' },
+      { days: 10, gdd: 150, name: '初收期', image: 'images/crown_daisy_v3_stage_6_1779655525467.png' },
+      { days: 10, gdd: 150, name: '采收期', image: 'images/crown_daisy_v3_stage_7_1779655541072.png' }
     ],
     pests: [
             {
@@ -802,11 +802,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/tomato_v3_stage_1_1779705453496.png' },
       { days: 7, gdd: 105, name: '出苗期', image: 'images/tomato_v3_stage_2_1779705477910.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/tomato_v3_stage_3_1779705490626.png' },
-      { days: 30, gdd: 450, name: '开花期', image: 'images/tomato_v3_stage_4_1779705506448.png' },
-      { days: 50, gdd: 750, name: '结果期', image: 'images/tomato_v3_stage_5_1779705522180.png' },
-      { days: 70, gdd: 1050, name: '转色期', image: 'images/tomato_v3_stage_6_1779705537599.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/tomato_v3_stage_7_1779705551649.png' }
+      { days: 8, gdd: 120, name: '幼苗期', image: 'images/tomato_v3_stage_3_1779705490626.png' },
+      { days: 15, gdd: 225, name: '开花期', image: 'images/tomato_v3_stage_4_1779705506448.png' },
+      { days: 20, gdd: 300, name: '结果期', image: 'images/tomato_v3_stage_5_1779705522180.png' },
+      { days: 20, gdd: 300, name: '转色期', image: 'images/tomato_v3_stage_6_1779705537599.png' },
+      { days: 20, gdd: 300, name: '采收期', image: 'images/tomato_v3_stage_7_1779705551649.png' }
     ],
     pests: [
             {
@@ -888,11 +888,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/okra_v3_stage_1_1779705569315.png' },
       { days: 7, gdd: 105, name: '出苗期', image: 'images/okra_v3_stage_2_1779705582265.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/okra_v3_stage_3_1779705598566.png' },
-      { days: 30, gdd: 450, name: '开花期', image: 'images/okra_v3_stage_4_1779705628923.png' },
-      { days: 50, gdd: 750, name: '结果期', image: 'images/okra_v3_stage_5_1779705643996.png' },
-      { days: 70, gdd: 1050, name: '成熟期', image: 'images/okra_v3_stage_6_1779705658766.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/okra_v3_stage_7_1779705673427.png' }
+      { days: 8, gdd: 120, name: '幼苗期', image: 'images/okra_v3_stage_3_1779705598566.png' },
+      { days: 15, gdd: 225, name: '开花期', image: 'images/okra_v3_stage_4_1779705628923.png' },
+      { days: 20, gdd: 300, name: '结果期', image: 'images/okra_v3_stage_5_1779705643996.png' },
+      { days: 20, gdd: 300, name: '成熟期', image: 'images/okra_v3_stage_6_1779705658766.png' },
+      { days: 20, gdd: 300, name: '采收期', image: 'images/okra_v3_stage_7_1779705673427.png' }
     ],
     pests: [
             {
@@ -950,11 +950,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/eggplant_v3_stage_1_1779705685700.png' },
       { days: 7, gdd: 105, name: '出苗期', image: 'images/eggplant_v3_stage_2_1779705700567.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/eggplant_v3_stage_3_1779705715339.png' },
-      { days: 30, gdd: 450, name: '开花期', image: 'images/eggplant_v3_stage_4_1779705731023.png' },
-      { days: 50, gdd: 750, name: '结果期', image: 'images/eggplant_v3_stage_5_1779705745318.png' },
-      { days: 70, gdd: 1050, name: '转色期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
+      { days: 8, gdd: 120, name: '幼苗期', image: 'images/eggplant_v3_stage_3_1779705715339.png' },
+      { days: 15, gdd: 225, name: '开花期', image: 'images/eggplant_v3_stage_4_1779705731023.png' },
+      { days: 20, gdd: 300, name: '结果期', image: 'images/eggplant_v3_stage_5_1779705745318.png' },
+      { days: 20, gdd: 300, name: '转色期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
+      { days: 20, gdd: 300, name: '采收期', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
     ],
     pests: [
             {
@@ -1024,11 +1024,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/pepper_v3_stage_1_1779705805513.png' },
       { days: 7, gdd: 105, name: '出苗期', image: 'images/pepper_v3_stage_2_1779705824916.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/pepper_v3_stage_3_1779705838528.png' },
-      { days: 30, gdd: 450, name: '开花期', image: 'images/pepper_v3_stage_4_1779705854911.png' },
-      { days: 50, gdd: 750, name: '结果期', image: 'images/pepper_v3_stage_5_1779705877174.png' },
-      { days: 70, gdd: 1050, name: '转色期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/pepper_v3_stage_7_1779705905171.png' }
+      { days: 8, gdd: 120, name: '幼苗期', image: 'images/pepper_v3_stage_3_1779705838528.png' },
+      { days: 15, gdd: 225, name: '开花期', image: 'images/pepper_v3_stage_4_1779705854911.png' },
+      { days: 20, gdd: 300, name: '结果期', image: 'images/pepper_v3_stage_5_1779705877174.png' },
+      { days: 20, gdd: 300, name: '转色期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
+      { days: 20, gdd: 300, name: '采收期', image: 'images/pepper_v3_stage_7_1779705905171.png' }
     ],
     pests: [
             {
@@ -1093,11 +1093,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/radish_v3_stage_1_1779706393814.png' },
       { days: 7, gdd: 105, name: '出苗期', image: 'images/radish_v3_stage_2_1779706407294.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/radish_v3_stage_3_1779706420221.png' },
-      { days: 30, gdd: 450, name: '生长期', image: 'images/radish_v3_stage_4_1779706432672.png' },
-      { days: 50, gdd: 750, name: '破肚期', image: 'images/radish_v3_stage_5_1779706449343.png' },
-      { days: 70, gdd: 1050, name: '成熟期', image: 'images/radish_v3_stage_6_1779706465141.png' },
-      { days: 90, gdd: 1350, name: '采收期', image: 'images/radish_v3_stage_7_1779706479462.png' }
+      { days: 8, gdd: 120, name: '幼苗期', image: 'images/radish_v3_stage_3_1779706420221.png' },
+      { days: 15, gdd: 225, name: '生长期', image: 'images/radish_v3_stage_4_1779706432672.png' },
+      { days: 20, gdd: 300, name: '破肚期', image: 'images/radish_v3_stage_5_1779706449343.png' },
+      { days: 20, gdd: 300, name: '成熟期', image: 'images/radish_v3_stage_6_1779706465141.png' },
+      { days: 20, gdd: 300, name: '采收期', image: 'images/radish_v3_stage_7_1779706479462.png' }
     ],
     pests: [
             {
@@ -1160,11 +1160,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/carrot_v3_stage_1_1779706498016.png' },
       { days: 10, gdd: 150, name: '出苗期', image: 'images/carrot_v3_stage_2_1779706512570.png' },
-      { days: 25, gdd: 375, name: '幼苗期', image: 'images/carrot_v3_stage_3_1779706543981.png' },
-      { days: 45, gdd: 675, name: '生长期', image: 'images/carrot_v3_stage_4_1779706557811.png' },
-      { days: 65, gdd: 975, name: '膨大期', image: 'images/carrot_v3_stage_5_1779706572486.png' },
-      { days: 85, gdd: 1275, name: '成熟期', image: 'images/carrot_v3_stage_6_1779706588699.png' },
-      { days: 100, gdd: 1500, name: '采收期', image: 'images/carrot_v3_stage_7_1779706602273.png' }
+      { days: 15, gdd: 225, name: '幼苗期', image: 'images/carrot_v3_stage_3_1779706543981.png' },
+      { days: 20, gdd: 300, name: '生长期', image: 'images/carrot_v3_stage_4_1779706557811.png' },
+      { days: 20, gdd: 300, name: '膨大期', image: 'images/carrot_v3_stage_5_1779706572486.png' },
+      { days: 20, gdd: 300, name: '成熟期', image: 'images/carrot_v3_stage_6_1779706588699.png' },
+      { days: 15, gdd: 225, name: '采收期', image: 'images/carrot_v3_stage_7_1779706602273.png' }
     ],
     pests: [
             {
@@ -1216,11 +1216,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/potato_v3_stage_1_1779706615894.png' },
       { days: 15, gdd: 225, name: '出苗期', image: 'images/potato_v3_stage_2_1779706630208.png' },
-      { days: 30, gdd: 450, name: '幼苗期', image: 'images/potato_v3_stage_3_1779706644009.png' },
-      { days: 50, gdd: 750, name: '生长期', image: 'images/potato_v3_stage_4_1779706658922.png' },
-      { days: 70, gdd: 1050, name: '结薯期', image: 'images/potato_v3_stage_5_1779706691490.png' },
-      { days: 90, gdd: 1350, name: '成熟期', image: 'images/potato_v3_stage_6_1779706708840.png' },
-      { days: 100, gdd: 1500, name: '采收期', image: 'images/potato_v3_stage_7_1779706725798.png' }
+      { days: 15, gdd: 225, name: '幼苗期', image: 'images/potato_v3_stage_3_1779706644009.png' },
+      { days: 20, gdd: 300, name: '生长期', image: 'images/potato_v3_stage_4_1779706658922.png' },
+      { days: 20, gdd: 300, name: '结薯期', image: 'images/potato_v3_stage_5_1779706691490.png' },
+      { days: 20, gdd: 300, name: '成熟期', image: 'images/potato_v3_stage_6_1779706708840.png' },
+      { days: 10, gdd: 150, name: '采收期', image: 'images/potato_v3_stage_7_1779706725798.png' }
     ],
     pests: [
             {
@@ -1277,11 +1277,11 @@ export const vegetables = [
     growthSequence: [
       { days: 0, gdd: 0, name: '育苗期', image: 'images/sweetpotato_v3_stage_1_1779706740376.png' },
       { days: 15, gdd: 225, name: '缓苗期', image: 'images/sweetpotato_v3_stage_2_1779706755034.png' },
-      { days: 35, gdd: 525, name: '伸蔓期', image: 'images/sweetpotato_v3_stage_3_1779706771127.png' },
-      { days: 60, gdd: 900, name: '封垄期', image: 'images/sweetpotato_v3_stage_4_1779706783146.png' },
-      { days: 90, gdd: 1350, name: '膨大期', image: 'images/sweetpotato_v3_stage_5_1779706796967.png' },
-      { days: 120, gdd: 1800, name: '成熟期', image: 'images/sweetpotato_v3_stage_6_1779706834735.png' },
-      { days: 150, gdd: 2250, name: '采收期', image: 'images/sweetpotato_v3_stage_7_1779706851167.png' }
+      { days: 20, gdd: 300, name: '伸蔓期', image: 'images/sweetpotato_v3_stage_3_1779706771127.png' },
+      { days: 25, gdd: 375, name: '封垄期', image: 'images/sweetpotato_v3_stage_4_1779706783146.png' },
+      { days: 30, gdd: 450, name: '膨大期', image: 'images/sweetpotato_v3_stage_5_1779706796967.png' },
+      { days: 30, gdd: 450, name: '成熟期', image: 'images/sweetpotato_v3_stage_6_1779706834735.png' },
+      { days: 30, gdd: 450, name: '采收期', image: 'images/sweetpotato_v3_stage_7_1779706851167.png' }
     ],
     pests: [
             {
