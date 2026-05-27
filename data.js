@@ -327,8 +327,8 @@ export const vegetables = [
       northwest: '5-6月播种。'
     },
     stages: [
-      { name: '水肥管理', content: '需水量大，全生育期需保持土壤见干见湿，避免极度干旱。' , image: 'images/stages/broccoli_0_v3_1779513959706.png' },
-      { name: '特殊追肥 🌟', content: '当中心花球出现（约纽扣大小）时，是需肥临界期，必须重施一次速效高氮高钾有机肥，以促使花球迅速膨大、紧实。缺肥会导致花球松散早生花。' , image: 'images/stages/broccoli_1_v3_1779513973559.png' }
+      { name: '水肥管理', content: '需水量大，全生育期需保持土壤见干见湿，避免极度干旱。' , image: 'images/stages/broccoli_water_v3.png' },
+      { name: '特殊追肥 🌟', content: '当中心花球出现（约纽扣大小）时，是需肥临界期，必须重施一次速效高氮高钾有机肥，以促使花球迅速膨大、紧实。缺肥会导致花球松散早生花。' , image: 'images/stages/broccoli_harvest_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/broccoli_v3_stage_1_1779704201963.png' },
@@ -400,8 +400,8 @@ export const vegetables = [
       northwest: '5-6月播种。'
     },
     stages: [
-      { name: '水分控制', content: '结球前期叶面积急速扩张，需水最多，必须保持土壤湿润；但在结球后期必须严格控制水分，防止水分过大导致菜头开裂（裂球）。' , image: 'images/stages/cabbage_head_0_v3_1779513987976.png' },
-      { name: '特殊追肥 🌟', content: '在“莲座期”（外层叶片大量展开铺满地）和“结球初期”，是干物质积累关键期，需连续重施2次富含氮钾的腐熟液肥。' , image: 'images/stages/cabbage_head_1_v3_1779514003067.png' }
+      { name: '水分控制', content: '结球前期叶面积急速扩张，需水最多，必须保持土壤湿润；但在结球后期必须严格控制水分，防止水分过大导致菜头开裂（裂球）。' , image: 'images/stages/cabbage_water_v3.png' },
+      { name: '特殊追肥 🌟', content: '在“莲座期”（外层叶片大量展开铺满地）和“结球初期”，是干物质积累关键期，需连续重施2次富含氮钾的腐熟液肥。' , image: 'images/stages/cabbage_harvest_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/cabbage_head_v3_stage_1_1779704310656.png' },
@@ -473,8 +473,8 @@ export const vegetables = [
       northwest: '4-5月播种。'
     },
     stages: [
-      { name: '折叶盖花', content: '花菜特有步骤：当白色花球长至拳头大小时，需折断1-2片外部老叶，将其覆盖在花球上，防止阳光直射导致白花球变黄、变散，影响品质。' , image: 'images/stages/cauliflower_0_v3_1779514018646.png' },
-      { name: '特殊追肥 🌟', content: '花球初现时追施膨大肥。花椰菜对【硼元素】极度敏感，缺硼极易导致花球空心、茎部开裂或表面褐斑，强烈建议在结球期叶面喷施硼砂溶液2-3次。' , image: 'images/stages/cauliflower_1_v3_1779514031724.png' }
+      { name: '折叶盖花', content: '花菜特有步骤：当白色花球长至拳头大小时，需折断1-2片外部老叶，将其覆盖在花球上，防止阳光直射导致白花球变黄、变散，影响品质。' , image: 'images/stages/cauliflower_cover_v3.png' },
+      { name: '特殊追肥 🌟', content: '花球初现时追施膨大肥。花椰菜对【硼元素】极度敏感，缺硼极易导致花球空心、茎部开裂或表面褐斑，强烈建议在结球期叶面喷施硼砂溶液2-3次。' , image: 'images/stages/cauliflower_harvest_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/cauliflower_v3_stage_1_1779704407223.png' },
