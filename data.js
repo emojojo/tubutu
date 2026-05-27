@@ -1087,8 +1087,8 @@ export const vegetables = [
     description: '半耐寒性蔬菜，直根类，要求土层深厚、疏松。',
     calendar: { north: '7-8月播种', south: '9-11月为主', east: '8-9月播种', southwest: '夏秋或秋冬', northwest: '6-7月播种' },
     stages: [
-      { name: '间苗定苗', content: '萝卜苗出齐后需进行2-3次间苗，拔除弱苗和拥挤苗。进入“破肚期”（肉质根开始膨大撑破外皮）时完成最终定苗（大型品种株距定为25-30cm）。' , image: 'images/stages/radish_0_v3_1779514077917.png' },
-      { name: '特殊追肥 🌟', content: '“破肚”后肉质根进入快速膨大期，重施钾肥，同时均匀浇水。生长后期若土壤极度干旱又遇大水，极易导致萝卜空心（糠心）或严重裂开。' , image: 'images/stages/radish_1_v3_1779514106918.png' }
+      { name: '间苗定苗', content: '萝卜苗出齐后需进行2-3次间苗，拔除弱苗和拥挤苗。进入“破肚期”（肉质根开始膨大撑破外皮）时完成最终定苗（大型品种株距定为25-30cm）。' , image: 'images/stages/radish_thin_v3.png' },
+      { name: '特殊追肥 🌟', content: '“破肚”后肉质根进入快速膨大期，重施钾肥，同时均匀浇水。生长后期若土壤极度干旱又遇大水，极易导致萝卜空心（糠心）或严重裂开。' , image: 'images/stages/radish_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/radish_v3_stage_1_1779706393814.png' },
@@ -1154,8 +1154,8 @@ export const vegetables = [
     description: '喜凉爽，耐寒。肉质根营养丰富。',
     calendar: { north: '5-6月或7月夏播', south: '8-10月秋播', east: '7-8月', southwest: '8-9月', northwest: '4-5月' },
     stages: [
-      { name: '间苗除草', content: '胡萝卜幼苗期生长极其缓慢，田间杂草极易反客为主，需及时间苗（最终株距保持在10-15cm左右）并彻底人工拔除杂草。' , image: 'images/stages/carrot_0_v3_1779514122592.png' },
-      { name: '特殊追肥 🌟', content: '肉质根膨大期（播后60天左右）需重施高钾液肥。此时必须严格控制水分均衡，若忽干忽湿极易导致裂根或长出畸形的“歧根”。' , image: 'images/stages/carrot_1_v3_1779514139182.png' }
+      { name: '间苗除草', content: '胡萝卜幼苗期生长极其缓慢，田间杂草极易反客为主，需及时间苗（最终株距保持在10-15cm左右）并彻底人工拔除杂草。' , image: 'images/stages/carrot_thin_v3.png' },
+      { name: '特殊追肥 🌟', content: '肉质根膨大期（播后60天左右）需重施高钾液肥。此时必须严格控制水分均衡，若忽干忽湿极易导致裂根或长出畸形的“歧根”。' , image: 'images/stages/carrot_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/carrot_v3_stage_1_1779706498016.png' },
@@ -1209,9 +1209,9 @@ export const vegetables = [
     description: '喜冷凉，不耐高温。块茎形成需黑暗和疏松土壤。',
     calendar: { north: '4-5月一季作', south: '11月至次年1月冬作', east: '2-3月春作或8月秋作', southwest: '1-3月春作', northwest: '4-5月' },
     stages: [
-      { name: '中耕培土', content: '土豆的块茎是从地下茎长出的，生长期间必须进行2次以上的深培土（总覆土厚度需超过15cm），防止薯块露出地表被阳光照射变绿结毒（龙葵素）。' , image: 'images/stages/potato_0_v3_1779514154849.png' },
-      { name: '打顶与摘花', content: '发现现蕾开花时可及早摘除花蕾，切断顶端优势，防止开花消耗养分。' , image: 'images/stages/potato_1_v3_1779514168666.png' },
-      { name: '特殊追肥 🌟', content: '现蕾开花期正是地下薯块极速膨大期，需重施钾肥（如优质草木灰）。同生姜一样，忌施含氯肥料。' , image: 'images/stages/potato_2_v3_1779514182001.png' }
+      { name: '中耕培土', content: '土豆的块茎是从地下茎长出的，生长期间必须进行2次以上的深培土（总覆土厚度需超过15cm），防止薯块露出地表被阳光照射变绿结毒（龙葵素）。' , image: 'images/stages/potato_hill_v3.png' },
+      { name: '打顶与摘花', content: '发现现蕾开花时可及早摘除花蕾，切断顶端优势，防止开花消耗养分。' , image: 'images/stages/potato_flower_v3.png' },
+      { name: '特殊追肥 🌟', content: '现蕾开花期正是地下薯块极速膨大期，需重施钾肥（如优质草木灰）。同生姜一样，忌施含氯肥料。' , image: 'images/stages/potato_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/potato_v3_stage_1_1779706615894.png' },
@@ -1271,8 +1271,8 @@ export const vegetables = [
     description: '喜温耐旱，怕霜冻。适应性强。',
     calendar: { north: '5月栽秧', south: '3-8月均可', east: '5-6月', southwest: '4-6月', northwest: '5月中下旬' },
     stages: [
-      { name: '打顶与提蔓 (核心技术)', content: '藤蔓长至40-50cm时掐尖打顶促发侧蔓。雨季藤蔓过长并扎出地下不定根时，需将藤蔓轻轻提起扯断不定根后放回（提蔓），【切忌翻蔓】，因为翻蔓会打乱叶片向光排列，严重减产。' , image: 'images/stages/sweetpotato_0_v3_1779513923849.png' },
-      { name: '特殊追肥 🌟', content: '红薯是典型的喜钾作物。在薯块膨大期，若因干旱导致土壤垄面开裂，可直接沿裂缝灌注草木灰水或高钾液肥。' , image: 'images/stages/sweetpotato_1_v3_1779513939968.png' }
+      { name: '打顶与提蔓 (核心技术)', content: '藤蔓长至40-50cm时掐尖打顶促发侧蔓。雨季藤蔓过长并扎出地下不定根时，需将藤蔓轻轻提起扯断不定根后放回（提蔓），【切忌翻蔓】，因为翻蔓会打乱叶片向光排列，严重减产。' , image: 'images/stages/sweetpotato_lift_v3.png' },
+      { name: '特殊追肥 🌟', content: '红薯是典型的喜钾作物。在薯块膨大期，若因干旱导致土壤垄面开裂，可直接沿裂缝灌注草木灰水或高钾液肥。' , image: 'images/stages/sweetpotato_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '育苗期', image: 'images/sweetpotato_v3_stage_1_1779706740376.png' },
@@ -1332,9 +1332,9 @@ export const vegetables = [
       northwest: '一般需保护地，露天慎种。'
     },
     stages: [
-      { name: '遮阴管理', content: '生姜喜阴怕强光直射，幼苗期必须搭设透光率50%的遮阳网，或与高秆作物（如玉米）套种遮阴。' , image: 'images/stages/ginger_0_v3_1779513955176.png' },
-      { name: '培土 (核心技术)', content: '俗语“姜不培土不长”，生长期间需结合除草进行2-3次高培土，将根际垒高，遮光避日，促使地下姜块向上垂直生长并防止其露出地表变绿发苦。' , image: 'images/stages/ginger_1_v3_1779513970011.png' },
-      { name: '特殊追肥 🌟', content: '立秋前后进入姜块“暴长”阶段，此时必须重施“秋里肥”（大量腐熟饼肥和硫酸钾）。生姜极度忌氯，绝对不能施用氯化钾。' , image: 'images/stages/ginger_2_v3_1779513985871.png' }
+      { name: '遮阴管理', content: '生姜喜阴怕强光直射，幼苗期必须搭设透光率50%的遮阳网，或与高秆作物（如玉米）套种遮阴。' , image: 'images/stages/ginger_shade_v3.png' },
+      { name: '培土 (核心技术)', content: '俗语“姜不培土不长”，生长期间需结合除草进行2-3次高培土，将根际垒高，遮光避日，促使地下姜块向上垂直生长并防止其露出地表变绿发苦。' , image: 'images/stages/ginger_hill_v3.png' },
+      { name: '特殊追肥 🌟', content: '立秋前后进入姜块“暴长”阶段，此时必须重施“秋里肥”（大量腐熟饼肥和硫酸钾）。生姜极度忌氯，绝对不能施用氯化钾。' , image: 'images/stages/ginger_fertilize_v3.png' }
     ],
     pests: [
             {
@@ -1385,8 +1385,8 @@ export const vegetables = [
       northwest: '春季播种，秋季收获（长日照品种）。'
     },
     stages: [
-      { name: '水分管理', content: '苗期忌水大防徒长。鳞茎膨大期需水最多，必须保持湿润。但在采收前7-10天必须彻底停止浇水，以利于鳞茎收口和长期耐储藏。' , image: 'images/stages/onion_0_v3_1779514000576.png' },
-      { name: '特殊追肥 🌟', content: '春季返青后追施提苗肥。当鳞茎开始膨大（长至3cm）时，重施高钾膨大肥，切忌此时偏施氮肥，否则会导致“贪青徒长”且不长葱头。' , image: 'images/stages/onion_1_v3_1779514015063.png' }
+      { name: '水分管理', content: '苗期忌水大防徒长。鳞茎膨大期需水最多，必须保持湿润。但在采收前7-10天必须彻底停止浇水，以利于鳞茎收口和长期耐储藏。' , image: 'images/stages/onion_water_v3.png' },
+      { name: '特殊追肥 🌟', content: '春季返青后追施提苗肥。当鳞茎开始膨大（长至3cm）时，重施高钾膨大肥，切忌此时偏施氮肥，否则会导致“贪青徒长”且不长葱头。' , image: 'images/stages/onion_fertilize_v3.png' }
     ],
     pests: [
             {
@@ -1437,9 +1437,9 @@ export const vegetables = [
       northwest: '4月下旬。'
     },
     stages: [
-      { name: '定植与搭架', content: '山药藤蔓极长且细弱，出苗后需迅速搭设1.5-2m高的结实人字架或拉网架供其攀爬，否则藤蔓缠绕在地极易感染病害。' , image: 'images/stages/yam_0_v3_1779514027628.png' },
-      { name: '培土与排涝', content: '地下块茎极度怕水涝，田间必须开挖深排水沟。' , image: 'images/stages/yam_1_v3_1779514040954.png' },
-      { name: '特殊追肥 🌟', content: '生长期长达数月，后期需肥量极大。当藤蔓长满架时，重施一次含硫酸钾的有机肥以促进地下块茎快速膨大变粗。' , image: 'images/stages/yam_2_v3_1779514055516.png' }
+      { name: '定植与搭架', content: '山药藤蔓极长且细弱，出苗后需迅速搭设1.5-2m高的结实人字架或拉网架供其攀爬，否则藤蔓缠绕在地极易感染病害。' , image: 'images/stages/yam_trellis_v3.png' },
+      { name: '培土与排涝', content: '地下块茎极度怕水涝，田间必须开挖深排水沟。' , image: 'images/stages/yam_drain_v3.png' },
+      { name: '特殊追肥 🌟', content: '生长期长达数月，后期需肥量极大。当藤蔓长满架时，重施一次含硫酸钾的有机肥以促进地下块茎快速膨大变粗。' , image: 'images/stages/yam_fertilize_v3.png' }
     ],
     pests: [
             {
@@ -2579,8 +2579,8 @@ export const vegetables = [
     description: '喜高温高湿的根茎类蔬菜，极不耐旱。',
     calendar: { north: '春夏季', south: '春夏季', east: '春夏季', southwest: '春夏', northwest: '不宜种植' },
     stages: [
-      { name: '多水栽培', content: '芋头是名副其实的“水货”，生长旺盛期需要充足甚至积水的环境，不可缺水。', image: 'images/stages/taro_0.png' },
-      { name: '培土长芋', content: '地上叶片长出后，地下球茎开始膨大，需多次培土以利于块茎膨大并防止露出水面变绿。', image: 'images/stages/taro_1.png' }
+      { name: '多水栽培', content: '芋头是名副其实的“水货”，生长旺盛期需要充足甚至积水的环境，不可缺水。', image: 'images/stages/taro_water_v3.png' },
+      { name: '培土长芋', content: '地上叶片长出后，地下球茎开始膨大，需多次培土以利于块茎膨大并防止露出水面变绿。', image: 'images/stages/taro_hill_v3.png' }
     ],
     growthSequence: [
       { name: '种芋', image: 'images/taro_stage_1.png', days: 15, gdd: 200 },
