@@ -1391,8 +1391,37 @@ export const vegetables = [
     description: '半耐寒性蔬菜，直根类，要求土层深厚、疏松。',
     calendar: { north: '7-8月播种', south: '9-11月为主', east: '8-9月播种', southwest: '夏秋或秋冬', northwest: '6-7月播种' },
     stages: [
-      { name: '间苗定苗', content: '萝卜苗出齐后需进行2-3次间苗，拔除弱苗和拥挤苗。进入“破肚期”（肉质根开始膨大撑破外皮）时完成最终定苗（大型品种株距定为25-30cm）。' , image: 'images/stages/radish_thin_v3.png' },
-      { name: '特殊追肥 🌟', content: '“破肚”后肉质根进入快速膨大期，重施钾肥，同时均匀浇水。生长后期若土壤极度干旱又遇大水，极易导致萝卜空心（糠心）或严重裂开。' , image: 'images/stages/radish_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '底肥要足且必须腐熟。播种后保持土壤湿润至出苗。',
+        pest_management: '防范地下害虫（地老虎、蝼蛄）。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '及时间苗（一般分两次进行）。齐苗后适当控水“蹲苗”，促进直根下扎。',
+        pest_management: '重点防治黄条跳甲和蚜虫，可使用防虫网。',
+        pruning_trellising: '【关键操作】间苗：拔除弱苗、拥挤苗，确保适当的株距。',
+      },
+      {
+        name: '生长期 (莲座期)',
+        water_fertilizer: '结束蹲苗，追施一次氮钾肥，保持土壤见干见湿，促使叶片生长。',
+        pest_management: '注意防范菜青虫和霜霉病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '肉质根膨大期 (破肚至成熟)',
+        water_fertilizer: '“破肚”后肉质根开始快速膨大，需水量骤增。必须保持土壤均匀湿润，忽干忽湿极易导致萝卜开裂。重施钾肥。',
+        pest_management: '注意防范软腐病和黑腐病。避免积水引发沤根。',
+        pruning_trellising: null,
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收前一周停止浇水，提高耐储藏性。',
+        pest_management: '停药。',
+        pruning_trellising: '叶色转黄、肉质根充分膨大时拔出采收。',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/radish_v3_stage_1_1779706393814.png' },
@@ -1458,8 +1487,37 @@ export const vegetables = [
     description: '喜凉爽，耐寒。肉质根营养丰富。',
     calendar: { north: '5-6月或7月夏播', south: '8-10月秋播', east: '7-8月', southwest: '8-9月', northwest: '4-5月' },
     stages: [
-      { name: '间苗除草', content: '胡萝卜幼苗期生长极其缓慢，田间杂草极易反客为主，需及时间苗（最终株距保持在10-15cm左右）并彻底人工拔除杂草。' , image: 'images/stages/carrot_thin_v3.png' },
-      { name: '特殊追肥 🌟', content: '肉质根膨大期（播后60天左右）需重施高钾液肥。此时必须严格控制水分均衡，若忽干忽湿极易导致裂根或长出畸形的“歧根”。' , image: 'images/stages/carrot_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '胡萝卜种子发芽极慢（需1-2周），期间必须保持表土湿润，绝不能干旱干结。',
+        pest_management: '防地下害虫。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '长出1-2片真叶时进行第一次间苗，4-5片真叶时定苗。幼苗期适当控水蹲苗。',
+        pest_management: '防蚜虫。',
+        pruning_trellising: '进行中耕除草，胡萝卜幼苗极易被杂草竞争导致失败。',
+      },
+      {
+        name: '生长期',
+        water_fertilizer: '叶片旺盛生长，适量追施氮肥，保持土壤微润。',
+        pest_management: '预防黑斑病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '肉质根膨大期',
+        water_fertilizer: '根部膨大期需水肥大增，重施钾肥。保持水分均匀，防止裂根。严禁施用未腐熟的有机肥，否则极易产生分叉根（“歧根”）。',
+        pest_management: '防范根结线虫。',
+        pruning_trellising: '结合除草进行培土，防止胡萝卜“露肩”变绿发苦。',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收前控水。',
+        pest_management: '无用药。',
+        pruning_trellising: '心叶黄化，外叶稍有枯黄时采收。',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/carrot_v3_stage_1_1779706498016.png' },
@@ -1513,9 +1571,37 @@ export const vegetables = [
     description: '喜冷凉，不耐高温。块茎形成需黑暗和疏松土壤。',
     calendar: { north: '4-5月一季作', south: '11月至次年1月冬作', east: '2-3月春作或8月秋作', southwest: '1-3月春作', northwest: '4-5月' },
     stages: [
-      { name: '中耕培土', content: '土豆的块茎是从地下茎长出的，生长期间必须进行2次以上的深培土（总覆土厚度需超过15cm），防止薯块露出地表被阳光照射变绿结毒（龙葵素）。' , image: 'images/stages/potato_hill_v3.png' },
-      { name: '打顶与摘花', content: '发现现蕾开花时可及早摘除花蕾，切断顶端优势，防止开花消耗养分。' , image: 'images/stages/potato_flower_v3.png' },
-      { name: '特殊追肥 🌟', content: '现蕾开花期正是地下薯块极速膨大期，需重施钾肥（如优质草木灰）。同生姜一样，忌施含氯肥料。' , image: 'images/stages/potato_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '种薯切块播种，播种前土壤需保持适当底墒。出苗前一般不浇水，防烂薯。',
+        pest_management: '预防晚疫病、防地下害虫。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '齐苗后，追施提苗肥（速效氮肥），促进茎叶早发。',
+        pest_management: '防治蚜虫、二十八星瓢虫。',
+        pruning_trellising: '进行第一次浅中耕除草。',
+      },
+      {
+        name: '生长期',
+        water_fertilizer: '现蕾开花期，块茎开始膨大，此时对缺水最敏感，需保持土壤湿润。',
+        pest_management: '晚疫病高发期，重点预防（尤其在连阴雨天）。',
+        pruning_trellising: '结合中耕进行高培土，厚度约5-10cm，增加结薯层，防止块茎见光变绿带毒。',
+      },
+      {
+        name: '结薯与膨大期',
+        water_fertilizer: '需重施钾肥，土壤保持湿润。高温干旱会严重影响块茎膨大。',
+        pest_management: '警惕马铃薯块茎蛾。',
+        pruning_trellising: '如植株徒长严重，可适当打顶摘心，抑制营养生长，促进地下结薯。',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收前10-15天停止浇水，促使薯皮老化，利于储藏。',
+        pest_management: '无。',
+        pruning_trellising: '茎叶大部分枯黄时选择晴天挖掘采收。',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/potato_v3_stage_1_1779706615894.png' },
@@ -1575,8 +1661,31 @@ export const vegetables = [
     description: '喜温耐旱，怕霜冻。适应性强。',
     calendar: { north: '5月栽秧', south: '3-8月均可', east: '5-6月', southwest: '4-6月', northwest: '5月中下旬' },
     stages: [
-      { name: '打顶与提蔓 (核心技术)', content: '藤蔓长至40-50cm时掐尖打顶促发侧蔓。雨季藤蔓过长并扎出地下不定根时，需将藤蔓轻轻提起扯断不定根后放回（提蔓），【切忌翻蔓】，因为翻蔓会打乱叶片向光排列，严重减产。' , image: 'images/stages/sweetpotato_lift_v3.png' },
-      { name: '特殊追肥 🌟', content: '红薯是典型的喜钾作物。在薯块膨大期，若因干旱导致土壤垄面开裂，可直接沿裂缝灌注草木灰水或高钾液肥。' , image: 'images/stages/sweetpotato_fertilize_v3.png' }
+
+      {
+        name: '育苗与缓苗期',
+        water_fertilizer: '剪薯藤扦插定植，插后浇透“还阳水”（定根水），保持土壤湿润直至缓苗成活。',
+        pest_management: '防地下害虫咬断幼苗。',
+        pruning_trellising: null,
+      },
+      {
+        name: '伸蔓与封垄期',
+        water_fertilizer: '缓苗后轻施提苗肥。随着薯蔓伸长，适当控水促根深扎。',
+        pest_management: '防范卷叶虫、麦蛾。',
+        pruning_trellising: '中耕除草，封垄前完成最后一次培土。',
+      },
+      {
+        name: '薯块膨大期',
+        water_fertilizer: '土壤见干见湿，忌积水。重施裂缝肥（高钾，如草木灰浸出液），促进块根急剧膨大。',
+        pest_management: '防治天蛾幼虫，雨季注意排水防涝。',
+        pruning_trellising: '【关键操作】提蔓（翻藤）：在雨季或薯蔓扎不定根时，将薯藤轻轻提起再放下，扯断不定根，防止养分分散（注意不要打乱藤蔓原方向）。如徒长严重可打顶。',
+      },
+      {
+        name: '成熟与采收期',
+        water_fertilizer: '停止浇水，保持干燥。',
+        pest_management: '无。',
+        pruning_trellising: '气温降至15℃左右时必须采收完毕，以免受冻腐烂（“冷害”）。',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '育苗期', image: 'images/sweetpotato_v3_stage_1_1779706740376.png' },
@@ -3004,8 +3113,31 @@ export const vegetables = [
     description: '喜高温高湿的根茎类蔬菜，极不耐旱。',
     calendar: { north: '春夏季', south: '春夏季', east: '春夏季', southwest: '春夏', northwest: '不宜种植' },
     stages: [
-      { name: '多水栽培', content: '芋头是名副其实的“水货”，生长旺盛期需要充足甚至积水的环境，不可缺水。', image: 'images/stages/taro_water_v3.png' },
-      { name: '培土长芋', content: '地上叶片长出后，地下球茎开始膨大，需多次培土以利于块茎膨大并防止露出水面变绿。', image: 'images/stages/taro_hill_v3.png' }
+
+      {
+        name: '种芋发芽与出苗',
+        water_fertilizer: '播前施足基肥。芋头喜湿，发芽期需保持土壤湿润，但因温度较低，不宜大水漫灌。',
+        pest_management: '防地下害虫烂种。',
+        pruning_trellising: null,
+      },
+      {
+        name: '展叶与发棵期',
+        water_fertilizer: '随着叶片增多，逐渐增加浇水量，保持田间湿润。结合中耕追施氮肥。',
+        pest_management: '防范蚜虫和斜纹夜蛾。',
+        pruning_trellising: '进行第一次浅培土。',
+      },
+      {
+        name: '球茎膨大期',
+        water_fertilizer: '芋头是“水芋”，此期需水量极大，甚至可保持浅水层（水芋种植法）。重施钾肥促进球茎发育。',
+        pest_management: '重点防治芋疫病（高温高湿易发）和软腐病。',
+        pruning_trellising: '【关键操作】大培土：连续进行2-3次高培土，将基部完全覆盖，促使子芋、孙芋膨大，防止露出水面变绿。',
+      },
+      {
+        name: '成熟与采收期',
+        water_fertilizer: '采收前15天左右排干田间积水，使土壤稍微干爽，利于采收和储藏。',
+        pest_management: '停药。',
+        pruning_trellising: '霜降前后，叶片变黄衰老时采挖。',
+      },
     ],
     growthSequence: [
       { name: '种芋', image: 'images/taro_stage_1.png', days: 15, gdd: 200 },
