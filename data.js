@@ -563,7 +563,9 @@ export const vegetables = [
       {
         name: '旺盛生长期与采收期',
         water_fertilizer: '每次收割后，必须等伤口愈合、新叶长出2-3cm时再追施腐熟有机肥或高氮复合肥，并浇透水。',
+        water_image: '',
         pest_management: '重点防治韭蛆。可用苏云金杆菌（Bt）或印楝素灌根，切忌使用剧毒农药。',
+        pest_image: '',
         pruning_trellising: '收割时留茬高度需适当（离地2-3厘米处平剪），不可齐根割，以免伤及鳞茎影响下茬生长。',
         pruning_image: 'images/stages/stage_leek_harvest.png'
       }
@@ -643,7 +645,9 @@ export const vegetables = [
         water_fertilizer: '空心菜极其喜水喜肥。每次采摘后，必须及时追施速效氮肥，并充足灌水，保证嫩梢快速萌发。',
         water_image: 'images/stages/stage_waterspinach_water.png',
         pest_management: '高温高湿易发白锈病，发病初期可用波尔多液或多菌灵喷洒防治。注意防范斜纹夜蛾幼虫啃食叶片。',
+        pest_image: '',
         pruning_trellising: '采收时采用“掐尖”法，保留基部2-3个节（腋芽），以促进侧枝不断萌发，实现多次采收。',
+        pruning_image: 'images/stages/stage_waterspinach_harvest.png'
       }
     ],
     growthSequence: [
@@ -719,7 +723,9 @@ export const vegetables = [
       {
         name: '旺盛生长期与采收期',
         water_fertilizer: '生长中后期重施氮肥，促进叶片宽大厚实。采收前5天停止追肥，适量控水以降低硝酸盐含量。',
+        water_image: '',
         pest_management: '防范高湿导致的白锈病。发现叶背出现白色疱斑应及时拔除病株，并增加通风。',
+        pest_image: '',
         pruning_trellising: '多次采收类型可采用“打顶摘心”法收割嫩梢，促发侧枝；一次性采收可直接连根拔起。',
         pruning_image: 'images/stages/stage_amaranth_harvest.png'
       }
@@ -797,7 +803,9 @@ export const vegetables = [
       {
         name: '旺盛生长期与采收期',
         water_fertilizer: '生长旺盛期需肥量大，以速效氮肥为主。大叶茼蒿每次采收后需及时追施速效液肥促新叶。',
+        water_image: '',
         pest_management: '低温高湿易发霜霉病。可通过控制浇水时间（早晨浇水），降低夜间叶面湿度来预防。',
+        pest_image: '',
         pruning_trellising: '小叶茼蒿多为一次性连根拔起；大叶茼蒿可采用“割头”法，留基部1-2个侧芽多次采收。',
         pruning_image: 'images/stages/stage_crowndaisy_harvest.png'
       }
@@ -2410,13 +2418,18 @@ export const vegetables = [
       {
         name: '莲座期',
         water_fertilizer: '重施“发棵肥”（以氮磷为主）。此期外叶迅速生长，浇水需见干见湿，随后进行中耕“蹲苗”约10天，控制外叶徒长，促进包心。',
+        water_image: '',
         pest_management: '预防霜霉病和软腐病。不要在雨天或叶面有露水时进行中耕等农事操作，以免伤口感染细菌。',
+        pest_image: '',
         pruning_trellising: '结合中耕除草，适当摘除底部接触土壤的黄叶、病叶，增加通风，切断软腐病传播途径。',
+        pruning_image: 'images/stages/stage_napacabbage_prune.png'
       },
       {
         name: '结球期与采收',
         water_fertilizer: '需水量极大，需保持土壤湿润，决不能缺水。进入结球前期追施“结球肥”（重施钾肥、适量氮肥）。采收前10天停止浇水。',
+        water_image: '',
         pest_management: '严防软腐病爆发（闻到臭味立刻拔除病株并在坑内撒生石灰）。注意防治菜螟和菜青虫钻心。',
+        pest_image: '',
         pruning_trellising: '北方部分地区在结球后期会用稻草将外叶束缚（“束叶”），防止寒害并促进内叶软化变白。',
         pruning_image: 'images/stages/stage_napacabbage_tie.png'
       }
@@ -2453,7 +2466,9 @@ export const vegetables = [
       {
         name: '旺盛生长期',
         water_fertilizer: '进入发棵期，对氮肥需求直线上升。每7-10天追施一次速效氮肥（如腐熟豆饼水），并保持土壤见干见湿。',
+        water_image: '',
         pest_management: '防范菜青虫和小菜蛾啃食叶片（形成孔洞）。高温多雨时注意田间排水，防软腐病。',
+        pest_image: '',
         pruning_trellising: '生长迅速，通常无须特殊整枝。随时拔除田间杂草即可。',
         pruning_image: 'images/stages/stage_bokchoy_weed.png'
       },
@@ -2501,7 +2516,9 @@ export const vegetables = [
       {
         name: '叶片膨大与采收期',
         water_fertilizer: '进入旺盛生长期，重施1-2次速效氮肥。菠菜极度耐寒，越冬菠菜在冻结前需浇足“越冬水”。',
+        water_image: '',
         pest_management: '早春和秋末易发霜霉病（叶片出现黄斑，叶背有灰白霉层）。需注意田间通风，及时拔除病株。',
+        pest_image: '',
         pruning_trellising: '发现即将抽薹（长出中心花柱）的植株应立刻采收，否则叶片将迅速老化失去食用价值。',
         pruning_image: 'images/stages/stage_spinach_harvest.png'
       }
@@ -2536,15 +2553,20 @@ export const vegetables = [
       {
         name: '发棵/莲座期',
         water_fertilizer: '定植缓苗后，适当控水“蹲苗”促进根系下扎。之后追施以氮肥为主的“发棵肥”，促进叶面积快速扩张。',
+        water_image: '',
         pest_management: '极易受蚜虫和白粉虱危害，可通过悬挂黄板进行物理诱杀。防范地下蜗牛啃食叶片。',
+        pest_image: '',
         pruning_trellising: '结球生菜需注意将底层老叶、病叶剥除，增加贴地通风，防止软腐菌从基部感染。',
         pruning_image: 'images/stages/stage_lettuce_prune.png'
       },
       {
         name: '结球/肉质茎膨大与采收',
         water_fertilizer: '结球生菜或莴笋进入产品器官膨大期，需重施钾肥，并保持水分充足均匀。忽干忽湿易导致裂球或裂茎。采收前停止浇水。',
+        water_image: '',
         pest_management: '重点防范霜霉病和软腐病。不可在阴雨天或叶片带水时采收。',
+        pest_image: '',
         pruning_trellising: '散叶生菜可采用“剥叶采收”，每次从外围剥取大叶；结球生菜需用刀齐根切下整个叶球。',
+        pruning_image: 'images/stages/stage_lettuce_harvest.png'
       }
     ],
     growthSequence: [
@@ -2578,13 +2600,18 @@ export const vegetables = [
       {
         name: '心叶生长期',
         water_fertilizer: '定植缓苗后，开始进入旺盛生长期。追施高氮肥，同时补充微量元素（硼、钙）以防茎裂和心叶坏死。需水量大。',
+        water_image: '',
         pest_management: '重点防治蚜虫和斑枯病（叶片出现带黑点的小圆斑）。发现病叶及早摘除销毁。',
+        pest_image: '',
         pruning_trellising: '适当剥除最外层老化、黄化的枯叶，利于植株中心（心叶）继续向上挺拔生长。',
+        pruning_image: 'images/stages/stage_celery_prune.png'
       },
       {
         name: '旺盛生长与软化采收',
         water_fertilizer: '收获前30天是产量形成关键期，大水大肥促进茎秆粗壮。缺水会导致纤维老化、口感发苦。',
+        water_image: '',
         pest_management: '防范根结线虫。大棚种植需注意控制湿度，以防灰霉病。',
+        pest_image: '',
         pruning_trellising: '为追求脆嫩口感，部分种植者在采收前20天进行“软化栽培”（培土或用黑塑料薄膜包裹茎秆避光）。',
         pruning_image: 'images/stages/stage_celery_blanch.png'
       }
@@ -2625,7 +2652,9 @@ export const vegetables = [
       {
         name: '旺盛生长与采收期',
         water_fertilizer: '进入旺盛生长期后，追施1-2次速效氮肥，促进叶片鲜绿。旱季注意傍晚浇水降温。',
+        water_image: '',
         pest_management: '春季高温长日照易导致蚜虫聚集和提早抽薹，需挂黄板防治，并适当遮荫延缓抽薹。',
+        pest_image: '',
         pruning_trellising: '植株高15-20cm时即可连根拔起采收。也可像割韭菜一样留茬收割，但重新萌发较慢。',
         pruning_image: 'images/stages/stage_coriander_harvest.png'
       }
