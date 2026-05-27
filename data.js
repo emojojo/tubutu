@@ -794,10 +794,10 @@ export const vegetables = [
       northwest: '4-5月播种，利用光热优势品质佳。'
     },
     stages: [
-      { name: '搭架绑蔓', content: '植株长到30-40cm（出现第一花序）时，必须搭设1.5-1.8m高的单杆直立架或人字架，用柔性绑带将主干固定成“8”字形。' , image: 'images/stages/tomato_0_v3_1779513880082.png' },
-      { name: '整枝打杈', content: '推荐【单干整枝】：只保留主干向上生长，所有叶腋间长出的侧枝（侧芽）在长到3-5cm时必须全部抹除（俗称打杈）。' , image: 'images/stages/tomato_1_v3_1779513894969.png' },
-      { name: '疏花疏果与打底叶', content: '每穗保留4-5个好果，摘除畸形果。第一穗果转色时，将果穗下方的黄叶、老叶全部摘除，增强底部通风透光。' , image: 'images/stages/tomato_2_v3_1779513910627.png' },
-      { name: '特殊追肥 🌟', content: '番茄喜钾喜钙。第一穗果膨大期开始，每半月追施一次高钾有机液肥。务必叶面喷施糖醇钙或螯合钙，以防止果实底部发黑变烂（脐腐病）。' , image: 'images/stages/tomato_3_v3_1779513921823.png' }
+      { name: '搭架绑蔓', content: '植株长到30-40cm（出现第一花序）时，必须搭设1.5-1.8m高的单杆直立架或人字架，用柔性绑带将主干固定成“8”字形。' , image: 'images/stages/tomato_trellis_v3.png' },
+      { name: '整枝打杈', content: '推荐【单干整枝】：只保留主干向上生长，所有叶腋间长出的侧枝（侧芽）在长到3-5cm时必须全部抹除（俗称打杈）。' , image: 'images/stages/tomato_prune_v3.png' },
+      { name: '疏花疏果与打底叶', content: '每穗保留4-5个好果，摘除畸形果。第一穗果转色时，将果穗下方的黄叶、老叶全部摘除，增强底部通风透光。' , image: 'images/stages/tomato_prune_leaves_v3.png' },
+      { name: '特殊追肥 🌟', content: '番茄喜钾喜钙。第一穗果膨大期开始，每半月追施一次高钾有机液肥。务必叶面喷施糖醇钙或螯合钙，以防止果实底部发黑变烂（脐腐病）。' , image: 'images/stages/tomato_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/tomato_v3_stage_1_1779705453496.png' },
@@ -881,9 +881,9 @@ export const vegetables = [
       northwest: '5月中下旬。'
     },
     stages: [
-      { name: '整枝打叶', content: '秋葵植株极高（可达1.5-2m），极度喜光。随着果实不断向上采收，必须及时将采收节位下方的老叶、病叶全部剪除，保持田间极佳的透风透光性。' , image: 'images/stages/okra_0_v3_1779513940371.png' },
-      { name: '适时采收', content: '开花后5-7天内、果荚长8-10cm时必须采收！稍微延误1-2天果荚就会迅速木质化变硬，彻底失去食用价值。' , image: 'images/stages/okra_1_v3_1779513953450.png' },
-      { name: '特殊追肥 🌟', content: '植株高大需肥量大。进入开花结果盛期后，每半个月需深施一次复合有机肥或腐熟饼肥。' , image: 'images/stages/okra_2_v3_1779513981045.png' }
+      { name: '整枝打叶', content: '秋葵植株极高（可达1.5-2m），极度喜光。随着果实不断向上采收，必须及时将采收节位下方的老叶、病叶全部剪除，保持田间极佳的透风透光性。' , image: 'images/stages/okra_prune_v3.png' },
+      { name: '适时采收', content: '开花后5-7天内、果荚长8-10cm时必须采收！稍微延误1-2天果荚就会迅速木质化变硬，彻底失去食用价值。' , image: 'images/stages/okra_harvest_v3.png' },
+      { name: '特殊追肥 🌟', content: '植株高大需肥量大。进入开花结果盛期后，每半个月需深施一次复合有机肥或腐熟饼肥。' , image: 'images/stages/okra_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/okra_v3_stage_1_1779705569315.png' },
@@ -943,9 +943,9 @@ export const vegetables = [
       northwest: '5月定植。'
     },
     stages: [
-      { name: '防倒伏支撑', content: '茄子果实较重，结果盛期极易遭遇风雨倒伏或枝条劈裂，必须在植株旁插80-100cm小竹竿，并用粗布条将主干绑缚固定。' , image: 'images/stages/eggplant_0_v3_1779513995381.png' },
-      { name: '整枝打杈', content: '经典【双干整枝】：保留“门茄”（第一个茄子）下方第一强壮侧枝与主干，形成两个主枝，将其余下部所有侧枝全部抹除；中后期及时摘除底部黄叶和病叶，保持下部极度通风。' , image: 'images/stages/eggplant_1_v3_1779514009408.png' },
-      { name: '特殊追肥 🌟', content: '“门茄”瞪眼期（果实开始膨大变色）重施追肥；“对茄”、“四门斗”期更是需肥极高峰期，基本每采收一次就必须追施一次速效有机肥。' , image: 'images/stages/eggplant_2_v3_1779514023156.png' }
+      { name: '防倒伏支撑', content: '茄子果实较重，结果盛期极易遭遇风雨倒伏或枝条劈裂，必须在植株旁插80-100cm小竹竿，并用粗布条将主干绑缚固定。' , image: 'images/stages/eggplant_trellis_v3.png' },
+      { name: '整枝打杈', content: '经典【双干整枝】：保留“门茄”（第一个茄子）下方第一强壮侧枝与主干，形成两个主枝，将其余下部所有侧枝全部抹除；中后期及时摘除底部黄叶和病叶，保持下部极度通风。' , image: 'images/stages/eggplant_prune_v3.png' },
+      { name: '特殊追肥 🌟', content: '“门茄”瞪眼期（果实开始膨大变色）重施追肥；“对茄”、“四门斗”期更是需肥极高峰期，基本每采收一次就必须追施一次速效有机肥。' , image: 'images/stages/eggplant_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/eggplant_v3_stage_1_1779705685700.png' },
@@ -1017,9 +1017,9 @@ export const vegetables = [
       northwest: '5月定植。'
     },
     stages: [
-      { name: '防倒伏支撑', content: '辣椒枝干较脆易折断，结椒盛期头重脚轻，强烈建议搭设0.8-1m高的简易四脚防风支架，或在种植行两侧拉尼龙网绳支撑。' , image: 'images/stages/pepper_0_v3_1779514037864.png' },
-      { name: '整枝打杈', content: '当“门椒”（第一个分叉处的辣椒）坐稳后，将该分叉点【以下】的所有侧芽、萌枝和老叶全部打掉，将根系养分全部集中供给上层果实。' , image: 'images/stages/pepper_1_v3_1779514051908.png' },
-      { name: '特殊追肥 🌟', content: '辣椒忌干旱更忌积水。结果期对钾肥、钙肥需求巨大，追肥时除常规有机肥外，强烈建议叶面喷施螯合钙，以预防辣椒出现脐腐病（底部黑腐烂）。' , image: 'images/stages/pepper_2_v3_1779514066934.png' }
+      { name: '防倒伏支撑', content: '辣椒枝干较脆易折断，结椒盛期头重脚轻，强烈建议搭设0.8-1m高的简易四脚防风支架，或在种植行两侧拉尼龙网绳支撑。' , image: 'images/stages/pepper_trellis_v3.png' },
+      { name: '整枝打杈', content: '当“门椒”（第一个分叉处的辣椒）坐稳后，将该分叉点【以下】的所有侧芽、萌枝和老叶全部打掉，将根系养分全部集中供给上层果实。' , image: 'images/stages/pepper_prune_v3.png' },
+      { name: '特殊追肥 🌟', content: '辣椒忌干旱更忌积水。结果期对钾肥、钙肥需求巨大，追肥时除常规有机肥外，强烈建议叶面喷施螯合钙，以预防辣椒出现脐腐病（底部黑腐烂）。' , image: 'images/stages/pepper_fertilize_v3.png' }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/pepper_v3_stage_1_1779705805513.png' },
