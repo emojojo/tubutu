@@ -971,10 +971,41 @@ export const vegetables = [
       northwest: '4-5月播种，利用光热优势品质佳。'
     },
     stages: [
-      { name: '搭架绑蔓', content: '植株长到30-40cm（出现第一花序）时，必须搭设1.5-1.8m高的单杆直立架或人字架，用柔性绑带将主干固定成“8”字形。' , image: 'images/stages/tomato_trellis_v3.png' },
-      { name: '整枝打杈', content: '推荐【单干整枝】：只保留主干向上生长，所有叶腋间长出的侧枝（侧芽）在长到3-5cm时必须全部抹除（俗称打杈）。' , image: 'images/stages/tomato_prune_v3.png' },
-      { name: '疏花疏果与打底叶', content: '每穗保留4-5个好果，摘除畸形果。第一穗果转色时，将果穗下方的黄叶、老叶全部摘除，增强底部通风透光。' , image: 'images/stages/tomato_prune_leaves_v3.png' },
-      { name: '特殊追肥 🌟', content: '番茄喜钾喜钙。第一穗果膨大期开始，每半月追施一次高钾有机液肥。务必叶面喷施糖醇钙或螯合钙，以防止果实底部发黑变烂（脐腐病）。' , image: 'images/stages/tomato_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '播后浇透底水，出苗后控水，保持见干见湿，防止幼苗徒长。',
+        pest_management: '注意苗床通风，预防猝倒病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '定植前“蹲苗”，定植时浇足定根水。成活后轻施一次提苗肥（薄氮肥）。',
+        pest_management: '防范蚜虫、白粉虱，可悬挂黄板进行诱杀。',
+        pruning_trellising: '开始准备搭架材料。',
+      },
+      {
+        name: '开花期',
+        water_fertilizer: '第一穗花开放至坐果前严格控水，防止落花落果。禁用重肥。',
+        pest_management: '防范早疫病、晚疫病，注意降低棚内或田间湿度。',
+        pruning_trellising: '【关键操作】搭架绑蔓。采用“单干整枝”：只保留主干，将所有叶腋处长出的侧枝（打杈）尽早抹除。',
+        pruning_image: '',
+      },
+      {
+        name: '结果与转色期',
+        water_fertilizer: '第一穗果膨大时（核桃大小），重施膨果肥（高钾），此后需水量大增，应保持土壤均匀湿润，忽干忽湿极易导致裂果。',
+        water_image: '',
+        pest_management: '防治棉铃虫（钻心虫）和脐腐病（因缺钙引起，需补充钙肥）。',
+        disease_image: '',
+        pruning_trellising: '及时摘除底部接触土壤的老叶、病叶，增加通风透光。适时打顶（一般留3-5穗果后掐去主茎顶端）。',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收前适度控水，可提高果实糖度。',
+        pest_management: '停用一切化学药剂。',
+        pruning_trellising: '分批采收，红熟一个采一个，减轻植株负担。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/tomato_v3_stage_1_1779705453496.png' },
@@ -1058,9 +1089,41 @@ export const vegetables = [
       northwest: '5月中下旬。'
     },
     stages: [
-      { name: '整枝打叶', content: '秋葵植株极高（可达1.5-2m），极度喜光。随着果实不断向上采收，必须及时将采收节位下方的老叶、病叶全部剪除，保持田间极佳的透风透光性。' , image: 'images/stages/okra_prune_v3.png' },
-      { name: '适时采收', content: '开花后5-7天内、果荚长8-10cm时必须采收！稍微延误1-2天果荚就会迅速木质化变硬，彻底失去食用价值。' , image: 'images/stages/okra_harvest_v3.png' },
-      { name: '特殊追肥 🌟', content: '植株高大需肥量大。进入开花结果盛期后，每半个月需深施一次复合有机肥或腐熟饼肥。' , image: 'images/stages/okra_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '种子壳厚，播种前可温水浸种。出苗前保持土壤湿润。',
+        pest_management: '注意防范地老虎。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '出苗后及时间苗，定植后浇透水。耐旱力强，适当控水防徒长。',
+        pest_management: '苗期防蚜虫。',
+        pruning_trellising: null,
+      },
+      {
+        name: '开花期',
+        water_fertilizer: '秋葵喜温耐热，开花期对水分敏感，需保证土壤湿润但不能积水。',
+        pest_management: '防范棉铃虫和夜蛾吃花和叶片。',
+        pruning_trellising: '及时摘除植株基部的无用侧枝。',
+      },
+      {
+        name: '结果与成熟期',
+        water_fertilizer: '结荚盛期需水量极大，应结合浇水追施一次速效复合肥，保障嫩荚快速膨大。',
+        water_image: '',
+        pest_management: '注意防范白粉病，高温高湿易发。',
+        disease_image: '',
+        pruning_trellising: '【关键操作】每采收一个嫩荚，顺手将该荚下方的1-2片老叶剪除，改善通风，促使植株向上拔高结果。',
+        pruning_image: '',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '持续追肥供水。',
+        pest_management: '停药。',
+        pruning_trellising: '花谢后3-5天，嫩荚长约8-10厘米时必须采收！过晚采收会导致纤维化（变木头一样硬）无法食用。需带手套采收以防刺痒。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/okra_v3_stage_1_1779705569315.png' },
@@ -1120,9 +1183,41 @@ export const vegetables = [
       northwest: '5月定植。'
     },
     stages: [
-      { name: '防倒伏支撑', content: '茄子果实较重，结果盛期极易遭遇风雨倒伏或枝条劈裂，必须在植株旁插80-100cm小竹竿，并用粗布条将主干绑缚固定。' , image: 'images/stages/eggplant_trellis_v3.png' },
-      { name: '整枝打杈', content: '经典【双干整枝】：保留“门茄”（第一个茄子）下方第一强壮侧枝与主干，形成两个主枝，将其余下部所有侧枝全部抹除；中后期及时摘除底部黄叶和病叶，保持下部极度通风。' , image: 'images/stages/eggplant_prune_v3.png' },
-      { name: '特殊追肥 🌟', content: '“门茄”瞪眼期（果实开始膨大变色）重施追肥；“对茄”、“四门斗”期更是需肥极高峰期，基本每采收一次就必须追施一次速效有机肥。' , image: 'images/stages/eggplant_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '育苗期需水较少，保持苗床微润即可。',
+        pest_management: '注意苗床保温，预防猝倒病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '定植后浇透水，缓苗后可施少量氮肥提苗，之后控水蹲苗。',
+        pest_management: '防范红蜘蛛和蚜虫。',
+        pruning_trellising: null,
+      },
+      {
+        name: '开花期',
+        water_fertilizer: '“门茄”（第一朵花）开花期间控制浇水，防止落花。',
+        pest_management: '注意防治灰霉病。',
+        pruning_trellising: '【关键操作】整枝：门茄以下的所有侧枝全部抹除，采用“双干整枝”或“自然开心型”整枝。',
+      },
+      {
+        name: '结果与转色期',
+        water_fertilizer: '门茄瞪眼（果实开始膨大）后，结束蹲苗，重施氮钾肥。结果盛期需水量极大，需勤浇水保持湿润。',
+        water_image: '',
+        pest_management: '重点防治二十八星瓢虫（吃叶片）和黄萎病（土传病害）。',
+        disease_image: '',
+        pruning_trellising: '及时摘除植株下部的黄叶、老叶，改善通风透光。',
+        pruning_image: '',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '采收期间每隔10-15天追肥一次。',
+        pest_management: '采收前停止施药。',
+        pruning_trellising: '看果实萼片与果实连接处（茄眼），白色部分变窄时即可采收。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/eggplant_v3_stage_1_1779705685700.png' },
@@ -1194,9 +1289,41 @@ export const vegetables = [
       northwest: '5月定植。'
     },
     stages: [
-      { name: '防倒伏支撑', content: '辣椒枝干较脆易折断，结椒盛期头重脚轻，强烈建议搭设0.8-1m高的简易四脚防风支架，或在种植行两侧拉尼龙网绳支撑。' , image: 'images/stages/pepper_trellis_v3.png' },
-      { name: '整枝打杈', content: '当“门椒”（第一个分叉处的辣椒）坐稳后，将该分叉点【以下】的所有侧芽、萌枝和老叶全部打掉，将根系养分全部集中供给上层果实。' , image: 'images/stages/pepper_prune_v3.png' },
-      { name: '特殊追肥 🌟', content: '辣椒忌干旱更忌积水。结果期对钾肥、钙肥需求巨大，追肥时除常规有机肥外，强烈建议叶面喷施螯合钙，以预防辣椒出现脐腐病（底部黑腐烂）。' , image: 'images/stages/pepper_fertilize_v3.png' }
+
+      {
+        name: '播种与出苗期',
+        water_fertilizer: '辣椒种子发芽慢，需保持土壤湿润且温度较高。',
+        pest_management: '防范苗期猝倒病。',
+        pruning_trellising: null,
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '定植成活后，轻施提苗肥。根系浅，切忌积水。',
+        pest_management: '防范蚜虫（传播病毒病），悬挂黄板。',
+        pruning_trellising: null,
+      },
+      {
+        name: '开花期',
+        water_fertilizer: '初花期严禁浇大水，适当干旱有助于扎根和防止落花。',
+        pest_management: '高温干旱易引发病毒病，需注意预防。',
+        pruning_trellising: '门椒（第一个分叉处的果实）以下长出的侧枝需全部抹除，以集中养分向上生长。',
+        pruning_image: '',
+      },
+      {
+        name: '结果与转色期',
+        water_fertilizer: '门椒坐住后，开始追施磷钾肥。结果盛期“见干见湿”，切忌大水漫灌（极易引发沤根落叶）。',
+        water_image: '',
+        pest_management: '重点防范炭疽病、疫病和烟青虫。雨后必须及时排水防涝。',
+        disease_image: '',
+        pruning_trellising: '植株过高且挂果多时，可插竹竿支撑防倒伏。',
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '青椒可随时采收，红椒需等转色完全。采收期间配合追肥。',
+        pest_management: '停药。',
+        pruning_trellising: '采摘时注意不要拉断脆嫩的枝条。',
+        harvest_image: '',
+      },
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/pepper_v3_stage_1_1779705805513.png' },
