@@ -145,10 +145,28 @@ export const vegetables = [
       northwest: '4-5月（气候最适宜甜瓜生长）。'
     },
     stages: [
-      { name: '定植与搭架', content: '推荐搭架吊蔓种植（1.8-2m高铁丝/尼龙绳），采光好且防烂瓜；也可地爬种植（需铺草防地雷瓜）。' , image: 'images/stages/melon_0_v3_1779513847521.png' },
-      { name: '整蔓打杈', content: '【吊蔓单干整枝】：主蔓向上牵引，摘除10节以下所有侧枝；11-15节留侧枝结果，果前留1-2叶摘心。主蔓至25节左右打顶。【地爬】：常采用“双蔓或三蔓整枝”。' , image: 'images/stages/melon_1_v3_1779513861324.png' },
-      { name: '人工授粉', content: '羊角蜜等甜瓜主要靠侧枝结瓜，雌花开放时需在上午进行人工授粉。' , image: 'images/stages/melon_2_v3_1779513877039.png' },
-      { name: '特殊追肥 🌟', content: '坐果后进入膨大期，立即追施膨瓜肥（腐熟饼肥水或高钾肥），配合叶面喷施磷酸二氢钾，采收前10天断水。' , image: 'images/stages/melon_3_v3_1779513893106.png' }
+      {
+        name: '幼苗期 (定植与缓苗)',
+        water_fertilizer: '定植后浇透水，缓苗后适当控水促进根系下扎。',
+        pest_management: '防范苗期立枯病，预防蚜虫。',
+        pruning_trellising: '推荐搭架吊蔓种植（1.8-2m高铁丝/尼龙绳），采光好且防烂瓜；也可地爬种植（需铺草防地雷瓜）。',
+        pruning_image: 'images/stages/melon_0_v3_1779513847521.png'
+      },
+      {
+        name: '抽蔓期',
+        water_fertilizer: '伸蔓期追施一次伸蔓肥（均衡型复混肥），保持土壤见干见湿。',
+        pest_management: '重点防范白粉病、蔓枯病。',
+        pruning_trellising: '【吊蔓单干整枝】：主蔓向上牵引，摘除10节以下所有侧枝；11-15节留侧枝结果，果前留1-2叶摘心。主蔓至25节左右打顶。【地爬】：常采用“双蔓或三蔓整枝”。',
+        pruning_image: 'images/stages/melon_1_v3_1779513861324.png'
+      },
+      {
+        name: '开花结果期',
+        water_fertilizer: '坐果后进入膨大期，立即追施膨瓜肥（腐熟饼肥水或高钾肥），配合叶面喷施磷酸二氢钾，采收前10天断水。',
+        water_image: 'images/stages/melon_3_v3_1779513893106.png',
+        pest_management: '防范果实腐烂病、白粉病。',
+        pruning_trellising: '羊角蜜等甜瓜主要靠侧枝结瓜，雌花开放时需在上午进行人工授粉。',
+        pruning_image: 'images/stages/melon_2_v3_1779513877039.png'
+      }
     ],
     growthSequence: [
       { name: '种子', image: 'images/melon_v3_stage_1_1779710563597.png', days: 7, gdd: 105  },
@@ -214,9 +232,28 @@ export const vegetables = [
       northwest: '8月下旬定植。'
     },
     stages: [
-      { name: '整地理蔓', content: '必须采用高垄种植（垄高30cm以上），并铺设黑色地膜（防草、保温、保肥）。结果时需将果穗理到膜上，绝对避免果实直接接触湿润泥土引起烂果。' , image: 'images/stages/strawberry_0_v3_1779513907840.png' },
-      { name: '摘除匍匐茎', content: '开花结果期间，草莓会不断长出细长的繁殖藤蔓（匍匐茎）。一旦发现，应立刻贴根掐断，避免其严重消耗植株养分导致果实变小。' , image: 'images/stages/strawberry_1_v3_1779513923046.png' },
-      { name: '特殊追肥 🌟', content: '底肥必须施足充分发酵好的羊粪。开花前和果实膨大期，结合滴灌追施高磷高钾水溶有机肥（如海藻酸、鱼蛋白液肥）以提升果实风味和甜度。' , image: 'images/stages/strawberry_2_v3_1779513936502.png' }
+      {
+        name: '幼苗期 (定植与缓苗)',
+        water_fertilizer: '定植前底肥必须施足充分发酵好的羊粪。定植后浇透水，缓苗期间保持土壤湿润，不能缺水。',
+        pest_management: '预防红蜘蛛和根腐病。',
+        pruning_trellising: '必须采用高垄种植（垄高30cm以上），“深不埋心，浅不露根”，并铺设黑色地膜（防草、保温、保肥）。',
+        pruning_image: 'images/stages/strawberry_0_v3_1779513907840.png'
+      },
+      {
+        name: '旺盛生长期',
+        water_fertilizer: '新叶长出后，可少量追施平衡肥。保持水分供应但忌积水。',
+        pest_management: '防范白粉病、蚜虫。',
+        pruning_trellising: '及时摘除老叶、病叶，改善植株通风透光。',
+        pruning_image: null
+      },
+      {
+        name: '开花结果期',
+        water_fertilizer: '开花前和果实膨大期，结合滴灌追施高磷高钾水溶有机肥（如海藻酸、鱼蛋白液肥）以提升果实风味和甜度。',
+        water_image: 'images/stages/strawberry_2_v3_1779513936502.png',
+        pest_management: '重点防范灰霉病（降低田间湿度），防鸟。',
+        pruning_trellising: '结果时需将果穗理到膜上，绝对避免果实直接接触湿润泥土引起烂果。开花结果期间不断长出的匍匐茎，应立刻贴根掐断。',
+        pruning_image: 'images/stages/strawberry_1_v3_1779513923046.png'
+      }
     ],
     growthSequence: [
       { name: '种子', image: 'images/strawberry_v3_stage_1_1779710715671.png', days: 7, gdd: 105  },
@@ -2214,9 +2251,28 @@ export const vegetables = [
       northwest: '4-10月'
     },
     stages: [
-      { name: '定植与日常管理', content: '选择疏松透气的营养土定植，“深不埋心，浅不露根”。它不像普通草莓那样依赖短日照，只要温度在 10-30℃ 之间就会持续生长。' },
-      { name: '花果同株与疏花', content: '最大的特点是可以一边开花一边结果。为了保证果子又大又甜，建议每株同时保留 2-3 个健壮的花序即可，发现太小太弱的花蕾要狠心摘除。', image: 'images/stage_eb_strawberry_flower.png' },
-      { name: '持久采收与追肥', content: '红透后及时采收。因为它是“劳模”，一直结果一直消耗养分，所以必须做到“薄肥勤施”：每隔10-15天浇一次稀薄的有机钾肥或酵素水。', image: 'images/stage_eb_strawberry_harvest.png' }
+      {
+        name: '幼苗期 (定植)',
+        water_fertilizer: '底肥需充足，定植后浇透定根水。',
+        pest_management: '防范根腐病、红蜘蛛。',
+        pruning_trellising: '选择疏松透气的营养土定植，“深不埋心，浅不露根”。',
+        image: null
+      },
+      {
+        name: '营养生长与抽蔓期',
+        water_fertilizer: '温度在 10-30℃ 之间持续生长，需保持土壤湿润，见干见湿。',
+        pest_management: '注意通风，防范白粉病、蚜虫。',
+        pruning_trellising: '及时剪除老叶、病叶以及不需要繁殖的匍匐茎。',
+        image: null
+      },
+      {
+        name: '连续开花结果期',
+        water_fertilizer: '因为它是“劳模”，一直结果一直消耗养分，必须“薄肥勤施”：每隔10-15天浇一次稀薄的有机钾肥或酵素水。',
+        water_image: 'images/stage_eb_strawberry_harvest.png',
+        pest_management: '花果同株期需重点防范灰霉病，注意疏苗通风。',
+        pruning_trellising: '为了保证果大味甜，建议每株同时保留 2-3 个健壮的花序，太小太弱的花蕾狠心摘除。理顺果穗，避免果实接触泥土。',
+        pruning_image: 'images/stage_eb_strawberry_flower.png'
+      }
     ],
     growthSequence: [
       { name: '种子', image: 'images/everbearing_strawberry_v3_stage_1_1779710841859.png', days: 7, gdd: 105  },
@@ -2395,8 +2451,27 @@ export const vegetables = [
     description: '喜温喜光的禾本科作物，甜玉米/糯玉米风味极佳。',
     calendar: { north: '春夏季', south: '春夏秋', east: '春夏季', southwest: '春夏', northwest: '春季' },
     stages: [
-      { name: '集中授粉', content: '玉米靠风力授粉，应呈方阵式多行种植（而非单行），微风吹过顶端雄花花粉才能顺利落在果穗花丝上。', image: 'images/stages/corn_0.png' },
-      { name: '重施大喇叭口肥', content: '当玉米长到第11-12片叶时，顶部呈喇叭口状，是需肥高峰期，需重施氮肥。', image: 'images/stages/corn_1.png' }
+      {
+        name: '苗期',
+        water_fertilizer: '播种后保持土壤湿润。出苗后至拔节前，控制浇水，促根下扎。',
+        pest_management: '防范地老虎、蝼蛄等地下害虫。',
+        pruning_trellising: '应呈方阵式多行种植（而非单行），利于后期集中授粉。',
+        image: null
+      },
+      {
+        name: '拔节孕穗期 (大喇叭口期)',
+        water_fertilizer: '当长到第11-12片叶时（顶部呈喇叭口状），是需水需肥高峰期，需重施氮肥，并充足浇水。',
+        water_image: 'images/stages/corn_1.png',
+        pest_management: '玉米螟幼虫极易钻入心叶啃食，需在大喇叭口期向心叶内撒施Bt颗粒剂防治。',
+        pruning_trellising: null
+      },
+      {
+        name: '抽雄开花与灌浆期',
+        water_fertilizer: '保持土壤湿润，不可缺水，防止花粉枯萎或灌浆不足。后期防涝。',
+        pest_management: '防范黏虫、草地贪夜蛾。',
+        pruning_trellising: '玉米靠风力授粉，方阵种植下微风吹过雄花花粉能顺利落在果穗花丝上。如遇连续阴雨，可进行人工辅助授粉。',
+        pruning_image: 'images/stages/corn_0.png'
+      }
     ],
     growthSequence: [
       { name: '种子', image: 'images/corn_stage_1.png', days: 5, gdd: 75 },
