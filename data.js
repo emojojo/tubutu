@@ -2135,8 +2135,27 @@ export const vegetables = [
     description: '耐寒，具有强烈杀菌作用，有机农场不可缺少的伴生植物。',
     calendar: { north: '3月春播或8-9月秋播', south: '9-11月秋播', east: '9-10月秋播', southwest: '9-10月秋播', northwest: '3-4月春播' },
     stages: [
-      { name: '水分管理', content: '出苗期保持湿润，北方地区越冬前需浇透“越冬水”以防冻伤。次年春季蒜薹生长期需水量最大。' , image: 'images/stages/garlic_0_v3_1779514141166.png' },
-      { name: '特殊追肥 🌟', content: '“退母期”（母瓣干瘪，幼苗靠自身根系吸肥的转折点）容易出现叶尖发黄，此时需马上追施一次促苗肥；抽薹后进入蒜头膨大期，重施高钾肥。' , image: 'images/stages/garlic_1_v3_1779514157310.png' }
+      {
+        name: '幼苗越冬期',
+        water_fertilizer: '出苗期保持湿润，北方地区越冬前需浇透“越冬水”以防冻伤。',
+        pest_management: '预防根蛆。',
+        pruning_trellising: '播种时深度适中，覆土并可覆盖稻草保温保墒。',
+        image: null
+      },
+      {
+        name: '退母期与蒜薹生长期',
+        water_fertilizer: '“退母期”（母瓣干瘪，幼苗靠自身根系吸肥的转折点）容易出现叶尖发黄，需马上追施促苗肥。春季蒜薹生长期需水量最大，需保持充足水分。',
+        water_image: 'images/stages/garlic_water_fertilize_v3.png',
+        pest_management: '防范紫斑病、灰霉病及葱蓟马。',
+        pruning_trellising: '及时抽出蒜薹以利于地下蒜头膨大。',
+        pruning_image: 'images/stages/garlic_harvest_scape_v3.png'
+      },
+      {
+        name: '蒜头膨大期',
+        water_fertilizer: '抽薹后进入蒜头膨大期，需重施高钾肥。采收前7-10天停止浇水，以利于储藏。',
+        pest_management: '雨后及时排水，避免湿度过高引发叶枯病和根腐病。',
+        pruning_trellising: null
+      }
     ],
     growthSequence: [
       { name: '种子', image: 'images/garlic_v3_stage_1_1779711272689.png', days: 7, gdd: 105  },
@@ -2190,8 +2209,21 @@ export const vegetables = [
     description: '适应性强，大葱需培土软化，小葱生长快速。',
     calendar: { north: '秋播育苗次年夏定植', south: '四季均可', east: '春秋均可', southwest: '四季', northwest: '春季' },
     stages: [
-      { name: '深沟培土软化', content: '大葱优质葱白长的秘诀在于“深开沟，勤培土”。随着大葱向上生长，需多次将泥土培到葱白处（以不埋过葱心为限），使葱白在无光条件下软化变长。' , image: 'images/stages/greenonion_0_v3_1779514173965.png' },
-      { name: '特殊追肥 🌟', content: '立秋后天气转凉，大葱进入葱白极速生长期，需大量养分，必须重施“攻葱肥”（高氮高钾），并结合培土和浇透水。' , image: 'images/stages/greenonion_1_v3_1779514192323.png' }
+      {
+        name: '幼苗期',
+        water_fertilizer: '苗床保持湿润。定植前控制浇水进行炼苗。',
+        pest_management: '注意防治地老虎等地下害虫。',
+        pruning_trellising: '选择排水良好的地块，深翻整地。',
+        image: null
+      },
+      {
+        name: '葱白生长期',
+        water_fertilizer: '立秋后天气转凉，大葱进入葱白极速生长期，需大量养分，必须重施“攻葱肥”（高氮高钾），并结合培土和浇透水。',
+        water_image: 'images/stages/greenonion_fertilize_v3.png',
+        pest_management: '防范葱蓟马、斑潜蝇（鬼画符）和紫斑病。',
+        pruning_trellising: '大葱优质葱白长的秘诀在于“深开沟，勤培土”。随着向上生长，需多次将泥土培到葱白处（不埋过葱心），使葱白在无光条件下软化变长。',
+        pruning_image: 'images/stages/greenonion_hilling_v3.png'
+      }
     ],
     growthSequence: [
       { name: '种子', image: 'images/greenonion_v3_stage_1_1779711395154.png', days: 7, gdd: 105  },
