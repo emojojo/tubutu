@@ -33,7 +33,7 @@ body {
 /* HEADER / HERO SECTION */
 .hero {
     background: linear-gradient(135deg, rgba(45, 106, 79, 0.85), rgba(27, 67, 50, 0.9)), url('images/hero_farm_bg.png') center/cover no-repeat;
-    padding: 3rem 1.5rem 4rem;
+    padding: 1.5rem 1.5rem 2rem;
     position: relative;
     overflow: visible;
     z-index: 10;
