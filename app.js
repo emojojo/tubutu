@@ -1191,21 +1191,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.tagName === 'IMG' && (e.target.classList.contains('pest-img') || e.target.classList.contains('veg-img') || e.target.classList.contains('stage-image') || e.target.closest('.pest-img'))) {
             if (lightboxOverlay && lightboxImg) {
                 lightboxImg.src = e.target.src;
-                lightboxOverlay.style.display = 'flex';
+                lightboxOverlay.classList.add('active');
             }
         }
     });
 
     if (lightboxCloseBtn) {
         lightboxCloseBtn.addEventListener('click', () => {
-            if (lightboxOverlay) lightboxOverlay.style.display = 'none';
+            if (lightboxOverlay) lightboxOverlay.classList.remove('active');
         });
     }
 
     if (lightboxOverlay) {
         lightboxOverlay.addEventListener('click', (e) => {
             if (e.target === lightboxOverlay) {
-                lightboxOverlay.style.display = 'none';
+                lightboxOverlay.classList.remove('active');
             }
         });
     }
