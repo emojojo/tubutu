@@ -36,8 +36,7 @@ export const categories = [
 
 export const vegetables = [
   // ================= 水果 (Fruits) =================
-  {
-    id: 'watermelon',
+  { id: 'watermelon',
     avatar: 'assets/icons/icon_watermelon.png',
     name: '西瓜',
     baseTemp: 12, categoryId: 'fruit',
@@ -129,8 +128,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'melon',
+  { id: 'melon',
     avatar: 'assets/icons/icon_melon.png',
     name: '羊角蜜/甜瓜',
     baseTemp: 12, categoryId: 'fruit',
@@ -216,8 +214,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'strawberry',
+  { id: 'strawberry',
     avatar: 'assets/icons/icon_strawberry.png',
     name: '草莓',
     baseTemp: 12, categoryId: 'fruit',
@@ -311,8 +308,7 @@ export const vegetables = [
   },
 
   // ================= 甘蓝花菜类 (Brassicas) =================
-  {
-    id: 'broccoli',
+  { id: 'broccoli',
     avatar: 'assets/icons/icon_broccoli.png',
     name: '西兰花',
     baseTemp: 5, categoryId: 'brassica',
@@ -344,23 +340,22 @@ export const vegetables = [
         name: '莲座期',
         water_fertilizer: '进入外叶旺盛生长期，需水量大，重施一次氮钾复合肥，促使形成强大同化器官。',
         pest_management: '重点防范菜青虫、小菜蛾和蚜虫。',
-        pruning_trellising: '结合除草进行中耕培土，防止植株倒伏。',
-        pruning_image: '',
-      },
+        pruning_trellising: null,
+        },
       {
         name: '现蕾与膨大期',
         water_fertilizer: '需水肥最高峰。现蕾时追施磷钾肥，补充硼肥以防茎秆空心。保持土壤始终湿润，但忌积水。',
-        water_image: '',
+        water_image: 'images/stages/stage_broccoli_water.png',
         pest_management: '注意防范软腐病及钻心虫，发现病叶及时摘除烧毁。',
-        disease_image: '',
+        disease_image: 'images/stages/stage_broccoli_disease.png',
         pruning_trellising: null,
       },
       {
         name: '采收期',
         water_fertilizer: '采收前5天停止浇水，以延长花球保鲜期。',
         pest_management: '严禁使用任何化学药剂。',
-        pruning_trellising: '当花蕾边缘尚未散开时采收。斜切主茎，保留基部侧芽以继续收获侧花球。',
-        harvest_image: '',
+        pruning_trellising: null,
+        harvest_image: 'images/stages/stage_broccoli_harvest.png',
       },
     ],
     growthSequence: [
@@ -417,8 +412,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'cabbage_head',
+  { id: 'cabbage_head',
     avatar: 'assets/icons/icon_cabbage_head.png',
     name: '包菜 (结球甘蓝)',
     baseTemp: 5, categoryId: 'brassica',
@@ -450,24 +444,22 @@ export const vegetables = [
         name: '莲座期',
         water_fertilizer: '结束蹲苗，重施氮肥（“发棵肥”），浇透水，促使莲座叶快速同化养分。',
         pest_management: '防治霜霉病，及时清理田间杂草。',
-        pruning_trellising: '中耕除草，深锄保墒。',
-        pruning_image: '',
-      },
+        pruning_trellising: null,
+        },
       {
         name: '结球期 (初期与盛期)',
         water_fertilizer: '需水量达到顶峰，要求土壤始终湿润（结球盛期）。重施钾肥和适量氮肥（“结球肥”），缺钙会导致“干烧心”，可补充钙肥。',
-        water_image: '',
+        water_image: 'images/stages/stage_cabbage_head_water.png',
         pest_management: '严防菜青虫钻入叶球内部，一旦结球极难施药，须在结球初期彻底防治。防范软腐病。',
-        disease_image: '',
-        pruning_trellising: '及时剥除植株基部的老叶、黄叶，增加通风透光，减少病害滋生。',
-        pruning_image: '',
-      },
+        disease_image: 'images/stages/stage_cabbage_head_disease.png',
+        pruning_trellising: null,
+        },
       {
         name: '采收期',
         water_fertilizer: '采收前10天停止浇水，防止裂球。',
         pest_management: '安全间隔期停止用药。',
-        pruning_trellising: '叶球紧实度达到最大时贴地平割，保留外层2-3片莲座叶保护叶球。',
-        harvest_image: '',
+        pruning_trellising: null,
+        harvest_image: 'images/stages/stage_cabbage_head_harvest.png',
       },
     ],
     growthSequence: [
@@ -524,8 +516,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'cauliflower',
+  { id: 'cauliflower',
     avatar: 'assets/icons/icon_cauliflower.png',
     name: '花菜 (花椰菜)',
     baseTemp: 5, categoryId: 'brassica',
@@ -557,24 +548,22 @@ export const vegetables = [
         name: '莲座期',
         water_fertilizer: '叶片迅速扩大期，需水量增加，追施高氮高钾肥料。',
         pest_management: '防治小菜蛾、斜纹夜蛾，可使用苏云金杆菌(Bt)等生物制剂。',
-        pruning_trellising: '进行中耕松土和培土，促进根系深扎。',
-        pruning_image: '',
-      },
+        pruning_trellising: null,
+        },
       {
         name: '现蕾与膨大期',
         water_fertilizer: '花球膨大期需水肥极大，重施钾肥和硼肥，充足的水分是花球紧实的关键。',
-        water_image: '',
+        water_image: 'images/stages/stage_cauliflower_water.png',
         pest_management: '防范黑腐病，注意雨后排水。',
-        disease_image: '',
-        pruning_trellising: '【关键操作】折叶盖花：将靠近花球的1-2片内叶折断覆盖在花球上，防止阳光直射导致花球变黄。',
-        pruning_image: '',
-      },
+        disease_image: 'images/stages/stage_cauliflower_disease.png',
+        pruning_trellising: null,
+        },
       {
         name: '采收期',
         water_fertilizer: '适度控水。',
         pest_management: '停止用药。',
-        pruning_trellising: '花球充分长大、表面紧密洁白时连同外围3-4片保护叶一起砍下。',
-        harvest_image: '',
+        pruning_trellising: null,
+        harvest_image: 'images/stages/stage_cauliflower_harvest.png',
       },
     ],
     growthSequence: [
@@ -633,8 +622,7 @@ export const vegetables = [
   },
 
   // ================= 叶菜类 (Leafy) =================
-  {
-    id: 'leek_chinese',
+  { id: 'leek_chinese',
     avatar: 'assets/icons/icon_leek_chinese.png',
     name: '韭菜',
     baseTemp: 5, categoryId: 'leafy',
@@ -659,17 +647,16 @@ export const vegetables = [
         name: '幼苗期 (养根期)',
         water_fertilizer: '当苗高10cm左右时，结合浇水追施稀薄氮肥一次。忌浇大水，防烂根。',
         pest_management: '注意预防灰霉病，保持良好通风，发现病叶及时清除。',
-        pruning_trellising: '幼苗期间及时拔除杂草，防止杂草与韭苗争夺养分。'
+        pruning_trellising: null
       },
       {
         name: '旺盛生长期与采收期',
         water_fertilizer: '每次收割后，必须等伤口愈合、新叶长出2-3cm时再追施腐熟有机肥或高氮复合肥，并浇透水。',
-        water_image: '',
+        water_image: 'images/stages/stage_leek_chinese_water.png',
         pest_management: '重点防治韭蛆。可用苏云金杆菌（Bt）或印楝素灌根，切忌使用剧毒农药。',
-        pest_image: '',
-        pruning_trellising: '收割时留茬高度需适当（离地2-3厘米处平剪），不可齐根割，以免伤及鳞茎影响下茬生长。',
-        pruning_image: 'images/stages/stage_leek_harvest.png'
-      }
+        pest_image: 'images/stages/stage_leek_chinese_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/leek_v3_stage_1_1779690617984.png' },
@@ -713,8 +700,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'water_spinach',
+  { id: 'water_spinach',
     avatar: 'assets/icons/icon_water_spinach.png',
     name: '空心菜 (蕹菜)',
     baseTemp: 5, categoryId: 'leafy',
@@ -739,17 +725,16 @@ export const vegetables = [
         name: '幼苗与拔节期',
         water_fertilizer: '苗高5-10cm时，追施一次尿素或腐熟粪水。此期需水量大，应保持田间见干见湿或略微积水（旱栽/水栽）。',
         pest_management: '注意预防猝倒病，避免苗期遇低温阴雨导致烂根。',
-        pruning_trellising: '若过于拥挤，需及时间苗，保持株距10-15cm左右，增加通风透光。'
+        pruning_trellising: null
       },
       {
         name: '旺盛分枝与采收期',
         water_fertilizer: '空心菜极其喜水喜肥。每次采摘后，必须及时追施速效氮肥，并充足灌水，保证嫩梢快速萌发。',
-        water_image: 'images/stages/stage_waterspinach_water.png',
+        water_image: 'images/stages/stage_water_spinach_water.png',
         pest_management: '高温高湿易发白锈病，发病初期可用波尔多液或多菌灵喷洒防治。注意防范斜纹夜蛾幼虫啃食叶片。',
-        pest_image: '',
-        pruning_trellising: '采收时采用“掐尖”法，保留基部2-3个节（腋芽），以促进侧枝不断萌发，实现多次采收。',
-        pruning_image: 'images/stages/stage_waterspinach_harvest.png'
-      }
+        pest_image: 'images/stages/stage_water_spinach_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/water_spinach_v3_stage_1_1779690721705.png' },
@@ -793,8 +778,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'amaranth',
+  { id: 'amaranth',
     name: '苋菜',
     baseTemp: 5, categoryId: 'leafy',
     icon: '🍃',
@@ -819,17 +803,16 @@ export const vegetables = [
         name: '幼苗与生长期',
         water_fertilizer: '幼苗长出2-3片真叶时，追施一次提苗肥（稀薄氮肥）。生长期需水较多，经常保持土壤湿润。',
         pest_management: '极少发生病害。夏季主要防范蚜虫和甜菜夜蛾，可挂黄板或喷洒印楝素。',
-        pruning_trellising: '结合采收进行2-3次间苗，拔大留小，疏除过密弱苗，最终保持株距5-10cm左右。'
+        pruning_trellising: null
       },
       {
         name: '旺盛生长期与采收期',
         water_fertilizer: '生长中后期重施氮肥，促进叶片宽大厚实。采收前5天停止追肥，适量控水以降低硝酸盐含量。',
-        water_image: '',
+        water_image: 'images/stages/stage_amaranth_water.png',
         pest_management: '防范高湿导致的白锈病。发现叶背出现白色疱斑应及时拔除病株，并增加通风。',
-        pest_image: '',
-        pruning_trellising: '多次采收类型可采用“打顶摘心”法收割嫩梢，促发侧枝；一次性采收可直接连根拔起。',
-        pruning_image: 'images/stages/stage_amaranth_harvest.png'
-      }
+        pest_image: 'images/stages/stage_amaranth_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/amaranth_v3_stage_1_1779655355486.png' },
@@ -873,8 +856,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'crown_daisy',
+  { id: 'crown_daisy',
     avatar: 'assets/icons/icon_crown_daisy.png',
     name: '茼蒿',
     baseTemp: 5, categoryId: 'leafy',
@@ -899,17 +881,16 @@ export const vegetables = [
         name: '幼苗与生长期',
         water_fertilizer: '幼苗具3-4片真叶时开始追肥。喜微润，忌水涝，下雨后需及时排水防烂根。',
         pest_management: '病虫害较少。偶尔有蚜虫、潜叶蝇危害，可悬挂黄板，或摘除带虫道的老叶。',
-        pruning_trellising: '长至5-6cm时进行间苗，拔除弱苗，保持合理的株行距以利于叶片伸展。'
+        pruning_trellising: null
       },
       {
         name: '旺盛生长期与采收期',
         water_fertilizer: '生长旺盛期需肥量大，以速效氮肥为主。大叶茼蒿每次采收后需及时追施速效液肥促新叶。',
-        water_image: '',
+        water_image: 'images/stages/stage_crown_daisy_water.png',
         pest_management: '低温高湿易发霜霉病。可通过控制浇水时间（早晨浇水），降低夜间叶面湿度来预防。',
-        pest_image: '',
-        pruning_trellising: '小叶茼蒿多为一次性连根拔起；大叶茼蒿可采用“割头”法，留基部1-2个侧芽多次采收。',
-        pruning_image: 'images/stages/stage_crowndaisy_harvest.png'
-      }
+        pest_image: 'images/stages/stage_crown_daisy_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { days: 0, gdd: 0, name: '播种期', image: 'images/crown_daisy_v3_stage_1_1779655458123.png' },
@@ -955,8 +936,7 @@ export const vegetables = [
   },
 
   // ================= 茄果类 (Solanaceous) =================
-  {
-    id: 'tomato',
+  { id: 'tomato',
     avatar: 'assets/icons/icon_tomato.png',
     name: '番茄 (西红柿)',
     baseTemp: 12, categoryId: 'solanaceous',
@@ -989,14 +969,14 @@ export const vegetables = [
         water_fertilizer: '第一穗花开放至坐果前严格控水，防止落花落果。禁用重肥。',
         pest_management: '防范早疫病、晚疫病，注意降低棚内或田间湿度。',
         pruning_trellising: '【关键操作】搭架绑蔓。采用“单干整枝”：只保留主干，将所有叶腋处长出的侧枝（打杈）尽早抹除。',
-        pruning_image: '',
+        pruning_image: 'images/stages/stage_tomato_pruning.png',
       },
       {
         name: '结果与转色期',
         water_fertilizer: '第一穗果膨大时（核桃大小），重施膨果肥（高钾），此后需水量大增，应保持土壤均匀湿润，忽干忽湿极易导致裂果。',
-        water_image: '',
+        water_image: 'images/stages/stage_tomato_water.png',
         pest_management: '防治棉铃虫（钻心虫）和脐腐病（因缺钙引起，需补充钙肥）。',
-        disease_image: '',
+        disease_image: 'images/stages/stage_tomato_disease.png',
         pruning_trellising: '及时摘除底部接触土壤的老叶、病叶，增加通风透光。适时打顶（一般留3-5穗果后掐去主茎顶端）。',
       },
       {
@@ -1004,7 +984,7 @@ export const vegetables = [
         water_fertilizer: '采收前适度控水，可提高果实糖度。',
         pest_management: '停用一切化学药剂。',
         pruning_trellising: '分批采收，红熟一个采一个，减轻植株负担。',
-        harvest_image: '',
+        harvest_image: 'images/stages/stage_tomato_harvest.png',
       },
     ],
     growthSequence: [
@@ -1073,8 +1053,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'okra',
+  { id: 'okra',
     avatar: 'assets/icons/icon_okra.png',
     name: '秋葵 (黄秋葵)',
     baseTemp: 12, categoryId: 'solanaceous',
@@ -1111,18 +1090,18 @@ export const vegetables = [
       {
         name: '结果与成熟期',
         water_fertilizer: '结荚盛期需水量极大，应结合浇水追施一次速效复合肥，保障嫩荚快速膨大。',
-        water_image: '',
+        water_image: 'images/stages/stage_okra_water.png',
         pest_management: '注意防范白粉病，高温高湿易发。',
-        disease_image: '',
+        disease_image: 'images/stages/stage_okra_disease.png',
         pruning_trellising: '【关键操作】每采收一个嫩荚，顺手将该荚下方的1-2片老叶剪除，改善通风，促使植株向上拔高结果。',
-        pruning_image: '',
+        pruning_image: 'images/stages/stage_okra_pruning.png',
       },
       {
         name: '采收期',
         water_fertilizer: '持续追肥供水。',
         pest_management: '停药。',
         pruning_trellising: '花谢后3-5天，嫩荚长约8-10厘米时必须采收！过晚采收会导致纤维化（变木头一样硬）无法食用。需带手套采收以防刺痒。',
-        harvest_image: '',
+        harvest_image: 'images/stages/stage_okra_harvest.png',
       },
     ],
     growthSequence: [
@@ -1167,8 +1146,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'eggplant',
+  { id: 'eggplant',
     avatar: 'assets/icons/icon_eggplant.png',
     name: '茄子',
     baseTemp: 12, categoryId: 'solanaceous',
@@ -1205,18 +1183,18 @@ export const vegetables = [
       {
         name: '结果与转色期',
         water_fertilizer: '门茄瞪眼（果实开始膨大）后，结束蹲苗，重施氮钾肥。结果盛期需水量极大，需勤浇水保持湿润。',
-        water_image: '',
+        water_image: 'images/stages/stage_eggplant_water.png',
         pest_management: '重点防治二十八星瓢虫（吃叶片）和黄萎病（土传病害）。',
-        disease_image: '',
+        disease_image: 'images/stages/stage_eggplant_disease.png',
         pruning_trellising: '及时摘除植株下部的黄叶、老叶，改善通风透光。',
-        pruning_image: '',
+        pruning_image: 'images/stages/stage_eggplant_pruning.png',
       },
       {
         name: '采收期',
         water_fertilizer: '采收期间每隔10-15天追肥一次。',
         pest_management: '采收前停止施药。',
         pruning_trellising: '看果实萼片与果实连接处（茄眼），白色部分变窄时即可采收。',
-        harvest_image: '',
+        harvest_image: 'images/stages/stage_eggplant_harvest.png',
       },
     ],
     growthSequence: [
@@ -1273,8 +1251,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'pepper',
+  { id: 'pepper',
     avatar: 'assets/icons/icon_pepper.png',
     name: '辣椒',
     baseTemp: 12, categoryId: 'solanaceous',
@@ -1307,14 +1284,14 @@ export const vegetables = [
         water_fertilizer: '初花期严禁浇大水，适当干旱有助于扎根和防止落花。',
         pest_management: '高温干旱易引发病毒病，需注意预防。',
         pruning_trellising: '门椒（第一个分叉处的果实）以下长出的侧枝需全部抹除，以集中养分向上生长。',
-        pruning_image: '',
+        pruning_image: 'images/stages/stage_pepper_pruning.png',
       },
       {
         name: '结果与转色期',
         water_fertilizer: '门椒坐住后，开始追施磷钾肥。结果盛期“见干见湿”，切忌大水漫灌（极易引发沤根落叶）。',
-        water_image: '',
+        water_image: 'images/stages/stage_pepper_water.png',
         pest_management: '重点防范炭疽病、疫病和烟青虫。雨后必须及时排水防涝。',
-        disease_image: '',
+        disease_image: 'images/stages/stage_pepper_disease.png',
         pruning_trellising: '植株过高且挂果多时，可插竹竿支撑防倒伏。',
       },
       {
@@ -1322,7 +1299,7 @@ export const vegetables = [
         water_fertilizer: '青椒可随时采收，红椒需等转色完全。采收期间配合追肥。',
         pest_management: '停药。',
         pruning_trellising: '采摘时注意不要拉断脆嫩的枝条。',
-        harvest_image: '',
+        harvest_image: 'images/stages/stage_pepper_harvest.png',
       },
     ],
     growthSequence: [
@@ -1381,8 +1358,7 @@ export const vegetables = [
   },
 
   // ================= 根茎类 (Root) =================
-  {
-    id: 'radish',
+  { id: 'radish',
     avatar: 'assets/icons/icon_radish.png',
     name: '萝卜',
     baseTemp: 5, categoryId: 'root',
@@ -1402,7 +1378,7 @@ export const vegetables = [
         name: '幼苗期',
         water_fertilizer: '及时间苗（一般分两次进行）。齐苗后适当控水“蹲苗”，促进直根下扎。',
         pest_management: '重点防治黄条跳甲和蚜虫，可使用防虫网。',
-        pruning_trellising: '【关键操作】间苗：拔除弱苗、拥挤苗，确保适当的株距。',
+        pruning_trellising: null,
       },
       {
         name: '生长期 (莲座期)',
@@ -1420,7 +1396,7 @@ export const vegetables = [
         name: '采收期',
         water_fertilizer: '采收前一周停止浇水，提高耐储藏性。',
         pest_management: '停药。',
-        pruning_trellising: '叶色转黄、肉质根充分膨大时拔出采收。',
+        pruning_trellising: null,
       },
     ],
     growthSequence: [
@@ -1477,8 +1453,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'carrot',
+  { id: 'carrot',
     avatar: 'assets/icons/icon_carrot.png',
     name: '胡萝卜',
     baseTemp: 5, categoryId: 'root',
@@ -1498,7 +1473,7 @@ export const vegetables = [
         name: '幼苗期',
         water_fertilizer: '长出1-2片真叶时进行第一次间苗，4-5片真叶时定苗。幼苗期适当控水蹲苗。',
         pest_management: '防蚜虫。',
-        pruning_trellising: '进行中耕除草，胡萝卜幼苗极易被杂草竞争导致失败。',
+        pruning_trellising: null,
       },
       {
         name: '生长期',
@@ -1510,13 +1485,13 @@ export const vegetables = [
         name: '肉质根膨大期',
         water_fertilizer: '根部膨大期需水肥大增，重施钾肥。保持水分均匀，防止裂根。严禁施用未腐熟的有机肥，否则极易产生分叉根（“歧根”）。',
         pest_management: '防范根结线虫。',
-        pruning_trellising: '结合除草进行培土，防止胡萝卜“露肩”变绿发苦。',
+        pruning_trellising: null,
       },
       {
         name: '采收期',
         water_fertilizer: '采收前控水。',
         pest_management: '无用药。',
-        pruning_trellising: '心叶黄化，外叶稍有枯黄时采收。',
+        pruning_trellising: null,
       },
     ],
     growthSequence: [
@@ -1561,8 +1536,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'potato',
+  { id: 'potato',
     avatar: 'assets/icons/icon_potato.png',
     name: '马铃薯 (土豆)',
     baseTemp: 5, categoryId: 'root',
@@ -1582,25 +1556,25 @@ export const vegetables = [
         name: '幼苗期',
         water_fertilizer: '齐苗后，追施提苗肥（速效氮肥），促进茎叶早发。',
         pest_management: '防治蚜虫、二十八星瓢虫。',
-        pruning_trellising: '进行第一次浅中耕除草。',
+        pruning_trellising: null,
       },
       {
         name: '生长期',
         water_fertilizer: '现蕾开花期，块茎开始膨大，此时对缺水最敏感，需保持土壤湿润。',
         pest_management: '晚疫病高发期，重点预防（尤其在连阴雨天）。',
-        pruning_trellising: '结合中耕进行高培土，厚度约5-10cm，增加结薯层，防止块茎见光变绿带毒。',
+        pruning_trellising: null,
       },
       {
         name: '结薯与膨大期',
         water_fertilizer: '需重施钾肥，土壤保持湿润。高温干旱会严重影响块茎膨大。',
         pest_management: '警惕马铃薯块茎蛾。',
-        pruning_trellising: '如植株徒长严重，可适当打顶摘心，抑制营养生长，促进地下结薯。',
+        pruning_trellising: null,
       },
       {
         name: '采收期',
         water_fertilizer: '采收前10-15天停止浇水，促使薯皮老化，利于储藏。',
         pest_management: '无。',
-        pruning_trellising: '茎叶大部分枯黄时选择晴天挖掘采收。',
+        pruning_trellising: null,
       },
     ],
     growthSequence: [
@@ -1651,8 +1625,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'sweetpotato',
+  { id: 'sweetpotato',
     avatar: 'assets/icons/icon_sweetpotato.png',
     name: '红薯 (地瓜)',
     baseTemp: 5, categoryId: 'root',
@@ -1672,19 +1645,19 @@ export const vegetables = [
         name: '伸蔓与封垄期',
         water_fertilizer: '缓苗后轻施提苗肥。随着薯蔓伸长，适当控水促根深扎。',
         pest_management: '防范卷叶虫、麦蛾。',
-        pruning_trellising: '中耕除草，封垄前完成最后一次培土。',
+        pruning_trellising: null,
       },
       {
         name: '薯块膨大期',
         water_fertilizer: '土壤见干见湿，忌积水。重施裂缝肥（高钾，如草木灰浸出液），促进块根急剧膨大。',
         pest_management: '防治天蛾幼虫，雨季注意排水防涝。',
-        pruning_trellising: '【关键操作】提蔓（翻藤）：在雨季或薯蔓扎不定根时，将薯藤轻轻提起再放下，扯断不定根，防止养分分散（注意不要打乱藤蔓原方向）。如徒长严重可打顶。',
+        pruning_trellising: null,
       },
       {
         name: '成熟与采收期',
         water_fertilizer: '停止浇水，保持干燥。',
         pest_management: '无。',
-        pruning_trellising: '气温降至15℃左右时必须采收完毕，以免受冻腐烂（“冷害”）。',
+        pruning_trellising: null,
       },
     ],
     growthSequence: [
@@ -1729,8 +1702,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'ginger',
+  { id: 'ginger',
     avatar: 'assets/icons/icon_ginger.png',
     name: '生姜',
     baseTemp: 5, categoryId: 'root',
@@ -1782,8 +1754,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'onion',
+  { id: 'onion',
     avatar: 'assets/icons/icon_onion.png',
     name: '洋葱',
     baseTemp: 5, categoryId: 'root',
@@ -1834,8 +1805,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'yam',
+  { id: 'yam',
     avatar: 'assets/icons/icon_yam.png',
     name: '山药 (淮山)',
     baseTemp: 5, categoryId: 'root',
@@ -1889,8 +1859,7 @@ export const vegetables = [
   },
 
   // ================= 瓜菜类 (Cucurbits) =================
-  {
-    id: 'cucumber',
+  { id: 'cucumber',
     avatar: 'assets/icons/icon_cucumber.png',
     name: '黄瓜',
     baseTemp: 12, categoryId: 'cucurbits',
@@ -1957,8 +1926,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'pumpkin',
+  { id: 'pumpkin',
     avatar: 'assets/icons/icon_pumpkin.png',
     name: '南瓜 (老南瓜/金瓜)',
     baseTemp: 12, categoryId: 'cucurbits',
@@ -2020,8 +1988,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'zucchini',
+  { id: 'zucchini',
     avatar: 'assets/icons/icon_zucchini.png',
     name: '西葫芦',
     baseTemp: 12, categoryId: 'cucurbits',
@@ -2082,8 +2049,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'bittermelon',
+  { id: 'bittermelon',
     name: '苦瓜',
     baseTemp: 12, categoryId: 'cucurbits',
     icon: '🥒',
@@ -2144,8 +2110,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'winter_melon',
+  { id: 'winter_melon',
     avatar: 'assets/icons/icon_winter_melon.png',
     name: '冬瓜',
     baseTemp: 12, categoryId: 'cucurbits',
@@ -2206,8 +2171,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'luffa',
+  { id: 'luffa',
     avatar: 'assets/icons/icon_luffa.png',
     name: '丝瓜',
     baseTemp: 12, categoryId: 'cucurbits',
@@ -2274,8 +2238,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'calabash',
+  { id: 'calabash',
     avatar: 'assets/icons/icon_calabash.png',
     name: '葫芦/瓠子',
     baseTemp: 12, categoryId: 'cucurbits',
@@ -2344,8 +2307,7 @@ export const vegetables = [
   },
 
   // ================= 豆类 (Legumes) =================
-  {
-    id: 'cowpea',
+  { id: 'cowpea',
     avatar: 'assets/icons/icon_cowpea.png',
     name: '豇豆 (长豆角)',
     baseTemp: 12, categoryId: 'legumes',
@@ -2406,8 +2368,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'green_bean',
+  { id: 'green_bean',
     avatar: 'assets/icons/icon_green_bean.png',
     name: '四季豆 (菜豆/扁豆)',
     baseTemp: 12, categoryId: 'legumes',
@@ -2474,8 +2435,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'broad_bean',
+  { id: 'broad_bean',
     avatar: 'assets/icons/icon_broad_bean.png',
     name: '蚕豆',
     baseTemp: 12, categoryId: 'legumes',
@@ -2538,8 +2498,7 @@ export const vegetables = [
   },
 
   // ================= 葱蒜类 (Allium) =================
-  {
-    id: 'garlic',
+  { id: 'garlic',
     avatar: 'assets/icons/icon_garlic.png',
     name: '大蒜',
     baseTemp: 5, categoryId: 'allium',
@@ -2552,7 +2511,7 @@ export const vegetables = [
         name: '幼苗越冬期',
         water_fertilizer: '出苗期保持湿润，北方地区越冬前需浇透“越冬水”以防冻伤。',
         pest_management: '预防根蛆。',
-        pruning_trellising: '播种时深度适中，覆土并可覆盖稻草保温保墒。',
+        pruning_trellising: null,
         image: null
       },
       {
@@ -2560,9 +2519,8 @@ export const vegetables = [
         water_fertilizer: '“退母期”（母瓣干瘪，幼苗靠自身根系吸肥的转折点）容易出现叶尖发黄，需马上追施促苗肥。春季蒜薹生长期需水量最大，需保持充足水分。',
         water_image: 'images/stages/garlic_water_fertilize_v3.png',
         pest_management: '防范紫斑病、灰霉病及葱蓟马。',
-        pruning_trellising: '及时抽出蒜薹以利于地下蒜头膨大。',
-        pruning_image: 'images/stages/garlic_harvest_scape_v3.png'
-      },
+        pruning_trellising: null,
+        },
       {
         name: '蒜头膨大期',
         water_fertilizer: '抽薹后进入蒜头膨大期，需重施高钾肥。采收前7-10天停止浇水，以利于储藏。',
@@ -2612,8 +2570,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'greenonion',
+  { id: 'greenonion',
     avatar: 'assets/icons/icon_greenonion.png',
     name: '大葱/小葱',
     baseTemp: 5, categoryId: 'allium',
@@ -2626,7 +2583,7 @@ export const vegetables = [
         name: '幼苗期',
         water_fertilizer: '苗床保持湿润。定植前控制浇水进行炼苗。',
         pest_management: '注意防治地老虎等地下害虫。',
-        pruning_trellising: '选择排水良好的地块，深翻整地。',
+        pruning_trellising: null,
         image: null
       },
       {
@@ -2634,9 +2591,8 @@ export const vegetables = [
         water_fertilizer: '立秋后天气转凉，大葱进入葱白极速生长期，需大量养分，必须重施“攻葱肥”（高氮高钾），并结合培土和浇透水。',
         water_image: 'images/stages/greenonion_fertilize_v3.png',
         pest_management: '防范葱蓟马、斑潜蝇（鬼画符）和紫斑病。',
-        pruning_trellising: '大葱优质葱白长的秘诀在于“深开沟，勤培土”。随着向上生长，需多次将泥土培到葱白处（不埋过葱心），使葱白在无光条件下软化变长。',
-        pruning_image: 'images/stages/greenonion_hilling_v3.png'
-      }
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/greenonion_v3_stage_1_1779711395154.png', days: 7, gdd: 105  },
@@ -2680,8 +2636,7 @@ export const vegetables = [
             }
         ]
   },
-  {
-    id: 'everbearing_strawberry',
+  { id: 'everbearing_strawberry',
     avatar: 'assets/icons/icon_everbearing_strawberry.png',
     name: '四季草莓',
     baseTemp: 12, categoryId: 'fruit',
@@ -2736,8 +2691,7 @@ export const vegetables = [
   }
 ,
   // ================= 补充的新增蔬菜 =================
-  {
-    id: 'napacabbage',
+  { id: 'napacabbage',
     avatar: 'assets/icons/icon_napacabbage.png',
     name: '大白菜',
     baseTemp: 5, categoryId: 'leafy',
@@ -2750,26 +2704,24 @@ export const vegetables = [
         name: '播种与幼苗期',
         water_fertilizer: '遵循“三水齐苗，五水定棵”原则。播种后小水勤浇降温保湿；定苗后适当控水促进根系深扎。',
         pest_management: '重点防范黄条跳甲、菜青虫和蚜虫危害幼叶。幼苗期受损会严重影响后期结球。',
-        pruning_trellising: '在“十字期”和“团棵期”进行两次间苗、定苗，最终保留健壮单株。'
+        pruning_trellising: null
       },
       {
         name: '莲座期',
         water_fertilizer: '重施“发棵肥”（以氮磷为主）。此期外叶迅速生长，浇水需见干见湿，随后进行中耕“蹲苗”约10天，控制外叶徒长，促进包心。',
-        water_image: '',
+        water_image: 'images/stages/stage_napa_cabbage_water.png',
         pest_management: '预防霜霉病和软腐病。不要在雨天或叶面有露水时进行中耕等农事操作，以免伤口感染细菌。',
-        pest_image: '',
-        pruning_trellising: '结合中耕除草，适当摘除底部接触土壤的黄叶、病叶，增加通风，切断软腐病传播途径。',
-        pruning_image: 'images/stages/stage_napacabbage_prune.png'
-      },
+        pest_image: 'images/stages/stage_napa_cabbage_pest.png',
+        pruning_trellising: null,
+        },
       {
         name: '结球期与采收',
         water_fertilizer: '需水量极大，需保持土壤湿润，决不能缺水。进入结球前期追施“结球肥”（重施钾肥、适量氮肥）。采收前10天停止浇水。',
-        water_image: '',
+        water_image: 'images/stages/stage_napa_cabbage_water.png',
         pest_management: '严防软腐病爆发（闻到臭味立刻拔除病株并在坑内撒生石灰）。注意防治菜螟和菜青虫钻心。',
-        pest_image: '',
-        pruning_trellising: '北方部分地区在结球后期会用稻草将外叶束缚（“束叶”），防止寒害并促进内叶软化变白。',
-        pruning_image: 'images/stages/stage_napacabbage_tie.png'
-      }
+        pest_image: 'images/stages/stage_napa_cabbage_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/napacabbage_stage_1.png', days: 5, gdd: 80 },
@@ -2784,8 +2736,7 @@ export const vegetables = [
       { name: '软腐病', cause: '高温高湿且有伤口时极易感染，散发恶臭。', prevention: '高垄栽培，避免大水漫灌，及时拔除病株并撒生石灰消毒。', image: 'images/pest_soft_rot.png' }
     ]
   },
-  {
-    id: 'bokchoy',
+  { id: 'bokchoy',
     name: '小白菜/上海青',
     baseTemp: 5, categoryId: 'leafy',
     icon: '🥬',
@@ -2798,22 +2749,21 @@ export const vegetables = [
         name: '播种与幼苗期',
         water_fertilizer: '喜湿润浅土层，播种后覆盖遮阳网保湿。出苗后浇水应遵循“小水勤浇”，避免冲倒弱苗。',
         pest_management: '高温干旱极易爆发黄条跳甲和蚜虫，可悬挂黄板或喷洒印楝素预防。注意防范鸟类啄食嫩芽。',
-        pruning_trellising: '幼苗过密极易徒长倒伏，需在2-3片真叶时间苗，扩大生长空间。'
+        pruning_trellising: null
       },
       {
         name: '旺盛生长期',
         water_fertilizer: '进入发棵期，对氮肥需求直线上升。每7-10天追施一次速效氮肥（如腐熟豆饼水），并保持土壤见干见湿。',
-        water_image: '',
+        water_image: 'images/stages/stage_bokchoy_water.png',
         pest_management: '防范菜青虫和小菜蛾啃食叶片（形成孔洞）。高温多雨时注意田间排水，防软腐病。',
-        pest_image: '',
-        pruning_trellising: '生长迅速，通常无须特殊整枝。随时拔除田间杂草即可。',
-        pruning_image: 'images/stages/stage_bokchoy_weed.png'
-      },
+        pest_image: 'images/stages/stage_bokchoy_pest.png',
+        pruning_trellising: null,
+        },
       {
         name: '采收期',
         water_fertilizer: '采收前一周停止追肥，适度控水，以提升口感并降低叶片中的硝酸盐积累。',
         pest_management: '采收前严禁使用任何化学农药。发现少量虫害应以人工捕捉为主。',
-        pruning_trellising: '可根据需求分批采收：先拔大株，留下小株继续生长（“间拔采收”），也可一次性连根拔起。'
+        pruning_trellising: null
       }
     ],
     growthSequence: [
@@ -2828,8 +2778,7 @@ export const vegetables = [
       { name: '霜霉病', cause: '低温高湿环境下易发病，叶背产生霜状霉层。', prevention: '增加通风透光，降低湿度。', image: 'images/pest_downy_mildew.png' }
     ]
   },
-  {
-    id: 'spinach',
+  { id: 'spinach',
     avatar: 'assets/icons/icon_spinach.png',
     name: '菠菜',
     baseTemp: 2, categoryId: 'leafy',
@@ -2848,17 +2797,16 @@ export const vegetables = [
         name: '真叶期 (幼苗期)',
         water_fertilizer: '长出2-3片真叶时，根系较弱，浇水需小水浅浇。若底肥充足，此期一般不需追肥。',
         pest_management: '秋季常发立枯病，表现为根茎基部干枯。需避免苗床湿度过大和种植过密。',
-        pruning_trellising: '适当间苗，拔除过密苗和病苗，保持株距约3-5cm。'
+        pruning_trellising: null
       },
       {
         name: '叶片膨大与采收期',
         water_fertilizer: '进入旺盛生长期，重施1-2次速效氮肥。菠菜极度耐寒，越冬菠菜在冻结前需浇足“越冬水”。',
-        water_image: '',
+        water_image: 'images/stages/stage_spinach_water.png',
         pest_management: '早春和秋末易发霜霉病（叶片出现黄斑，叶背有灰白霉层）。需注意田间通风，及时拔除病株。',
-        pest_image: '',
-        pruning_trellising: '发现即将抽薹（长出中心花柱）的植株应立刻采收，否则叶片将迅速老化失去食用价值。',
-        pruning_image: 'images/stages/stage_spinach_harvest.png'
-      }
+        pest_image: 'images/stages/stage_spinach_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/spinach_stage_1.png', days: 7, gdd: 70 },
@@ -2871,8 +2819,7 @@ export const vegetables = [
       { name: '潜叶蝇', cause: '幼虫潜入叶片内部取食，留下白色不规则虫道。', prevention: '挂黄板诱杀成虫，发现虫道及早摘除病叶。', image: 'images/pest_leafminer.png' }
     ]
   },
-  {
-    id: 'lettuce',
+  { id: 'lettuce',
     avatar: 'assets/icons/icon_lettuce.png',
     name: '生菜/莴笋',
     baseTemp: 4, categoryId: 'leafy',
@@ -2885,26 +2832,24 @@ export const vegetables = [
         name: '播种与幼苗期',
         water_fertilizer: '生菜种子具趋光性，播种时覆土需极薄。高温季节发芽困难，需在冰箱保鲜层冷凉催芽。',
         pest_management: '防范蚂蚁搬运种子及苗期猝倒病。出苗后保持良好通风。',
-        pruning_trellising: '育苗后长至4-5片真叶时进行定植，定植时尽量带土坨，保护根系。'
+        pruning_trellising: null
       },
       {
         name: '发棵/莲座期',
         water_fertilizer: '定植缓苗后，适当控水“蹲苗”促进根系下扎。之后追施以氮肥为主的“发棵肥”，促进叶面积快速扩张。',
-        water_image: '',
+        water_image: 'images/stages/stage_lettuce_water.png',
         pest_management: '极易受蚜虫和白粉虱危害，可通过悬挂黄板进行物理诱杀。防范地下蜗牛啃食叶片。',
-        pest_image: '',
-        pruning_trellising: '结球生菜需注意将底层老叶、病叶剥除，增加贴地通风，防止软腐菌从基部感染。',
-        pruning_image: 'images/stages/stage_lettuce_prune.png'
-      },
+        pest_image: 'images/stages/stage_lettuce_pest.png',
+        pruning_trellising: null,
+        },
       {
         name: '结球/肉质茎膨大与采收',
         water_fertilizer: '结球生菜或莴笋进入产品器官膨大期，需重施钾肥，并保持水分充足均匀。忽干忽湿易导致裂球或裂茎。采收前停止浇水。',
-        water_image: '',
+        water_image: 'images/stages/stage_lettuce_water.png',
         pest_management: '重点防范霜霉病和软腐病。不可在阴雨天或叶片带水时采收。',
-        pest_image: '',
-        pruning_trellising: '散叶生菜可采用“剥叶采收”，每次从外围剥取大叶；结球生菜需用刀齐根切下整个叶球。',
-        pruning_image: 'images/stages/stage_lettuce_harvest.png'
-      }
+        pest_image: 'images/stages/stage_lettuce_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/lettuce_stage_1.png', days: 4, gdd: 60 },
@@ -2918,8 +2863,7 @@ export const vegetables = [
       { name: '霜霉病', cause: '高湿阴冷环境。', prevention: '通风降湿。', image: 'images/pest_downy_mildew.png' }
     ]
   },
-  {
-    id: 'celery',
+  { id: 'celery',
     name: '芹菜',
     baseTemp: 4, categoryId: 'leafy',
     icon: '🥬',
@@ -2932,26 +2876,24 @@ export const vegetables = [
         name: '播种与幼苗期',
         water_fertilizer: '芹菜种子发芽缓慢且喜凉，高温需冷凉催芽。播种后需搭设遮阳网保湿，直到幼苗出齐。',
         pest_management: '出苗期极易遭受立枯病和猝倒病危害。需确保土壤排水良好，不可积水。',
-        pruning_trellising: '幼苗生长极其缓慢，期间需进行2次间苗，拔除细弱苗和杂草。长至5-6片真叶时定植。'
+        pruning_trellising: null
       },
       {
         name: '心叶生长期',
         water_fertilizer: '定植缓苗后，开始进入旺盛生长期。追施高氮肥，同时补充微量元素（硼、钙）以防茎裂和心叶坏死。需水量大。',
-        water_image: '',
+        water_image: 'images/stages/stage_celery_water.png',
         pest_management: '重点防治蚜虫和斑枯病（叶片出现带黑点的小圆斑）。发现病叶及早摘除销毁。',
-        pest_image: '',
-        pruning_trellising: '适当剥除最外层老化、黄化的枯叶，利于植株中心（心叶）继续向上挺拔生长。',
-        pruning_image: 'images/stages/stage_celery_prune.png'
-      },
+        pest_image: 'images/stages/stage_celery_pest.png',
+        pruning_trellising: null,
+        },
       {
         name: '旺盛生长与软化采收',
         water_fertilizer: '收获前30天是产量形成关键期，大水大肥促进茎秆粗壮。缺水会导致纤维老化、口感发苦。',
-        water_image: '',
+        water_image: 'images/stages/stage_celery_water.png',
         pest_management: '防范根结线虫。大棚种植需注意控制湿度，以防灰霉病。',
-        pest_image: '',
-        pruning_trellising: '为追求脆嫩口感，部分种植者在采收前20天进行“软化栽培”（培土或用黑塑料薄膜包裹茎秆避光）。',
-        pruning_image: 'images/stages/stage_celery_blanch.png'
-      }
+        pest_image: 'images/stages/stage_celery_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/celery_stage_1.png', days: 10, gdd: 120 },
@@ -2964,8 +2906,7 @@ export const vegetables = [
       { name: '斑枯病', cause: '高温高湿导致叶片出现病斑。', prevention: '合理密植，改善通风，轮作。', image: 'images/pest_garlic_purpleblotch.png' }
     ]
   },
-  {
-    id: 'coriander',
+  { id: 'coriander',
     name: '香菜/芫荽',
     baseTemp: 3, categoryId: 'leafy',
     icon: '🌿',
@@ -2984,17 +2925,16 @@ export const vegetables = [
         name: '幼叶展开与生长期',
         water_fertilizer: '植株较小，根系浅，浇水应小水勤浇。长出3-4片真叶时追施一次稀薄氮肥。',
         pest_management: '病害极少。长势衰弱时偶尔会有白粉病，注意通风透光即可自愈。',
-        pruning_trellising: '结合除草进行间苗，保持株距3-5cm。杂草会严重影响香菜长势，需“见草就拔”。'
+        pruning_trellising: null
       },
       {
         name: '旺盛生长与采收期',
         water_fertilizer: '进入旺盛生长期后，追施1-2次速效氮肥，促进叶片鲜绿。旱季注意傍晚浇水降温。',
-        water_image: '',
+        water_image: 'images/stages/stage_coriander_water.png',
         pest_management: '春季高温长日照易导致蚜虫聚集和提早抽薹，需挂黄板防治，并适当遮荫延缓抽薹。',
-        pest_image: '',
-        pruning_trellising: '植株高15-20cm时即可连根拔起采收。也可像割韭菜一样留茬收割，但重新萌发较慢。',
-        pruning_image: 'images/stages/stage_coriander_harvest.png'
-      }
+        pest_image: 'images/stages/stage_coriander_pest.png',
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/coriander_stage_1.png', days: 10, gdd: 120 },
@@ -3007,8 +2947,7 @@ export const vegetables = [
       { name: '极少病虫害', cause: '因其带有强烈气味，天然具有驱虫效果。', prevention: '正常田间管理即可，适合作为伴生植物。', image: 'images/pest_none.png' }
     ]
   },
-  {
-    id: 'corn',
+  { id: 'corn',
     name: '玉米',
     baseTemp: 10, categoryId: 'fruit',
     icon: '🌽',
@@ -3021,7 +2960,7 @@ export const vegetables = [
         name: '苗期',
         water_fertilizer: '播种后保持土壤湿润。出苗后至拔节前，控制浇水，促根下扎。',
         pest_management: '防范地老虎、蝼蛄等地下害虫。',
-        pruning_trellising: '应呈方阵式多行种植（而非单行），利于后期集中授粉。',
+        pruning_trellising: null,
         image: null
       },
       {
@@ -3035,9 +2974,8 @@ export const vegetables = [
         name: '抽雄开花与灌浆期',
         water_fertilizer: '保持土壤湿润，不可缺水，防止花粉枯萎或灌浆不足。后期防涝。',
         pest_management: '防范黏虫、草地贪夜蛾。',
-        pruning_trellising: '玉米靠风力授粉，方阵种植下微风吹过雄花花粉能顺利落在果穗花丝上。如遇连续阴雨，可进行人工辅助授粉。',
-        pruning_image: 'images/stages/corn_pollinate_v3.png'
-      }
+        pruning_trellising: null,
+        }
     ],
     growthSequence: [
       { name: '种子', image: 'images/corn_stage_1.png', days: 5, gdd: 75 },
@@ -3052,8 +2990,7 @@ export const vegetables = [
       { name: '草地贪夜蛾', cause: '暴食性害虫，食量惊人。', prevention: '利用性诱剂诱杀成虫，尽早喷施生物农药。', image: 'images/pest_fall_armyworm.png' }
     ]
   },
-  {
-    id: 'edamame',
+  { id: 'edamame',
     name: '毛豆/大豆',
     baseTemp: 10, categoryId: 'legumes',
     icon: '🫘',
@@ -3077,8 +3014,7 @@ export const vegetables = [
       { name: '豆荚螟', cause: '幼虫钻入豆荚内啃食豆粒。', prevention: '在开花结荚期及时喷药防治。', image: 'images/pest_pod_borer.png' }
     ]
   },
-  {
-    id: 'pea',
+  { id: 'pea',
     name: '豌豆',
     baseTemp: 3, categoryId: 'legumes',
     icon: '🫛',
@@ -3103,8 +3039,7 @@ export const vegetables = [
       { name: '白粉病', cause: '生长中后期通风不良时易发。', prevention: '加强通风，喷施硫磺或粉锈宁。', image: 'images/pest_powdery_mildew.png' }
     ]
   },
-  {
-    id: 'taro',
+  { id: 'taro',
     name: '芋头',
     baseTemp: 13, categoryId: 'root',
     icon: '🥔',
@@ -3124,19 +3059,19 @@ export const vegetables = [
         name: '展叶与发棵期',
         water_fertilizer: '随着叶片增多，逐渐增加浇水量，保持田间湿润。结合中耕追施氮肥。',
         pest_management: '防范蚜虫和斜纹夜蛾。',
-        pruning_trellising: '进行第一次浅培土。',
+        pruning_trellising: null,
       },
       {
         name: '球茎膨大期',
         water_fertilizer: '芋头是“水芋”，此期需水量极大，甚至可保持浅水层（水芋种植法）。重施钾肥促进球茎发育。',
         pest_management: '重点防治芋疫病（高温高湿易发）和软腐病。',
-        pruning_trellising: '【关键操作】大培土：连续进行2-3次高培土，将基部完全覆盖，促使子芋、孙芋膨大，防止露出水面变绿。',
+        pruning_trellising: null,
       },
       {
         name: '成熟与采收期',
         water_fertilizer: '采收前15天左右排干田间积水，使土壤稍微干爽，利于采收和储藏。',
         pest_management: '停药。',
-        pruning_trellising: '霜降前后，叶片变黄衰老时采挖。',
+        pruning_trellising: null,
       },
     ],
     growthSequence: [
@@ -3154,8 +3089,7 @@ export const vegetables = [
 ];
 
 export const fertilizers = [
-  {
-    id: 'eco_enzyme',
+  { id: 'eco_enzyme',
     name: '环保酵素',
     baseTemp: 10, categoryId: 'liquid_fertilizer',
     icon: '🧪',
@@ -3172,8 +3106,7 @@ export const fertilizers = [
       { name: '稀释使用 🌟', content: '【日常浇水】：1:1000 比例稀释；【叶面喷施】：1:500 比例稀释（防病虫害）；【土壤改良】：直接浇灌土壤底肥。', image: 'images/enz_step5_v2.png' }
     ]
   },
-  {
-    id: 'aerobic_compost',
+  { id: 'aerobic_compost',
     name: '有机耗氧堆肥',
     baseTemp: 10, categoryId: 'solid_fertilizer',
     icon: '🍂',
@@ -3191,8 +3124,7 @@ export const fertilizers = [
       { name: '熟成与使用 🌟', content: '约1-2个月后，堆肥体积缩小一半，不再发热，变成黑褐色且散发泥土清香，即可作为极品底肥拌入土壤中使用。', image: 'images/comp_step5_1779289937708.png' }
     ]
   },
-  {
-    id: 'vermicompost',
+  { id: 'vermicompost',
     name: '有机蚯蚓粪',
     baseTemp: 10, categoryId: 'solid_fertilizer',
     icon: '🪱',
@@ -3213,8 +3145,7 @@ export const fertilizers = [
 // ================= 生态植保工坊 =================
 export const pestControls = [
   // 1
-  {
-    id: 'pc_sticky_trap',
+  { id: 'pc_sticky_trap',
     name: '黄板/蓝板诱杀',
     baseTemp: 10, categoryId: 'physical',
     icon: '🟨',
@@ -3226,8 +3157,7 @@ export const pestControls = [
     ]
   },
   // 2
-  {
-    id: 'pc_insect_net',
+  { id: 'pc_insect_net',
     name: '防虫网隔离',
     baseTemp: 10, categoryId: 'physical',
     icon: '🕸️',
@@ -3239,8 +3169,7 @@ export const pestControls = [
     ]
   },
   // 3
-  {
-    id: 'pc_sugar_trap',
+  { id: 'pc_sugar_trap',
     name: '糖醋酒液诱杀',
     baseTemp: 10, categoryId: 'physical',
     icon: '🍶',
@@ -3252,8 +3181,7 @@ export const pestControls = [
     ]
   },
   // 4
-  {
-    id: 'pc_chili_garlic',
+  { id: 'pc_chili_garlic',
     name: '辣椒大蒜水',
     baseTemp: 10, categoryId: 'homemade',
     icon: '🌶️',
@@ -3265,8 +3193,7 @@ export const pestControls = [
     ]
   },
   // 5
-  {
-    id: 'pc_wood_ash',
+  { id: 'pc_wood_ash',
     name: '草木灰撒施与水剂',
     baseTemp: 10, categoryId: 'homemade',
     icon: '🪵',
@@ -3278,8 +3205,7 @@ export const pestControls = [
     ]
   },
   // 6
-  {
-    id: 'pc_soap_spray',
+  { id: 'pc_soap_spray',
     name: '洗衣粉/皂液水',
     baseTemp: 10, categoryId: 'homemade',
     icon: '🧼',
@@ -3291,8 +3217,7 @@ export const pestControls = [
     ]
   },
   // 7
-  {
-    id: 'pc_matrine',
+  { id: 'pc_matrine',
     name: '苦参碱',
     baseTemp: 10, categoryId: 'extract',
     icon: '🌿',
@@ -3304,8 +3229,7 @@ export const pestControls = [
     ]
   },
   // 8
-  {
-    id: 'pc_neem_oil',
+  { id: 'pc_neem_oil',
     name: '印楝素',
     baseTemp: 10, categoryId: 'extract',
     icon: '🫒',
@@ -3317,8 +3241,7 @@ export const pestControls = [
     ]
   },
   // 9
-  {
-    id: 'pc_bt',
+  { id: 'pc_bt',
     name: '苏云金杆菌 (Bt)',
     baseTemp: 10, categoryId: 'biological',
     icon: '🦠',
@@ -3330,8 +3253,7 @@ export const pestControls = [
     ]
   },
   // 10
-  {
-    id: 'pc_bacillus',
+  { id: 'pc_bacillus',
     name: '枯草芽孢杆菌',
     baseTemp: 10, categoryId: 'biological',
     icon: '🧫',
@@ -3343,8 +3265,7 @@ export const pestControls = [
     ]
   },
   // 11
-  {
-    id: 'pc_ladybug',
+  { id: 'pc_ladybug',
     name: '释放天敌昆虫',
     baseTemp: 10, categoryId: 'ecology',
     icon: '🐞',
@@ -3356,8 +3277,7 @@ export const pestControls = [
     ]
   },
   // 12
-  {
-    id: 'pc_companion_planting',
+  { id: 'pc_companion_planting',
     name: '陪伴种植 (套种/混种)',
     baseTemp: 10, categoryId: 'ecology',
     icon: '🌻',
@@ -3375,8 +3295,7 @@ export const pestControls = [
 ];
 
 export const farmingModels = [
-  {
-    id: 'model_permaculture',
+  { id: 'model_permaculture',
     type: 'model',
     name: '朴门农学 (Permaculture)',
     baseTemp: 10, categoryId: 'ecology',
@@ -3389,8 +3308,7 @@ export const farmingModels = [
        { name: '锁水微地形 (Swales)', content: '沿等高线挖掘浅沟，用来拦截和蓄集雨水，沟旁种植树木，让水分缓慢渗入地下，防旱保水。', image: 'images/permaculture_swales.png' }
     ]
   },
-  {
-    id: 'model_notill',
+  { id: 'model_notill',
     type: 'model',
     name: '免耕法 (No-Till Farming)',
     baseTemp: 10, categoryId: 'ecology',
@@ -3403,8 +3321,7 @@ export const farmingModels = [
        { name: '免耕播种', content: '不需要深翻土地，直接在覆盖层下开一条窄缝播下种子，最大程度保持土壤原本的孔隙和蚯蚓通道。', image: 'images/notill_seeding.png' }
     ]
   },
-  {
-    id: 'model_biodynamic',
+  { id: 'model_biodynamic',
     type: 'model',
     name: '生物动力农法 (Biodynamic)',
     baseTemp: 10, categoryId: 'ecology',
@@ -3417,8 +3334,7 @@ export const farmingModels = [
        { name: '农场闭环 (Closed Loop)', content: '极其强调农场内部的物质循环，饲料、肥料必须主要来源于农场自身，尽量不依赖外部购入。', image: 'images/biodynamic_loop.png' }
     ]
   },
-  {
-    id: 'model_aquaponics',
+  { id: 'model_aquaponics',
     type: 'model',
     name: '共生农业 (Integrated Farming)',
     baseTemp: 10, categoryId: 'ecology',
@@ -3431,8 +3347,7 @@ export const farmingModels = [
        { name: '林下养殖 (Silvopasture)', content: '在果园或树林下散养鸡鸭猪羊。家禽家畜吃林间虫草，粪便肥林，树木为动物提供果实和遮阴。', image: 'images/aquaponics_silvopasture.png' }
     ]
   },
-  {
-    id: 'pc_regenerative',
+  { id: 'pc_regenerative',
     name: '再生农业 (Regenerative)',
     type: 'model',
     icon: '🌱',
