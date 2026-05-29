@@ -3075,7 +3075,7 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { name: '种芋', image: 'images/taro_stage_1.png', days: 15, gdd: 200 },
+      { name: '种芋', image: 'images/taro_stage_1.png?v=2', days: 15, gdd: 200 },
       { name: '发芽出苗', image: 'images/taro_stage_2.png', days: 15, gdd: 250 },
       { name: '展叶期', image: 'images/taro_stage_3.png', days: 30, gdd: 450 },
       { name: '球茎膨大', image: 'images/taro_stage_4.png', days: 40, gdd: 700 },
