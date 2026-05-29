@@ -1187,8 +1187,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
 
     document.body.addEventListener('click', (e) => {
-        // Enlarge pest images, stage images, and vegetable images
-        if (e.target.tagName === 'IMG' && (e.target.classList.contains('pest-img') || e.target.classList.contains('veg-img') || e.target.classList.contains('stage-image') || e.target.closest('.pest-img'))) {
+        // Enlarge ONLY pest images
+        if (e.target.tagName === 'IMG' && (e.target.classList.contains('pest-img') || e.target.closest('.pest-img'))) {
             if (lightboxOverlay && lightboxImg) {
                 lightboxImg.src = e.target.src;
                 lightboxOverlay.classList.add('active');

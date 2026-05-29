@@ -1491,11 +1491,11 @@ footer {
 }
 
 /* Image Lightbox Styling */
-.pest-img, .veg-img, .stage-image {
+.pest-img {
     cursor: pointer;
     transition: transform 0.2s;
 }
 
-.pest-img:hover, .veg-img:hover, .stage-image:hover {
+.pest-img:hover {
     transform: scale(1.02);
 }
