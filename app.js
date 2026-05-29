@@ -1181,4 +1181,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Image Lightbox Logic ---
+    const lightboxOverlay = document.getElementById('image-lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+
+    document.body.addEventListener('click', (e) => {
+        // Enlarge pest images, stage images, and vegetable images
+        if (e.target.tagName === 'IMG' && (e.target.classList.contains('pest-img') || e.target.classList.contains('veg-img') || e.target.classList.contains('stage-image') || e.target.closest('.pest-img'))) {
+            if (lightboxOverlay && lightboxImg) {
+                lightboxImg.src = e.target.src;
+                lightboxOverlay.style.display = 'flex';
+            }
+        }
+    });
+
+    if (lightboxCloseBtn) {
+        lightboxCloseBtn.addEventListener('click', () => {
+            if (lightboxOverlay) lightboxOverlay.style.display = 'none';
+        });
+    }
+
+    if (lightboxOverlay) {
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                lightboxOverlay.style.display = 'none';
+            }
+        });
+    }
+
 });

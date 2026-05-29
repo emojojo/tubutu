@@ -1489,3 +1489,13 @@ footer {
     vertical-align: middle;
     margin-right: 2px;
 }
+
+/* Image Lightbox Styling */
+.pest-img, .veg-img, .stage-image {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.pest-img:hover, .veg-img:hover, .stage-image:hover {
+    transform: scale(1.02);
+}

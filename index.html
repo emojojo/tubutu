@@ -221,6 +221,14 @@
         </div>
     </div>
 
+    <!-- Image Lightbox Modal -->
+    <div class="modal-overlay" id="image-lightbox-overlay" style="z-index: 3000; display: none; align-items: center; justify-content: center;">
+        <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+            <button class="close-btn" id="lightbox-close-btn" style="position: absolute; top: -40px; right: 0; color: white; background: none; border: none; font-size: 2rem; cursor: pointer;">&times;</button>
+            <img id="lightbox-img" src="" style="max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); object-fit: contain;">
+        </div>
+    </div>
+
     <script type="module" src="app.js?v=1779902024409"></script>
 </body>
 </html>
