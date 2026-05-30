@@ -1351,16 +1351,51 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             timelineHtml += '</div>';
 
-            let guideStageIndex = 0;
-            if (daysPassed > 0) {
-                guideStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
-                if (guideStageIndex >= fert.stages.length) guideStageIndex = fert.stages.length - 1;
+            let operationsHtml = '';
+            const ops = record.operations || [];
+            if (ops.length > 0) {
+                const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
+                const typeMap = {
+                    'water': { icon: '<img src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
+                };
+                operationsHtml = `
+                    <div class="operations-timeline">
+                        <div class="operations-timeline-title">📝 农事记录</div>
+                        <div class="op-list">
+                            ${sortedOps.map(op => {
+                                const t = typeMap[op.type] || typeMap['other'];
+                                return `
+                                    <div class="op-item">
+                                        <div class="op-marker"></div>
+                                        <div class="op-date">${op.date} <span class="op-type-badge">${t.icon} ${t.label}</span></div>
+                                        ${op.remark ? `<div class="op-remark">${op.remark}</div>` : ''}
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                 operationsHtml = `
+                    <div class="operations-timeline">
+                        <div class="operations-timeline-title">📝 农事记录</div>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 5px;">暂无记录，点击下方按钮添加。</p>
+                    </div>
+                 `;
             }
-            
-            let guideHtml = `
-                <div class="operations-timeline">
-                    <div class="operations-timeline-title">📝 当前操作指南: ${fert.stages[guideStageIndex].name}</div>
-                    <p style="color: #4b5563; font-size: 0.95rem; margin-top: 5px; line-height: 1.6;">${fert.stages[guideStageIndex].content}</p>
+            operationsHtml += `
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button class="add-op-btn" onclick="openOperationModal('${record.id}')" style="flex: 1; width: auto;">➕ 添加农事记录</button>
+                    <button class="harvest-btn" onclick="finishFertRecord('${record.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
+                        ✅ 标记为制作完成
+                    </button>
                 </div>
             `;
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
@@ -1389,11 +1424,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         ${progressHtml}
                         ${timelineHtml}
-                        ${guideHtml}
-                        <div style="margin-top: 25px; border-top: 2px dashed rgba(22, 101, 52, 0.2); padding-top: 15px;">
-                            <button onclick="finishFertRecord('${record.id}')" style="padding: 8px 16px; border-radius: 8px; border: none; background: var(--primary-color); color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">✅ 标记为制作完成</button>
-                        </div>
-
+                        ${operationsHtml}
                     </div>
                 </div>
             `;
