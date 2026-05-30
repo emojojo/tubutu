@@ -511,10 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="veg-category">肥料工坊</span>
                     </div>
                     <p class="veg-desc">${item.description}</p>
-                    <div class="op-form-group">
-                    <label>操作类型</label>
-                    <div class="op-type-grid" id="op-type-selector">
-                        <!-- Dynamically populated by JS -->
+                    <div class="veg-calendar">
+                        <span class="veg-calendar-icon">⏳</span>
+                        <span>${calendarText}</span>
                     </div>
                 </div>
             `;
