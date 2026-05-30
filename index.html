@@ -115,6 +115,12 @@
 
         <!-- My Garden Section -->
         <div id="mygarden-section" class="tab-content" style="display: none;">
+            <section class="filter-section" id="mygarden-filter-section" style="display: none; margin-bottom: -10px;">
+                <div class="category-filters" id="mygarden-category-filters">
+                    <button class="mygarden-filter-btn filter-btn active" data-id="all">全部蔬果</button>
+                    <!-- Categories will be populated by JS -->
+                </div>
+            </section>
             <section class="mygarden-wrapper" style="padding: 20px 0;">
                 <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="mygarden-empty-msg">
                     你的菜园空空如也，快去“蔬果种植”里挑选想种的植物吧！
@@ -127,6 +133,12 @@
 
         <!-- History Section -->
         <div id="history-section" class="tab-content" style="display: none;">
+            <section class="filter-section" id="history-filter-section" style="display: none; margin-bottom: -10px;">
+                <div class="category-filters" id="history-category-filters">
+                    <button class="history-filter-btn filter-btn active" data-id="all">全部蔬果</button>
+                    <!-- Categories will be populated by JS -->
+                </div>
+            </section>
             <section class="history-wrapper" style="padding: 20px 0;">
                 <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="history-empty-msg">
                     暂无收获历史，继续努力种植吧！
@@ -250,6 +262,6 @@
         </div>
     </div>
 
-    <script type="module" src="app.js?v=1780082772009"></script>
+    <script type="module" src="app.js?v=1780082772010"></script>
 </body>
 </html>

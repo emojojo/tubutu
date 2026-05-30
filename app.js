@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const customSelect = document.getElementById('custom-region-select');
     const regionDesc = document.getElementById('region-desc');
     const categoryFilters = document.getElementById('category-filters');
+    const mygardenCategoryFilters = document.getElementById('mygarden-category-filters');
+    const mygardenFilterSection = document.getElementById('mygarden-filter-section');
+    const historyCategoryFilters = document.getElementById('history-category-filters');
+    const historyFilterSection = document.getElementById('history-filter-section');
     const vegGrid = document.getElementById('vegetable-grid');
     const modalOverlay = document.getElementById('modal-overlay');
     const modalContent = document.getElementById('modal-content');
@@ -274,8 +278,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    let currentRegion = '';
+        const defaultRegion = regions[0];
+    let currentRegion = localStorage.getItem('tubutu_region') || defaultRegion.id;
     let currentCategory = 'all';
+    let currentMyGardenCategory = 'all';
+    let currentHistoryCategory = 'all';
     let currentSearchQuery = '';
 
     // Initialize Regions
@@ -327,15 +334,45 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.dataset.id = cat.id;
         btn.textContent = `${cat.icon} ${cat.name}`;
         categoryFilters.appendChild(btn);
+
+        const mgBtn = document.createElement('button');
+        mgBtn.className = 'mygarden-filter-btn filter-btn';
+        mgBtn.dataset.id = cat.id;
+        mgBtn.textContent = `${cat.icon} ${cat.name}`;
+        mygardenCategoryFilters.appendChild(mgBtn);
+
+        const histBtn = document.createElement('button');
+        histBtn.className = 'history-filter-btn filter-btn';
+        histBtn.dataset.id = cat.id;
+        histBtn.textContent = `${cat.icon} ${cat.name}`;
+        historyCategoryFilters.appendChild(histBtn);
     });
 
     // Event Listeners
     categoryFilters.addEventListener('click', (e) => {
         if (e.target.classList.contains('filter-btn')) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('#category-filters .filter-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentCategory = e.target.dataset.id;
             renderGrid();
+        }
+    });
+
+    mygardenCategoryFilters.addEventListener('click', (e) => {
+        if (e.target.classList.contains('mygarden-filter-btn')) {
+            document.querySelectorAll('.mygarden-filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentMyGardenCategory = e.target.dataset.id;
+            renderMyGarden();
+        }
+    });
+
+    historyCategoryFilters.addEventListener('click', (e) => {
+        if (e.target.classList.contains('history-filter-btn')) {
+            document.querySelectorAll('.history-filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentHistoryCategory = e.target.dataset.id;
+            renderHistory();
         }
     });
 
@@ -981,16 +1018,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeGarden.length === 0) {
             grid.innerHTML = '';
             emptyMsg.style.display = 'block';
+            if (mygardenFilterSection) mygardenFilterSection.style.display = 'none';
             return;
         }
         
+        if (mygardenFilterSection) mygardenFilterSection.style.display = 'block';
         emptyMsg.style.display = 'none';
         grid.innerHTML = '';
         
+        const filteredGarden = activeGarden.filter(g => {
+            if (currentMyGardenCategory === 'all') return true;
+            const veg = vegetables.find(v => v.id === g.vegId);
+            return veg && veg.categoryId === currentMyGardenCategory;
+        });
+        
+        if (filteredGarden.length === 0) {
+            grid.innerHTML = '<p style="color: #9ca3af; text-align: center; width: 100%; margin-top: 20px;">当前分类下没有种植记录哦。</p>';
+            return;
+        }
+        
         const cardsHtml = [];
         
-        for (let index = 0; index < activeGarden.length; index++) {
-            const gardenItem = activeGarden[index];
+        for (let index = 0; index < filteredGarden.length; index++) {
+            const gardenItem = filteredGarden[index];
             const veg = vegetables.find(v => v.id === gardenItem.vegId);
             if (!veg) continue;
             
@@ -1174,16 +1224,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (historyGarden.length === 0) {
             grid.innerHTML = '';
             emptyMsg.style.display = 'block';
+            if (historyFilterSection) historyFilterSection.style.display = 'none';
             return;
         }
         
+        if (historyFilterSection) historyFilterSection.style.display = 'block';
         emptyMsg.style.display = 'none';
         grid.innerHTML = '';
         
+        const filteredHistory = historyGarden.filter(g => {
+            if (currentHistoryCategory === 'all') return true;
+            const veg = vegetables.find(v => v.id === g.vegId);
+            return veg && veg.categoryId === currentHistoryCategory;
+        });
+        
+        if (filteredHistory.length === 0) {
+            grid.innerHTML = '<p style="color: #9ca3af; text-align: center; width: 100%; margin-top: 20px;">当前分类下没有历史记录哦。</p>';
+            return;
+        }
+        
         const cardsHtml = [];
         
-        for (let index = 0; index < historyGarden.length; index++) {
-            const gardenItem = historyGarden[index];
+        for (let index = 0; index < filteredHistory.length; index++) {
+            const gardenItem = filteredHistory[index];
             const veg = vegetables.find(v => v.id === gardenItem.vegId);
             if (!veg) continue;
             
