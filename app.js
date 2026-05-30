@@ -340,28 +340,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
     const btnShowActive = document.getElementById('btn-show-active');
     const btnShowHistory = document.getElementById('btn-show-history');
+    const btnShowFert = document.getElementById('btn-show-fert');
     const mygardenActiveView = document.getElementById('mygarden-active-view');
     const mygardenHistoryView = document.getElementById('mygarden-history-view');
+    const mygardenFertView = document.getElementById('mygarden-fert-view');
 
     if (btnShowActive && btnShowHistory) {
         btnShowActive.addEventListener('click', () => {
             btnShowActive.classList.add('active');
             btnShowHistory.classList.remove('active');
+            if(btnShowFert) btnShowFert.classList.remove('active');
             mygardenActiveView.style.display = 'block';
             mygardenHistoryView.style.display = 'none';
+            if(mygardenFertView) mygardenFertView.style.display = 'none';
             renderMyGarden();
         });
 
         btnShowHistory.addEventListener('click', () => {
             btnShowHistory.classList.add('active');
             btnShowActive.classList.remove('active');
+            if(btnShowFert) btnShowFert.classList.remove('active');
             mygardenHistoryView.style.display = 'block';
             mygardenActiveView.style.display = 'none';
+            if(mygardenFertView) mygardenFertView.style.display = 'none';
             renderHistory();
         });
+        
+        if (btnShowFert) {
+            btnShowFert.addEventListener('click', () => {
+                btnShowFert.classList.add('active');
+                btnShowActive.classList.remove('active');
+                btnShowHistory.classList.remove('active');
+                if(mygardenFertView) mygardenFertView.style.display = 'block';
+                mygardenActiveView.style.display = 'none';
+                mygardenHistoryView.style.display = 'none';
+                renderMyFertilizers();
+            });
+        }
     }
+    
+    const btnAddFertRecord = document.getElementById('btn-add-fert-record');
+    if (btnAddFertRecord) {
+        btnAddFertRecord.addEventListener('click', () => {
+            const select = document.getElementById('new-fert-select');
+            const fertId = select.value;
+            if (!fertId) {
+                alert('请先选择一种肥料');
+                return;
+            }
+            myGarden.unshift({
+                id: 'f_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7),
+                type: 'fertilizer',
+                fertId: fertId,
+                startDate: new Date().toISOString(),
+                isHarvested: false
+            });
+            saveGarden();
+            renderMyFertilizers();
+            select.value = '';
+        });
+    }
+
 
     closeBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => {
@@ -1000,7 +1042,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emptyMsg = document.getElementById('mygarden-empty-msg');
         if (!grid) return;
         
-        const activeGarden = myGarden.filter(g => !g.isHarvested);
+        const activeGarden = myGarden.filter(g => !g.isHarvested && g.type !== 'fertilizer');
         
         if (activeGarden.length === 0) {
             grid.innerHTML = '';
@@ -1190,12 +1232,91 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    
+    window.deleteFertRecord = function(id) {
+        if(confirm('确定删除此制作记录吗？')) {
+            const idx = myGarden.findIndex(g => g.id === id);
+            if(idx !== -1) {
+                myGarden.splice(idx, 1);
+                saveGarden();
+                renderMyFertilizers();
+            }
+        }
+    };
+    
+    window.finishFertRecord = function(id) {
+        if(confirm('恭喜！肥料制作完成了，要归档吗？')) {
+            const idx = myGarden.findIndex(g => g.id === id);
+            if(idx !== -1) {
+                myGarden[idx].isHarvested = true;
+                myGarden[idx].endDate = new Date().toISOString();
+                saveGarden();
+                renderMyFertilizers();
+            }
+        }
+    };
+
+    function renderMyFertilizers() {
+        const grid = document.getElementById('fert-grid');
+        const emptyMsg = document.getElementById('fert-empty-msg');
+        if (!grid) return;
+        
+        const activeFerts = myGarden.filter(g => g.type === 'fertilizer' && !g.isHarvested);
+        
+        if (activeFerts.length === 0) {
+            grid.innerHTML = '';
+            emptyMsg.style.display = 'block';
+            return;
+        }
+        
+        emptyMsg.style.display = 'none';
+        
+        let cardsHtml = '';
+        
+        for (let i = 0; i < activeFerts.length; i++) {
+            const record = activeFerts[i];
+            const fert = fertilizers.find(f => f.id === record.fertId);
+            if (!fert) continue;
+            
+            const startDateStr = record.startDate ? record.startDate.split('T')[0] : '未知时间';
+            const daysPassed = record.startDate ? Math.floor((new Date() - new Date(record.startDate)) / (1000 * 60 * 60 * 24)) : 0;
+            
+            cardsHtml += `
+                <div class="mygarden-card" style="position: relative;">
+                    <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+                        <button onclick="deleteFertRecord('${record.id}')" style="background: rgba(255,59,48,0.1); color: #FF3B30; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">删除</button>
+                    </div>
+                    
+                    <div class="mygarden-img-container" style="background: #f5f7fa; padding: 20px;">
+                        <img src="${fert.image}" alt="${fert.name}" class="mygarden-main-img" style="object-fit: contain;">
+                    </div>
+                    
+                    <div class="mygarden-info">
+                        <div class="mygarden-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h3 style="margin: 0;">${fert.icon} ${fert.name}</h3>
+                            <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: bold;">已进行 ${daysPassed} 天</span>
+                        </div>
+                        
+                        <div class="mygarden-meta">
+                            <span class="meta-item">📅 开始制作: ${startDateStr}</span>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <button onclick="finishFertRecord('${record.id}')" style="width: 100%; padding: 10px; border-radius: 8px; border: none; background: var(--primary-color); color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">✅ 标记为制作完成</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        grid.innerHTML = cardsHtml;
+    }
+
     async function renderHistory() {
         const grid = document.getElementById('history-grid');
         const emptyMsg = document.getElementById('history-empty-msg');
         if (!grid) return;
         
-        const historyGarden = myGarden.filter(g => g.isHarvested);
+        const historyGarden = myGarden.filter(g => g.isHarvested && g.type !== 'fertilizer');
         
         if (historyGarden.length === 0) {
             grid.innerHTML = '';

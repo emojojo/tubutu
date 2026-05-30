@@ -118,6 +118,7 @@
                 <div class="garden-view-toggle">
                     <button class="toggle-btn active" id="btn-show-active">🌱 种植中</button>
                     <button class="toggle-btn" id="btn-show-history">🏆 收获历史</button>
+                    <button class="toggle-btn" id="btn-show-fert">🧪 肥料制作</button>
                 </div>
             </div>
             
@@ -128,6 +129,27 @@
                     </p>
                     <div class="vegetable-grid" id="mygarden-grid">
                         <!-- My Garden cards will be populated by JS -->
+                    </div>
+                </section>
+            </div>
+
+
+            <div id="mygarden-fert-view" style="display: none;">
+                <section class="fert-wrapper" style="padding: 10px 0;">
+                    <div style="text-align: center; margin-bottom: 25px; display: flex; justify-content: center; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <select id="new-fert-select" style="padding: 10px 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem; outline: none; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.02); min-width: 200px;">
+                            <option value="">-- 选择要制作的肥料 --</option>
+                            <option value="eco_enzyme">环保酵素</option>
+                            <option value="aerobic_compost">有机耗氧堆肥</option>
+                            <option value="vermicompost">有机蚯蚓粪</option>
+                        </select>
+                        <button id="btn-add-fert-record" class="main-tab-btn" style="padding: 10px 16px; font-size: 1rem; margin: 0; background-color: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;">➕ 新增制作</button>
+                    </div>
+                    <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="fert-empty-msg">
+                        暂无制作中的肥料，开始自制有机肥吧！
+                    </p>
+                    <div class="vegetable-grid" id="fert-grid">
+                        <!-- Fertilizer cards will be populated by JS -->
                     </div>
                 </section>
             </div>
