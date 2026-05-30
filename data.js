@@ -1721,6 +1721,13 @@ export const vegetables = [
       { name: '培土 (核心技术)', content: '俗语“姜不培土不长”，生长期间需结合除草进行2-3次高培土，将根际垒高，遮光避日，促使地下姜块向上垂直生长并防止其露出地表变绿发苦。' , image: 'images/stages/ginger_hill_v3.png' },
       { name: '特殊追肥 🌟', content: '立秋前后进入姜块“暴长”阶段，此时必须重施“秋里肥”（大量腐熟饼肥和硫酸钾）。生姜极度忌氯，绝对不能施用氯化钾。' , image: 'images/stages/ginger_fertilize_v3.png' }
     ],
+    growthSequence: [
+      { name: '种姜催芽', image: 'images/stages/ginger_seed.png?v=1', days: 20, gdd: 300 },
+      { name: '幼苗期', image: 'images/stages/ginger_seedling.png?v=1', days: 40, gdd: 600 },
+      { name: '旺盛生长期', image: 'images/stages/ginger_grow.png?v=1', days: 60, gdd: 900 },
+      { name: '根茎膨大', image: 'images/stages/ginger_swell.png?v=1', days: 30, gdd: 450 },
+      { name: '成熟采收', image: 'images/stages/ginger_harvest.png?v=1', days: 10, gdd: 150 }
+    ],
     pests: [
             {
                 name: '姜瘟病',
