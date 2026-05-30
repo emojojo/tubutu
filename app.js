@@ -493,35 +493,6 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredFertilizers.forEach(item => {
             const calendarText = item.calendar.default || '';
 
-            let currentStageIndex = 0;
-            const totalDays = fert.id === 'eco_enzyme' ? 90 : (fert.id === 'aerobic_compost' ? 60 : 45);
-            if (daysPassed > 0) {
-                currentStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
-                if (currentStageIndex >= fert.stages.length) currentStageIndex = fert.stages.length - 1;
-            }
-
-            let timelineHtml = '<div class="growth-timeline">';
-            fert.stages.forEach((stage, idx) => {
-                let statusClass = '';
-                if (idx < currentStageIndex) statusClass = 'past';
-                else if (idx === currentStageIndex) statusClass = 'current';
-                else statusClass = 'future';
-                
-                timelineHtml += `
-                    <div class="timeline-stage ${statusClass}">
-                        <img src="${stage.image}" alt="${stage.name}" class="timeline-img">
-                        <span class="timeline-label">${stage.name}</span>
-                    </div>
-                `;
-            });
-            timelineHtml += '</div>';
-
-            let guideHtml = `
-                <div class="operations-timeline">
-                    <div class="operations-timeline-title">📝 当前操作指南: ${fert.stages[currentStageIndex].name}</div>
-                    <p style="color: #4b5563; font-size: 0.95rem; margin-top: 5px; line-height: 1.6;">${fert.stages[currentStageIndex].content}</p>
-                </div>
-            `;
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
 
             const imgHtml = item.image 
