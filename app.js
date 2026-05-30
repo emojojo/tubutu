@@ -511,9 +511,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="veg-category">肥料工坊</span>
                     </div>
                     <p class="veg-desc">${item.description}</p>
-                    <div class="veg-calendar">
-                        <span class="veg-calendar-icon">⏳</span>
-                        <span>${calendarText}</span>
+                    <div class="op-form-group">
+                    <label>操作类型</label>
+                    <div class="op-type-grid" id="op-type-selector">
+                        <!-- Dynamically populated by JS -->
                     </div>
                 </div>
             `;
@@ -1142,6 +1143,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
                     'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
                     'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
+                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
                     'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
@@ -1365,6 +1368,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
                     'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
                     'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
+                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
                     'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
@@ -1486,6 +1491,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
                     'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
                     'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
+                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
                     'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
@@ -1540,17 +1547,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const opDateInput = document.getElementById('op-date-input');
     const opRemarkInput = document.getElementById('op-remark-input');
     const opSaveBtn = document.getElementById('op-save-btn');
-    const opTypeBtns = document.querySelectorAll('.op-type-btn');
-    let currentOpGardenItemId = null;
-
-    if (opTypeBtns) {
-        opTypeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                opTypeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-    }
+    // opTypeBtns are now dynamically populated in openOperationModal
 
     if (opCloseBtn) {
         opCloseBtn.addEventListener('click', () => {
@@ -1562,23 +1559,75 @@ document.addEventListener('DOMContentLoaded', () => {
         currentOpGardenItemId = gardenItemId;
         if (opDateInput) opDateInput.value = new Date().toISOString().split('T')[0];
         if (opRemarkInput) opRemarkInput.value = '';
-        if (opTypeBtns && opTypeBtns.length > 0) {
-            opTypeBtns.forEach(b => b.classList.remove('active'));
-            opTypeBtns[0].classList.add('active');
+        const currentItem = myGarden.find(g => g.id === gardenItemId);
+        const isFert = currentItem && currentItem.type === 'fertilizer';
+
+        const opTypeSelector = document.getElementById('op-type-selector');
+        if (opTypeSelector) {
+            opTypeSelector.innerHTML = '';
+            let opTypes = [];
+            if (isFert) {
+                opTypes = [
+                    { id: 'turn', name: '翻堆', icon: '🔄' },
+                    { id: 'vent', name: '放气', icon: '💨' },
+                    { id: 'other', name: '其他', img: 'assets/icons/op_other.png?v=1' }
+                ];
+            } else {
+                opTypes = [
+                    { id: 'water', name: '浇水', img: 'assets/icons/op_water.png?v=1' },
+                    { id: 'weed', name: '除草', img: 'assets/icons/op_weed.png?v=1' },
+                    { id: 'fertilize', name: '施肥', img: 'assets/icons/op_fertilize.png?v=1' },
+                    { id: 'pest', name: '杀虫', img: 'assets/icons/op_pest.png?v=1' },
+                    { id: 'prune', name: '修剪', img: 'assets/icons/op_prune.png?v=1' },
+                    { id: 'trellis', name: '搭架', img: 'assets/icons/op_trellis.png?v=1' },
+                    { id: 'pollinate', name: '授粉', img: 'assets/icons/op_pollinate.png?v=1' },
+                    { id: 'other', name: '其他', img: 'assets/icons/op_other.png?v=1' }
+                ];
+            }
+            
+            opTypes.forEach((type, index) => {
+                const btn = document.createElement('div');
+                btn.className = `op-type-btn ${index === 0 ? 'active' : ''}`;
+                btn.dataset.type = type.id;
+                
+                let iconHtml = type.img 
+                    ? `<img src="${type.img}" class="op-icon-large" style="width:36px; height:36px; object-fit:contain; margin-bottom:4px;">`
+                    : `<div style="font-size: 28px; height: 36px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px;">${type.icon}</div>`;
+                    
+                btn.innerHTML = `${iconHtml}<span class="op-type-text">${type.name}</span>`;
+                
+                btn.addEventListener('click', () => {
+                    opTypeSelector.querySelectorAll('.op-type-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+                
+                opTypeSelector.appendChild(btn);
+            });
         }
 
         const cropSelector = document.getElementById('op-crop-selector');
         if (cropSelector) {
             cropSelector.innerHTML = '';
             myGarden.forEach(g => {
-                const veg = vegetables.find(v => v.id === g.vegId) || { name: g.vegId };
+                const isItemFert = g.type === 'fertilizer';
+                if (isFert !== isItemFert) return;
+
+                let displayName = '';
+                if (isItemFert) {
+                    const f = fertilizers.find(f => f.id === g.fertId) || { name: g.fertId };
+                    displayName = f.name;
+                } else {
+                    const v = vegetables.find(v => v.id === g.vegId) || { name: g.vegId };
+                    displayName = v.name;
+                }
+
                 const tag = document.createElement('div');
                 tag.className = 'crop-select-tag';
                 if (g.id === gardenItemId) {
                     tag.classList.add('active');
                 }
                 tag.dataset.id = g.id;
-                tag.innerHTML = `<span class="checkmark">✓</span> ${veg.name} (${g.plantDate})`;
+                tag.innerHTML = `<span class="checkmark">✓</span> ${displayName} (${g.plantDate})`;
                 tag.addEventListener('click', () => {
                     tag.classList.toggle('active');
                     if (cropSelector.querySelectorAll('.crop-select-tag.active').length === 0) {
