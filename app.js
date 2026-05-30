@@ -696,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <input type="date" id="fert-date-input" value="${new Date().toISOString().split('T')[0]}" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
                             </div>
                             <button id="toggle-fert-btn" class="add-btn">
-                                ➕ 加入制作记录
+                                + 加入制作记录
                             </button>
                         </div>
                     </div>` : ''}
@@ -870,7 +870,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const originalText = toggleFertBtn.innerHTML;
                     toggleFertBtn.innerHTML = '✅ 添加成功！';
                     setTimeout(() => {
-                        toggleFertBtn.innerHTML = '➕ 再次添加新批次';
+                        toggleFertBtn.innerHTML = '+ 再次添加新批次';
                     }, 1500);
 
                     saveGarden();
