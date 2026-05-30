@@ -1077,7 +1077,7 @@ footer {
 .quick-add-btn:hover { transform: scale(1.05); background: #228b22; }
 .quick-add-btn.added { background: #e0e0e0; color: #666; }
 
-#mygarden-grid {
+#mygarden-grid, #mygarden-fert-grid, #history-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
