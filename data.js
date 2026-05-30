@@ -3111,6 +3111,12 @@ export const fertilizers = [
       { name: '发酵放气', content: '第一个月发酵最剧烈，需每天拧松瓶盖放气一次（闻到酒香或微酸味属正常）。', image: 'images/enz_step3_v2.png' },
       { name: '静置熟成', content: '第二、三个月可盖紧密封静置。三个月后，液体呈棕黄色、散发清香酸气即为发酵成功。若发黑发臭则为失败，需补充红糖重新发酵。', image: 'images/enz_step4_v2.png' },
       { name: '稀释使用 🌟', content: '【日常浇水】：1:1000 比例稀释；【叶面喷施】：1:500 比例稀释（防病虫害）；【土壤改良】：直接浇灌土壤底肥。', image: 'images/enz_step5_v2.png' }
+    ],
+    transformationSequence: [
+      { name: '鲜料与红糖', image: 'images/enz_trans_1.png' },
+      { name: '剧烈产气', image: 'images/enz_trans_2.png' },
+      { name: '静置沉淀', image: 'images/enz_trans_3.png' },
+      { name: '熟成酵素液', image: 'images/enz_trans_4.png' }
     ]
   },
   { id: 'aerobic_compost',
@@ -3129,6 +3135,12 @@ export const fertilizers = [
       { name: '水分控制', content: '加水至堆肥材料“湿润但捏不出水滴”的状态（含水量约50-60%）。太干不发酵，太湿会发臭。', image: 'images/comp_step3_1779289907283.png' },
       { name: '翻堆与供氧', content: '耗氧发酵需要氧气。每隔3-5天，用铁铲或叉子将底部和内部的材料翻到表面。翻堆时若中心温度达到50-60℃，说明发酵非常成功！', image: 'images/comp_step4_1779289922090.png' },
       { name: '熟成与使用 🌟', content: '约1-2个月后，堆肥体积缩小一半，不再发热，变成黑褐色且散发泥土清香，即可作为极品底肥拌入土壤中使用。', image: 'images/comp_step5_1779289937708.png' }
+    ],
+    transformationSequence: [
+      { name: '混合生料', image: 'images/comp_trans_1.png' },
+      { name: '高温发酵', image: 'images/comp_trans_2.png' },
+      { name: '降温腐熟', image: 'images/comp_trans_3.png' },
+      { name: '极品黑金土', image: 'images/comp_trans_4.png' }
     ]
   },
   { id: 'vermicompost',
@@ -3145,6 +3157,12 @@ export const fertilizers = [
       { name: '投放蚯蚓', content: '放入适合堆肥的红蚯蚓（如太平2号红蚯蚓或Red wigglers）。不要使用普通菜园挖来的野生大蚯蚓。', image: 'images/verm_step2.png' },
       { name: '投喂厨余', content: '定期投入果皮、菜叶、咖啡渣等切碎的素食厨余（切忌投入肉类、油脂或柑橘类）。表面覆盖一层薄土或纸片以防飞虫。', image: 'images/verm_step3.png' },
       { name: '收获纯肥与“蚯蚓茶” 🌟', content: '几个月后，底层会充满黑褐色无异味的“泥土”——蚯蚓粪，可直接拌入土中作极品底肥。<br><br>💧 <b>高阶副产物“蚯蚓茶”：</b><br>从底部水龙头接出的浓缩渗液被称为“蚯蚓茶”，它是极佳的速效液体肥，富含有益微生物。<b>用法：</b>必须按 1:10 兑水稀释，用于日常浇根或叶面喷施，能显著增强叶片抗病驱虫能力！', image: 'images/verm_step4.png' }
+    ],
+    transformationSequence: [
+      { name: '生鲜厨余', image: 'images/verm_trans_1.png' },
+      { name: '蚯蚓采食', image: 'images/verm_trans_2.png' },
+      { name: '褐化堆积', image: 'images/verm_trans_3.png' },
+      { name: '纯正蚯蚓粪', image: 'images/verm_trans_4.png' }
     ]
   }
 ];

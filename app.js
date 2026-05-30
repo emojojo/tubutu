@@ -1310,9 +1310,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let currentStageIndex = 0;
             const totalDays = fert.id === 'eco_enzyme' ? 90 : (fert.id === 'aerobic_compost' ? 60 : 45);
+            const displaySequence = fert.transformationSequence || fert.stages;
             if (daysPassed > 0) {
-                currentStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
-                if (currentStageIndex >= fert.stages.length) currentStageIndex = fert.stages.length - 1;
+                currentStageIndex = Math.floor((daysPassed / totalDays) * displaySequence.length);
+                if (currentStageIndex >= displaySequence.length) currentStageIndex = displaySequence.length - 1;
             }
             
             const progressPercent = Math.min(100, (daysPassed / totalDays) * 100);
@@ -1328,14 +1329,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="progress-bar-fill" style="height: 100%; width: ${progressPercent}%; background: var(--primary); transition: width 1s ease-out;"></div>
                     </div>
                     <div style="margin-top: 8px; font-size: 0.85rem; color: #64748b; display: flex; justify-content: space-between;">
-                        <span>当前阶段: ${fert.stages[currentStageIndex].name}</span>
+                        <span>当前状态: ${displaySequence[currentStageIndex].name}</span>
                         <span style="color: var(--primary-dark); font-weight: 500;">⏳ 预估距熟成约 ${remainingDays} 天</span>
                     </div>
                 </div>
             `;
 
             let timelineHtml = '<div class="growth-timeline">';
-            fert.stages.forEach((stage, idx) => {
+            displaySequence.forEach((stage, idx) => {
                 let statusClass = '';
                 if (idx < currentStageIndex) statusClass = 'past';
                 else if (idx === currentStageIndex) statusClass = 'current';
@@ -1350,10 +1351,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             timelineHtml += '</div>';
 
+            let guideStageIndex = 0;
+            if (daysPassed > 0) {
+                guideStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
+                if (guideStageIndex >= fert.stages.length) guideStageIndex = fert.stages.length - 1;
+            }
+            
             let guideHtml = `
                 <div class="operations-timeline">
-                    <div class="operations-timeline-title">📝 当前操作指南: ${fert.stages[currentStageIndex].name}</div>
-                    <p style="color: #4b5563; font-size: 0.95rem; margin-top: 5px; line-height: 1.6;">${fert.stages[currentStageIndex].content}</p>
+                    <div class="operations-timeline-title">📝 当前操作指南: ${fert.stages[guideStageIndex].name}</div>
+                    <p style="color: #4b5563; font-size: 0.95rem; margin-top: 5px; line-height: 1.6;">${fert.stages[guideStageIndex].content}</p>
                 </div>
             `;
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
