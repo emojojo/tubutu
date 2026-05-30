@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.dataset.id = cat.id;
-        btn.textContent = `${cat.icon} ${cat.name}`;
+        btn.innerHTML = `${cat.icon} <span>${cat.name}</span>`;
         categoryFilters.appendChild(btn);
     });
 
