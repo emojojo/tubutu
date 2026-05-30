@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.dataset.id = cat.id;
-        btn.innerHTML = `${cat.icon} <span>${cat.name}</span>`;
+        btn.textContent = `${cat.icon} ${cat.name}`;
         categoryFilters.appendChild(btn);
     });
 
@@ -347,16 +347,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mygardenCategoryFilters) {
         categories.forEach(cat => {
             const btn = document.createElement('button');
-            btn.className = 'filter-btn';
+            btn.className = 'flat-filter-btn';
             btn.dataset.id = cat.id;
-            btn.innerHTML = `${cat.icon} <span>${cat.name}</span>`;
+            btn.textContent = `${cat.icon} ${cat.name}`;
             mygardenCategoryFilters.appendChild(btn);
         });
 
         mygardenCategoryFilters.addEventListener('click', (e) => {
-            const btn = e.target.closest('.filter-btn');
+            const btn = e.target.closest('.flat-filter-btn');
             if (btn) {
-                document.querySelectorAll('#mygarden-category-filters .filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('#mygarden-category-filters .flat-filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 currentMyGardenCategory = btn.dataset.id;
                 renderMyGarden();

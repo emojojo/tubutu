@@ -24,14 +24,14 @@ export const regions = [
 ];
 
 export const categories = [
-  { id: 'leafy', name: '叶菜类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 22 12 12"/></svg>' },
-  { id: 'brassica', name: '甘蓝花菜类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16v0H5v0h0a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L14 3l-3 4.3a1 1 0 0 0 .8 1.7H12l-2 3.3a1 1 0 0 0 .8 1.7H11l-1.8 2.7A1 1 0 0 0 10 19Z"/></svg>' },
-  { id: 'solanaceous', name: '茄果类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>' },
-  { id: 'root', name: '根茎类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.27 21.7s9.87-3.5 12.73-6.43a7.1 7.1 0 0 0 2.29-6.53l-1.2-1.2a2.5 2.5 0 0 0-3.5 0l-1 1A2.5 2.5 0 0 0 11.56 12l-.7.7-1.4-1.4 1-1a2.5 2.5 0 0 0 0-3.5l-1-1A2.5 2.5 0 0 0 6 5.8L4.8 7a7.1 7.1 0 0 0-6.53 2.29c-2.4 2.87-6 12.74-6 12.74Z"/><path d="M10.3 11.7l3.4 3.4"/></svg>' },
-  { id: 'cucurbits', name: '瓜菜类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 8-3.6 8-8 0-6.2-4.6-12-8-12S4 7.8 4 14c0 4.4 3.6 8 8 8Z"/></svg>' },
-  { id: 'fruit', name: '水果', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-5s-5 2.24-5 5Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-5s-5 2.24-5 5Z"/><path d="M7 12c7.33-4.67 9.33-2.67 12-2"/></svg>' },
-  { id: 'legumes', name: '豆类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.165 6.598C9.954 7.478 9.64 8.36 9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22c7.732 0 14-6.268 14-14a6 6 0 0 0-11.835-1.402Z"/><path d="M5.34 10.62a4 4 0 1 0 5.279-5.28"/></svg>' },
-  { id: 'allium', name: '葱蒜类', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>' }
+  { id: 'leafy', name: '叶菜类', icon: '🥬' },
+  { id: 'brassica', name: '甘蓝花菜类', icon: '🥦' },
+  { id: 'solanaceous', name: '茄果类', icon: '🍅' },
+  { id: 'root', name: '根茎类', icon: '🥕' },
+  { id: 'cucurbits', name: '瓜菜类', icon: '🥒' },
+  { id: 'fruit', name: '水果', icon: '🍉' },
+  { id: 'legumes', name: '豆类', icon: '🫘' },
+  { id: 'allium', name: '葱蒜类', icon: '🧄' }
 ];
 
 export const vegetables = [
