@@ -1372,6 +1372,49 @@ footer {
     color: #475569;
 }
 
+.op-crop-selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.crop-select-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.crop-select-tag:hover {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.crop-select-tag.active {
+    background: #ecfdf5;
+    color: #059669;
+    border-color: #34d399;
+}
+
+.crop-select-tag .checkmark {
+    display: none;
+    font-size: 0.8rem;
+}
+
+.crop-select-tag.active .checkmark {
+    display: inline;
+}
+
 .op-input {
     padding: 14px 16px;
     border-radius: 14px;

@@ -1147,6 +1147,29 @@ document.addEventListener('DOMContentLoaded', () => {
             opTypeBtns.forEach(b => b.classList.remove('active'));
             opTypeBtns[0].classList.add('active');
         }
+
+        const cropSelector = document.getElementById('op-crop-selector');
+        if (cropSelector) {
+            cropSelector.innerHTML = '';
+            myGarden.forEach(g => {
+                const veg = vegetables.find(v => v.id === g.vegId) || { name: g.vegId };
+                const tag = document.createElement('div');
+                tag.className = 'crop-select-tag';
+                if (g.vegId === vegId) {
+                    tag.classList.add('active');
+                }
+                tag.dataset.id = g.vegId;
+                tag.innerHTML = `<span class="checkmark">✓</span> ${veg.name}`;
+                tag.addEventListener('click', () => {
+                    tag.classList.toggle('active');
+                    if (cropSelector.querySelectorAll('.crop-select-tag.active').length === 0) {
+                        tag.classList.add('active');
+                    }
+                });
+                cropSelector.appendChild(tag);
+            });
+        }
+
         if (opModalOverlay) opModalOverlay.classList.add('active');
     };
 
@@ -1163,17 +1186,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const existingIndex = myGarden.findIndex(g => g.vegId === currentOpVegId);
-            if (existingIndex >= 0) {
-                if (!myGarden[existingIndex].operations) {
-                    myGarden[existingIndex].operations = [];
+            const cropSelector = document.getElementById('op-crop-selector');
+            let targetVegIds = [currentOpVegId];
+            if (cropSelector) {
+                const activeTags = cropSelector.querySelectorAll('.crop-select-tag.active');
+                if (activeTags.length > 0) {
+                    targetVegIds = Array.from(activeTags).map(t => t.dataset.id);
                 }
-                myGarden[existingIndex].operations.push({
-                    id: Date.now().toString(),
-                    date: dateVal,
-                    type: typeVal,
-                    remark: remarkVal
-                });
+            }
+
+            let updated = false;
+            myGarden.forEach(g => {
+                if (targetVegIds.includes(g.vegId)) {
+                    if (!g.operations) {
+                        g.operations = [];
+                    }
+                    g.operations.push({
+                        id: Date.now().toString() + '_' + Math.random().toString(36).substring(7),
+                        date: dateVal,
+                        type: typeVal,
+                        remark: remarkVal
+                    });
+                    updated = true;
+                }
+            });
+
+            if (updated) {
                 saveGarden();
                 if (opModalOverlay) opModalOverlay.classList.remove('active');
                 renderMyGarden();
