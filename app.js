@@ -492,6 +492,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         filteredFertilizers.forEach(item => {
             const calendarText = item.calendar.default || '';
+
+            let currentStageIndex = 0;
+            const totalDays = fert.id === 'eco_enzyme' ? 90 : (fert.id === 'aerobic_compost' ? 60 : 45);
+            if (daysPassed > 0) {
+                currentStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
+                if (currentStageIndex >= fert.stages.length) currentStageIndex = fert.stages.length - 1;
+            }
+
+            let timelineHtml = '<div class="growth-timeline">';
+            fert.stages.forEach((stage, idx) => {
+                let statusClass = '';
+                if (idx < currentStageIndex) statusClass = 'past';
+                else if (idx === currentStageIndex) statusClass = 'current';
+                else statusClass = 'future';
+                
+                timelineHtml += `
+                    <div class="timeline-stage ${statusClass}">
+                        <img src="${stage.image}" alt="${stage.name}" class="timeline-img">
+                        <span class="timeline-label">${stage.name}</span>
+                    </div>
+                `;
+            });
+            timelineHtml += '</div>';
+
+            let guideHtml = `
+                <div class="operations-timeline">
+                    <div class="operations-timeline-title">📝 当前操作指南: ${fert.stages[currentStageIndex].name}</div>
+                    <p style="color: #4b5563; font-size: 0.95rem; margin-top: 5px; line-height: 1.6;">${fert.stages[currentStageIndex].content}</p>
+                </div>
+            `;
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
 
             const imgHtml = item.image 
@@ -1306,6 +1336,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const startDateStr = record.startDate ? record.startDate.split('T')[0] : '未知时间';
             const daysPassed = record.startDate ? Math.floor((new Date() - new Date(record.startDate)) / (1000 * 60 * 60 * 24)) : 0;
             
+
+            let currentStageIndex = 0;
+            const totalDays = fert.id === 'eco_enzyme' ? 90 : (fert.id === 'aerobic_compost' ? 60 : 45);
+            if (daysPassed > 0) {
+                currentStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
+                if (currentStageIndex >= fert.stages.length) currentStageIndex = fert.stages.length - 1;
+            }
+
+            let timelineHtml = '<div class="growth-timeline">';
+            fert.stages.forEach((stage, idx) => {
+                let statusClass = '';
+                if (idx < currentStageIndex) statusClass = 'past';
+                else if (idx === currentStageIndex) statusClass = 'current';
+                else statusClass = 'future';
+                
+                timelineHtml += `
+                    <div class="timeline-stage ${statusClass}">
+                        <img src="${stage.image}" alt="${stage.name}" class="timeline-img">
+                        <span class="timeline-label">${stage.name}</span>
+                    </div>
+                `;
+            });
+            timelineHtml += '</div>';
+
+            let guideHtml = `
+                <div class="operations-timeline">
+                    <div class="operations-timeline-title">📝 当前操作指南: ${fert.stages[currentStageIndex].name}</div>
+                    <p style="color: #4b5563; font-size: 0.95rem; margin-top: 5px; line-height: 1.6;">${fert.stages[currentStageIndex].content}</p>
+                </div>
+            `;
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             const imgHtml = fert.image 
                 ? `<img src="${fert.image}" alt="${fert.name}" class="mygarden-main-img">`
@@ -1329,9 +1389,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             </span>
                         </div>
                         
+
+                        ${timelineHtml}
+                        ${guideHtml}
                         <div style="margin-top: 25px; border-top: 2px dashed rgba(22, 101, 52, 0.2); padding-top: 15px;">
                             <button onclick="finishFertRecord('${record.id}')" style="padding: 8px 16px; border-radius: 8px; border: none; background: var(--primary-color); color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">✅ 标记为制作完成</button>
                         </div>
+
                     </div>
                 </div>
             `;
