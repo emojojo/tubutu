@@ -1306,28 +1306,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const startDateStr = record.startDate ? record.startDate.split('T')[0] : '未知时间';
             const daysPassed = record.startDate ? Math.floor((new Date() - new Date(record.startDate)) / (1000 * 60 * 60 * 24)) : 0;
             
+            const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
+            const imgHtml = fert.image 
+                ? `<img src="${fert.image}" alt="${fert.name}" class="mygarden-main-img">`
+                : `<div class="mygarden-main-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1);">${fert.icon}</div>`;
+
             cardsHtml += `
                 <div class="mygarden-card" style="position: relative;">
-                    <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
-                        <button onclick="deleteFertRecord('${record.id}')" style="background: rgba(255,59,48,0.1); color: #FF3B30; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">删除</button>
-                    </div>
+                    <button class="remove-garden-item-btn" title="删除记录" onclick="deleteFertRecord('${record.id}')" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #ef4444; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">❌</button>
+                    <div class="row-number">${i + 1}</div>
+                    ${imgHtml}
                     
-                    <div class="mygarden-img-container" style="background: #f5f7fa; padding: 20px;">
-                        <img src="${fert.image}" alt="${fert.name}" class="mygarden-main-img" style="object-fit: contain;">
-                    </div>
-                    
-                    <div class="mygarden-info">
-                        <div class="mygarden-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                            <h3 style="margin: 0;">${fert.icon} ${fert.name}</h3>
-                            <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: bold;">已进行 ${daysPassed} 天</span>
+                    <div class="veg-info">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h3 style="margin: 0; font-size: 1.3rem;">${fert.name}</h3>
+                            <span style="font-size: 0.9rem; color: #555;">📍 开始制作: ${startDateStr}</span>
+                        </div>
+                        <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+                            <span class="days-badge">已进行 ${daysPassed} 天</span>
+                            <span class="gdd-badge" style="background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
+                                🌡️ 适宜发酵温度: 15-25°C
+                            </span>
                         </div>
                         
-                        <div class="mygarden-meta">
-                            <span class="meta-item">📅 开始制作: ${startDateStr}</span>
-                        </div>
-                        
-                        <div style="margin-top: 15px;">
-                            <button onclick="finishFertRecord('${record.id}')" style="width: 100%; padding: 10px; border-radius: 8px; border: none; background: var(--primary-color); color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">✅ 标记为制作完成</button>
+                        <div style="margin-top: 25px; border-top: 2px dashed rgba(22, 101, 52, 0.2); padding-top: 15px;">
+                            <button onclick="finishFertRecord('${record.id}')" style="padding: 8px 16px; border-radius: 8px; border: none; background: var(--primary-color); color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">✅ 标记为制作完成</button>
                         </div>
                     </div>
                 </div>
