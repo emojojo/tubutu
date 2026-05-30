@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=60">
+    <link rel="stylesheet" href="styles.css?v=63">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -56,7 +56,6 @@
         <!-- Main Tabs -->
         <div class="main-tabs">
             <button class="main-tab-btn" data-target="mygarden-section">🧑‍🌾 我的菜园</button>
-            <button class="main-tab-btn" data-target="history-section">🏆 收获历史</button>
             <button class="main-tab-btn active" data-target="veg-section">🥗 蔬果种植</button>
             <button class="main-tab-btn" data-target="fert-section">💩 自制肥料</button>
             <button class="main-tab-btn" data-target="protection-section">🛡️ 生态防虫</button>
@@ -115,38 +114,44 @@
 
         <!-- My Garden Section -->
         <div id="mygarden-section" class="tab-content" style="display: none;">
-            <section class="filter-section" id="mygarden-filter-section" style="display: none; margin-bottom: -10px;">
-                <div class="category-filters" id="mygarden-category-filters">
-                    <button class="mygarden-filter-btn filter-btn active" data-id="all">全部蔬果</button>
-                    <!-- Categories will be populated by JS -->
-                </div>
-            </section>
-            <section class="mygarden-wrapper" style="padding: 20px 0;">
-                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="mygarden-empty-msg">
-                    你的菜园空空如也，快去“蔬果种植”里挑选想种的植物吧！
-                </p>
-                <div class="vegetable-grid" id="mygarden-grid">
-                    <!-- My Garden cards will be populated by JS -->
-                </div>
-            </section>
-        </div>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 10px; margin-bottom: 20px;">
+                <button class="sub-tab-btn active" id="btn-show-active">🌱 种植中</button>
+                <button class="sub-tab-btn" id="btn-show-history">🏆 收获历史</button>
+            </div>
+            
+            <div id="mygarden-active-view">
+                <section class="filter-section" id="mygarden-filter-section" style="display: none; margin-bottom: -10px;">
+                    <div class="category-filters" id="mygarden-category-filters">
+                        <button class="mygarden-filter-btn filter-btn active" data-id="all">全部蔬果</button>
+                        <!-- Categories will be populated by JS -->
+                    </div>
+                </section>
+                <section class="mygarden-wrapper" style="padding: 20px 0;">
+                    <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="mygarden-empty-msg">
+                        你的菜园空空如也，快去“蔬果种植”里挑选想种的植物吧！
+                    </p>
+                    <div class="vegetable-grid" id="mygarden-grid">
+                        <!-- My Garden cards will be populated by JS -->
+                    </div>
+                </section>
+            </div>
 
-        <!-- History Section -->
-        <div id="history-section" class="tab-content" style="display: none;">
-            <section class="filter-section" id="history-filter-section" style="display: none; margin-bottom: -10px;">
-                <div class="category-filters" id="history-category-filters">
-                    <button class="history-filter-btn filter-btn active" data-id="all">全部蔬果</button>
-                    <!-- Categories will be populated by JS -->
-                </div>
-            </section>
-            <section class="history-wrapper" style="padding: 20px 0;">
-                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="history-empty-msg">
-                    暂无收获历史，继续努力种植吧！
-                </p>
-                <div class="vegetable-grid" id="history-grid">
-                    <!-- History cards will be populated by JS -->
-                </div>
-            </section>
+            <div id="mygarden-history-view" style="display: none;">
+                <section class="filter-section" id="history-filter-section" style="display: none; margin-bottom: -10px;">
+                    <div class="category-filters" id="history-category-filters">
+                        <button class="history-filter-btn filter-btn active" data-id="all">全部蔬果</button>
+                        <!-- Categories will be populated by JS -->
+                    </div>
+                </section>
+                <section class="history-wrapper" style="padding: 20px 0;">
+                    <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="history-empty-msg">
+                        暂无收获历史，继续努力种植吧！
+                    </p>
+                    <div class="vegetable-grid" id="history-grid">
+                        <!-- History cards will be populated by JS -->
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
 
@@ -262,6 +267,6 @@
         </div>
     </div>
 
-    <script type="module" src="app.js?v=1780082772010"></script>
+    <script type="module" src="app.js?v=1780082772012"></script>
 </body>
 </html>

@@ -376,6 +376,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const btnShowActive = document.getElementById('btn-show-active');
+    const btnShowHistory = document.getElementById('btn-show-history');
+    const mygardenActiveView = document.getElementById('mygarden-active-view');
+    const mygardenHistoryView = document.getElementById('mygarden-history-view');
+
+    if (btnShowActive && btnShowHistory) {
+        btnShowActive.addEventListener('click', () => {
+            btnShowActive.classList.add('active');
+            btnShowHistory.classList.remove('active');
+            mygardenActiveView.style.display = 'block';
+            mygardenHistoryView.style.display = 'none';
+            renderMyGarden();
+        });
+
+        btnShowHistory.addEventListener('click', () => {
+            btnShowHistory.classList.add('active');
+            btnShowActive.classList.remove('active');
+            mygardenHistoryView.style.display = 'block';
+            mygardenActiveView.style.display = 'none';
+            renderHistory();
+        });
+    }
+
     closeBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
