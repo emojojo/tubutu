@@ -130,7 +130,7 @@ export const vegetables = [
   },
   { id: 'melon',
     avatar: 'assets/icons/icon_melon.png',
-    name: '羊角蜜/甜瓜',
+    name: '甜瓜',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍈',
     image: 'images/crop_melon.png',
@@ -162,7 +162,7 @@ export const vegetables = [
         water_fertilizer: '坐果后进入膨大期，立即追施膨瓜肥（腐熟饼肥水或高钾肥），配合叶面喷施磷酸二氢钾，采收前10天断水。',
         water_image: 'images/stages/melon_3_v3_1779513893106.png',
         pest_management: '防范果实腐烂病、白粉病。',
-        pruning_trellising: '羊角蜜等甜瓜主要靠侧枝结瓜，雌花开放时需在上午进行人工授粉。',
+        pruning_trellising: '甜瓜主要靠侧枝结瓜，雌花开放时需在上午进行人工授粉。',
         pruning_image: 'images/stages/melon_2_v3_1779513877039.png'
       }
     ],
