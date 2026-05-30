@@ -276,8 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const defaultRegion = regions[0];
     let currentRegion = localStorage.getItem('tubutu_region') || defaultRegion.id;
+    let currentMonth = 'all';
     let currentCategory = 'all';
     let currentSearchQuery = '';
+    let currentMyGardenCategory = 'all';
 
     // Initialize Regions
     regions.forEach(region => {
@@ -332,13 +334,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners
     categoryFilters.addEventListener('click', (e) => {
-        if (e.target.classList.contains('filter-btn')) {
+        if (e.target.classList.contains('filter-btn') || e.target.closest('.filter-btn')) {
+            const btn = e.target.closest('.filter-btn');
             document.querySelectorAll('#category-filters .filter-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            currentCategory = e.target.dataset.id;
+            btn.classList.add('active');
+            currentCategory = btn.dataset.id;
             renderGrid();
         }
     });
+
+    const mygardenCategoryFilters = document.getElementById('mygarden-category-filters');
+    if (mygardenCategoryFilters) {
+        categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn';
+            btn.dataset.id = cat.id;
+            btn.innerHTML = `${cat.icon} <span>${cat.name}</span>`;
+            mygardenCategoryFilters.appendChild(btn);
+        });
+
+        mygardenCategoryFilters.addEventListener('click', (e) => {
+            const btn = e.target.closest('.filter-btn');
+            if (btn) {
+                document.querySelectorAll('#mygarden-category-filters .filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentMyGardenCategory = btn.dataset.id;
+                renderMyGarden();
+            }
+        });
+    }
 
 
     const btnShowActive = document.getElementById('btn-show-active');
@@ -356,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mygardenActiveView.style.display = 'block';
             mygardenHistoryView.style.display = 'none';
             if(mygardenFertView) mygardenFertView.style.display = 'none';
+            if(mygardenCategoryFilters) mygardenCategoryFilters.style.display = 'inline-flex';
             renderMyGarden();
         });
 
@@ -366,6 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mygardenHistoryView.style.display = 'block';
             mygardenActiveView.style.display = 'none';
             if(mygardenFertView) mygardenFertView.style.display = 'none';
+            if(mygardenCategoryFilters) mygardenCategoryFilters.style.display = 'none';
             renderHistory();
         });
         
@@ -377,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(mygardenFertView) mygardenFertView.style.display = 'block';
                 mygardenActiveView.style.display = 'none';
                 mygardenHistoryView.style.display = 'none';
+                if(mygardenCategoryFilters) mygardenCategoryFilters.style.display = 'none';
                 renderMyFertilizers();
             });
         }
@@ -1079,7 +1106,16 @@ document.addEventListener('DOMContentLoaded', () => {
         emptyMsg.style.display = 'none';
         grid.innerHTML = '';
         
-        const filteredGarden = activeGarden;
+        const filteredGarden = activeGarden.filter(gardenItem => {
+            if (currentMyGardenCategory === 'all') return true;
+            const veg = vegetables.find(v => v.id === gardenItem.vegId);
+            return veg && veg.categoryId === currentMyGardenCategory;
+        });
+        
+        if (filteredGarden.length === 0) {
+            grid.innerHTML = '<p style="text-align: center; color: var(--text-muted); width: 100%; padding: 20px;">没有找到该分类下的种植项目</p>';
+            return;
+        }
         
         const cardsHtml = [];
         
