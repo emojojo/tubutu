@@ -382,27 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    const btnAddFertRecord = document.getElementById('btn-add-fert-record');
-    if (btnAddFertRecord) {
-        btnAddFertRecord.addEventListener('click', () => {
-            const select = document.getElementById('new-fert-select');
-            const fertId = select.value;
-            if (!fertId) {
-                alert('请先选择一种肥料');
-                return;
-            }
-            myGarden.unshift({
-                id: 'f_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7),
-                type: 'fertilizer',
-                fertId: fertId,
-                startDate: new Date().toISOString(),
-                isHarvested: false
-            });
-            saveGarden();
-            renderMyFertilizers();
-            select.value = '';
-        });
-    }
+
 
 
     closeBtn.addEventListener('click', closeModal);
@@ -707,6 +687,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (item.type === 'fertilizer' || item.type === 'protection' || item.type === 'model') {
             contentHtml += `
                 <div class="modal-body">
+                    ${item.type === 'fertilizer' ? `
+                    <div class="modal-section garden-control-section" style="margin-top: 0; margin-bottom: 20px; background: #f0fdf4; border-color: #bbf7d0;">
+                        <h3 style="color: #166534; display: flex; align-items: center; gap: 8px;">🏡 记录到我的菜园</h3>
+                        <div class="garden-control-flex" style="flex-wrap: wrap; gap: 15px;">
+                            <div class="date-picker-group">
+                                <label style="color: #166534; font-size: 1rem;">开始制作日期：</label>
+                                <input type="date" id="fert-date-input" value="${new Date().toISOString().split('T')[0]}" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
+                            </div>
+                            <button id="toggle-fert-btn" class="add-btn">
+                                ➕ 加入制作记录
+                            </button>
+                        </div>
+                    </div>` : ''}
+
                     <div class="modal-section">
                         <h4>${item.type === 'protection' ? '📖 原理与适用' : item.type === 'model' ? '📖 核心理念' : '📖 介绍与原理'}</h4>
                         <p style="font-size: 15px; line-height: 1.6; color: #4b5563; margin-top: 8px;">${item.description}</p>
@@ -856,6 +850,37 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
+
+        if (item.type === 'fertilizer') {
+            const toggleFertBtn = document.getElementById('toggle-fert-btn');
+            const fertDateInput = document.getElementById('fert-date-input');
+            if (toggleFertBtn) {
+                toggleFertBtn.addEventListener('click', () => {
+                    const dateVal = fertDateInput ? fertDateInput.value : new Date().toISOString().split('T')[0];
+                    const newId = 'f_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+                    
+                    myGarden.unshift({ 
+                        id: newId, 
+                        type: 'fertilizer',
+                        fertId: item.id, 
+                        startDate: dateVal,
+                        isHarvested: false
+                    });
+                    
+                    const originalText = toggleFertBtn.innerHTML;
+                    toggleFertBtn.innerHTML = '✅ 添加成功！';
+                    setTimeout(() => {
+                        toggleFertBtn.innerHTML = '➕ 再次添加新批次';
+                    }, 1500);
+
+                    saveGarden();
+                    const mygardenFertView = document.getElementById('mygarden-fert-view');
+                    if (mygardenFertView && mygardenFertView.style.display === 'block') {
+                        renderMyFertilizers();
+                    }
+                });
+            }
+        }
         if (item.type !== 'fertilizer' && item.type !== 'protection' && item.type !== 'model') {
             const toggleBtn = document.getElementById('toggle-garden-btn');
             const dateInput = document.getElementById('garden-date-input');
@@ -1257,7 +1282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function renderMyFertilizers() {
-        const grid = document.getElementById('fert-grid');
+        const grid = document.getElementById('mygarden-fert-grid');
         const emptyMsg = document.getElementById('fert-empty-msg');
         if (!grid) return;
         
