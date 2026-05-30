@@ -56,6 +56,7 @@
         <!-- Main Tabs -->
         <div class="main-tabs">
             <button class="main-tab-btn" data-target="mygarden-section">🧑‍🌾 我的菜园</button>
+            <button class="main-tab-btn" data-target="history-section">🏆 收获历史</button>
             <button class="main-tab-btn active" data-target="veg-section">🥗 蔬果种植</button>
             <button class="main-tab-btn" data-target="fert-section">💩 自制肥料</button>
             <button class="main-tab-btn" data-target="protection-section">🛡️ 生态防虫</button>
@@ -120,6 +121,18 @@
                 </p>
                 <div class="vegetable-grid" id="mygarden-grid">
                     <!-- My Garden cards will be populated by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- History Section -->
+        <div id="history-section" class="tab-content" style="display: none;">
+            <section class="history-wrapper" style="padding: 20px 0;">
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="history-empty-msg">
+                    暂无收获历史，继续努力种植吧！
+                </p>
+                <div class="vegetable-grid" id="history-grid">
+                    <!-- History cards will be populated by JS -->
                 </div>
             </section>
         </div>
@@ -237,6 +250,6 @@
         </div>
     </div>
 
-    <script type="module" src="app.js?v=1780082772006"></script>
+    <script type="module" src="app.js?v=1780082772007"></script>
 </body>
 </html>

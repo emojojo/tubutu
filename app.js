@@ -249,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('model-section').style.display = 'none';
             const myGardenSection = document.getElementById('mygarden-section');
             if (myGardenSection) myGardenSection.style.display = 'none';
+            const historySection = document.getElementById('history-section');
+            if (historySection) historySection.style.display = 'none';
 
             const targetId = btn.dataset.target;
             if (targetId === 'veg-section') {
@@ -265,6 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (targetId === 'mygarden-section') {
                 if (myGardenSection) myGardenSection.style.display = 'block';
                 renderMyGarden();
+            } else if (targetId === 'history-section') {
+                if (historySection) historySection.style.display = 'block';
+                renderHistory();
             }
         });
     });
@@ -971,7 +976,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const emptyMsg = document.getElementById('mygarden-empty-msg');
         if (!grid) return;
         
-        if (myGarden.length === 0) {
+        const activeGarden = myGarden.filter(g => !g.isHarvested);
+        
+        if (activeGarden.length === 0) {
             grid.innerHTML = '';
             emptyMsg.style.display = 'block';
             return;
@@ -982,8 +989,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const cardsHtml = [];
         
-        for (let index = 0; index < myGarden.length; index++) {
-            const gardenItem = myGarden[index];
+        for (let index = 0; index < activeGarden.length; index++) {
+            const gardenItem = activeGarden[index];
             const veg = vegetables.find(v => v.id === gardenItem.vegId);
             if (!veg) continue;
             
@@ -1066,7 +1073,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                  `;
             }
-            operationsHtml += `<button class="add-op-btn" style="margin-top: 10px;">➕ 添加农事记录</button>`;
+            operationsHtml += `
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button class="add-op-btn" style="flex: 1;">➕ 添加农事记录</button>
+                    <button class="harvest-btn" data-id="${gardenItem.id}" style="flex: 1; background-color: #22c55e; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: opacity 0.2s;">🏆 标记已采收</button>
+                </div>
+            `;
 
             const cardHtml = `
                 <div class="mygarden-card" style="position: relative;">
@@ -1117,7 +1129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             cardEl.addEventListener('click', (e) => {
-                if (e.target.closest('.add-op-btn') || e.target.closest('.remove-garden-item-btn')) return;
+                if (e.target.closest('.add-op-btn') || e.target.closest('.remove-garden-item-btn') || e.target.closest('.harvest-btn')) return;
                 openModal(c.veg, false);
             });
 
@@ -1129,6 +1141,121 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
+            const harvestBtn = cardEl.querySelector('.harvest-btn');
+            if (harvestBtn) {
+                harvestBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (confirm('确定这批作物已经采收完毕了吗？它将被移入收获历史记录中。')) {
+                        const targetId = harvestBtn.dataset.id;
+                        const item = myGarden.find(g => g.id === targetId);
+                        if (item) {
+                            item.isHarvested = true;
+                            item.harvestDate = new Date().toISOString().split('T')[0];
+                            saveGarden();
+                            renderMyGarden();
+                        }
+                    }
+                });
+            }
+
+            grid.appendChild(cardEl);
+        });
+    }
+
+    async function renderHistory() {
+        const grid = document.getElementById('history-grid');
+        const emptyMsg = document.getElementById('history-empty-msg');
+        if (!grid) return;
+        
+        const historyGarden = myGarden.filter(g => g.isHarvested);
+        
+        if (historyGarden.length === 0) {
+            grid.innerHTML = '';
+            emptyMsg.style.display = 'block';
+            return;
+        }
+        
+        emptyMsg.style.display = 'none';
+        grid.innerHTML = '';
+        
+        const cardsHtml = [];
+        
+        for (let index = 0; index < historyGarden.length; index++) {
+            const gardenItem = historyGarden[index];
+            const veg = vegetables.find(v => v.id === gardenItem.vegId);
+            if (!veg) continue;
+            
+            const city = cities.find(c => c.id === gardenItem.cityId);
+            const cityName = city ? city.name : '未知地区';
+            
+            const categoryGradients = {
+                leafy: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)',
+                root: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+                fruit: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)',
+                legume: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+                allium: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)'
+            };
+            const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
+            const imgHtml = veg.image 
+                ? `<img src="${veg.image}" alt="${veg.name}" class="mygarden-main-img" style="filter: grayscale(30%);">`
+                : `<div class="mygarden-main-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1); filter: grayscale(30%);">${veg.icon}</div>`;
+
+            let operationsHtml = '';
+            const ops = gardenItem.operations || [];
+            if (ops.length > 0) {
+                const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
+                const typeMap = {
+                    'water': { icon: '<img src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
+                };
+                operationsHtml = `
+                    <div class="operations-timeline">
+                        <div class="operations-timeline-title">📝 历史农事记录</div>
+                        <div class="op-list">
+                            ${sortedOps.map(op => {
+                                const t = typeMap[op.type] || typeMap['other'];
+                                return `
+                                    <div class="op-item">
+                                        <div class="op-marker"></div>
+                                        <div class="op-date">${op.date} <span class="op-type-badge">${t.icon} ${t.label}</span></div>
+                                        ${op.remark ? `<div class="op-remark">${op.remark}</div>` : ''}
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            const cardHtml = `
+                <div class="mygarden-card" style="position: relative; opacity: 0.9;">
+                    <div class="row-number">🏆</div>
+                    ${imgHtml}
+                    <div class="veg-info">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
+                            <span style="font-size: 0.9rem; color: #555;">📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
+                        </div>
+                        <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+                            <span class="days-badge" style="background: #f3f4f6; color: #374151;">已于 ${gardenItem.harvestDate} 采收完毕</span>
+                        </div>
+                        ${operationsHtml}
+                    </div>
+                </div>
+            `;
+            cardsHtml.push({ html: cardHtml, veg: veg, gardenItem: gardenItem });
+        }
+        
+        cardsHtml.forEach(c => {
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = c.html.trim();
+            const cardEl = wrapper.firstChild;
             grid.appendChild(cardEl);
         });
     }
