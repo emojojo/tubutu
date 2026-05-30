@@ -10,6 +10,11 @@ try {
     const stored = localStorage.getItem('tubutu_my_garden');
     if (stored) {
         myGarden = JSON.parse(stored);
+        myGarden.forEach(g => {
+            if (!g.id) {
+                g.id = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+            }
+        });
     }
 } catch (e) {
     console.error('Failed to parse myGarden data', e);
@@ -676,23 +681,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="garden-control-flex" style="flex-wrap: wrap; gap: 15px;">
                             <div class="date-picker-group">
                                 <label style="color: #166534; font-size: 1rem;">播种城市：</label>
-                                <select id="garden-city-input" ${isInGarden ? 'disabled' : ''} style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
+                                <select id="garden-city-input" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
                                     ${cityOptionsHtml}
                                 </select>
                             </div>
                             <div class="date-picker-group">
                                 <label style="color: #166534; font-size: 1rem;">种植方式：</label>
-                                <select id="garden-method-input" ${isInGarden ? 'disabled' : ''} style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
+                                <select id="garden-method-input" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
                                     <option value="sow" ${defaultMethod !== 'transplant' ? 'selected' : ''}>🌱 播种种子</option>
                                     <option value="transplant" ${defaultMethod === 'transplant' ? 'selected' : ''}>🪴 买苗移栽</option>
                                 </select>
                             </div>
                             <div class="date-picker-group">
                                 <label style="color: #166534; font-size: 1rem;" id="garden-date-label">${defaultMethod === 'transplant' ? '移栽日期：' : '播种日期：'}</label>
-                                <input type="date" id="garden-date-input" value="${defaultDate}" ${isInGarden ? 'disabled' : ''} style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
+                                <input type="date" id="garden-date-input" value="${defaultDate}" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
                             </div>
-                            <button id="toggle-garden-btn" class="${isInGarden ? 'remove-btn' : 'add-btn'}">
-                                ${isInGarden ? '❌ 移出我的菜园' : '🌱 加入我的菜园'}
+                            <button id="toggle-garden-btn" class="add-btn">
+                                🌱 加入我的菜园
                             </button>
                         </div>
                     </div>
@@ -786,28 +791,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const cityInput = document.getElementById('garden-city-input');
             if (toggleBtn) {
                 toggleBtn.addEventListener('click', () => {
-                    const existingIndex = myGarden.findIndex(g => g.vegId === item.id);
-                    if (existingIndex >= 0) {
-                        if (!confirm('确定要从虚拟菜园中移除它吗？您的种植进度将无法恢复。')) return;
-                        myGarden.splice(existingIndex, 1);
-                        toggleBtn.className = 'add-btn';
-                        toggleBtn.innerHTML = '🌱 加入我的菜园';
-                        dateInput.disabled = false;
-                        cityInput.disabled = false;
-                        if (methodInput) methodInput.disabled = false;
-                    } else {
-                        const dateVal = dateInput.value || new Date().toISOString().split('T')[0];
-                        const cityVal = cityInput.value || (cities.length > 0 ? cities[0].id : '');
-                        const methodVal = methodInput ? methodInput.value : 'sow';
-                        myGarden.push({ vegId: item.id, plantDate: dateVal, cityId: cityVal, method: methodVal });
-                        localStorage.setItem('tubutu_default_city', cityVal);
-                        localStorage.setItem('tubutu_default_method', methodVal);
-                        toggleBtn.className = 'remove-btn';
-                        toggleBtn.innerHTML = '❌ 移出我的菜园';
-                        dateInput.disabled = true;
-                        cityInput.disabled = true;
-                        if (methodInput) methodInput.disabled = true;
-                    }
+                    const dateVal = dateInput.value || new Date().toISOString().split('T')[0];
+                    const cityVal = cityInput.value || (cities.length > 0 ? cities[0].id : '');
+                    const methodVal = methodInput ? methodInput.value : 'sow';
+                    const newId = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+                    
+                    myGarden.push({ 
+                        id: newId, 
+                        vegId: item.id, 
+                        plantDate: dateVal, 
+                        cityId: cityVal, 
+                        method: methodVal 
+                    });
+                    
+                    localStorage.setItem('tubutu_default_city', cityVal);
+                    localStorage.setItem('tubutu_default_method', methodVal);
+                    
+                    const originalText = toggleBtn.innerHTML;
+                    toggleBtn.innerHTML = '✅ 添加成功！';
+                    setTimeout(() => {
+                        toggleBtn.innerHTML = '🌱 再次添加新批次';
+                    }, 1500);
+
                     saveGarden();
                     const myGardenSection = document.getElementById('mygarden-section');
                     if (myGardenSection && myGardenSection.style.display === 'block') {
@@ -1064,7 +1069,8 @@ document.addEventListener('DOMContentLoaded', () => {
             operationsHtml += `<button class="add-op-btn" style="margin-top: 10px;">➕ 添加农事记录</button>`;
 
             const cardHtml = `
-                <div class="mygarden-card">
+                <div class="mygarden-card" style="position: relative;">
+                    <button class="remove-garden-item-btn" title="移出菜园" data-id="${gardenItem.id}" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #ef4444; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">❌</button>
                     <div class="row-number">${index + 1}</div>
                     ${imgHtml}
                     <div class="veg-info">
@@ -1089,7 +1095,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-            cardsHtml.push({ html: cardHtml, veg: veg });
+            cardsHtml.push({ html: cardHtml, veg: veg, gardenItem: gardenItem });
         }
         
         grid.innerHTML = '';
@@ -1097,9 +1103,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const wrapper = document.createElement('div');
             wrapper.innerHTML = c.html.trim();
             const cardEl = wrapper.firstChild;
-            
+            const removeBtn = cardEl.querySelector('.remove-garden-item-btn');
+            if (removeBtn) {
+                removeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (confirm('确定要移出这个播期的记录吗？相关农事记录将被一起删除。')) {
+                        const targetId = removeBtn.dataset.id;
+                        myGarden = myGarden.filter(g => g.id !== targetId);
+                        saveGarden();
+                        renderMyGarden();
+                    }
+                });
+            }
+
             cardEl.addEventListener('click', (e) => {
-                if (e.target.closest('.add-op-btn')) return;
+                if (e.target.closest('.add-op-btn') || e.target.closest('.remove-garden-item-btn')) return;
                 openModal(c.veg, false);
             });
 
@@ -1107,7 +1125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (addOpBtn) {
                 addOpBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    openOperationModal(c.veg.id);
+                    openOperationModal(c.gardenItem.id);
                 });
             }
 
@@ -1122,7 +1140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const opRemarkInput = document.getElementById('op-remark-input');
     const opSaveBtn = document.getElementById('op-save-btn');
     const opTypeBtns = document.querySelectorAll('.op-type-btn');
-    let currentOpVegId = null;
+    let currentOpGardenItemId = null;
 
     if (opTypeBtns) {
         opTypeBtns.forEach(btn => {
@@ -1139,8 +1157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.openOperationModal = function(vegId) {
-        currentOpVegId = vegId;
+    window.openOperationModal = function(gardenItemId) {
+        currentOpGardenItemId = gardenItemId;
         if (opDateInput) opDateInput.value = new Date().toISOString().split('T')[0];
         if (opRemarkInput) opRemarkInput.value = '';
         if (opTypeBtns && opTypeBtns.length > 0) {
@@ -1155,11 +1173,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const veg = vegetables.find(v => v.id === g.vegId) || { name: g.vegId };
                 const tag = document.createElement('div');
                 tag.className = 'crop-select-tag';
-                if (g.vegId === vegId) {
+                if (g.id === gardenItemId) {
                     tag.classList.add('active');
                 }
-                tag.dataset.id = g.vegId;
-                tag.innerHTML = `<span class="checkmark">✓</span> ${veg.name}`;
+                tag.dataset.id = g.id;
+                tag.innerHTML = `<span class="checkmark">✓</span> ${veg.name} (${g.plantDate})`;
                 tag.addEventListener('click', () => {
                     tag.classList.toggle('active');
                     if (cropSelector.querySelectorAll('.crop-select-tag.active').length === 0) {
@@ -1187,17 +1205,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const cropSelector = document.getElementById('op-crop-selector');
-            let targetVegIds = [currentOpVegId];
+            let targetGardenItemIds = [currentOpGardenItemId];
             if (cropSelector) {
                 const activeTags = cropSelector.querySelectorAll('.crop-select-tag.active');
                 if (activeTags.length > 0) {
-                    targetVegIds = Array.from(activeTags).map(t => t.dataset.id);
+                    targetGardenItemIds = Array.from(activeTags).map(t => t.dataset.id);
                 }
             }
 
             let updated = false;
             myGarden.forEach(g => {
-                if (targetVegIds.includes(g.vegId)) {
+                if (targetGardenItemIds.includes(g.id)) {
                     if (!g.operations) {
                         g.operations = [];
                     }
