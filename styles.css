@@ -950,7 +950,7 @@ footer {
     cursor: not-allowed;
 }
 
-#toggle-garden-btn {
+#toggle-garden-btn, #toggle-fert-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
@@ -960,21 +960,21 @@ footer {
     transition: all 0.2s;
 }
 
-#toggle-garden-btn.add-btn {
+#toggle-garden-btn.add-btn, #toggle-fert-btn.add-btn {
     background: var(--primary);
     color: white;
 }
 
-#toggle-garden-btn.add-btn:hover {
+#toggle-garden-btn.add-btn:hover, #toggle-fert-btn.add-btn:hover {
     background: var(--primary-dark);
 }
 
-#toggle-garden-btn.remove-btn {
+#toggle-garden-btn.remove-btn, #toggle-fert-btn.remove-btn {
     background: #fee2e2;
     color: #b91c1c;
 }
 
-#toggle-garden-btn.remove-btn:hover {
+#toggle-garden-btn.remove-btn:hover, #toggle-fert-btn.remove-btn:hover {
     background: #fca5a5;
 }
 
