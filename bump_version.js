@@ -8,6 +8,7 @@ const indexPath = path.join(__dirname, 'index.html');
 let indexHtml = fs.readFileSync(indexPath, 'utf8');
 indexHtml = indexHtml.replace(/app\.js\?v=\d+/g, `app.js?v=${version}`);
 indexHtml = indexHtml.replace(/data\.js\?v=\d+/g, `data.js?v=${version}`);
+indexHtml = indexHtml.replace(/styles\.css\?v=\d+/g, `styles.css?v=${version}`);
 fs.writeFileSync(indexPath, indexHtml);
 
 // Update app.js

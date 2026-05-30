@@ -9,7 +9,7 @@ node bump_version.js
 
 # Git operations
 echo "Adding changes to git..."
-git add index.html app.js bump_version.js deploy.sh data.js
+git add index.html app.js bump_version.js deploy.sh data.js styles.css
 git add assets/icons/ || true
 
 # Commit with a provided message, or default to "Auto deploy"
