@@ -1314,6 +1314,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentStageIndex = Math.floor((daysPassed / totalDays) * fert.stages.length);
                 if (currentStageIndex >= fert.stages.length) currentStageIndex = fert.stages.length - 1;
             }
+            
+            const progressPercent = Math.min(100, (daysPassed / totalDays) * 100);
+            const remainingDays = Math.max(0, totalDays - daysPassed);
+            
+            const progressHtml = `
+                <div style="background: #f1f5f9; border-radius: 8px; padding: 12px; margin: 15px 0;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">
+                        <span>发酵熟成进度</span>
+                        <span>${Math.round(progressPercent)}%</span>
+                    </div>
+                    <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                        <div class="progress-bar-fill" style="height: 100%; width: ${progressPercent}%; background: var(--primary); transition: width 1s ease-out;"></div>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #64748b; display: flex; justify-content: space-between;">
+                        <span>当前阶段: ${fert.stages[currentStageIndex].name}</span>
+                        <span style="color: var(--primary-dark); font-weight: 500;">⏳ 预估距熟成约 ${remainingDays} 天</span>
+                    </div>
+                </div>
+            `;
 
             let timelineHtml = '<div class="growth-timeline">';
             fert.stages.forEach((stage, idx) => {
@@ -1361,6 +1380,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         
 
+                        ${progressHtml}
                         ${timelineHtml}
                         ${guideHtml}
                         <div style="margin-top: 25px; border-top: 2px dashed rgba(22, 101, 52, 0.2); padding-top: 15px;">
