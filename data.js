@@ -1722,9 +1722,9 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '立秋前后进入姜块“暴长”阶段，此时必须重施“秋里肥”（大量腐熟饼肥和硫酸钾）。生姜极度忌氯，绝对不能施用氯化钾。' , image: 'images/stages/ginger_fertilize_v3.png' }
     ],
     growthSequence: [
-      { name: '种姜催芽', image: 'images/stages/ginger_0_v3.png?v=1780159400000', days: 20, gdd: 300 },
-      { name: '幼苗期', image: 'images/stages/stage_ginger_0.png?v=1780159400000', days: 40, gdd: 600 },
-      { name: '旺盛生长期', image: 'images/stages/stage_ginger_1.png?v=1780159400000', days: 60, gdd: 900 },
+      { name: '种姜催芽', image: 'images/stages/ginger_0_v3.png?v=1780159650000', days: 20, gdd: 300 },
+      { name: '幼苗期', image: 'images/stages/stage_ginger_0.png?v=1780159650000', days: 40, gdd: 600 },
+      { name: '旺盛生长期', image: 'images/stages/stage_ginger_1.png?v=1780159650000', days: 60, gdd: 900 },
       { name: '根茎膨大', image: 'images/stages/ginger_2_v3.png', days: 30, gdd: 450 },
       { name: '成熟采收', image: 'images/stages/stage_ginger_2.png', days: 10, gdd: 150 }
     ],
