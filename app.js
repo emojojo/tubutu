@@ -1075,8 +1075,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             operationsHtml += `
                 <div style="display: flex; gap: 10px; margin-top: 10px;">
-                    <button class="add-op-btn" style="flex: 1;">➕ 添加农事记录</button>
-                    <button class="harvest-btn" data-id="${gardenItem.id}" style="flex: 1; background-color: #22c55e; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: opacity 0.2s;">🏆 标记已采收</button>
+                    <button class="add-op-btn" style="flex: 1; width: auto;">➕ 添加农事记录</button>
+                    <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
+                        🏆 标记采收
+                    </button>
                 </div>
             `;
 
