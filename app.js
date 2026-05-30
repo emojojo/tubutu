@@ -279,7 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMonth = 'all';
     let currentCategory = 'all';
     let currentSearchQuery = '';
-    let currentMyGardenCategory = 'all';
 
     // Initialize Regions
     regions.forEach(region => {
@@ -343,27 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const mygardenCategoryFilters = document.getElementById('mygarden-category-filters');
-    if (mygardenCategoryFilters) {
-        categories.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.className = 'flat-filter-btn';
-            btn.dataset.id = cat.id;
-            btn.textContent = `${cat.icon} ${cat.name}`;
-            mygardenCategoryFilters.appendChild(btn);
-        });
-
-        mygardenCategoryFilters.addEventListener('click', (e) => {
-            const btn = e.target.closest('.flat-filter-btn');
-            if (btn) {
-                document.querySelectorAll('#mygarden-category-filters .flat-filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentMyGardenCategory = btn.dataset.id;
-                renderMyGarden();
-            }
-        });
-    }
-
 
     const btnShowActive = document.getElementById('btn-show-active');
     const btnShowHistory = document.getElementById('btn-show-history');
@@ -380,7 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mygardenActiveView.style.display = 'block';
             mygardenHistoryView.style.display = 'none';
             if(mygardenFertView) mygardenFertView.style.display = 'none';
-            if(mygardenCategoryFilters) mygardenCategoryFilters.style.display = 'inline-flex';
             renderMyGarden();
         });
 
@@ -391,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mygardenHistoryView.style.display = 'block';
             mygardenActiveView.style.display = 'none';
             if(mygardenFertView) mygardenFertView.style.display = 'none';
-            if(mygardenCategoryFilters) mygardenCategoryFilters.style.display = 'none';
             renderHistory();
         });
         
@@ -403,7 +379,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(mygardenFertView) mygardenFertView.style.display = 'block';
                 mygardenActiveView.style.display = 'none';
                 mygardenHistoryView.style.display = 'none';
-                if(mygardenCategoryFilters) mygardenCategoryFilters.style.display = 'none';
                 renderMyFertilizers();
             });
         }
@@ -1106,16 +1081,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emptyMsg.style.display = 'none';
         grid.innerHTML = '';
         
-        const filteredGarden = activeGarden.filter(gardenItem => {
-            if (currentMyGardenCategory === 'all') return true;
-            const veg = vegetables.find(v => v.id === gardenItem.vegId);
-            return veg && veg.categoryId === currentMyGardenCategory;
-        });
-        
-        if (filteredGarden.length === 0) {
-            grid.innerHTML = '<p style="text-align: center; color: var(--text-muted); width: 100%; padding: 20px;">没有找到该分类下的种植项目</p>';
-            return;
-        }
+        const filteredGarden = activeGarden;
         
         const cardsHtml = [];
         
