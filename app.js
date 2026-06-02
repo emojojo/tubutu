@@ -5,6 +5,7 @@ import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db,
 let currentUser = null;
 let unsubSnapshot = null;
 let myGarden = [];
+let currentOpGardenItemId = null;
 
 try {
     const stored = localStorage.getItem('tubutu_my_garden');
