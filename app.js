@@ -1173,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             operationsHtml += `
                 <div style="display: flex; gap: 10px; margin-top: 10px;">
-                    <button class="add-op-btn" style="flex: 1; width: auto;">➕ 添加农事记录</button>
+                    <button class="add-op-btn" onclick="openOperationModal('${gardenItem.id}')" style="flex: 1; width: auto;">➕ 添加农事记录</button>
                     <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
                         🏆 标记采收
                     </button>
@@ -1233,13 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 openModal(c.veg, false);
             });
 
-            const addOpBtn = cardEl.querySelector('.add-op-btn');
-            if (addOpBtn) {
-                addOpBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openOperationModal(c.gardenItem.id);
-                });
-            }
+            // The add-op-btn uses an inline onclick handler now.
 
             const harvestBtn = cardEl.querySelector('.harvest-btn');
             if (harvestBtn) {
