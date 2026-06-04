@@ -1906,3 +1906,27 @@ footer {
         opacity: 0.8;
     }
 }
+@media (max-width: 768px) {
+    .main-tabs {
+        overflow-x: visible !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        padding: 5px 2px !important;
+        padding-bottom: calc(5px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .main-tab-btn {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        padding: 2px !important;
+    }
+    .main-tab-btn .tab-text {
+        font-size: 0.65rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    .main-tab-btn .tab-icon {
+        font-size: 1.2rem !important;
+    }
+}
