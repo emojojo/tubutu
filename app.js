@@ -171,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Merge local and cloud (simple union by vegId for now, prioritizing cloud)
                     const mergedMap = new Map();
-                    myGarden.forEach(item => mergedMap.set(item.vegId, item));
-                    cloudGarden.forEach(item => mergedMap.set(item.vegId, item));
+                    myGarden.forEach(item => mergedMap.set(item.id, item));
+                    cloudGarden.forEach(item => mergedMap.set(item.id, item));
                     myGarden = Array.from(mergedMap.values());
                     
                     saveGarden();
