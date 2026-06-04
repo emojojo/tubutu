@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
 import { weatherData } from './weather_data.js?v=1780168514676';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -790,10 +790,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="stage-item">
                                     <div class="stage-icon">${stageIcons[index % stageIcons.length]}</div>
                                     <div class="stage-content">
-                                        <h4 style="color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; margin-bottom: 10px;">阶段 ${index + 1}: ${stage.name}</h4>
+                                        <h4 style="color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">阶段 ${index + 1}: ${stage.name}</h4>
                                         
                                         ${hasNewStructure ? `
-                                            <div class="stage-details" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                                            <div class="stage-details" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; flex-wrap: wrap;">
                                                 ${stage.water_fertilizer ? `
                                                     <div class="stage-detail-item">
                                                         <strong>💧 水肥管理：</strong>${stage.water_fertilizer}
@@ -1176,9 +1176,9 @@ document.addEventListener('DOMContentLoaded', () => {
                  `;
             }
             operationsHtml += `
-                <div style="display: flex; gap: 10px; margin-top: 10px;">
-                    <button class="add-op-btn" onclick="openOperationModal('${gardenItem.id}')" style="flex: 1; width: auto;">➕ 添加农事记录</button>
-                    <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
+                <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                    <button class="add-op-btn" onclick="openOperationModal('${gardenItem.id}')" style="flex: 1; min-width: 120px; width: auto;">➕ 添加农事记录</button>
+                    <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
                         🏆 标记采收
                     </button>
                 </div>
@@ -1190,7 +1190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="row-number">${index + 1}</div>
                     ${imgHtml}
                     <div class="veg-info">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
                             <span style="font-size: 0.9rem; color: #555;">📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
                         </div>
@@ -1395,9 +1395,9 @@ document.addEventListener('DOMContentLoaded', () => {
                  `;
             }
             operationsHtml += `
-                <div style="display: flex; gap: 10px; margin-top: 10px;">
-                    <button class="add-op-btn" onclick="openOperationModal('${record.id}')" style="flex: 1; width: auto;">➕ 添加农事记录</button>
-                    <button class="harvest-btn" onclick="finishFertRecord('${record.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex-shrink: 0; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
+                <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                    <button class="add-op-btn" onclick="openOperationModal('${record.id}')" style="flex: 1; min-width: 120px; width: auto;">➕ 添加农事记录</button>
+                    <button class="harvest-btn" onclick="finishFertRecord('${record.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
                         ✅ 标记为制作完成
                     </button>
                 </div>
@@ -1414,7 +1414,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${imgHtml}
                     
                     <div class="veg-info">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${fert.name}</h3>
                             <span style="font-size: 0.9rem; color: #555;">📍 开始制作: ${startDateStr}</span>
                         </div>
@@ -1516,7 +1516,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="row-number">🏆</div>
                     ${imgHtml}
                     <div class="veg-info">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
                             <span style="font-size: 0.9rem; color: #555;">📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
                         </div>
