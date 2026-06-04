@@ -1753,3 +1753,156 @@ footer {
     color: white !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+/* Mobile Specific Optimizations */
+@media (max-width: 768px) {
+    /* Bottom Navigation Bar */
+    .main-tabs {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        padding: 8px 5px;
+        padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+        margin: 0;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        overflow-x: auto;
+    }
+    
+    .main-tab-btn {
+        flex: 0 0 auto;
+        padding: 5px;
+        font-size: 0.75rem;
+        font-weight: normal;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        background: transparent;
+        color: var(--text-muted);
+        min-width: 60px;
+    }
+    
+    .main-tab-btn .tab-icon {
+        font-size: 1.4rem;
+    }
+
+    .main-tab-btn.active {
+        background: transparent;
+        color: var(--primary);
+        font-weight: bold;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .main-tab-btn.active .tab-icon {
+        background: var(--bg-hover);
+        padding: 4px 12px;
+        border-radius: 16px;
+    }
+
+    /* Adjust main container to prevent content from hiding behind nav bar */
+    main.container {
+        padding-bottom: 90px;
+    }
+
+    /* Modal Full Screen on Mobile */
+    .modal-content {
+        width: 100%;
+        max-width: none;
+        height: 85vh;
+        margin-top: 15vh;
+        border-radius: 24px 24px 0 0;
+        overflow-y: auto;
+        animation: slideUp 0.3s ease-out forwards;
+        padding: 25px 20px;
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Touch Targets & Spacing */
+    .btn, .primary-btn, .secondary-btn, .op-submit-btn, .auth-btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input, select, textarea {
+        min-height: 44px;
+        font-size: 16px; /* Prevents auto-zoom on iOS */
+    }
+
+    /* Card Layouts */
+    .vegetable-card, .mygarden-card {
+        padding: 15px;
+    }
+    
+    .stage-item {
+        padding: 12px;
+    }
+}
+
+/* Hover fixes: only apply hover effects on devices that support hover */
+@media (hover: hover) {
+    .main-tab-btn:hover {
+        background: var(--bg-hover);
+        transform: translateY(-2px);
+    }
+    .vegetable-card:hover, .mygarden-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+    .btn:hover, .primary-btn:hover, .secondary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Remove default hovers that were outside media query */
+.main-tab-btn {
+    transition: all 0.3s ease;
+}
+.vegetable-card, .mygarden-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn, .primary-btn, .secondary-btn {
+    transition: all 0.3s ease;
+}
+/* Mobile Hover Override to prevent sticky hovers */
+@media (max-width: 768px) {
+    .vegetable-card:hover, .mygarden-card:hover, .btn:hover, .primary-btn:hover, .secondary-btn:hover {
+        transform: none !important;
+    }
+    .main-tab-btn:hover:not(.active) {
+        background: transparent !important;
+        transform: none !important;
+    }
+    /* Touch active state instead */
+    .vegetable-card:active, .mygarden-card:active {
+        background-color: var(--bg-hover);
+        opacity: 0.9;
+    }
+    .btn:active, .primary-btn:active, .secondary-btn:active {
+        opacity: 0.8;
+    }
+}
