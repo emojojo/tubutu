@@ -1,4 +1,4 @@
-﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
 import { weatherData } from './weather_data.js?v=1780168514676';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const myGardenSection = document.getElementById('mygarden-section');
                             if (myGardenSection && myGardenSection.style.display === 'block') {
                                 renderMyGarden();
+                                if (typeof renderMyFertilizers === 'function') renderMyFertilizers();
                             }
                         }
                     }
@@ -211,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const myGardenSection = document.getElementById('mygarden-section');
                 if (myGardenSection && myGardenSection.style.display === 'block') {
                     renderMyGarden();
+                    if (typeof renderMyFertilizers === 'function') renderMyFertilizers();
                 }
 
             } catch(e) {
@@ -268,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (targetId === 'mygarden-section') {
                 if (myGardenSection) myGardenSection.style.display = 'block';
                 renderMyGarden();
+                if (typeof renderMyFertilizers === 'function') renderMyFertilizers();
             } else if (targetId === 'history-section') {
                 if (historySection) historySection.style.display = 'block';
                 renderHistory();
