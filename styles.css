@@ -1930,3 +1930,34 @@ footer {
         font-size: 1.2rem !important;
     }
 }
+@media (max-width: 768px) {
+    .mygarden-card {
+        box-sizing: border-box;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 15px;
+    }
+    .veg-info {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    .growth-timeline {
+        justify-content: flex-start;
+        padding-bottom: 15px;
+    }
+    .timeline-img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+    .timeline-stage {
+        min-width: 70px !important;
+        flex: 0 0 auto !important;
+    }
+    .timeline-label {
+        font-size: 0.75rem !important;
+    }
+    .operations-timeline .op-item {
+        max-width: 100%;
+    }
+}
