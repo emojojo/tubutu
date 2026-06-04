@@ -2024,3 +2024,8 @@ footer {
         font-weight: 700 !important;
     }
 }
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 65px !important;
+    }
+}
