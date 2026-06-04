@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #2d6a4f;
     --primary-light: #40916c;
     --primary-dark: #1b4332;
@@ -1625,4 +1625,131 @@ footer {
 
 .pest-img:hover {
     transform: scale(1.02);
+}
+/* Farm Game View Styles */
+.farm-scene {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #87CEEB; /* default */
+    margin: 10px 0;
+}
+
+.farm-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    transition: background 1s ease;
+}
+
+.farm-sky.time-day { background: linear-gradient(to bottom, #87CEEB, #E0F6FF); }
+.farm-sky.time-sunset { background: linear-gradient(to bottom, #FF7E5F, #FEB47B); }
+.farm-sky.time-night { background: linear-gradient(to bottom, #0F2027, #203A43, #2C5364); }
+.farm-sky.time-dawn { background: linear-gradient(to bottom, #4CA1AF, #C4E0E5); }
+
+.celestial-body {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: 10px;
+    transition: all 1s ease;
+}
+
+.time-day .celestial-body { right: 15%; bottom: 40%; background: #FFD700; box-shadow: 0 0 20px #FFD700; }
+.time-sunset .celestial-body { left: 15%; bottom: 10px; background: #FF4500; box-shadow: 0 0 20px #FF4500; }
+.time-night .celestial-body { right: 20%; bottom: 50%; background: #F4F6F0; box-shadow: 0 0 15px #FFF; }
+.time-dawn .celestial-body { left: 20%; bottom: 20px; background: #FFEFD5; box-shadow: 0 0 20px #FFF; }
+
+.farm-land {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: #6D4C41;
+    border-top: 15px solid #4CAF50;
+    box-shadow: inset 0 20px 20px rgba(0,0,0,0.1);
+    
+    /* Dynamically expanding horizontal layout */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-columns: 120px;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 15px 30px;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: start;
+}
+
+/* Custom horizontal scrollbar for the farm land */
+.farm-land::-webkit-scrollbar {
+    height: 10px;
+}
+.farm-land::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.farm-land::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.farm-land::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.crop-plot {
+    position: relative;
+    width: 90px;
+    height: 60px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crop-sprite {
+    position: absolute;
+    bottom: 20px;
+    /* random widths/heights set by JS */
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    transform-origin: bottom center;
+    filter: drop-shadow(0 5px 2px rgba(0,0,0,0.3));
+}
+
+.crop-label {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.mode-btn {
+    transition: all 0.2s ease;
+}
+.mode-btn.active {
+    background: var(--primary) !important;
+    color: white !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }

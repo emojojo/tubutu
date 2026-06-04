@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
 import { weatherData } from './weather_data.js?v=1780168514676';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -1710,4 +1710,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Farm Mode Extension Logic ---
 });
