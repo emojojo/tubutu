@@ -1,4 +1,4 @@
-﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
 import { weatherData } from './weather_data.js?v=1780168514676';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const docSnap = await getDoc(userDocRef);
                 if (docSnap.exists()) {
                     const cloudGarden = docSnap.data().garden || [];
+                    cloudGarden.forEach(g => {
+                        if (!g.id) {
+                            g.id = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+                        }
+                    });
                     
                     // Merge local and cloud (simple union by vegId for now, prioritizing cloud)
                     const mergedMap = new Map();
@@ -191,6 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 unsubSnapshot = onSnapshot(userDocRef, (doc) => {
                     if (doc.exists()) {
                         const newGarden = doc.data().garden || [];
+                        newGarden.forEach(g => {
+                            if (!g.id) {
+                                g.id = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+                            }
+                        });
                         // Check if different to avoid infinite loop
                         if (JSON.stringify(newGarden) !== JSON.stringify(myGarden)) {
                             myGarden = newGarden;
