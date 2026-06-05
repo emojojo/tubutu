@@ -1303,7 +1303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         for (let i = 0; i < activeFerts.length; i++) {
             const record = activeFerts[i];
-            const fert = fertilizers.find(f => f.id === record.fertId);
+            const fert = fertilizers.find(f => f.id === (record.fertId || record.vegId));
             if (!fert) continue;
             
             const startDateStr = record.startDate ? record.startDate.split('T')[0] : '未知时间';
