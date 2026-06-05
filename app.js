@@ -1,4 +1,4 @@
-﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
 import { weatherData } from './weather_data.js?v=1780168514676';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -1311,7 +1311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let cardsHtml = '';
         
-        for (let i = 0; i < activeFerts.length; i++) { try {
+        for (let i = 0; i < activeFerts.length; i++) {
             const record = activeFerts[i];
             const fert = fertilizers.find(f => f.id === (record.fertId || record.vegId));
             if (!fert) continue;
@@ -1443,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
-        } catch (err) { cardsHtml += <div style='color: red; padding: 20px;'>Error rendering record : </div>; } } grid.innerHTML = cardsHtml;
+        grid.innerHTML = cardsHtml;
     }
 
     async function renderHistory() {
