@@ -2029,3 +2029,14 @@ footer {
         padding-top: 65px !important;
     }
 }
+@media (max-width: 768px) {
+    .op-item {
+        flex-wrap: wrap !important;
+        border-radius: 12px !important;
+    }
+    .op-remark {
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-left: 12px !important;
+    }
+}
