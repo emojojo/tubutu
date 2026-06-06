@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780168514676';
 import { weatherData } from './weather_data.js?v=1780168514676';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
 
             const imgHtml = veg.image 
-                ? `<img src="${veg.image}" alt="${veg.name}" class="veg-img">`
+                ? `<img loading="lazy" src="${veg.image}" alt="${veg.name}" class="veg-img">`
                 : `<div class="veg-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1);">${veg.icon}</div>`;
 
             const inGarden = window.myGarden && window.myGarden.some(g => g.vegId === veg.id);
@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
 
             const imgHtml = item.image 
-                ? `<img src="${item.image}" alt="${item.name}" class="veg-img">`
+                ? `<img loading="lazy" src="${item.image}" alt="${item.name}" class="veg-img">`
                 : `<div class="veg-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1);">${item.icon}</div>`;
 
             const card = document.createElement('div');
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'veg-card fade-in';
             card.innerHTML = `
-                <img src="${pc.image}" alt="${pc.name}" class="veg-img" onerror="this.src='images/default_crop.png'">
+                <img loading="lazy" src="${pc.image}" alt="${pc.name}" class="veg-img" onerror="this.src='images/default_crop.png'">
                 <div class="veg-content">
                     <div class="veg-header">
                         <h3 class="veg-title">${pc.icon} ${pc.name}</h3>
@@ -572,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'veg-card fade-in';
             card.innerHTML = `
-                <img src="${model.image}" alt="${model.name}" class="veg-img" onerror="this.src='images/default_crop.png'">
+                <img loading="lazy" src="${model.image}" alt="${model.name}" class="veg-img" onerror="this.src='images/default_crop.png'">
                 <div class="veg-content">
                     <div class="veg-header">
                         <h3 class="veg-title">${model.icon} ${model.name}</h3>
@@ -673,9 +673,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const item = document.createElement('div');
                     item.className = 'calendar-veg-item';
                     const iconHtml = veg.avatar
-                        ? `<div style="width: 28px; height: 28px; border-radius: 4px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: white;"><img src="${veg.avatar}?v=2" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.2);"></div>`
+                        ? `<div style="width: 28px; height: 28px; border-radius: 4px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: white;"><img loading="lazy" src="${veg.avatar}?v=2" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.2);"></div>`
                         : (veg.image 
-                            ? `<img src="${veg.image}?v=2" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
+                            ? `<img loading="lazy" src="${veg.image}?v=2" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
                             : `<span>${veg.icon}</span>`);
                     item.innerHTML = `${iconHtml} <span>${veg.name}</span>`;
                     item.addEventListener('click', () => openModal(veg, false));
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function openModal(item, isFertilizer = false) {
         const bgGradient = categoryGradients[item.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
         const imgHtml = item.image
-            ? `<img src="${item.image}" alt="${item.name}">`
+            ? `<img loading="lazy" src="${item.image}" alt="${item.name}">`
             : `<div style="width: 100%; height: 100%; background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 7rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1);">${item.icon}</div>`;
 
         let contentHtml = `
@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="stage-content">
                                             <h5 class="stage-name">${stage.name}</h5>
                                             <p class="stage-desc">${stage.content}</p>
-                                            ${stage.image ? `<img src="${stage.image}" alt="${stage.name}" class="stage-image" style="width: 50%; max-width: 300px; border-radius: 8px; margin-top: 10px; display: block;">` : ''}
+                                            ${stage.image ? `<img loading="lazy" src="${stage.image}" alt="${stage.name}" class="stage-image" style="width: 50%; max-width: 300px; border-radius: 8px; margin-top: 10px; display: block;">` : ''}
                                         </div>
                                     </div>
                                 `).join('')}
@@ -807,23 +807,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 ${stage.water_fertilizer ? `
                                                     <div class="stage-detail-item">
                                                         <strong>💧 水肥管理：</strong>${stage.water_fertilizer}
-                                                        ${stage.water_image ? `<img src="${stage.water_image}" alt="水肥管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                        ${stage.water_image ? `<img loading="lazy" src="${stage.water_image}" alt="水肥管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                                     </div>` : ''}
                                                 ${stage.pruning_trellising ? `
                                                     <div class="stage-detail-item">
                                                         <strong>✂️ 整枝搭架：</strong>${stage.pruning_trellising}
-                                                        ${stage.pruning_image ? `<img src="${stage.pruning_image}" alt="整枝搭架" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                        ${stage.pruning_image ? `<img loading="lazy" src="${stage.pruning_image}" alt="整枝搭架" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                                     </div>` : ''}
                                                 ${stage.pest_management ? `
                                                     <div class="stage-detail-item">
                                                         <strong>🛡️ 病虫害管理：</strong>${stage.pest_management}
-                                                        ${stage.pest_image ? `<img src="${stage.pest_image}" alt="病虫害管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                        ${stage.pest_image ? `<img loading="lazy" src="${stage.pest_image}" alt="病虫害管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                                     </div>` : ''}
                                                 ${stage.content ? `<div class="stage-detail-item"><strong>📌 其他要点：</strong>${stage.content}</div>` : ''}
                                             </div>
                                         ` : `<p>${stage.content}</p>`}
                                         
-                                        ${stage.image ? `<img src="${stage.image}" alt="${stage.name}" style="width: 50%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                        ${stage.image ? `<img loading="lazy" src="${stage.image}" alt="${stage.name}" style="width: 50%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                     </div>
                                 </div>
                                 `;
@@ -838,7 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="pest-list">
                             ${item.pests.map(pest => `
                                 <div class="pest-item">
-                                    <img src="${pest.image}" alt="${pest.name}" class="pest-img">
+                                    <img loading="lazy" src="${pest.image}" alt="${pest.name}" class="pest-img">
                                     <div class="pest-details">
                                         <div class="pest-header">
                                             <h4>${pest.name}</h4>
@@ -1122,7 +1122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     timelineHtml += `
                         <div class="timeline-stage ${statusClass}">
-                            <img src="${stage.image}" alt="${stage.name}" class="timeline-img">
+                            <img loading="lazy" src="${stage.image}" alt="${stage.name}" class="timeline-img">
                             <span class="timeline-label">${stage.name}</span>
                         </div>
                     `;
@@ -1139,7 +1139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             const imgHtml = veg.image 
-                ? `<img src="${veg.image}" alt="${veg.name}" class="mygarden-main-img">`
+                ? `<img loading="lazy" src="${veg.image}" alt="${veg.name}" class="mygarden-main-img">`
                 : `<div class="mygarden-main-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1);">${veg.icon}</div>`;
 
             let gddPercentage = Math.min(100, (status.accumulatedGdd / status.overallTotalGdd) * 100).toFixed(1);
@@ -1149,16 +1149,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
-                    'weed': { icon: '<img src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
-                    'fertilize': { icon: '<img src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
-                    'pest': { icon: '<img src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
-                    'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
-                    'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
-                    'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
                     'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
                     'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
-                    'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
+                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
@@ -1356,7 +1356,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 timelineHtml += `
                     <div class="timeline-stage ${statusClass}">
-                        <img src="${stage.image}" alt="${stage.name}" class="timeline-img">
+                        <img loading="lazy" src="${stage.image}" alt="${stage.name}" class="timeline-img">
                         <span class="timeline-label">${stage.name}</span>
                     </div>
                 `;
@@ -1368,16 +1368,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
-                    'weed': { icon: '<img src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
-                    'fertilize': { icon: '<img src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
-                    'pest': { icon: '<img src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
-                    'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
-                    'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
-                    'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
                     'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
                     'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
-                    'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
+                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
@@ -1414,7 +1414,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             const bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             const imgHtml = fert.image 
-                ? `<img src="${fert.image}" alt="${fert.name}" class="mygarden-main-img">`
+                ? `<img loading="lazy" src="${fert.image}" alt="${fert.name}" class="mygarden-main-img">`
                 : `<div class="mygarden-main-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1);">${fert.icon}</div>`;
 
             cardsHtml += `
@@ -1483,7 +1483,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             const imgHtml = veg.image 
-                ? `<img src="${veg.image}" alt="${veg.name}" class="mygarden-main-img" style="filter: grayscale(30%);">`
+                ? `<img loading="lazy" src="${veg.image}" alt="${veg.name}" class="mygarden-main-img" style="filter: grayscale(30%);">`
                 : `<div class="mygarden-main-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1); filter: grayscale(30%);">${veg.icon}</div>`;
 
             let operationsHtml = '';
@@ -1491,16 +1491,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
-                    'weed': { icon: '<img src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
-                    'fertilize': { icon: '<img src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
-                    'pest': { icon: '<img src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
-                    'prune': { icon: '<img src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
-                    'trellis': { icon: '<img src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
-                    'pollinate': { icon: '<img src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
                     'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
                     'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
-                    'other': { icon: '<img src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
+                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
@@ -1598,7 +1598,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.dataset.type = type.id;
                 
                 let iconHtml = type.img 
-                    ? `<img src="${type.img}" class="op-icon-large" style="width:36px; height:36px; object-fit:contain; margin-bottom:4px;">`
+                    ? `<img loading="lazy" src="${type.img}" class="op-icon-large" style="width:36px; height:36px; object-fit:contain; margin-bottom:4px;">`
                     : `<div style="font-size: 28px; height: 36px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px;">${type.icon}</div>`;
                     
                 btn.innerHTML = `${iconHtml}<span class="op-type-text">${type.name}</span>`;
