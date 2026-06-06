@@ -2989,8 +2989,7 @@ export const vegetables = [
       { name: '出苗', image: 'images/corn_stage_2.png', days: 7, gdd: 100 },
       { name: '拔节期', image: 'images/corn_stage_3.png', days: 20, gdd: 350 },
       { name: '抽穗开花', image: 'images/corn_stage_4.png', days: 15, gdd: 250 },
-      { name: '灌浆期', image: 'images/corn_stage_5.png', days: 20, gdd: 300 },
-      { name: '成熟采收', image: 'images/corn_stage_6.png', days: 10, gdd: 150 }
+      { name: '乳熟(鲜食采收)', image: 'images/corn_stage_5.png', days: 20, gdd: 225 }
     ],
     pests: [
       { name: '玉米螟', cause: '幼虫钻入心叶或茎秆、果穗中啃食。', prevention: '在大喇叭口期向心叶内撒施Bt颗粒剂。', image: 'images/pest_corn_borer.png' },
