@@ -2955,7 +2955,7 @@ export const vegetables = [
     ]
   },
   { id: 'corn',
-    name: '玉米',
+    name: '水果玉米',
     baseTemp: 10, categoryId: 'fruit',
     icon: '🌽',
     avatar: 'assets/icons/icon_corn.png',
