@@ -1880,13 +1880,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '黄瓜根系浅且需肥量极大，原则是“少吃多餐”。结瓜盛期每隔7-10天追施一次腐熟有机液肥，重点补充钾肥和微量元素。' , image: 'images/stages/cucumber_2_v3_1779514111532.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/cucumber_v3_stage_1_1779707113594.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/cucumber_v3_stage_2_1779707126513.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/cucumber_v3_stage_3_1779707142900.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/cucumber_v3_stage_4_1779707157524.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/cucumber_v3_stage_5_1779707172655.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/cucumber_v3_stage_6_1779707187264.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/cucumber_v3_stage_7_1779707200995.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/cucumber_v3_stage_1_1779707113594.png', days: 5, gdd: 75  },
+      { name: '出苗', image: 'images/cucumber_v3_stage_2_1779707126513.png', days: 5, gdd: 75  },
+      { name: '幼苗', image: 'images/cucumber_v3_stage_3_1779707142900.png', days: 15, gdd: 225  },
+      { name: '抽蔓', image: 'images/cucumber_v3_stage_4_1779707157524.png', days: 10, gdd: 150  },
+      { name: '开花', image: 'images/cucumber_v3_stage_5_1779707172655.png', days: 10, gdd: 150  },
+      { name: '结瓜', image: 'images/cucumber_v3_stage_6_1779707187264.png', days: 10, gdd: 150  },
+      { name: '连续采收', image: 'images/cucumber_v3_stage_7_1779707200995.png', days: 45, gdd: 675  }
     ],
     pests: [
             {
