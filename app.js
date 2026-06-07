@@ -1,5 +1,5 @@
-﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780660000000';
-import { weatherData } from './weather_data.js?v=1780660000000';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780670000000';
+import { weatherData } from './weather_data.js?v=1780670000000';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -1788,7 +1788,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             // Sort harvests by date descending
             item.harvests.sort((a, b) => new Date(b.date) - new Date(a.date));
-            saveMyGarden();
+            saveGarden();
             document.getElementById('harvest-input-overlay').classList.remove('active');
             renderMyGarden();
         }
