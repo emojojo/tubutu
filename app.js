@@ -1,5 +1,5 @@
-﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780650000000';
-import { weatherData } from './weather_data.js?v=1780650000000';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780660000000';
+import { weatherData } from './weather_data.js?v=1780660000000';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -1749,7 +1749,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const yyyy = today.getFullYear();
         const mm = String(today.getMonth() + 1).padStart(2, '0');
         const dd = String(today.getDate()).padStart(2, '0');
-        document.getElementById('harvest-date').value = \\-\-\\;
+        document.getElementById('harvest-date').value = `${yyyy}-${mm}-${dd}`;
         
         // Auto select unit based on previous harvest if exists
         const item = myGarden.find(i => i.id === gardenId);
@@ -1800,7 +1800,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!item || !item.harvests || item.harvests.length === 0) return;
         
         const vegInfo = vegetables.find(v => v.id === item.vegId);
-        document.getElementById('harvest-viz-title').innerHTML = \\ \ - 产量统计\;
+        document.getElementById('harvest-viz-title').innerHTML = `${vegInfo ? vegInfo.icon : '🍓'} ${vegInfo ? vegInfo.name : '未知'} - 产量统计`;
         
         let total = 0;
         const unit = item.harvests[0].unit || '公斤';
@@ -1838,21 +1838,21 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const barWrapper = document.createElement('div');
             barWrapper.className = 'harvest-bar-wrapper';
-            barWrapper.innerHTML = \
-                <div class="harvest-bar-val">\</div>
-                <div class="harvest-bar" style="height: \%" title="\: \ \"></div>
-                <div class="harvest-bar-date">\</div>
-            \;
+            barWrapper.innerHTML = `
+                <div class="harvest-bar-val">${amt.toFixed(1)}</div>
+                <div class="harvest-bar" style="height: ${heightPct}%" title="${date}: ${amt} ${unit}"></div>
+                <div class="harvest-bar-date">${shortDate}</div>
+            `;
             chartContainer.appendChild(barWrapper);
         });
 
         const listContainer = document.getElementById('harvest-list');
-        listContainer.innerHTML = item.harvests.map(h => \
+        listContainer.innerHTML = item.harvests.map(h => `
             <div class="harvest-list-item">
-                <span style="color: #64748b;">📅 \</span>
-                <span style="font-weight: 600; color: #0f172a;">\ \</span>
+                <span style="color: #64748b;">📅 ${h.date}</span>
+                <span style="font-weight: 600; color: #0f172a;">${parseFloat(h.amount).toFixed(1)} ${h.unit || '公斤'}</span>
             </div>
-        \).join('');
+        `).join('');
 
         document.getElementById('harvest-viz-overlay').classList.add('active');
     };
