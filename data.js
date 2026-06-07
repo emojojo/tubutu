@@ -622,6 +622,41 @@ export const vegetables = [
   },
 
   // ================= 叶菜类 (Leafy) =================
+  { id: 'jingjie',
+    avatar: 'images/jingjie_stage_4_1780860836901.png',
+    name: '荆芥',
+    baseTemp: 10, categoryId: 'leafy',
+    icon: '🌿',
+    image: 'images/jingjie_stage_4_1780860836901.png',
+    description: '河南人的灵魂香草！喜温暖湿润，香气浓郁，不仅可以做面条伴侣，还有驱虫功效。',
+    calendar: {
+      north: '4-5月春播，或夏季播种。',
+      south: '3-9月均可播种。',
+      east: '4-8月。',
+      southwest: '3-8月。',
+      northwest: '5-7月。'
+    },
+    stages: [
+      { name: '种子期', water_fertilizer: '播种前浇透底水，保持土壤湿润直到出苗。', pest_management: '防鸟虫啃食种子。', pruning_trellising: null },
+      { name: '幼苗期', water_fertilizer: '苗期稍加控水，促进根系下扎。', pest_management: '注意防治蚜虫。', pruning_trellising: '过密时可以间苗，间下的苗可以直接食用。' },
+      { name: '生长期', water_fertilizer: '需水量大，保持土壤湿润，结合浇水追施氮肥。', pest_management: '自带特殊香气，病虫害较少。', pruning_trellising: null },
+      { name: '采收期', water_fertilizer: '每次采收后补充速效氮肥，促进新侧枝萌发。', pest_management: '采摘期停药，保证食用安全。', pruning_trellising: '打顶采摘，越掐越发，能不断长出新侧芽。' }
+    ],
+    growthSequence: [
+      { name: '种子', image: 'images/jingjie_stage_1_1780860799978.png', days: 5, gdd: 50  },
+      { name: '出苗', image: 'images/jingjie_stage_2_1780860813309.png', days: 7, gdd: 70  },
+      { name: '生长期', image: 'images/jingjie_stage_3_1780860822893.png', days: 15, gdd: 150  },
+      { name: '连续采收', image: 'images/jingjie_stage_4_1780860836901.png', days: 40, gdd: 400  }
+    ],
+    pests: [
+      {
+          name: '蚜虫',
+          cause: '高温干旱时容易在嫩叶背面聚集。',
+          prevention: '小面积可直接用手抹除，或喷洒稀释的肥皂水。',
+          image: 'images/pest_aphid.png'
+      }
+    ]
+  },
   { id: 'leek_chinese',
     avatar: 'assets/icons/icon_leek_chinese.png',
     name: '韭菜',
