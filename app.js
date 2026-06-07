@@ -1,5 +1,5 @@
-﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780630000000';
-import { weatherData } from './weather_data.js?v=1780630000000';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780640000000';
+import { weatherData } from './weather_data.js?v=1780640000000';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -1188,11 +1188,28 @@ document.addEventListener('DOMContentLoaded', () => {
             operationsHtml += `
                 <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
                     <button class="add-op-btn" onclick="openOperationModal('${gardenItem.id}')" style="flex: 1; min-width: 120px; width: auto;">➕ 添加农事记录</button>
-                    <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
-                        🏆 标记采收
+                    <button class="harvest-record-btn" onclick="openHarvestModal('${gardenItem.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
+                        🍓 记录单次采收
+                    </button>
+                    <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fef2f2'">
+                        🛑 结束种植(移至历史)
                     </button>
                 </div>
             `;
+
+            let harvestBadgeHtml = '';
+            if (gardenItem.harvests && gardenItem.harvests.length > 0) {
+                let totalAmount = 0;
+                let unit = gardenItem.harvests[0].unit || '公斤';
+                gardenItem.harvests.forEach(h => {
+                    totalAmount += parseFloat(h.amount || 0);
+                });
+                harvestBadgeHtml = `
+                    <span class="harvest-total-badge" onclick="openHarvestVizModal('${gardenItem.id}')" style="background: #fff1f2; color: #be123c; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: transform 0.1s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        📦 已累计采收: ${totalAmount.toFixed(1)} ${unit} (点击查看)
+                    </span>
+                `;
+            }
 
             const cardHtml = `
                 <div class="mygarden-card" style="position: relative;">
@@ -1215,6 +1232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="gdd-badge" style="background: ${status.remainingDays === 0 ? '#dcfce7' : '#fee2e2'}; color: ${status.remainingDays === 0 ? '#166534' : '#991b1b'}; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
                                 ⏳ ${status.remainingDays === 0 ? '已完全成熟' : `预估剩余: 约 ${status.remainingDays} 天`}
                             </span>
+                            ${harvestBadgeHtml}
                         </div>
                         ${timelineHtml}
                         ${operationsHtml}
@@ -1722,6 +1740,126 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    
+    // --- Harvest Record Logic ---
+    window.openHarvestModal = function(gardenId) {
+        document.getElementById('harvest-garden-id').value = gardenId;
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        document.getElementById('harvest-date').value = \\-\-\\;
+        
+        // Auto select unit based on previous harvest if exists
+        const item = myGarden.find(i => i.id === gardenId);
+        if (item && item.harvests && item.harvests.length > 0) {
+            document.getElementById('harvest-unit').value = item.harvests[0].unit || '公斤';
+        }
+        
+        document.getElementById('harvest-amount').value = '';
+        document.getElementById('harvest-input-overlay').classList.add('active');
+    };
+
+    document.getElementById('harvest-input-close-btn').addEventListener('click', () => {
+        document.getElementById('harvest-input-overlay').classList.remove('active');
+    });
+
+    document.getElementById('harvest-submit-btn').addEventListener('click', () => {
+        const gardenId = document.getElementById('harvest-garden-id').value;
+        const date = document.getElementById('harvest-date').value;
+        const amount = parseFloat(document.getElementById('harvest-amount').value);
+        const unit = document.getElementById('harvest-unit').value;
+
+        if (!date || isNaN(amount) || amount <= 0) {
+            alert('请填写正确的日期和数量！');
+            return;
+        }
+
+        const item = myGarden.find(i => i.id === gardenId);
+        if (item) {
+            if (!item.harvests) {
+                item.harvests = [];
+            }
+            item.harvests.push({
+                date: date,
+                amount: amount,
+                unit: unit
+            });
+            // Sort harvests by date descending
+            item.harvests.sort((a, b) => new Date(b.date) - new Date(a.date));
+            saveMyGarden();
+            document.getElementById('harvest-input-overlay').classList.remove('active');
+            renderMyGarden();
+        }
+    });
+
+    // --- Harvest Viz Logic ---
+    window.openHarvestVizModal = function(gardenId) {
+        const item = myGarden.find(i => i.id === gardenId);
+        if (!item || !item.harvests || item.harvests.length === 0) return;
+        
+        const vegInfo = vegetables.find(v => v.id === item.vegId);
+        document.getElementById('harvest-viz-title').innerHTML = \\ \ - 产量统计\;
+        
+        let total = 0;
+        const unit = item.harvests[0].unit || '公斤';
+        let maxAmount = 0;
+        
+        // Aggregate by date (in case multiple harvests per day)
+        const aggregated = {};
+        item.harvests.forEach(h => {
+            const date = h.date;
+            const amt = parseFloat(h.amount || 0);
+            total += amt;
+            if (!aggregated[date]) aggregated[date] = 0;
+            aggregated[date] += amt;
+        });
+        
+        const sortedDates = Object.keys(aggregated).sort((a, b) => new Date(a) - new Date(b));
+        sortedDates.forEach(d => {
+            if (aggregated[d] > maxAmount) maxAmount = aggregated[d];
+        });
+
+        const count = item.harvests.length;
+        const avg = (total / count).toFixed(1);
+
+        document.getElementById('harvest-total-val').innerText = total.toFixed(1) + ' ' + unit;
+        document.getElementById('harvest-count-val').innerText = count + ' 次';
+        document.getElementById('harvest-avg-val').innerText = avg + ' ' + unit;
+
+        const chartContainer = document.getElementById('harvest-chart');
+        chartContainer.innerHTML = '';
+        
+        sortedDates.forEach(date => {
+            const amt = aggregated[date];
+            const heightPct = maxAmount > 0 ? Math.max((amt / maxAmount) * 100, 5) : 5;
+            const shortDate = date.substring(5); // MM-DD
+            
+            const barWrapper = document.createElement('div');
+            barWrapper.className = 'harvest-bar-wrapper';
+            barWrapper.innerHTML = \
+                <div class="harvest-bar-val">\</div>
+                <div class="harvest-bar" style="height: \%" title="\: \ \"></div>
+                <div class="harvest-bar-date">\</div>
+            \;
+            chartContainer.appendChild(barWrapper);
+        });
+
+        const listContainer = document.getElementById('harvest-list');
+        listContainer.innerHTML = item.harvests.map(h => \
+            <div class="harvest-list-item">
+                <span style="color: #64748b;">📅 \</span>
+                <span style="font-weight: 600; color: #0f172a;">\ \</span>
+            </div>
+        \).join('');
+
+        document.getElementById('harvest-viz-overlay').classList.add('active');
+    };
+
+    document.getElementById('harvest-viz-close-btn').addEventListener('click', () => {
+        document.getElementById('harvest-viz-overlay').classList.remove('active');
+    });
 
     // --- Farm Mode Extension Logic ---
 });

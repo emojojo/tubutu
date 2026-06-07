@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1780630000000">
+    <link rel="stylesheet" href="styles.css?v=1780640000000">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -251,6 +251,80 @@
         </div>
     </div>
 
+    <!-- Harvest Input Modal -->
+    <div class="modal-overlay" id="harvest-input-overlay">
+        <div class="modal op-glass-modal" id="harvest-input-modal">
+            <button class="close-btn" id="harvest-input-close-btn">&times;</button>
+            <div class="op-modal-header">
+                <h3>🍓 记录采收</h3>
+                <p>记录每一次丰收的喜悦</p>
+            </div>
+            <div class="op-form-content">
+                <input type="hidden" id="harvest-garden-id">
+                
+                <div class="op-form-group">
+                    <label>采收日期</label>
+                    <input type="date" id="harvest-date" class="op-input">
+                </div>
+                
+                <div class="op-form-group" style="flex-direction: row; gap: 10px;">
+                    <div style="flex: 2;">
+                        <label>采收数量</label>
+                        <input type="number" id="harvest-amount" class="op-input" placeholder="输入数量" step="0.1" min="0">
+                    </div>
+                    <div style="flex: 1;">
+                        <label>单位</label>
+                        <select id="harvest-unit" class="op-input">
+                            <option value="公斤">公斤</option>
+                            <option value="斤">斤</option>
+                            <option value="克">克</option>
+                            <option value="个">个</option>
+                            <option value="把">把</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="op-submit-btn" id="harvest-submit-btn">保存采收记录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Harvest Viz Modal -->
+    <div class="modal-overlay" id="harvest-viz-overlay">
+        <div class="modal op-glass-modal" id="harvest-viz-modal" style="max-width: 600px;">
+            <button class="close-btn" id="harvest-viz-close-btn">&times;</button>
+            <div class="op-modal-header" style="padding-bottom: 10px;">
+                <h3 id="harvest-viz-title">产量统计</h3>
+            </div>
+            <div class="op-form-content" style="gap: 15px;">
+                <div class="harvest-stats-dashboard">
+                    <div class="harvest-stat-box">
+                        <div class="stat-label">总产量</div>
+                        <div class="stat-value" id="harvest-total-val">-</div>
+                    </div>
+                    <div class="harvest-stat-box">
+                        <div class="stat-label">采收次数</div>
+                        <div class="stat-value" id="harvest-count-val">-</div>
+                    </div>
+                    <div class="harvest-stat-box">
+                        <div class="stat-label">单次平均</div>
+                        <div class="stat-value" id="harvest-avg-val">-</div>
+                    </div>
+                </div>
+
+                <div class="harvest-chart-container">
+                    <div class="harvest-chart" id="harvest-chart">
+                        <!-- Bars injected by JS -->
+                    </div>
+                </div>
+
+                <div class="harvest-list" id="harvest-list">
+                    <!-- List injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Image Lightbox Modal -->
     <div class="modal-overlay" id="image-lightbox-overlay" style="z-index: 3000; align-items: center; justify-content: center;">
         <div style="position: relative; max-width: 90vw; max-height: 90vh;">
@@ -259,6 +333,6 @@
         </div>
     </div>
 
-    <script type="module" src="app.js?v=1780630000000"></script>
+    <script type="module" src="app.js?v=1780640000000"></script>
 </body>
 </html>
