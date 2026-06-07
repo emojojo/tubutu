@@ -1,6 +1,6 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780680000000';
+﻿import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780680000000';
 import { weatherData } from './weather_data.js?v=1780680000000';
-import { app, auth, db } from './cloudbase-config.js';
+import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
 let unsubSnapshot = null;
@@ -27,7 +27,7 @@ async function saveGarden() {
     window.myGarden = myGarden;
     if (currentUser) {
         try {
-            await db.collection('users').doc(currentUser.uid).set({ garden: myGarden });
+            await setDoc(doc(db, 'users', currentUser.uid), { garden: myGarden }, { merge: true });
         } catch (e) {
             console.error('Error saving to cloud:', e);
         }
@@ -73,17 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const anonymousLoginBtn = document.getElementById('anonymous-login-btn');
-
-    if (anonymousLoginBtn) {
-        anonymousLoginBtn.addEventListener('click', async () => {
+    if (googleLoginBtn) {
+        googleLoginBtn.addEventListener('click', async () => {
             try {
-                const loginState = await auth.anonymousAuthProvider().signIn();
-                console.log("Logged in anonymously");
+                const result = await signInWithPopup(auth, googleProvider);
+                console.log("Logged in as:", result.user.displayName);
                 loginModalOverlay.classList.remove('active');
             } catch (error) {
-                console.error("Anonymous Login failed:", error);
-                alert("游客登录失败，请确保您在云开发控制台开启了匿名登录：" + error.message);
+                console.error("Login failed:", error);
+                alert("登录失败：" + error.message);
             }
         });
     }
@@ -97,24 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             try {
-                await auth.signUpWithEmailAndPassword(email, password);
+                const result = await createUserWithEmailAndPassword(auth, email, password);
                 
                 // Assign a random vegetable icon as avatar
                 const randomVeg = vegetables[Math.floor(Math.random() * vegetables.length)];
-                try {
-                    await auth.currentUser.update({ avatarUrl: randomVeg.icon });
-                } catch(e){}
+                await updateProfile(result.user, { 
+                    photoURL: randomVeg.icon 
+                });
+                // Update DOM immediately since onAuthStateChanged might have fired before profile update
+                if (userAvatar) userAvatar.src = randomVeg.icon;
 
                 console.log("Registered successfully");
                 loginModalOverlay.classList.remove('active');
                 authEmailInput.value = '';
                 authPasswordInput.value = '';
-                
-                // Automatically sign in after sign up
-                await auth.signInWithEmailAndPassword(email, password);
             } catch (error) {
                 console.error("Registration failed:", error);
-                alert("注册失败：" + error.message);
+                if (error.code === 'auth/email-already-in-use') {
+                    alert("该邮箱已被注册！");
+                } else if (error.code === 'auth/operation-not-allowed') {
+                    alert("管理员未开启邮箱注册功能，请在 Firebase 控制台开启。");
+                } else {
+                    alert("注册失败：" + error.message);
+                }
             }
         });
     }
@@ -128,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             try {
-                await auth.signInWithEmailAndPassword(email, password);
+                await signInWithEmailAndPassword(auth, email, password);
                 console.log("Logged in successfully");
                 loginModalOverlay.classList.remove('active');
                 authEmailInput.value = '';
@@ -143,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', async () => {
             try {
-                await auth.signOut();
+                await signOut(auth);
                 console.log("Logged out");
             } catch (error) {
                 console.error("Logout failed:", error);
@@ -151,20 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    auth.onLoginStateChanged(async (loginState) => {
-        if (loginState) {
-            const user = auth.currentUser;
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
             currentUser = user;
             if (showLoginModalBtn) showLoginModalBtn.style.display = 'none';
             if (userInfoDiv) userInfoDiv.style.display = 'flex';
-            if (userAvatar) userAvatar.src = user.avatarUrl || 'images/default_avatar.png';
-            if (userName) userName.textContent = user.isAnonymous ? '游客' : (user.nickName || user.email.split('@')[0]);
+            if (userAvatar) userAvatar.src = user.photoURL || 'images/default_avatar.png';
+            if (userName) userName.textContent = user.displayName || user.email.split('@')[0];
 
             // Sync Data
             try {
-                const res = await db.collection('users').doc(user.uid).get();
-                if (res.data && res.data.length > 0) {
-                    const cloudGarden = res.data[0].garden || [];
+                const userDocRef = doc(db, 'users', user.uid);
+                const docSnap = await getDoc(userDocRef);
+                if (docSnap.exists()) {
+                    const cloudGarden = docSnap.data().garden || [];
                     cloudGarden.forEach(g => {
                         if (!g.id) {
                             g.id = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
@@ -180,41 +183,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     saveGarden();
                 } else {
                     // First time login, save local garden to cloud
-                    await db.collection('users').doc(user.uid).set({
-                        email: user.isAnonymous ? 'anonymous' : user.email,
+                    await setDoc(userDocRef, {
+                        email: user.email,
+                        displayName: user.displayName,
                         lastLogin: new Date().toISOString(),
                         garden: myGarden
                     });
                 }
 
                 // Listen for changes
-                if (unsubSnapshot) unsubSnapshot.close();
-                unsubSnapshot = db.collection('users').doc(user.uid).watch({
-                    onChange: (snapshot) => {
-                        if (snapshot.docs && snapshot.docs.length > 0) {
-                            const newGarden = snapshot.docs[0].garden || [];
-                            newGarden.forEach(g => {
-                                if (!g.id) {
-                                    g.id = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
-                                }
-                            });
-                            // Check if different to avoid infinite loop
-                            if (JSON.stringify(newGarden) !== JSON.stringify(myGarden)) {
-                                myGarden = newGarden;
-                                localStorage.setItem('tubutu_my_garden', JSON.stringify(myGarden));
-                                window.myGarden = myGarden;
-                                renderGrid();
-                                renderCalendar();
-                                const myGardenSection = document.getElementById('mygarden-section');
-                                if (myGardenSection && myGardenSection.style.display === 'block') {
-                                    renderMyGarden();
-                                    if (typeof renderMyFertilizers === 'function') renderMyFertilizers();
-                                }
+                if (unsubSnapshot) unsubSnapshot();
+                unsubSnapshot = onSnapshot(userDocRef, (doc) => {
+                    if (doc.exists()) {
+                        const newGarden = doc.data().garden || [];
+                        newGarden.forEach(g => {
+                            if (!g.id) {
+                                g.id = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+                            }
+                        });
+                        // Check if different to avoid infinite loop
+                        if (JSON.stringify(newGarden) !== JSON.stringify(myGarden)) {
+                            myGarden = newGarden;
+                            localStorage.setItem('tubutu_my_garden', JSON.stringify(myGarden));
+                            window.myGarden = myGarden;
+                            renderGrid();
+                            renderCalendar();
+                            const myGardenSection = document.getElementById('mygarden-section');
+                            if (myGardenSection && myGardenSection.style.display === 'block') {
+                                renderMyGarden();
+                                if (typeof renderMyFertilizers === 'function') renderMyFertilizers();
                             }
                         }
-                    },
-                    onError: (err) => {
-                        console.error('Watch error', err);
                     }
                 });
 
@@ -233,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             currentUser = null;
             if (unsubSnapshot) {
-                unsubSnapshot.close();
+                unsubSnapshot();
                 unsubSnapshot = null;
             }
             if (showLoginModalBtn) showLoginModalBtn.style.display = 'flex';
