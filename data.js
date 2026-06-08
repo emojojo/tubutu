@@ -623,11 +623,11 @@ export const vegetables = [
 
   // ================= 叶菜类 (Leafy) =================
   { id: 'jingjie',
-    avatar: 'images/jingjie_avatar_1780861101862.png',
+    avatar: 'images/jingjie_v3_avatar_1780922012884.png',
     name: '荆芥',
     baseTemp: 10, categoryId: 'leafy',
     icon: '🌿',
-    image: 'images/jingjie_banner_1780861113342.png',
+    image: 'images/jingjie_v3_banner_1780922026494.png',
     description: '河南人的灵魂香草！喜温暖湿润，香气浓郁，不仅可以做面条伴侣，还有驱虫功效。',
     calendar: {
       north: '4-5月春播，或夏季播种。',
@@ -643,10 +643,10 @@ export const vegetables = [
       { name: '采收期', water_fertilizer: '每次采收后补充速效氮肥，促进新侧枝萌发。', pest_management: '采摘期停药，保证食用安全。', pruning_trellising: '打顶采摘，越掐越发，能不断长出新侧芽。' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/jingjie_v2_stage_1_1780861125854.png', days: 5, gdd: 50  },
-      { name: '出苗', image: 'images/jingjie_v2_stage_2_1780861136071.png', days: 7, gdd: 70  },
-      { name: '生长期', image: 'images/jingjie_v2_stage_3_1780861149029.png', days: 15, gdd: 150  },
-      { name: '连续采收', image: 'images/jingjie_v2_stage_4_1780861164525.png', days: 40, gdd: 400  }
+      { name: '种子', image: 'images/jingjie_v3_stage_1_1780922036837.png', days: 5, gdd: 50  },
+      { name: '出苗', image: 'images/jingjie_v3_stage_2_1780922048193.png', days: 7, gdd: 70  },
+      { name: '生长期', image: 'images/jingjie_v3_stage_3_1780922059868.png', days: 15, gdd: 150  },
+      { name: '连续采收', image: 'images/jingjie_v3_stage_4_1780922074090.png', days: 40, gdd: 400  }
     ],
     pests: [
       {
