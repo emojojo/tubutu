@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1780922000000';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000011';
 import { weatherData } from './weather_data.js?v=1780922000000';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
@@ -1249,6 +1249,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let gddPercentage = Math.min(100, (status.accumulatedGdd / status.overallTotalGdd) * 100).toFixed(1);
 
+            let reminderHtml = '';
+            if (veg.fertilizerSchedule && Array.isArray(veg.fertilizerSchedule)) {
+                const currentFert = veg.fertilizerSchedule.filter(f => f.stageIndex === status.currentStageIndex);
+                if (currentFert.length > 0) {
+                    currentFert.forEach(f => {
+                        const stageName = veg.growthSequence[status.currentStageIndex] ? veg.growthSequence[status.currentStageIndex].name : '当前阶段';
+                        const todoKey = 'fert_' + f.stageIndex;
+                        const isChecked = gardenItem.completedTodos && gardenItem.completedTodos[todoKey];
+                        const checkedStyle = isChecked ? 'filter: grayscale(1); opacity: 0.5;' : '';
+                        const remarkText = gardenItem.remarks && gardenItem.remarks[todoKey] ? gardenItem.remarks[todoKey] : '';
+                        
+                        reminderHtml += `
+                        <div style="margin-top: 15px; background: #fdfbf7; border: 1px solid #f3e8d2; border-radius: 12px; padding: 12px;">
+                            <div style="color: #b45309; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">🧪 施肥提醒清单 (待办)</div>
+                            <div style="display: flex; align-items: center; background: white; padding: 12px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; ${checkedStyle}">
+                                <div style="flex: 0 0 auto; display: flex; align-items: center;">
+                                    <input type="checkbox" onchange="toggleFertTodo('${gardenItem.id}', ${f.stageIndex})" ${isChecked ? 'checked' : ''} style="margin-right: 10px; width: 18px; height: 18px; accent-color: #10b981; cursor: pointer; flex-shrink: 0;">
+                                    <span style="font-weight: 500; color: #4b5563; white-space: nowrap;">${f.actionName}</span>
+                                    <span style="font-size: 0.85rem; color: #9ca3af; margin-left: 8px; white-space: nowrap;">(对应: ${stageName})</span>
+                                </div>
+                                <div style="width: 1px; background: #e5e7eb; height: 30px; margin: 0 15px; flex-shrink: 0;"></div>
+                                <div style="flex: 1 1 auto; font-size: 0.9rem; color: #6b7280; line-height: 1.4; word-break: break-word;">
+                                    ${f.dosagePerPlant} ${f.fertilizerType}<br>
+                                    有机替代: ${f.organicAlternative}
+                                    <div style="margin-top: 6px;">
+                                        <input type="text" placeholder="📝 添加备注..." value="${remarkText}" onchange="saveFertRemark('${gardenItem.id}', ${f.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    });
+                }
+            }
+            if (veg.pruning && Array.isArray(veg.pruning)) {
+                const currentPrune = veg.pruning.filter(p => p.stageIndex === status.currentStageIndex);
+                if (currentPrune.length > 0) {
+                    currentPrune.forEach(p => {
+                        reminderHtml += `<div style="background: #f0fdf4; border: 1px solid #dcfce7; border-left: 4px solid #16a34a; padding: 10px 15px; margin: 15px 0 5px 0; border-radius: 4px;">
+                            <div style="color: #166534; font-weight: bold; margin-bottom: 5px; font-size: 0.95rem;">✂️ 整枝提醒：当前处于【${(veg.growthSequence[status.currentStageIndex] ? veg.growthSequence[status.currentStageIndex].name : '当前阶段')}】</div>
+                            <div style="color: #14532d; font-size: 0.9rem;">操作建议：${p.instruction}</div>
+                        </div>`;
+                    });
+                }
+            }
+
             let operationsHtml = '';
             const ops = gardenItem.operations || [];
             if (ops.length > 0) {
@@ -1340,6 +1385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${harvestBadgeHtml}
                         </div>
                         ${timelineHtml}
+                        ${reminderHtml}
                         ${operationsHtml}
                     </div>
                 </div>
@@ -1900,6 +1946,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Combined To-Do and Harvest Modal Logic ---
+    window.saveFertRemark = function(gardenId, stageIndex, remark) {
+        const item = myGarden.find(i => i.id === gardenId);
+        if (item) {
+            item.remarks = item.remarks || {};
+            item.remarks['fert_' + stageIndex] = remark;
+            saveMyGarden();
+        }
+    };
+
+    window.toggleFertTodo = function(gardenId, stageIndex) {
+        const item = myGarden.find(i => i.id === gardenId);
+        if (item) {
+            item.completedTodos = item.completedTodos || {};
+            item.completedTodos['fert_' + stageIndex] = !item.completedTodos['fert_' + stageIndex];
+            saveMyGarden();
+            renderMyGarden();
+            // Re-render modal list if open
+            if (document.getElementById('todo-harvest-overlay').classList.contains('active')) {
+                openTodoHarvestModal(gardenId);
+            }
+        }
+    };
+
     window.openTodoHarvestModal = function(gardenId) {
         const item = myGarden.find(i => i.id === gardenId);
         if (!item) return;
@@ -1917,19 +1986,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (vegInfo.fertilizerSchedule && vegInfo.fertilizerSchedule.length > 0) {
             todoList.innerHTML = vegInfo.fertilizerSchedule.map(fert => {
                 const stageName = vegInfo.growthSequence[fert.stageIndex]?.name || '特定阶段';
-                let isDone = status.currentStageIndex > fert.stageIndex;
-                let isActive = status.currentStageIndex === fert.stageIndex;
-                let icon = isDone ? '✅' : (isActive ? '⏳' : '📅');
-                let color = isDone ? '#9ca3af' : (isActive ? '#d97706' : '#6b7280');
+                const todoKey = 'fert_' + fert.stageIndex;
+                const isChecked = item.completedTodos && item.completedTodos[todoKey];
+                const checkedStyle = isChecked ? 'filter: grayscale(1); opacity: 0.5;' : '';
+                const remarkText = item.remarks && item.remarks[todoKey] ? item.remarks[todoKey] : '';
                 return `
-                    <div class="op-item" style="color: ${color};">
-                        <div class="op-marker" style="background: ${isDone ? '#d1d5db' : (isActive ? '#f59e0b' : '#e5e7eb')}; border-color: ${isDone ? '#9ca3af' : (isActive ? '#b45309' : '#9ca3af')};"></div>
-                        <div class="op-date" style="font-weight: 500;">
-                            ${icon} ${fert.actionName} <span style="font-size: 0.8rem; font-weight: normal; margin-left: 5px; opacity: 0.8;">(对应: ${stageName})</span>
+                    <div style="display: flex; align-items: center; background: white; margin-top: 8px; padding: 12px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; ${checkedStyle}">
+                        <div style="flex: 0 0 auto; display: flex; align-items: center;">
+                            <input type="checkbox" onchange="toggleFertTodo('${item.id}', ${fert.stageIndex})" ${isChecked ? 'checked' : ''} style="margin-right: 10px; width: 18px; height: 18px; accent-color: #10b981; cursor: pointer; flex-shrink: 0;">
+                            <span style="font-weight: 500; color: #4b5563; white-space: nowrap;">${fert.actionName}</span>
+                            <span style="font-size: 0.85rem; color: #9ca3af; margin-left: 8px; white-space: nowrap;">(对应: ${stageName})</span>
                         </div>
-                        <div class="op-remark" style="margin-top: 4px; font-size: 0.85rem; padding-left: 20px;">
+                        <div style="width: 1px; background: #e5e7eb; height: 30px; margin: 0 15px; flex-shrink: 0;"></div>
+                        <div style="flex: 1 1 auto; font-size: 0.9rem; color: #6b7280; line-height: 1.4; word-break: break-word;">
                             ${fert.dosagePerPlant} ${fert.fertilizerType}<br>
                             有机替代: ${fert.organicAlternative}
+                            <div style="margin-top: 6px;">
+                                <input type="text" placeholder="📝 添加备注..." value="${remarkText}" onchange="saveFertRemark('${item.id}', ${fert.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
+                            </div>
                         </div>
                     </div>
                 `;

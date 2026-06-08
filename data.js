@@ -180,6 +180,16 @@ export const vegetables = [
       { name: '结瓜', image: 'images/melon_v3_stage_6_1779710642557.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/melon_v3_stage_7_1779710660882.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '白粉病',
@@ -265,6 +275,14 @@ export const vegetables = [
       { name: '开花', image: 'images/strawberry_v3_stage_5_1779710769883.png', days: 15, gdd: 225  },
       { name: '结果', image: 'images/strawberry_v3_stage_6_1779710785239.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/strawberry_v3_stage_7_1779710805797.png', days: 10, gdd: 150  }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
     ],
     pests: [
             {
@@ -372,6 +390,12 @@ export const vegetables = [
       { days: 15, gdd: 225, name: '膨大期', image: 'images/broccoli_v3_stage_6_1779704281851.png' },
       { days: 15, gdd: 225, name: '采收期', image: 'images/broccoli_v3_stage_7_1779704297567.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
     pests: [
             {
                 name: '菜青虫',
@@ -476,6 +500,12 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '结球盛期', image: 'images/cabbage_head_v3_stage_6_1779704378100.png' },
       { days: 15, gdd: 225, name: '采收期', image: 'images/cabbage_head_v3_stage_7_1779704391362.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
     pests: [
             {
                 name: '菜青虫',
@@ -579,6 +609,12 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '现蕾期', image: 'images/cauliflower_v3_stage_5_1779704466832.png' },
       { days: 20, gdd: 300, name: '膨大期', image: 'images/cauliflower_v3_stage_6_1779704487261.png' },
       { days: 15, gdd: 225, name: '采收期', image: 'images/cauliflower_v3_stage_7_1779704502215.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
     ],
     pests: [
             {
@@ -710,6 +746,11 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '旺盛生长期', image: 'images/leek_v3_stage_5_1779690678105.png' },
       { days: 20, gdd: 300, name: '初收期', image: 'images/leek_v3_stage_6_1779690693708.png' },
       { days: 20, gdd: 300, name: '盛收期', image: 'images/leek_v3_stage_7_1779690708238.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 4, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
     ],
     pests: [
             {
@@ -871,6 +912,10 @@ export const vegetables = [
       { days: 30, gdd: 450, name: '初收期', image: 'images/amaranth_v3_stage_6_1779655429771.png' },
       { days: 40, gdd: 600, name: '采收期', image: 'images/amaranth_v3_stage_7_1779655444753.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 4, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
+    ],
     pests: [
             {
                 name: '白锈病',
@@ -948,6 +993,10 @@ export const vegetables = [
       { days: 10, gdd: 150, name: '旺盛生长期', image: 'images/crown_daisy_v3_stage_5_1779655513349.png' },
       { days: 10, gdd: 150, name: '初收期', image: 'images/crown_daisy_v3_stage_6_1779655525467.png' },
       { days: 10, gdd: 150, name: '采收期', image: 'images/crown_daisy_v3_stage_7_1779655541072.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 4, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
     ],
     pests: [
             {
@@ -1165,6 +1214,14 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '成熟期', image: 'images/okra_v3_stage_6_1779705658766.png' },
       { days: 20, gdd: 300, name: '采收期', image: 'images/okra_v3_stage_7_1779705673427.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 4, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '根结线虫',
@@ -1257,6 +1314,14 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '结果期', image: 'images/eggplant_v3_stage_5_1779705745318.png' },
       { days: 20, gdd: 300, name: '转色期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
       { days: 20, gdd: 300, name: '采收期', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 4, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
     ],
     pests: [
             {
@@ -1363,6 +1428,14 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '转色期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
       { days: 20, gdd: 300, name: '采收期', image: 'images/pepper_v3_stage_7_1779705905171.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 4, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '蚜虫',
@@ -1460,6 +1533,9 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '成熟期', image: 'images/radish_v3_stage_6_1779706465141.png' },
       { days: 20, gdd: 300, name: '采收期', image: 'images/radish_v3_stage_7_1779706479462.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
+    ],
     pests: [
             {
                 name: '跳甲',
@@ -1555,6 +1631,10 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '成熟期', image: 'images/carrot_v3_stage_6_1779706588699.png' },
       { days: 15, gdd: 225, name: '采收期', image: 'images/carrot_v3_stage_7_1779706602273.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
     pests: [
             {
                 name: '根结线虫',
@@ -1637,6 +1717,9 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '结薯期', image: 'images/potato_v3_stage_5_1779706691490.png' },
       { days: 20, gdd: 300, name: '成熟期', image: 'images/potato_v3_stage_6_1779706708840.png' },
       { days: 10, gdd: 150, name: '采收期', image: 'images/potato_v3_stage_7_1779706725798.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
     ],
     pests: [
             {
@@ -1721,6 +1804,15 @@ export const vegetables = [
       { days: 30, gdd: 450, name: '成熟期', image: 'images/sweetpotato_v3_stage_6_1779706834735.png' },
       { days: 30, gdd: 450, name: '采收期', image: 'images/sweetpotato_v3_stage_7_1779706851167.png' }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 0, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 1, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 2, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
+    ],
     pests: [
             {
                 name: '黑斑病',
@@ -1779,6 +1871,11 @@ export const vegetables = [
       { name: '旺盛生长期', image: 'images/stages/stage_ginger_1.png?v=1780159650000', days: 60, gdd: 900 },
       { name: '根茎膨大', image: 'images/stages/ginger_2_v3.png', days: 30, gdd: 450 },
       { name: '成熟采收', image: 'images/stages/stage_ginger_2.png', days: 10, gdd: 150 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 1, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 3, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
     ],
     pests: [
             {
@@ -1940,6 +2037,16 @@ export const vegetables = [
       { name: '结瓜', image: 'images/cucumber_v3_stage_6_1779707187264.png', days: 10, gdd: 150  },
       { name: '连续采收', image: 'images/cucumber_v3_stage_7_1779707200995.png', days: 45, gdd: 675  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '白粉病',
@@ -2008,6 +2115,16 @@ export const vegetables = [
       { name: '结瓜', image: 'images/pumpkin_v3_stage_6_1779708708298.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/pumpkin_v3_stage_7_1779708720195.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '白粉病',
@@ -2069,6 +2186,16 @@ export const vegetables = [
       { name: '结瓜', image: 'images/zucchini_v3_stage_6_1779708834395.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/zucchini_v3_stage_7_1779708847887.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '白粉病',
@@ -2129,6 +2256,16 @@ export const vegetables = [
       { name: '开花', image: 'images/bittermelon_v3_stage_5_1779708922373.png', days: 15, gdd: 225  },
       { name: '结瓜', image: 'images/bittermelon_v3_stage_6_1779708940274.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/bittermelon_v3_stage_7_1779708956561.png', days: 10, gdd: 150  }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
     ],
     pests: [
             {
@@ -2197,6 +2334,16 @@ export const vegetables = [
       { name: '结瓜', image: 'images/winter_melon_v3_stage_6_1779709207513.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/winter_melon_v3_stage_7_1779709220552.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '炭疽病',
@@ -2257,6 +2404,16 @@ export const vegetables = [
       { name: '开花', image: 'images/luffa_v3_stage_5_1779709323570.png', days: 15, gdd: 225  },
       { name: '结瓜', image: 'images/luffa_v3_stage_6_1779709337906.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/luffa_v3_stage_7_1779709353231.png', days: 10, gdd: 150  }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
     ],
     pests: [
             {
@@ -2325,6 +2482,16 @@ export const vegetables = [
       { name: '结瓜', image: 'images/calabash_v3_stage_6_1779709619259.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/calabash_v3_stage_7_1779709633898.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' },
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
             {
                 name: '白粉病',
@@ -2387,6 +2554,15 @@ export const vegetables = [
       { name: '开花', image: 'images/cowpea_v3_stage_5_1779710053877.png', days: 15, gdd: 225  },
       { name: '结荚', image: 'images/cowpea_v3_stage_6_1779710067725.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/cowpea_v3_stage_7_1779710084293.png', days: 10, gdd: 150  }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
     ],
     pests: [
             {
@@ -2455,6 +2631,15 @@ export const vegetables = [
       { name: '结荚', image: 'images/green_bean_v3_stage_6_1779710184514.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/green_bean_v3_stage_7_1779710199289.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
+    ],
     pests: [
             {
                 name: '炭疽病',
@@ -2521,6 +2706,15 @@ export const vegetables = [
       { name: '开花', image: 'images/broad_bean_v3_stage_5_1779710289138.png', days: 15, gdd: 225  },
       { name: '结荚', image: 'images/broad_bean_v3_stage_6_1779710304316.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/broad_bean_v3_stage_7_1779710318701.png', days: 10, gdd: 150  }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
     ],
     pests: [
             {
@@ -2596,6 +2790,10 @@ export const vegetables = [
       { name: '膨大', image: 'images/garlic_v3_stage_6_1779711352709.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/garlic_v3_stage_7_1779711365719.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
     pests: [
             {
                 name: '蒜蛆 (根蛆)',
@@ -2661,6 +2859,9 @@ export const vegetables = [
       { name: '培土', image: 'images/greenonion_v3_stage_5_1779711450339.png', days: 10, gdd: 150  },
       { name: '伸长', image: 'images/greenonion_v3_stage_6.png', days: 20, gdd: 300  },
       { name: '收获', image: 'images/greenonion_v3_stage_7.png', days: 15, gdd: 225  }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
     ],
     pests: [
             {
@@ -2740,6 +2941,14 @@ export const vegetables = [
       { name: '结果', image: 'images/everbearing_strawberry_v3_stage_6_1779710908481.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/everbearing_strawberry_v3_stage_7_1779710924843.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 4, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 5, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 5, instruction: '疏去畸形果、病虫果，每株保留健壮果实。摘除遮挡果实阳光的叶片。' }
+    ],
     pests: [
       {
         name: '红蜘蛛',
@@ -2790,6 +2999,11 @@ export const vegetables = [
       { name: '结球', image: 'images/napacabbage_stage_5.png', days: 25, gdd: 350 },
       { name: '采收', image: 'images/napacabbage_stage_6.png', days: 10, gdd: 100 }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
     pests: [
       { name: '菜青虫', cause: '十字花科专属性害虫，啃食叶片。', prevention: '使用防虫网，发现卵块及时捏死，喷洒苏云金杆菌（Bt）。', image: 'images/pest_cabbage_caterpillar.png' },
       { name: '软腐病', cause: '高温高湿且有伤口时极易感染，散发恶臭。', prevention: '高垄栽培，避免大水漫灌，及时拔除病株并撒生石灰消毒。', image: 'images/pest_soft_rot.png' }
@@ -2831,6 +3045,10 @@ export const vegetables = [
       { name: '幼苗', image: 'images/bokchoy_stage_3.png', days: 10, gdd: 150 },
       { name: '旺盛生长', image: 'images/bokchoy_stage_4.png', days: 15, gdd: 200 },
       { name: '采收', image: 'images/bokchoy_stage_5.png', days: 10, gdd: 120 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
     ],
     pests: [
       { name: '黄条跳甲', cause: '喜欢干燥温暖环境，啃食叶片成无数小孔。', prevention: '保持土壤湿润，铺设银灰地膜驱避。', image: 'images/pest_flea_beetle.png' },
@@ -2874,6 +3092,12 @@ export const vegetables = [
       { name: '叶片膨大', image: 'images/spinach_stage_4.png', days: 15, gdd: 150 },
       { name: '采收', image: 'images/spinach_stage_5.png', days: 10, gdd: 100 }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
+    ],
+    pruning: [
+      { stageIndex: 3, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
+    ],
     pests: [
       { name: '潜叶蝇', cause: '幼虫潜入叶片内部取食，留下白色不规则虫道。', prevention: '挂黄板诱杀成虫，发现虫道及早摘除病叶。', image: 'images/pest_leafminer.png' }
     ]
@@ -2916,6 +3140,10 @@ export const vegetables = [
       { name: '幼苗', image: 'images/lettuce_stage_3.png', days: 15, gdd: 200 },
       { name: '发棵/肉质茎膨大', image: 'images/lettuce_stage_4.png', days: 20, gdd: 300 },
       { name: '采收', image: 'images/lettuce_stage_5.png', days: 15, gdd: 200 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
     ],
     pests: [
       { name: '蚜虫', cause: '干旱温暖易爆发，吸食幼嫩汁液。', prevention: '黄板诱杀，喷施吡虫啉。', image: 'images/pest_aphid.png' },
@@ -2961,6 +3189,9 @@ export const vegetables = [
       { name: '心叶生长期', image: 'images/celery_stage_4.png', days: 30, gdd: 400 },
       { name: '采收', image: 'images/celery_stage_5.png', days: 15, gdd: 150 }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
+    ],
     pests: [
       { name: '斑枯病', cause: '高温高湿导致叶片出现病斑。', prevention: '合理密植，改善通风，轮作。', image: 'images/pest_garlic_purpleblotch.png' }
     ]
@@ -3001,6 +3232,9 @@ export const vegetables = [
       { name: '幼叶展开', image: 'images/coriander_stage_3.png', days: 15, gdd: 180 },
       { name: '旺盛生长', image: 'images/coriander_stage_4.png', days: 20, gdd: 250 },
       { name: '采收', image: 'images/coriander_stage_5.png', days: 10, gdd: 120 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
     ],
     pests: [
       { name: '极少病虫害', cause: '因其带有强烈气味，天然具有驱虫效果。', prevention: '正常田间管理即可，适合作为伴生植物。', image: 'images/pest_none.png' }
@@ -3043,6 +3277,10 @@ export const vegetables = [
       { name: '抽穗开花', image: 'images/corn_stage_4.png', days: 15, gdd: 250 },
       { name: '乳熟(鲜食采收)', image: 'images/corn_stage_5.png', days: 20, gdd: 225 }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' }
+    ],
     pests: [
       { name: '玉米螟', cause: '幼虫钻入心叶或茎秆、果穗中啃食。', prevention: '在大喇叭口期向心叶内撒施Bt颗粒剂。', image: 'images/pest_corn_borer.png' },
       { name: '草地贪夜蛾', cause: '暴食性害虫，食量惊人。', prevention: '利用性诱剂诱杀成虫，尽早喷施生物农药。', image: 'images/pest_fall_armyworm.png' }
@@ -3068,6 +3306,13 @@ export const vegetables = [
       { name: '鼓粒期', image: 'images/edamame_stage_5.png', days: 20, gdd: 300 },
       { name: '青荚采收', image: 'images/edamame_stage_6.png', days: 10, gdd: 150 }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' }
+    ],
+    pruning: [
+      { stageIndex: 2, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
+    ],
     pests: [
       { name: '豆荚螟', cause: '幼虫钻入豆荚内啃食豆粒。', prevention: '在开花结荚期及时喷药防治。', image: 'images/pest_pod_borer.png' }
     ]
@@ -3091,6 +3336,14 @@ export const vegetables = [
       { name: '开花', image: 'images/pea_stage_4.png', days: 15, gdd: 150 },
       { name: '结荚鼓粒', image: 'images/pea_stage_5.png', days: 20, gdd: 200 },
       { name: '采收', image: 'images/pea_stage_6.png', days: 10, gdd: 100 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' },
+      { stageIndex: 4, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
+    ],
+    pruning: [
+      { stageIndex: 2, instruction: '及时摘除底部老叶、黄叶，保持通风透光。侧枝生长过旺时可适当打顶。' }
     ],
     pests: [
       { name: '潜叶蝇', cause: '早春高发，幼虫钻入叶片啃食。', prevention: '黄板诱杀，摘除带虫道的叶片。', image: 'images/pest_leafminer.png' },
@@ -3138,6 +3391,9 @@ export const vegetables = [
       { name: '展叶期', image: 'images/taro_stage_3.png', days: 30, gdd: 450 },
       { name: '球茎膨大', image: 'images/taro_stage_4.png', days: 40, gdd: 700 },
       { name: '成熟采收', image: 'images/taro_stage_5.png', days: 20, gdd: 250 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
     ],
     pests: [
       { name: '斜纹夜蛾', cause: '暴食性害虫，幼虫群集啃食叶片。', prevention: '发现卵块或初孵幼虫及时摘除叶片销毁。', image: 'images/pest_cabbage_caterpillar.png' },
