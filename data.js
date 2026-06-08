@@ -89,6 +89,11 @@ export const vegetables = [
       { name: '结瓜', image: 'images/watermelon_v3_stage_6_1779709460924.png', days: 25, gdd: 375  },
       { name: '采收', image: 'images/watermelon_v3_stage_7_1779709474087.png', days: 10, gdd: 150  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
+      { stageIndex: 3, actionName: '促蔓肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 5, actionName: '膨瓜肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥 (如 NPK 15-5-25)', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶' }
+    ],
     pests: [
             {
                 name: '枯萎病',
@@ -648,6 +653,10 @@ export const vegetables = [
       { name: '生长期', image: 'images/jingjie_v3_stage_3_1780922059868.png', days: 15, gdd: 150  },
       { name: '连续采收', image: 'images/jingjie_v3_stage_4_1780922074090.png', days: 40, gdd: 400  }
     ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '2-3g', fertilizerType: '高氮复合肥 (如 NPK 30-10-10)', organicAlternative: '腐熟羊粪 30g 或 蚯蚓粪 50g', foliarAlternative: '0.2% 尿素水溶液喷叶' },
+      { stageIndex: 3, actionName: '采收追肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟厨余堆肥液 50ml', foliarAlternative: '氨基酸叶面肥 1000倍液' }
+    ],
     pests: [
       {
           name: '蚜虫',
@@ -779,6 +788,10 @@ export const vegetables = [
       { days: 10, gdd: 150, name: '旺盛生长期', image: 'images/water_spinach_v3_stage_5_1779690780220.png' },
       { days: 10, gdd: 150, name: '初收期', image: 'images/water_spinach_v3_stage_6_1779690794433.png' },
       { days: 10, gdd: 150, name: '分枝生长期', image: 'images/water_spinach_v3_stage_7_1779690808205.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '高氮复合肥 (如 NPK 30-10-10)', organicAlternative: '稀薄粪水或尿液发酵液 100ml', foliarAlternative: '0.2% 尿素水溶液喷叶' },
+      { stageIndex: 6, actionName: '采收追肥', dosagePerPlant: '5-8g', fertilizerType: '高氮复合肥 (如 NPK 30-10-10)', organicAlternative: '腐熟鸡粪 50g', foliarAlternative: '氨基酸叶面肥 800倍液' }
     ],
     pests: [
             {
@@ -1030,6 +1043,10 @@ export const vegetables = [
       { days: 20, gdd: 300, name: '结果期', image: 'images/tomato_v3_stage_5_1779705522180.png' },
       { days: 20, gdd: 300, name: '转色期', image: 'images/tomato_v3_stage_6_1779705537599.png' },
       { days: 20, gdd: 300, name: '采收期', image: 'images/tomato_v3_stage_7_1779705551649.png' }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '5-8g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟羊粪 100g 或 蚯蚓粪 150g', foliarAlternative: '0.2% 尿素水溶液喷叶' },
+      { stageIndex: 4, actionName: '膨果肥', dosagePerPlant: '10-15g', fertilizerType: '高钾复合肥 (如 NPK 15-5-25) + 适量钙肥', organicAlternative: '草木灰一小把 + 骨粉 20g', foliarAlternative: '0.2% 磷酸二氢钾 + 0.1% 螯合钙喷叶' }
     ],
     pests: [
             {

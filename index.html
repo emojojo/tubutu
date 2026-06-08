@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1780922000000">
+    <link rel="stylesheet" href="styles.css?v=1786000000001">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -29,6 +29,18 @@
         </div>
 
         <div class="top-right-nav" id="auth-container">
+            <div class="notification-container" id="notification-container">
+                <button class="notification-bell" id="notification-bell">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span class="notification-badge" id="notification-badge" style="display:none;">0</span>
+                </button>
+                <div class="notification-dropdown" id="notification-dropdown" style="display:none;">
+                    <div class="notification-header">农事提醒 <span id="notification-clear" style="font-size:0.8rem; font-weight:normal; cursor:pointer; color:var(--primary-color);">清空</span></div>
+                    <div class="notification-list" id="notification-list">
+                        <!-- Notifications here -->
+                    </div>
+                </div>
+            </div>
             <button id="show-login-modal-btn" class="auth-btn">
                 <span style="margin-right:5px;">👤</span> 登录 / 注册
             </button>
@@ -289,6 +301,54 @@
         </div>
     </div>
 
+    <!-- Combined To-Do and Harvest Modal -->
+    <div class="modal-overlay" id="todo-harvest-overlay">
+        <div class="modal op-glass-modal" id="todo-harvest-modal" style="max-width: 600px;">
+            <button class="close-btn" id="todo-harvest-close-btn">&times;</button>
+            <div class="op-modal-header" style="padding-bottom: 10px;">
+                <h3 id="todo-harvest-title">待办清单与产量统计</h3>
+            </div>
+            
+            <div class="op-form-content" style="gap: 15px; max-height: 70vh; overflow-y: auto;">
+                <!-- To-Do List Section -->
+                <div class="operations-timeline" style="margin-top: 10px; background: #fdfbf7; border-color: #f3e8d2;">
+                    <div class="operations-timeline-title" style="color: #b45309;">🧪 施肥提醒清单 (待办)</div>
+                    <div class="op-list" id="todo-fertilizer-list" style="margin-top: 8px;">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Harvest Stats Section -->
+                <div class="operations-timeline-title" style="color: #be123c; margin-top: 15px;">📦 产量统计</div>
+                <div class="harvest-stats-dashboard" id="todo-harvest-stats" style="display:none;">
+                    <div class="harvest-stat-box">
+                        <div class="stat-label">总产量</div>
+                        <div class="stat-value" id="todo-harvest-total-val">-</div>
+                    </div>
+                    <div class="harvest-stat-box">
+                        <div class="stat-label">采收次数</div>
+                        <div class="stat-value" id="todo-harvest-count-val">-</div>
+                    </div>
+                    <div class="harvest-stat-box">
+                        <div class="stat-label">单次平均</div>
+                        <div class="stat-value" id="todo-harvest-avg-val">-</div>
+                    </div>
+                </div>
+                
+                <div class="harvest-chart-container" id="todo-harvest-chart-container" style="display:none;">
+                    <div class="harvest-chart" id="todo-harvest-chart">
+                        <!-- Bars injected by JS -->
+                    </div>
+                </div>
+
+                <div class="harvest-list" id="todo-harvest-list" style="display:none;">
+                    <!-- List injected by JS -->
+                </div>
+                <div id="todo-harvest-empty-msg" style="text-align: center; color: #9ca3af; padding: 20px 0;">暂无采收记录</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Harvest Viz Modal -->
     <div class="modal-overlay" id="harvest-viz-overlay">
         <div class="modal op-glass-modal" id="harvest-viz-modal" style="max-width: 600px;">
@@ -333,6 +393,6 @@
         </div>
     </div>
 
-    <script type="module" src="app.js?v=1780922000000"></script>
+    <script type="module" src="app_v2.js?v=1786000000004"></script>
 </body>
 </html>
