@@ -1,5 +1,5 @@
 import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000011';
-import { weatherData } from './weather_data.js?v=1780922000000';
+import { weatherData } from './weather_data.js?v=1786000000010';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -1083,6 +1083,46 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     
+    function checkExtremeWeather(cityId) {
+        const cityWeather = weatherData[cityId];
+        if (!cityWeather) return null;
+        
+        const today = new Date();
+        let alerts = [];
+        
+        for (let i = 0; i < 3; i++) {
+            let d = new Date(today);
+            d.setDate(today.getDate() + i);
+            const dateStr = d.toISOString().split('T')[0];
+            const w = cityWeather[dateStr];
+            if (w) {
+                if (w.code === 95 || w.code === 96 || w.code === 99) {
+                    alerts.push({ type: 'hail', text: `⚠️ 强对流/冰雹预警 (${dateStr})：建议紧急防护或移入室内！`});
+                } else if (w.precip && w.precip >= 25) {
+                    alerts.push({ type: 'rain', text: `⚠️ 暴雨预警 (${dateStr})：预计降水 ${w.precip}mm，注意防涝排水！`});
+                } else if (w.max >= 35) {
+                    alerts.push({ type: 'heat', text: `⚠️ 高温预警 (${dateStr})：最高温 ${w.max}°C，注意遮阳保水！`});
+                } else if (w.min <= 12) {
+                    alerts.push({ type: 'cold', text: `⚠️ 霜冻预警 (${dateStr})：最低温 ${w.min}°C，注意覆膜保温！`});
+                }
+            }
+        }
+        
+        if (alerts.length === 0) return null;
+        const typePriority = { 'hail': 4, 'rain': 3, 'heat': 2, 'cold': 1 };
+        alerts.sort((a, b) => typePriority[b.type] - typePriority[a.type]);
+        
+        let uniqueAlerts = [];
+        let seenTypes = new Set();
+        for (let a of alerts) {
+            if (!seenTypes.has(a.type)) {
+                uniqueAlerts.push(a);
+                seenTypes.add(a.type);
+            }
+        }
+        return uniqueAlerts;
+    }
+
     function getWeatherDataForPlant(cityId, plantDateStr) {
         // Return pre-fetched static data instantly
         return weatherData[cityId] || null;

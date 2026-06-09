@@ -37,7 +37,7 @@ def main():
         city_id, lat, lon = match.groups()
         print(f"Fetching weather for {city_id} (lat:{lat}, lon:{lon})...")
         
-        url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FShanghai&past_days=90&forecast_days=14"
+        url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weather_code&timezone=Asia%2FShanghai&past_days=90&forecast_days=14"
         
         max_retries = 3
         for attempt in range(max_retries):
@@ -49,14 +49,21 @@ def main():
                     dates = data['daily']['time']
                     tmax = data['daily']['temperature_2m_max']
                     tmin = data['daily']['temperature_2m_min']
-                    
+                    precip = data['daily'].get('precipitation_sum', [0] * len(dates))
+                    wcode = data['daily'].get('weather_code', [0] * len(dates))
+
                     if city_id not in weather_data:
                         weather_data[city_id] = {}
                         
                     daily_data = {}
                     for i in range(len(dates)):
                         if tmax[i] is not None and tmin[i] is not None:
-                            daily_data[dates[i]] = {"max": tmax[i], "min": tmin[i]}
+                            daily_data[dates[i]] = {
+                                "max": tmax[i], 
+                                "min": tmin[i],
+                                "precip": precip[i] if precip[i] is not None else 0,
+                                "code": wcode[i] if wcode[i] is not None else 0
+                            }
                             
                     # Merge new daily data into existing history
                     weather_data[city_id].update(daily_data)
