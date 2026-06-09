@@ -1271,8 +1271,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </div>
                                 <div style="width: 1px; background: #e5e7eb; height: 30px; margin: 0 15px; flex-shrink: 0;"></div>
                                 <div style="flex: 1 1 auto; font-size: 0.9rem; color: #6b7280; line-height: 1.4; word-break: break-word;">
-                                    ${f.dosagePerPlant} ${f.fertilizerType}<br>
-                                    有机替代: ${f.organicAlternative}
+                                    <span style="color: #ea580c; font-weight: bold; background: #fff7ed; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; border: 1px solid #ffedd5;">每株用量：${f.dosagePerPlant}</span><span style="margin-left: 6px;">${f.fertilizerType}</span><br>
+                                    <div style="margin-top: 4px;">有机替代: ${f.organicAlternative}</div>
                                     <div style="margin-top: 6px;">
                                         <input type="text" placeholder="📝 添加备注..." value="${remarkText}" onchange="saveFertRemark('${gardenItem.id}', ${f.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
                                     </div>
