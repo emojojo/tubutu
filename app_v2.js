@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000011';
-import { weatherData } from './weather_data.js?v=1786000000010';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000015';
+import { weatherData } from './weather_data.js?v=1786000000016';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -854,7 +854,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const savedCity = localStorage.getItem('tubutu_default_city');
             const defaultCity = gardenItem ? gardenItem.cityId : (savedCity || (cities.length > 0 ? cities[0].id : ''));
             
-            const cityOptionsHtml = cities.map(c => `<option value="${c.id}" ${defaultCity === c.id ? 'selected' : ''}>${c.name}</option>`).join('');
+            // Build province groups
+            let provMap = {};
+            cities.forEach(c => {
+                const p = c.province || '其他';
+                if(!provMap[p]) provMap[p] = [];
+                provMap[p].push(c);
+            });
+            
+            let defaultCityName = '北京';
+            let initialCityId = defaultCity || 'beijing';
+            const fCity = cities.find(c => c.id === initialCityId);
+            if (fCity) defaultCityName = fCity.name;
+            
+            let cityOptionsHtml = `<div class="city-search-container" style="position: relative; display: inline-block;">
+                <input type="text" id="garden-city-search" value="${defaultCityName}" placeholder="搜索城市(拼音/汉字)..." autocomplete="off" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit; width: 150px; cursor: pointer;" readonly onfocus="this.removeAttribute('readonly');">
+                <input type="hidden" id="garden-city-input" value="${initialCityId}">
+                <div id="city-dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto; width: 220px; z-index: 1000; padding: 5px 0;">`;
+            
+            for (let p in provMap) {
+                cityOptionsHtml += `<div class="city-prov-group" style="padding: 4px 10px; background: #f3f4f6; font-weight: bold; font-size: 0.9rem; color: #4b5563;">${p}</div>`;
+                provMap[p].forEach(c => {
+                    cityOptionsHtml += `<div class="city-option-item" data-id="${c.id}" data-name="${c.name}" data-pinyin="${c.id}" style="padding: 6px 15px; cursor: pointer; font-size: 0.95rem; color: #1f2937;">${c.name}</div>`;
+                });
+            }
+            cityOptionsHtml += `</div></div>`;
 
             const savedMethod = localStorage.getItem('tubutu_default_method') || 'sow';
             const defaultMethod = gardenItem ? gardenItem.method : savedMethod;
@@ -866,9 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="garden-control-flex" style="flex-wrap: wrap; gap: 15px;">
                             <div class="date-picker-group">
                                 <label style="color: #166534; font-size: 1rem;">播种城市：</label>
-                                <select id="garden-city-input" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
-                                    ${cityOptionsHtml}
-                                </select>
+                                ${cityOptionsHtml}
                             </div>
                             <div class="date-picker-group">
                                 <label style="color: #166534; font-size: 1rem;">种植方式：</label>
@@ -1002,6 +1024,72 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         if (item.type !== 'fertilizer' && item.type !== 'protection' && item.type !== 'model') {
+            // Setup city search dropdown logic
+            const citySearch = document.getElementById('garden-city-search');
+            const cityHidden = document.getElementById('garden-city-input');
+            const cityMenu = document.getElementById('city-dropdown-menu');
+            
+            if (citySearch && cityMenu) {
+                const items = cityMenu.querySelectorAll('.city-option-item');
+                const groups = cityMenu.querySelectorAll('.city-prov-group');
+                
+                citySearch.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    cityMenu.style.display = cityMenu.style.display === 'block' ? 'none' : 'block';
+                    if (cityMenu.style.display === 'block') {
+                        citySearch.value = ''; // clear for searching
+                    } else {
+                        const fCity = cities.find(c => c.id === cityHidden.value);
+                        if(fCity) citySearch.value = fCity.name;
+                    }
+                });
+                
+                citySearch.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    let groupVisibleMap = new Map(); // keep track if group has visible items
+                    
+                    items.forEach(item => {
+                        const name = item.getAttribute('data-name');
+                        const pinyin = item.getAttribute('data-pinyin');
+                        const isMatch = name.includes(term) || pinyin.includes(term);
+                        item.style.display = isMatch ? 'block' : 'none';
+                        if (isMatch) {
+                            let prev = item.previousElementSibling;
+                            while(prev && !prev.classList.contains('city-prov-group')) {
+                                prev = prev.previousElementSibling;
+                            }
+                            if (prev) groupVisibleMap.set(prev, true);
+                        }
+                    });
+                    
+                    groups.forEach(g => {
+                        g.style.display = groupVisibleMap.has(g) ? 'block' : 'none';
+                    });
+                });
+                
+                items.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        citySearch.value = item.getAttribute('data-name');
+                        cityHidden.value = item.getAttribute('data-id');
+                        cityMenu.style.display = 'none';
+                    });
+                    
+                    item.addEventListener('mouseenter', () => item.style.background = '#e5e7eb');
+                    item.addEventListener('mouseleave', () => item.style.background = 'transparent');
+                });
+                
+                document.addEventListener('click', () => {
+                    if (cityMenu.style.display === 'block') {
+                        cityMenu.style.display = 'none';
+                        const fCity = cities.find(c => c.id === cityHidden.value);
+                        if(fCity) citySearch.value = fCity.name;
+                    }
+                });
+                
+                cityMenu.addEventListener('click', (e) => e.stopPropagation());
+            }
+
             const toggleBtn = document.getElementById('toggle-garden-btn');
             const dateInput = document.getElementById('garden-date-input');
             const cityInput = document.getElementById('garden-city-input');
