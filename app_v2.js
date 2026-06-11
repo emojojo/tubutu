@@ -22,7 +22,26 @@ try {
 }
 window.myGarden = myGarden;
 
+function deduplicateGarden(gardenArray) {
+    const seen = new Set();
+    const unique = [];
+    for (const item of gardenArray) {
+        const key = `${item.vegId}_${item.cityId}_${item.plantDate}_${item.method}_${item.isHarvested ? 'harvested' : 'active'}`;
+        if (!seen.has(key)) {
+            seen.add(key);
+            unique.push(item);
+        }
+    }
+    return unique;
+}
+
+// Initial deduplication on load
+if (myGarden.length > 0) {
+    myGarden = deduplicateGarden(myGarden);
+}
+
 async function saveGarden() {
+    myGarden = deduplicateGarden(myGarden);
     localStorage.setItem('tubutu_my_garden', JSON.stringify(myGarden));
     window.myGarden = myGarden;
     if (currentUser) {
@@ -276,11 +295,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                     
-                    // Merge local and cloud (simple union by vegId for now, prioritizing cloud)
+                    // Merge local and cloud
                     const mergedMap = new Map();
                     myGarden.forEach(item => mergedMap.set(item.id, item));
                     cloudGarden.forEach(item => mergedMap.set(item.id, item));
                     myGarden = Array.from(mergedMap.values());
+                    myGarden = deduplicateGarden(myGarden);
                     
                     saveGarden();
                 } else {
@@ -1099,6 +1119,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dateVal = dateInput.value || new Date().toISOString().split('T')[0];
                     const cityVal = cityInput.value || (cities.length > 0 ? cities[0].id : '');
                     const methodVal = methodInput ? methodInput.value : 'sow';
+                    
+                    // Prevent duplicate addition
+                    const isDuplicate = myGarden.some(g => !g.isHarvested && !g.harvestDate && g.vegId === item.id && g.cityId === cityVal && g.plantDate === dateVal && g.method === methodVal);
+                    if (isDuplicate) {
+                        alert('您已经在这个城市、这个日期使用相同方式种植了该作物，请勿重复添加。如果想再种一批，请选择不同的日期。');
+                        return;
+                    }
+
                     const newId = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
                     
                     myGarden.push({ 
@@ -1157,7 +1185,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const savedCity = localStorage.getItem('tubutu_default_city');
             const cityVal = savedCity || (cities.length > 0 ? cities[0].id : '');
             const methodVal = localStorage.getItem('tubutu_default_method') || 'sow';
+            
+            // Prevent duplicate addition
+            const isDuplicate = myGarden.some(g => !g.isHarvested && !g.harvestDate && g.vegId === vegId && g.cityId === cityVal && g.plantDate === dateVal && g.method === methodVal);
+            if (isDuplicate) {
+                alert('已在菜园中！如需多批次种植请通过详情页添加。');
+                return;
+            }
+
+            const newId = 'g_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
             myGarden.push({
+                id: newId,
                 vegId: vegId,
                 plantDate: dateVal,
                 cityId: cityVal,
