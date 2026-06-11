@@ -5,6 +5,8 @@ import { weatherData } from './weather_data.js?v=1786000000018';
 const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
 for (let i = pestControls.length - 1; i >= 0; i--) {
     if (pestControls[i].categoryId === 'field_crops') {
+        const crop = pestControls[i];
+        crop.icon = crop.icon || ''; // Fix "undefined" text showing up
         pestControls.splice(i, 1);
     }
 }
