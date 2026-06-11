@@ -1,5 +1,14 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000017';
-import { weatherData } from './weather_data.js?v=1786000000017';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000018';
+import { weatherData } from './weather_data.js?v=1786000000018';
+
+// Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
+const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
+for (let i = pestControls.length - 1; i >= 0; i--) {
+    if (pestControls[i].categoryId === 'field_crops') {
+        pestControls.splice(i, 1);
+    }
+}
+vegetables.push(...fieldCrops);
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
