@@ -360,7 +360,8 @@ export const categories = [
   { id: 'cucurbits', name: '瓜菜类', icon: '🥒' },
   { id: 'fruit', name: '水果', icon: '🍉' },
   { id: 'legumes', name: '豆类', icon: '🫘' },
-  { id: 'allium', name: '葱蒜类', icon: '🧄' }
+  { id: 'allium', name: '葱蒜类', icon: '🧄' },
+  { id: 'field_crops', name: '大田作物', icon: '🌾' }
 ];
 
 export const vegetables = [
@@ -4019,5 +4020,548 @@ export const farmingModels = [
        { name: '极度增加植物多样性', content: '采用复杂的轮作制度和多物种覆盖作物混合播种，用不同根系深度的植物在地下构建立体的碳封存网络，激活土壤微生物。', image: 'images/regen_diversity.png' },
        { name: '计划性适应性放牧', content: '模仿野生食草动物群的迁徙行为，让牲畜在小块土地上高密度采食、踩踏并留下粪便，然后迅速转移，给土地充分的恢复期，极大地加速土壤碳封存。', image: 'images/regen_grazing.png' }
     ]
+  },
+  // ================= 小麦 (wheat) =================
+  {
+    id: 'wheat',
+    avatar: 'assets/icons/icon_wheat.png',
+    name: '小麦',
+    category: 'field_crops',
+    image: 'images/wheat_farm_bg.png',
+    description: '全球最重要的粮食作物之一，喜冷凉，长日照作物。',
+    difficulty: '★★★☆☆',
+    cycle: '100~200',
+    spacing: '行距20cm',
+    sunlight: '全日照',
+    water: '中等，拔节至孕穗期需水量大',
+    baseTemp: '0',
+    targetGDD: '2000',
+    stages: [
+      {
+        name: '播种期',
+        days: 7,
+        gdd: 100,
+        water_fertilizer: '施足底肥（氮磷钾复合肥）。',
+        pest_management: '药剂拌种防地下害虫及根腐病。',
+        pruning_trellising: '',
+        image: 'images/stages/wheat_seed.png'
+      },
+      {
+        name: '出苗期',
+        days: 10,
+        gdd: 150,
+        water_fertilizer: '保持土壤湿润，出苗后视墒情浇水。',
+        pest_management: '注意查苗补缺，防治麦芽等害虫。',
+        pruning_trellising: '',
+        image: 'images/stages/wheat_seedling.png'
+      },
+      {
+        name: '分蘖期',
+        days: 30,
+        gdd: 300,
+        water_fertilizer: '根据苗情追施分蘖肥（尿素）。',
+        pest_management: '防治纹枯病及麦蜘蛛。',
+        pruning_trellising: '适时镇压，控旺促壮。',
+        image: 'images/stages/wheat_tillering.png'
+      },
+      {
+        name: '拔节期',
+        days: 20,
+        gdd: 350,
+        water_fertilizer: '重施拔节孕穗肥，保持水分充足。',
+        pest_management: '预防白粉病和锈病。',
+        pruning_trellising: '可喷施生长调节剂防倒伏。',
+        image: 'images/stages/wheat_jointing.png'
+      },
+      {
+        name: '抽穗扬花期',
+        days: 15,
+        gdd: 300,
+        water_fertilizer: '水分需求高峰，切忌缺水。',
+        pest_management: '重点防治赤霉病和蚜虫（一喷三防）。',
+        pruning_trellising: '',
+        image: 'images/stages/wheat_flowering.png'
+      },
+      {
+        name: '灌浆结实期',
+        days: 25,
+        gdd: 500,
+        water_fertilizer: '叶面喷施磷酸二氢钾，防早衰。',
+        pest_management: '继续防治蚜虫和白粉病。',
+        pruning_trellising: '',
+        image: 'images/stages/wheat_filling.png'
+      },
+      {
+        name: '成熟采收期',
+        days: 10,
+        gdd: 300,
+        water_fertilizer: '停水，保持田间干燥。',
+        pest_management: '',
+        pruning_trellising: '适时机械抢收，防遇雨发芽。',
+        image: 'images/stages/wheat_harvest.png'
+      }
+    ]
+  },
+  // ================= 水稻 (rice) =================
+  {
+    id: 'rice',
+    avatar: 'assets/icons/icon_rice.png',
+    name: '水稻',
+    category: 'field_crops',
+    image: 'images/rice_farm_bg.png',
+    description: '亚洲主要粮食作物，喜高温多湿，短日照作物。',
+    difficulty: '★★★★☆',
+    cycle: '120~150',
+    spacing: '株距15cm，行距25cm',
+    sunlight: '全日照',
+    water: '极高，需水层管理',
+    baseTemp: '10',
+    targetGDD: '3000',
+    stages: [
+      {
+        name: '播种/育秧',
+        days: 25,
+        gdd: 400,
+        water_fertilizer: '施足底肥，保持床土湿润。',
+        pest_management: '种子消毒防恶苗病，防立枯病。',
+        pruning_trellising: '',
+        image: 'images/stages/rice_seed.png'
+      },
+      {
+        name: '移栽返青期',
+        days: 10,
+        gdd: 200,
+        water_fertilizer: '浅水护秧，早施分蘖肥。',
+        pest_management: '防治稻水象甲、二化螟。',
+        pruning_trellising: '',
+        image: 'images/stages/rice_seedling.png'
+      },
+      {
+        name: '分蘖期',
+        days: 30,
+        gdd: 600,
+        water_fertilizer: '浅水勤灌，适时烤田控制无效分蘖。',
+        pest_management: '防稻飞虱、纵卷叶螟及纹枯病。',
+        pruning_trellising: '',
+        image: 'images/stages/rice_tillering.png'
+      },
+      {
+        name: '拔节孕穗期',
+        days: 25,
+        gdd: 700,
+        water_fertilizer: '重施穗肥，保持水层。',
+        pest_management: '破口前重点防稻瘟病、稻曲病。',
+        pruning_trellising: '',
+        image: 'images/stages/rice_jointing.png'
+      },
+      {
+        name: '抽穗扬花期',
+        days: 15,
+        gdd: 400,
+        water_fertilizer: '浅水灌溉，干湿交替。',
+        pest_management: '注意防高温热害或低温冷害。',
+        pruning_trellising: '',
+        image: 'images/stages/rice_flowering.png'
+      },
+      {
+        name: '灌浆成熟期',
+        days: 30,
+        gdd: 700,
+        water_fertilizer: '干干湿湿，收割前一周断水。',
+        pest_management: '防后期稻飞虱危害。',
+        pruning_trellising: '籽粒变黄，含水量适宜时收获。',
+        image: 'images/stages/rice_harvest.png'
+      }
+    ]
+  },
+  // ================= 大田玉米 (field_corn) =================
+  {
+    id: 'field_corn',
+    avatar: 'assets/icons/icon_corn.png',
+    name: '大田玉米',
+    category: 'field_crops',
+    image: 'images/field_corn_bg.png',
+    description: '重要的粮食和饲料作物，光合效率高（C4植物）。',
+    difficulty: '★★☆☆☆',
+    cycle: '100~130',
+    spacing: '株距25cm，行距60cm',
+    sunlight: '全日照',
+    water: '中等，抽雄吐丝期需水敏感',
+    baseTemp: '10',
+    targetGDD: '2600',
+    stages: [
+      {
+        name: '播种期',
+        days: 7,
+        gdd: 150,
+        water_fertilizer: '施足底肥（含锌肥）。',
+        pest_management: '包衣种子防地下害虫及丝黑穗病。',
+        pruning_trellising: '',
+        image: 'images/stages/corn_seed.png'
+      },
+      {
+        name: '苗期',
+        days: 20,
+        gdd: 400,
+        water_fertilizer: '蹲苗促根，适当控水。',
+        pest_management: '防地老虎、二点委夜蛾及杂草。',
+        pruning_trellising: '及时间苗定苗。',
+        image: 'images/stages/corn_seedling.png'
+      },
+      {
+        name: '拔节大喇叭口期',
+        days: 30,
+        gdd: 700,
+        water_fertilizer: '重施穗肥（尿素），需水量剧增。',
+        pest_management: '心叶内撒施颗粒剂防玉米螟。',
+        pruning_trellising: '遇大风可培土防倒。',
+        image: 'images/stages/corn_jointing.png'
+      },
+      {
+        name: '抽雄吐丝期',
+        days: 15,
+        gdd: 450,
+        water_fertilizer: '保持充足土壤水分，防旱防涝。',
+        pest_management: '防蚜虫及南方锈病。',
+        pruning_trellising: '辅助授粉提高结实率。',
+        image: 'images/stages/corn_flowering.png'
+      },
+      {
+        name: '灌浆期',
+        days: 35,
+        gdd: 700,
+        water_fertilizer: '酌施粒肥，防早衰。',
+        pest_management: '防玉米螟钻蛀果穗。',
+        pruning_trellising: '',
+        image: 'images/stages/corn_filling.png'
+      },
+      {
+        name: '成熟采收期',
+        days: 15,
+        gdd: 200,
+        water_fertilizer: '停止灌水。',
+        pest_management: '',
+        pruning_trellising: '籽粒乳线消失，黑层出现即可机收。',
+        image: 'images/stages/corn_harvest.png'
+      }
+    ]
+  },
+  // ================= 大豆 (soybean) =================
+  {
+    id: 'soybean',
+    avatar: 'assets/icons/icon_soybean.png',
+    name: '大豆',
+    category: 'field_crops',
+    image: 'images/soybean_farm_bg.png',
+    description: '重要的优质蛋白和油料来源，具有根瘤固氮能力。',
+    difficulty: '★★★☆☆',
+    cycle: '100~130',
+    spacing: '株距15cm，行距40cm',
+    sunlight: '全日照',
+    water: '中等，开花结荚期需水量大',
+    baseTemp: '10',
+    targetGDD: '2400',
+    stages: [
+      {
+        name: '播种期',
+        days: 7,
+        gdd: 150,
+        water_fertilizer: '施底肥（磷钾为主），根瘤菌拌种。',
+        pest_management: '防地下害虫。',
+        pruning_trellising: '',
+        image: 'images/stages/soybean_seed.png'
+      },
+      {
+        name: '出苗及幼苗期',
+        days: 20,
+        gdd: 350,
+        water_fertilizer: '视苗情少施提苗肥。',
+        pest_management: '防地老虎、蚜虫。',
+        pruning_trellising: '中耕除草，破除板结。',
+        image: 'images/stages/soybean_seedling.png'
+      },
+      {
+        name: '分枝期',
+        days: 20,
+        gdd: 450,
+        water_fertilizer: '花前可追施少量氮肥。',
+        pest_management: '防红蜘蛛、卷叶螟。',
+        pruning_trellising: '化控防旺长。',
+        image: 'images/stages/soybean_branching.png'
+      },
+      {
+        name: '开花结荚期',
+        days: 30,
+        gdd: 700,
+        water_fertilizer: '需水临界期，遇旱必浇；喷施硼钼肥。',
+        pest_management: '重防豆荚螟、食心虫及霜霉病。',
+        pruning_trellising: '',
+        image: 'images/stages/soybean_flowering.png'
+      },
+      {
+        name: '鼓粒成熟期',
+        days: 35,
+        gdd: 750,
+        water_fertilizer: '叶面喷施磷酸二氢钾。',
+        pest_management: '防盲蝽象及食叶害虫。',
+        pruning_trellising: '叶片黄化脱落，豆荚变褐摇动有声时收获。',
+        image: 'images/stages/soybean_harvest.png'
+      }
+    ]
+  },
+  // ================= 棉花 (cotton) =================
+  {
+    id: 'cotton',
+    avatar: 'assets/icons/icon_cotton.png',
+    name: '棉花',
+    category: 'field_crops',
+    image: 'images/cotton_farm_bg.png',
+    description: '重要的经济作物和纺织原料，喜温好光，生长期长。',
+    difficulty: '★★★★☆',
+    cycle: '150~200',
+    spacing: '株距30cm，行距80cm',
+    sunlight: '全日照',
+    water: '中等，花铃期需水最多',
+    baseTemp: '12',
+    targetGDD: '3500',
+    stages: [
+      {
+        name: '播种期',
+        days: 10,
+        gdd: 200,
+        water_fertilizer: '施足底肥，地膜覆盖保墒增温。',
+        pest_management: '药剂拌种防苗期病害（立枯、炭疽）。',
+        pruning_trellising: '',
+        image: 'images/stages/cotton_seed.png'
+      },
+      {
+        name: '苗期',
+        days: 30,
+        gdd: 500,
+        water_fertilizer: '促根壮苗，少浇水。',
+        pest_management: '防棉蚜、红蜘蛛、地老虎。',
+        pruning_trellising: '中耕松土。',
+        image: 'images/stages/cotton_seedling.png'
+      },
+      {
+        name: '蕾期',
+        days: 25,
+        gdd: 600,
+        water_fertilizer: '稳施蕾肥，见干见湿。',
+        pest_management: '防棉铃虫、盲蝽象。',
+        pruning_trellising: '适时化控（缩节胺），去叶枝。',
+        image: 'images/stages/cotton_budding.png'
+      },
+      {
+        name: '花铃期',
+        days: 50,
+        gdd: 1400,
+        water_fertilizer: '重施花铃肥，保证水分供应。',
+        pest_management: '重防二三代棉铃虫、伏蚜、红蜘蛛及枯黄萎病。',
+        pruning_trellising: '打顶心，去旁心，严格化控。',
+        image: 'images/stages/cotton_flowering.png'
+      },
+      {
+        name: '吐絮采收期',
+        days: 45,
+        gdd: 800,
+        water_fertilizer: '停水停肥，叶面喷肥防早衰。',
+        pest_management: '防后期虫害。',
+        pruning_trellising: '喷施脱叶催熟剂，机械或人工采摘。',
+        image: 'images/stages/cotton_harvest.png'
+      }
+    ]
+  },
+  // ================= 花生 (peanut) =================
+  {
+    id: 'peanut',
+    avatar: 'assets/icons/icon_peanut.png',
+    name: '花生',
+    category: 'field_crops',
+    image: 'images/peanut_farm_bg.png',
+    description: '地上开花、地下结果的经济油料作物，忌连作。',
+    difficulty: '★★★☆☆',
+    cycle: '110~150',
+    spacing: '株距15cm，行距40cm',
+    sunlight: '全日照',
+    water: '中等，结荚期需水较多',
+    baseTemp: '12',
+    targetGDD: '2800',
+    stages: [
+      {
+        name: '播种期',
+        days: 10,
+        gdd: 200,
+        water_fertilizer: '重施底肥（钙肥很关键）。',
+        pest_management: '拌种防蛴螬等地下害虫。',
+        pruning_trellising: '',
+        image: 'images/stages/peanut_seed.png'
+      },
+      {
+        name: '苗期',
+        days: 25,
+        gdd: 450,
+        water_fertilizer: '控水蹲苗。',
+        pest_management: '防蚜虫、蓟马及死苗病害。',
+        pruning_trellising: '清棵蹲苗，促进第一对侧枝发育。',
+        image: 'images/stages/peanut_seedling.png'
+      },
+      {
+        name: '开花下针期',
+        days: 25,
+        gdd: 600,
+        water_fertilizer: '保持水分充足，追施钙肥和硼肥。',
+        pest_management: '防叶斑病及棉铃虫。',
+        pruning_trellising: '中耕培土，利于果针入土。',
+        image: 'images/stages/peanut_flowering.png'
+      },
+      {
+        name: '结荚期',
+        days: 35,
+        gdd: 900,
+        water_fertilizer: '水分敏感期，防旱防涝。',
+        pest_management: '重防蛴螬、叶斑病。',
+        pruning_trellising: '如有徒长，喷施多效唑化控。',
+        image: 'images/stages/peanut_podding.png'
+      },
+      {
+        name: '饱果成熟期',
+        days: 25,
+        gdd: 650,
+        water_fertilizer: '排涝防烂果，叶面喷施磷酸二氢钾。',
+        pest_management: '防茎腐病、白绢病。',
+        pruning_trellising: '茎叶变黄，荚果网纹清晰时采收。',
+        image: 'images/stages/peanut_harvest.png'
+      }
+    ]
+  },
+  // ================= 油菜 (rapeseed) =================
+  {
+    id: 'rapeseed',
+    avatar: 'assets/icons/icon_rapeseed.png',
+    name: '油菜',
+    category: 'field_crops',
+    image: 'images/rapeseed_farm_bg.png',
+    description: '重要的冬春油料作物，花期极具观赏价值。',
+    difficulty: '★★☆☆☆',
+    cycle: '150~220',
+    spacing: '株距20cm，行距40cm',
+    sunlight: '全日照',
+    water: '中等，花期怕渍水',
+    baseTemp: '5',
+    targetGDD: '2200',
+    stages: [
+      {
+        name: '播种育苗期',
+        days: 30,
+        gdd: 300,
+        water_fertilizer: '施足底肥（必施硼肥）。',
+        pest_management: '防跳甲、菜青虫。',
+        pruning_trellising: '',
+        image: 'images/stages/rapeseed_seed.png'
+      },
+      {
+        name: '越冬/苗期',
+        days: 60,
+        gdd: 400,
+        water_fertilizer: '追施腊肥，防冻保苗。',
+        pest_management: '防蚜虫。',
+        pruning_trellising: '中耕培土。',
+        image: 'images/stages/rapeseed_seedling.png'
+      },
+      {
+        name: '蕾薹期',
+        days: 25,
+        gdd: 400,
+        water_fertilizer: '重施薹肥，喷施硼肥防“花而不实”。',
+        pest_management: '防蚜虫及菌核病。',
+        pruning_trellising: '清沟理墒，防渍害。',
+        image: 'images/stages/rapeseed_budding.png'
+      },
+      {
+        name: '开花期',
+        days: 30,
+        gdd: 500,
+        water_fertilizer: '保持土壤湿润，忌积水。',
+        pest_management: '初花期重点防菌核病。',
+        pruning_trellising: '',
+        image: 'images/stages/rapeseed_flowering.png'
+      },
+      {
+        name: '角果成熟期',
+        days: 35,
+        gdd: 600,
+        water_fertilizer: '叶面喷施磷钾肥。',
+        pest_management: '防鸟害及后期蚜虫。',
+        pruning_trellising: '角果7-8成变黄时割倒后熟，或全熟机收。',
+        image: 'images/stages/rapeseed_harvest.png'
+      }
+    ]
+  },
+  // ================= 高粱 (sorghum) =================
+  {
+    id: 'sorghum',
+    avatar: 'assets/icons/icon_sorghum.png',
+    name: '高粱',
+    category: 'field_crops',
+    image: 'images/sorghum_farm_bg.png',
+    description: '抗旱耐涝耐盐碱，是酿酒和饲料的重要原料。',
+    difficulty: '★☆☆☆☆',
+    cycle: '110~140',
+    spacing: '株距20cm，行距50cm',
+    sunlight: '全日照',
+    water: '极少，极其耐旱',
+    baseTemp: '10',
+    targetGDD: '2500',
+    stages: [
+      {
+        name: '播种期',
+        days: 10,
+        gdd: 150,
+        water_fertilizer: '底肥为主。',
+        pest_management: '药剂拌种防地下害虫及黑穗病。',
+        pruning_trellising: '',
+        image: 'images/stages/sorghum_seed.png'
+      },
+      {
+        name: '苗期',
+        days: 25,
+        gdd: 450,
+        water_fertilizer: '抗旱能力强，极少需浇水。',
+        pest_management: '防蚜虫、芒蝇。',
+        pruning_trellising: '及时间苗、定苗。',
+        image: 'images/stages/sorghum_seedling.png'
+      },
+      {
+        name: '拔节孕穗期',
+        days: 35,
+        gdd: 800,
+        water_fertilizer: '追施拔节孕穗肥（氮肥为主）。',
+        pest_management: '防螟虫、蚜虫。',
+        pruning_trellising: '中耕培土。',
+        image: 'images/stages/sorghum_jointing.png'
+      },
+      {
+        name: '抽穗开花期',
+        days: 15,
+        gdd: 400,
+        water_fertilizer: '水分需求高峰，遇大旱需浇水。',
+        pest_management: '防炭疽病等叶部病害。',
+        pruning_trellising: '',
+        image: 'images/stages/sorghum_flowering.png'
+      },
+      {
+        name: '灌浆成熟期',
+        days: 35,
+        gdd: 700,
+        water_fertilizer: '基本不需水肥管理。',
+        pest_management: '防鸟害（若无防鸟网损失较大）。',
+        pruning_trellising: '穗子变色，籽粒变硬时收获。',
+        image: 'images/stages/sorghum_harvest.png'
+      }
+    ]
   }
+
 ];
+
+

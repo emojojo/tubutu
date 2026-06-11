@@ -1312,7 +1312,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return { accumulatedGdd, overallTotalGdd, remainingDays, currentStageIndex, diffDays, baseTemp, apiFailed };
     }
 
+    function getWeatherEmoji(code) {
+        if (code < 0) return '';
+        if (code === 0) return '☀️';
+        if (code === 1 || code === 2 || code === 3) return '⛅';
+        if (code >= 45 && code <= 48) return '🌫️';
+        if (code >= 51 && code <= 67) return '🌧️';
+        if (code >= 71 && code <= 77) return '❄️';
+        if (code >= 80 && code <= 82) return '🌧️';
+        if (code >= 85 && code <= 86) return '❄️';
+        if (code >= 95 && code <= 99) return '⛈️';
+        return '';
+    }
+
     async function renderMyGarden() {
+        const todayStr = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split('T')[0];
         const grid = document.getElementById('mygarden-grid');
         const emptyMsg = document.getElementById('mygarden-empty-msg');
         if (!grid) return;
@@ -1341,6 +1355,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const cityName = city ? city.name : '未知地区';
             
             const dailyData = getWeatherDataForPlant(gardenItem.cityId, gardenItem.plantDate);
+            const todayWeather = dailyData ? dailyData[todayStr] : null;
+            const weatherEmoji = todayWeather ? getWeatherEmoji(todayWeather.code) : '';
+            const weatherDisplay = weatherEmoji ? ` ${weatherEmoji}` : '';
             
             const status = calculatePlantStatus(veg, dailyData || {}, gardenItem.plantDate, gardenItem.method);
             
@@ -1497,7 +1514,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
-                            <span style="font-size: 0.9rem; color: #555;">📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
+                            <span style="font-size: 0.9rem; color: #555;">📍 ${cityName}${weatherDisplay} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
                             <span class="days-badge">已${gardenItem.method === 'transplant' ? '移栽' : '播种'} ${status.diffDays} 天</span>
