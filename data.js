@@ -1,4 +1,4 @@
-﻿
+
 export const cities = [
   { id: 'xiaqu', name: '甯傝緰鍖?, province: '鍖椾含甯?, lat: 0.0, lon: 0.0 },
   { id: 'xiaqu', name: '甯傝緰鍖?, province: '澶╂触甯?, lat: 0.0, lon: 0.0 },
