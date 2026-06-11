@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鍦熶笉鍦熺敓鎬佸啘鍦?| 寮€鍚妞嶇敓娲?/title>
-    <meta name="description" content="鍛婂埆绻佺悙鐨勫啘涓氭湳璇紝鏍规嵁浣犳墍鍦ㄧ殑鍩庡競锛屽畾鍒舵渶杞绘澗鐨勪粠绉嶅瓙鍒伴妗岀殑绉嶆璁″垝銆?>
+    <title>土不土生态农场 | 开启种植生活</title>
+    <meta name="description" content="告别繁琐的农业术语，根据你所在的城市，定制最轻松的从种子到餐桌的种植计划。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
 <body>
     <header class="hero">
         <div class="top-left-nav">
-            <div class="nav-label">馃搷 绉嶆鍦板尯:</div>
+            <div class="nav-label">📍 种植地区:</div>
             <div class="custom-select-wrapper nav-select">
                 <div class="custom-select" id="custom-region-select">
                     <div class="select-trigger" id="region-select-trigger">
-                        <span class="trigger-text">璇烽€夋嫨鍦板尯</span>
-                        <span class="arrow">鈻?/span>
+                        <span class="trigger-text">请选择地区</span>
+                        <span class="arrow">▼</span>
                     </div>
                     <div class="custom-options" id="region-options">
                         <!-- populated by js -->
@@ -35,29 +35,29 @@
                     <span class="notification-badge" id="notification-badge" style="display:none;">0</span>
                 </button>
                 <div class="notification-dropdown" id="notification-dropdown" style="display:none;">
-                    <div class="notification-header">鍐滀簨鎻愰啋 <span id="notification-clear" style="font-size:0.8rem; font-weight:normal; cursor:pointer; color:var(--primary-color);">娓呯┖</span></div>
+                    <div class="notification-header">农事提醒 <span id="notification-clear" style="font-size:0.8rem; font-weight:normal; cursor:pointer; color:var(--primary-color);">清空</span></div>
                     <div class="notification-list" id="notification-list">
                         <!-- Notifications here -->
                     </div>
                 </div>
             </div>
             <button id="show-login-modal-btn" class="auth-btn">
-                <span style="margin-right:5px;">馃懁</span> 鐧诲綍 / 娉ㄥ唽
+                <span style="margin-right:5px;">👤</span> 登录 / 注册
             </button>
             <div id="user-info" style="display:none; align-items:center; gap:10px;">
                 <img id="user-avatar" src="" alt="Avatar" style="width:32px; height:32px; border-radius:50%; border:2px solid white;">
                 <span id="user-name" style="color:white; font-size:0.9rem; font-weight:500;"></span>
-                <button id="logout-btn" class="auth-btn" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:15px; cursor:pointer;">閫€鍑?/button>
+                <button id="logout-btn" class="auth-btn" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:15px; cursor:pointer;">退出</button>
             </div>
         </div>
 
         <div class="hero-content">
             <div class="logo-container">
-                <img src="images/logo_tubutu_premium.png" alt="鍦熶笉鍦? class="site-logo">
+                <img src="images/logo_tubutu_premium.png" alt="土不土" class="site-logo">
             </div>
             
             <div class="search-container">
-                <input type="text" id="main-search" class="search-input" placeholder="馃攳 鎼滅储钄彍鎴栫梾铏 (濡? 鐧借彍銆佽殰铏?...">
+                <input type="text" id="main-search" class="search-input" placeholder="🔍 搜索蔬菜或病虫害 (如: 白菜、蚜虫)...">
             </div>
             
             <div id="region-desc" class="region-desc" style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
@@ -67,18 +67,18 @@
     <main class="container">
         <!-- Main Tabs -->
         <div class="main-tabs">
-            <button class="main-tab-btn" data-target="mygarden-section"><span class="tab-icon">馃鈥嶐煂?/span><span class="tab-text">鎴戠殑鑿滃洯</span></button>
-            <button class="main-tab-btn active" data-target="veg-section"><span class="tab-icon">馃ガ</span><span class="tab-text">钄灉绉嶆</span></button>
-            <button class="main-tab-btn" data-target="fert-section"><span class="tab-icon">馃</span><span class="tab-text">鍫嗚偉鍒朵綔</span></button>
-            <button class="main-tab-btn" data-target="protection-section"><span class="tab-icon">馃悶</span><span class="tab-text">鐥呰櫕闃叉姢</span></button>
-            <button class="main-tab-btn" data-target="model-section"><span class="tab-icon">馃攧</span><span class="tab-text">寰幆鍐滀笟</span></button>
-            <button class="main-tab-btn" data-target="calendar-section"><span class="tab-icon">馃搮</span><span class="tab-text">绉嶆鏃ュ巻</span></button>
+            <button class="main-tab-btn" data-target="mygarden-section"><span class="tab-icon">🧑‍🌾</span><span class="tab-text">我的菜园</span></button>
+            <button class="main-tab-btn active" data-target="veg-section"><span class="tab-icon">🥬</span><span class="tab-text">蔬果种植</span></button>
+            <button class="main-tab-btn" data-target="fert-section"><span class="tab-icon">🪱</span><span class="tab-text">堆肥制作</span></button>
+            <button class="main-tab-btn" data-target="protection-section"><span class="tab-icon">🐞</span><span class="tab-text">病虫防护</span></button>
+            <button class="main-tab-btn" data-target="model-section"><span class="tab-icon">🔄</span><span class="tab-text">循环农业</span></button>
+            <button class="main-tab-btn" data-target="calendar-section"><span class="tab-icon">📅</span><span class="tab-text">种植日历</span></button>
         </div>
 
         <div id="veg-section">
             <section class="filter-section">
                 <div class="category-filters" id="category-filters">
-                <button class="filter-btn active" data-id="all">鍏ㄩ儴钄灉</button>
+                <button class="filter-btn active" data-id="all">全部蔬果</button>
                 <!-- Categories will be populated by JS -->
             </div>
         </section>
@@ -91,7 +91,7 @@
         <!-- Fertilizer Section -->
         <div id="fert-section" class="tab-content" style="display: none;">
             <section class="fertilizer-section">
-                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">鑷粰鑷冻鐨勭敓鎬佸惊鐜綋绯伙紝璁╀綘鐨勬鐗╂洿鍋ュ悍銆?/p>
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">自给自足的生态循环体系，让你的植物更健康。</p>
                 <div class="vegetable-grid" id="fert-grid">
                     <!-- Fertilizer cards will be populated by JS -->
                 </div>
@@ -116,7 +116,7 @@
         <div id="calendar-section" class="tab-content" style="display: none;">
             <section class="calendar-wrapper">
                 <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">
-                    鏍规嵁褰撳墠閫夋嫨鐨勫湴鍖?<strong id="calendar-region-name"></strong>锛岀敓鎴愬叏骞存湀鍘嗐€?
+                    根据当前选择的地区 <strong id="calendar-region-name"></strong>，生成全年月历。
                 </p>
                 <div class="calendar-grid" id="calendar-grid">
                     <!-- Calendar months will be populated by JS -->
@@ -130,15 +130,15 @@
                 <div class="garden-view-toggle">
                     <button class="toggle-btn active" id="btn-show-active">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
-                        绉嶆涓?
+                        种植中
                     </button>
                     <button class="toggle-btn" id="btn-show-fert">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M14 16H5.3"/></svg>
-                        鑲ユ枡鍒朵綔
+                        肥料制作
                     </button>
                     <button class="toggle-btn" id="btn-show-history">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                        鏀惰幏鍘嗗彶
+                        收获历史
                     </button>
                 </div>
                 
@@ -148,7 +148,7 @@
             <div id="mygarden-active-view">
                 <section class="mygarden-wrapper" style="padding: 10px 0;">
                     <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="mygarden-empty-msg">
-                        浣犵殑鑿滃洯绌虹┖濡備篃锛屽揩鍘烩€滆敩鏋滅妞嶁€濋噷鎸戦€夋兂绉嶇殑妞嶇墿鍚э紒
+                        你的菜园空空如也，快去“蔬果种植”里挑选想种的植物吧！
                     </p>
                     <div class="vegetable-grid" id="mygarden-grid">
                         <!-- My Garden cards will be populated by JS -->
@@ -161,7 +161,7 @@
                 <section class="fert-wrapper" style="padding: 10px 0;">
                     
                     <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="fert-empty-msg">
-                        鏆傛棤鍒朵綔涓殑鑲ユ枡锛屽幓鈥滆嚜鍒惰偉鏂欌€濇爮鐩紑濮嬪埗浣滃惂锛?
+                        暂无制作中的肥料，去“自制肥料”栏目开始制作吧！
                     </p>
                     <div class="vegetable-grid" id="mygarden-fert-grid">
                         <!-- Fertilizer cards will be populated by JS -->
@@ -172,7 +172,7 @@
             <div id="mygarden-history-view" style="display: none;">
                 <section class="history-wrapper" style="padding: 10px 0;">
                     <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="history-empty-msg">
-                        鏆傛棤鏀惰幏鍘嗗彶锛岀户缁姫鍔涚妞嶅惂锛?
+                        暂无收获历史，继续努力种植吧！
                     </p>
                     <div class="vegetable-grid" id="history-grid">
                         <!-- History cards will be populated by JS -->
@@ -192,34 +192,34 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 鍦熶笉鍦熺敓鎬佸啘鍦?| 绉嶄笅绉嶅瓙锛屾敹鑾风敓娲?/p>
+        <p>&copy; 2024 土不土生态农场 | 种下种子，收获生活</p>
     </footer>
 
     <!-- Login Modal -->
     <div class="modal-overlay" id="login-modal-overlay">
         <div class="modal" style="max-width: 400px; text-align: center; padding: 20px;">
             <button class="close-btn" id="login-close-btn">&times;</button>
-            <h2 style="margin-top: 0; margin-bottom: 20px; color: #1b4332;">鐧诲綍 / 娉ㄥ唽</h2>
+            <h2 style="margin-top: 0; margin-bottom: 20px; color: #1b4332;">登录 / 注册</h2>
             
             <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
-                <input type="email" id="auth-email" placeholder="閭鍦板潃" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
-                <input type="password" id="auth-password" placeholder="瀵嗙爜 (鏈€灏?浣?" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+                <input type="email" id="auth-email" placeholder="邮箱地址" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+                <input type="password" id="auth-password" placeholder="密码 (最少6位)" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
             </div>
             
             <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <button type="button" id="email-login-btn" class="primary-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px;">鐧?褰?/button>
-                <button type="button" id="email-register-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px; background: #f0f0f0; color: #333; border: 1px solid #ccc; cursor: pointer;">娉?鍐?/button>
+                <button type="button" id="email-login-btn" class="primary-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px;">登 录</button>
+                <button type="button" id="email-register-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px; background: #f0f0f0; color: #333; border: 1px solid #ccc; cursor: pointer;">注 册</button>
             </div>
 
             <div style="display: flex; align-items: center; margin: 20px 0;">
                 <div style="flex: 1; height: 1px; background: #eee;"></div>
-                <div style="padding: 0 10px; color: #999; font-size: 0.9rem;">鎴?/div>
+                <div style="padding: 0 10px; color: #999; font-size: 0.9rem;">或</div>
                 <div style="flex: 1; height: 1px; background: #eee;"></div>
             </div>
 
             <button type="button" id="google-login-btn" class="auth-btn" style="width: 100%; justify-content: center; padding: 12px; font-size: 1rem; border: 1px solid #ddd;">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width:20px;height:20px;margin-right:10px;">
-                浣跨敤 Google 璐﹀彿缁х画
+                使用 Google 账号继续
             </button>
         </div>
     </div>
@@ -229,36 +229,36 @@
         <div class="modal op-glass-modal" id="op-modal">
             <button class="close-btn" id="op-close-btn">&times;</button>
             <div class="op-modal-header">
-                <h3>娣诲姞鍐滀簨璁板綍</h3>
-                <p>璁板綍妞嶇墿鎴愰暱鐨勭偣婊?/p>
+                <h3>添加农事记录</h3>
+                <p>记录植物成长的点滴</p>
             </div>
             
             <div class="op-form-content">
                 <div class="op-form-group">
-                    <label>搴旂敤鍒颁綔鐗╋紙鍙閫夛級</label>
+                    <label>应用到作物（可多选）</label>
                     <div class="op-crop-selector-container" id="op-crop-selector">
-                        <!-- JS灏嗗湪姝ゅ鍔ㄦ€佺敓鎴愪綔鐗╂爣绛?-->
+                        <!-- JS将在此处动态生成作物标签 -->
                     </div>
                 </div>
 
                 <div class="op-form-group">
-                    <label>鎿嶄綔鏃ユ湡</label>
+                    <label>操作日期</label>
                     <input type="date" id="op-date-input" class="op-input">
                 </div>
                 
                 <div class="op-form-group">
-                    <label>鎿嶄綔绫诲瀷</label>
+                    <label>操作类型</label>
                     <div class="op-type-grid" id="op-type-selector">
                         <!-- Dynamically populated by JS -->
                     </div>
                 </div>
                 
                 <div class="op-form-group">
-                    <label>澶囨敞鍐呭 <span style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">(閫夊～)</span></label>
-                    <textarea id="op-remark-input" rows="3" class="op-input op-textarea" placeholder="璁板綍涓€涓嬩粖澶╃殑缁嗚妭锛屼緥濡傦細鏂戒簡鑷埗鍘ㄤ綑鍫嗚偉..."></textarea>
+                    <label>备注内容 <span style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">(选填)</span></label>
+                    <textarea id="op-remark-input" rows="3" class="op-input op-textarea" placeholder="记录一下今天的细节，例如：施了自制厨余堆肥..."></textarea>
                 </div>
                 
-                <button id="op-save-btn" class="op-submit-btn">淇濆瓨璁板綍</button>
+                <button id="op-save-btn" class="op-submit-btn">保存记录</button>
             </div>
         </div>
     </div>
@@ -268,35 +268,35 @@
         <div class="modal op-glass-modal" id="harvest-input-modal">
             <button class="close-btn" id="harvest-input-close-btn">&times;</button>
             <div class="op-modal-header">
-                <h3>馃崜 璁板綍閲囨敹</h3>
-                <p>璁板綍姣忎竴娆′赴鏀剁殑鍠滄偊</p>
+                <h3>🍓 记录采收</h3>
+                <p>记录每一次丰收的喜悦</p>
             </div>
             <div class="op-form-content">
                 <input type="hidden" id="harvest-garden-id">
                 
                 <div class="op-form-group">
-                    <label>閲囨敹鏃ユ湡</label>
+                    <label>采收日期</label>
                     <input type="date" id="harvest-date" class="op-input">
                 </div>
                 
                 <div class="op-form-group" style="flex-direction: row; gap: 10px;">
                     <div style="flex: 2;">
-                        <label>閲囨敹鏁伴噺</label>
-                        <input type="number" id="harvest-amount" class="op-input" placeholder="杈撳叆鏁伴噺" step="0.1" min="0">
+                        <label>采收数量</label>
+                        <input type="number" id="harvest-amount" class="op-input" placeholder="输入数量" step="0.1" min="0">
                     </div>
                     <div style="flex: 1;">
-                        <label>鍗曚綅</label>
+                        <label>单位</label>
                         <select id="harvest-unit" class="op-input">
-                            <option value="鍏枻">鍏枻</option>
-                            <option value="鏂?>鏂?/option>
-                            <option value="鍏?>鍏?/option>
-                            <option value="涓?>涓?/option>
-                            <option value="鎶?>鎶?/option>
+                            <option value="公斤">公斤</option>
+                            <option value="斤">斤</option>
+                            <option value="克">克</option>
+                            <option value="个">个</option>
+                            <option value="把">把</option>
                         </select>
                     </div>
                 </div>
 
-                <button class="op-submit-btn" id="harvest-submit-btn">淇濆瓨閲囨敹璁板綍</button>
+                <button class="op-submit-btn" id="harvest-submit-btn">保存采收记录</button>
             </div>
         </div>
     </div>
@@ -306,31 +306,31 @@
         <div class="modal op-glass-modal" id="todo-harvest-modal" style="max-width: 800px;">
             <button class="close-btn" id="todo-harvest-close-btn">&times;</button>
             <div class="op-modal-header" style="padding-bottom: 10px;">
-                <h3 id="todo-harvest-title">寰呭姙娓呭崟涓庝骇閲忕粺璁?/h3>
+                <h3 id="todo-harvest-title">待办清单与产量统计</h3>
             </div>
             
             <div class="op-form-content" style="gap: 15px; max-height: 70vh; overflow-y: auto;">
                 <!-- To-Do List Section -->
                 <div class="operations-timeline" style="margin-top: 10px; background: #fdfbf7; border-color: #f3e8d2;">
-                    <div class="operations-timeline-title" style="color: #b45309;">馃И 鏂借偉鎻愰啋娓呭崟 (寰呭姙)</div>
+                    <div class="operations-timeline-title" style="color: #b45309;">🧪 施肥提醒清单 (待办)</div>
                     <div class="op-list" id="todo-fertilizer-list" style="margin-top: 8px;">
                         <!-- Injected by JS -->
                     </div>
                 </div>
 
                 <!-- Harvest Stats Section -->
-                <div class="operations-timeline-title" style="color: #be123c; margin-top: 15px;">馃摝 浜ч噺缁熻</div>
+                <div class="operations-timeline-title" style="color: #be123c; margin-top: 15px;">📦 产量统计</div>
                 <div class="harvest-stats-dashboard" id="todo-harvest-stats" style="display:none;">
                     <div class="harvest-stat-box">
-                        <div class="stat-label">鎬讳骇閲?/div>
+                        <div class="stat-label">总产量</div>
                         <div class="stat-value" id="todo-harvest-total-val">-</div>
                     </div>
                     <div class="harvest-stat-box">
-                        <div class="stat-label">閲囨敹娆℃暟</div>
+                        <div class="stat-label">采收次数</div>
                         <div class="stat-value" id="todo-harvest-count-val">-</div>
                     </div>
                     <div class="harvest-stat-box">
-                        <div class="stat-label">鍗曟骞冲潎</div>
+                        <div class="stat-label">单次平均</div>
                         <div class="stat-value" id="todo-harvest-avg-val">-</div>
                     </div>
                 </div>
@@ -344,7 +344,7 @@
                 <div class="harvest-list" id="todo-harvest-list" style="display:none;">
                     <!-- List injected by JS -->
                 </div>
-                <div id="todo-harvest-empty-msg" style="text-align: center; color: #9ca3af; padding: 20px 0;">鏆傛棤閲囨敹璁板綍</div>
+                <div id="todo-harvest-empty-msg" style="text-align: center; color: #9ca3af; padding: 20px 0;">暂无采收记录</div>
             </div>
         </div>
     </div>
@@ -354,20 +354,20 @@
         <div class="modal op-glass-modal" id="harvest-viz-modal" style="max-width: 600px;">
             <button class="close-btn" id="harvest-viz-close-btn">&times;</button>
             <div class="op-modal-header" style="padding-bottom: 10px;">
-                <h3 id="harvest-viz-title">浜ч噺缁熻</h3>
+                <h3 id="harvest-viz-title">产量统计</h3>
             </div>
             <div class="op-form-content" style="gap: 15px;">
                 <div class="harvest-stats-dashboard">
                     <div class="harvest-stat-box">
-                        <div class="stat-label">鎬讳骇閲?/div>
+                        <div class="stat-label">总产量</div>
                         <div class="stat-value" id="harvest-total-val">-</div>
                     </div>
                     <div class="harvest-stat-box">
-                        <div class="stat-label">閲囨敹娆℃暟</div>
+                        <div class="stat-label">采收次数</div>
                         <div class="stat-value" id="harvest-count-val">-</div>
                     </div>
                     <div class="harvest-stat-box">
-                        <div class="stat-label">鍗曟骞冲潎</div>
+                        <div class="stat-label">单次平均</div>
                         <div class="stat-value" id="harvest-avg-val">-</div>
                     </div>
                 </div>
@@ -393,6 +393,6 @@
         </div>
     </div>
 
-    <script type="module" src="app_v2.js?v=1786000000016"></script>
+    <script type="module" src="app_v2.js?v=1786000000015"></script>
 </body>
 </html>

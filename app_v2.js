@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000016';
-import { weatherData } from './weather_data.js?v=1786000000016';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000017';
+import { weatherData } from './weather_data.js?v=1786000000017';
 import { auth, googleProvider, signInWithPopup, signOut, onAuthStateChanged, db, doc, setDoc, getDoc, onSnapshot, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from './firebase-config.js';
 
 let currentUser = null;
@@ -97,9 +97,9 @@ function generateNotifications() {
         if (daysIntoStage <= 3 && !(currentStageIndex === 0 && daysPassed <= 3)) {
             currentNotifications.push({
                 type: 'stage',
-                icon: cropData.icon || '馃尡',
-                title: `${gardenItem.nickname || cropData.name} 杩涘叆${currentStageName}锛乣,
-                desc: `蹇幓鐪嬬湅瀹冪殑鏂板彉鍖栧惂銆俙,
+                icon: cropData.icon || '🌱',
+                title: `${gardenItem.nickname || cropData.name} 进入${currentStageName}！`,
+                desc: `快去看看它的新变化吧。`,
                 timestamp: Date.now()
             });
         }
@@ -110,9 +110,9 @@ function generateNotifications() {
                 if (fert.stageIndex === currentStageIndex) {
                     currentNotifications.push({
                         type: 'fertilizer',
-                        icon: '馃И',
-                        title: `銆?{gardenItem.nickname || cropData.name} - ${fert.actionName}銆慲,
-                        desc: `寤鸿姣忔牚鏂?${fert.fertilizerType} ${fert.dosagePerPlant}銆傛湁鏈烘浛浠? ${fert.organicAlternative}銆備篃鍙€夌敤: ${fert.foliarAlternative}銆俙,
+                        icon: '🧪',
+                        title: `【${gardenItem.nickname || cropData.name} - ${fert.actionName}】`,
+                        desc: `建议每株施 ${fert.fertilizerType} ${fert.dosagePerPlant}。有机替代: ${fert.organicAlternative}。也可选用: ${fert.foliarAlternative}。`,
                         timestamp: Date.now()
                     });
                 }
@@ -132,7 +132,7 @@ function renderNotifications() {
     listEl.innerHTML = '';
     
     if (currentNotifications.length === 0) {
-        listEl.innerHTML = '<div class="notification-empty">鏆傛棤鍐滀簨鎻愰啋锛屼綔鐗╅兘鍦ㄥ仴搴风敓闀縹</div>';
+        listEl.innerHTML = '<div class="notification-empty">暂无农事提醒，作物都在健康生长~</div>';
         badgeEl.style.display = 'none';
         return;
     }
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginModalOverlay.classList.remove('active');
             } catch (error) {
                 console.error("Login failed:", error);
-                alert("鐧诲綍澶辫触锛? + error.message);
+                alert("登录失败：" + error.message);
             }
         });
     }
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = authEmailInput.value.trim();
             const password = authPasswordInput.value;
             if (!email || password.length < 6) {
-                alert("璇疯緭鍏ユ湁鏁堢殑閭锛屼笖瀵嗙爜涓嶈兘灏戜簬6浣嶃€?);
+                alert("请输入有效的邮箱，且密码不能少于6位。");
                 return;
             }
             try {
@@ -233,11 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error("Registration failed:", error);
                 if (error.code === 'auth/email-already-in-use') {
-                    alert("璇ラ偖绠卞凡琚敞鍐岋紒");
+                    alert("该邮箱已被注册！");
                 } else if (error.code === 'auth/operation-not-allowed') {
-                    alert("绠＄悊鍛樻湭寮€鍚偖绠辨敞鍐屽姛鑳斤紝璇峰湪 Firebase 鎺у埗鍙板紑鍚€?);
+                    alert("管理员未开启邮箱注册功能，请在 Firebase 控制台开启。");
                 } else {
-                    alert("娉ㄥ唽澶辫触锛? + error.message);
+                    alert("注册失败：" + error.message);
                 }
             }
         });
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = authEmailInput.value.trim();
             const password = authPasswordInput.value;
             if (!email || !password) {
-                alert("璇疯緭鍏ラ偖绠卞拰瀵嗙爜銆?);
+                alert("请输入邮箱和密码。");
                 return;
             }
             try {
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 authPasswordInput.value = '';
             } catch (error) {
                 console.error("Email Login failed:", error);
-                alert("鐧诲綍澶辫触锛? + error.message);
+                alert("登录失败：" + error.message);
             }
         });
     }
@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateRegionDesc() {
         const region = regions.find(r => r.id === currentRegion);
         if (region) {
-            regionDesc.textContent = `璇ュ湴鍩熺壒鐐癸細${region.desc}`;
+            regionDesc.textContent = `该地域特点：${region.desc}`;
         }
     }
 
@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         filteredVegs.forEach(veg => {
             const cat = categories.find(c => c.id === veg.categoryId);
-            const calendarText = (veg.calendar && veg.calendar[currentRegion]) || '璇ュ湴鍖烘殏鏃犳帹鑽愮妞嶆椂闂?;
+            const calendarText = (veg.calendar && veg.calendar[currentRegion]) || '该地区暂无推荐种植时间';
             const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
 
             const imgHtml = veg.image 
@@ -587,7 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const inGarden = window.myGarden && window.myGarden.some(g => g.vegId === veg.id);
             const addBtnHtml = `<button class="quick-add-btn ${inGarden ? 'added' : ''}">
-                ${inGarden ? '鉁?宸插湪鑿滃洯' : '馃尡 鍔犲叆鑿滃洯'}
+                ${inGarden ? '✓ 已在菜园' : '🌱 加入菜园'}
             </button>`;
 
             const card = document.createElement('div');
@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <p class="veg-desc">${veg.description}</p>
                     <div class="veg-calendar">
-                        <span class="veg-calendar-icon">馃搮</span>
+                        <span class="veg-calendar-icon">📅</span>
                         <span>${calendarText}</span>
                     </div>
                     <div style="margin-top: 15px; text-align: right;">
@@ -645,11 +645,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="veg-content">
                     <div class="veg-header">
                         <h3 class="veg-title">${item.icon} ${item.name}</h3>
-                        <span class="veg-category">鑲ユ枡宸ュ潑</span>
+                        <span class="veg-category">肥料工坊</span>
                     </div>
                     <p class="veg-desc">${item.description}</p>
                     <div class="veg-calendar">
-                        <span class="veg-calendar-icon">鈴?/span>
+                        <span class="veg-calendar-icon">⏳</span>
                         <span>${calendarText}</span>
                     </div>
                 </div>
@@ -715,16 +715,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function parseMonths(text) {
         if (!text) return [];
         let months = new Set();
-        if (text.includes('鍏ㄥ勾') || text.includes('鍥涘')) {
+        if (text.includes('全年') || text.includes('四季')) {
             for(let i=1; i<=12; i++) months.add(i);
             return Array.from(months);
         }
-        if (text.includes('鏄?)) { months.add(3); months.add(4); months.add(5); }
-        if (text.includes('澶?)) { months.add(6); months.add(7); months.add(8); }
-        if (text.includes('绉?)) { months.add(8); months.add(9); months.add(10); }
-        if (text.includes('鍐?)) { months.add(11); months.add(12); months.add(1); }
+        if (text.includes('春')) { months.add(3); months.add(4); months.add(5); }
+        if (text.includes('夏')) { months.add(6); months.add(7); months.add(8); }
+        if (text.includes('秋')) { months.add(8); months.add(9); months.add(10); }
+        if (text.includes('冬')) { months.add(11); months.add(12); months.add(1); }
 
-        const rangeRegex = /([1-9]|1[0-2])\s*[-鑷硚]\s*([1-9]|1[0-2])/g;
+        const rangeRegex = /([1-9]|1[0-2])\s*[-至~]\s*([1-9]|1[0-2])/g;
         let match;
         while ((match = rangeRegex.exec(text)) !== null) {
             let start = parseInt(match[1]);
@@ -737,7 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        const singleRegex = /([1-9]|1[0-2])\s*鏈?g;
+        const singleRegex = /([1-9]|1[0-2])\s*月/g;
         while ((match = singleRegex.exec(text)) !== null) {
             months.add(parseInt(match[1]));
         }
@@ -780,8 +780,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             monthCard.innerHTML = `
                 <div class="month-card-header">
-                    <span>${month} 鏈?${month === currentMonth ? '(褰撳墠鏈?' : ''}</span>
-                    <span class="veg-count">${matchedVegs.length} 绉?/span>
+                    <span>${month} 月 ${month === currentMonth ? '(当前月)' : ''}</span>
+                    <span class="veg-count">${matchedVegs.length} 种</span>
                 </div>
                 <div class="month-card-body" id="month-body-${month}">
                 </div>
@@ -790,15 +790,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const body = monthCard.querySelector(`#month-body-${month}`);
             if (matchedVegs.length === 0) {
-                body.innerHTML = '<div class="empty-month">璇ユ湀鏆傛棤鎺ㄨ崘绉嶆</div>';
+                body.innerHTML = '<div class="empty-month">该月暂无推荐种植</div>';
             } else {
                 matchedVegs.forEach(veg => {
                     const item = document.createElement('div');
                     item.className = 'calendar-veg-item';
                     const iconHtml = veg.avatar
-                        ? `<div style="width: 28px; height: 28px; border-radius: 4px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: white;"><img loading="lazy" src="${veg.avatar}?v=2" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.2);"></div>`
+                        ? `<div style="width: 28px; height: 28px; border-radius: 4px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: white;"><img loading="lazy" src="${veg.avatar}?v=3" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.2);"></div>`
                         : (veg.image 
-                            ? `<img loading="lazy" src="${veg.image}?v=2" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
+                            ? `<img loading="lazy" src="${veg.image}?v=3" style="width: 24px; height: 24px; object-fit: cover; border-radius: 4px;">`
                             : `<span>${veg.icon}</span>`);
                     item.innerHTML = `${iconHtml} <span>${veg.name}</span>`;
                     item.addEventListener('click', () => openModal(veg, false));
@@ -808,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const stageIcons = ['馃尡', '馃', '馃挧', '馃洝锔?, '馃Ш'];
+    const stageIcons = ['🌱', '🪴', '💧', '🛡️', '🧺'];
 
     function openModal(item, isFertilizer = false) {
         const bgGradient = categoryGradients[item.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
@@ -829,25 +829,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="modal-body">
                     ${item.type === 'fertilizer' ? `
                     <div class="modal-section garden-control-section" style="margin-top: 0; margin-bottom: 20px; background: #f0fdf4; border-color: #bbf7d0;">
-                        <h3 style="color: #166534; display: flex; align-items: center; gap: 8px;">馃彙 璁板綍鍒版垜鐨勮彍鍥?/h3>
+                        <h3 style="color: #166534; display: flex; align-items: center; gap: 8px;">🏡 记录到我的菜园</h3>
                         <div class="garden-control-flex" style="flex-wrap: wrap; gap: 15px;">
                             <div class="date-picker-group">
-                                <label style="color: #166534; font-size: 1rem;">寮€濮嬪埗浣滄棩鏈燂細</label>
+                                <label style="color: #166534; font-size: 1rem;">开始制作日期：</label>
                                 <input type="date" id="fert-date-input" value="${new Date().toISOString().split('T')[0]}" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
                             </div>
                             <button id="toggle-fert-btn" class="add-btn">
-                                + 鍔犲叆鍒朵綔璁板綍
+                                + 加入制作记录
                             </button>
                         </div>
                     </div>` : ''}
 
                     <div class="modal-section">
-                        <h4>${item.type === 'protection' ? '馃摉 鍘熺悊涓庨€傜敤' : item.type === 'model' ? '馃摉 鏍稿績鐞嗗康' : '馃摉 浠嬬粛涓庡師鐞?}</h4>
+                        <h4>${item.type === 'protection' ? '📖 原理与适用' : item.type === 'model' ? '📖 核心理念' : '📖 介绍与原理'}</h4>
                         <p style="font-size: 15px; line-height: 1.6; color: #4b5563; margin-top: 8px;">${item.description}</p>
                     </div>
                     ${item.stages && item.stages.length > 0 ? `
                         <div class="modal-section">
-                            <h4>${item.id === 'pc_companion_planting' ? '馃挕 缁忓吀鎼厤妗堜緥' : item.type === 'model' ? '馃挕 鍏稿瀷搴旂敤鍦烘櫙' : '馃搵 鍒朵綔涓庝娇鐢ㄦ楠?}</h4>
+                            <h4>${item.id === 'pc_companion_planting' ? '💡 经典搭配案例' : item.type === 'model' ? '💡 典型应用场景' : '📋 制作与使用步骤'}</h4>
                             <div class="stage-list">
                                 ${item.stages.map((stage, index) => `
                                     <div class="stage-item">
@@ -864,7 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
         } else {
             const cat = categories.find(c => c.id === item.categoryId);
-            const calendarText = (item.calendar && item.calendar[currentRegion]) || '璇ュ湴鍖烘殏鏃犳帹鑽愮妞嶆椂闂?;
+            const calendarText = (item.calendar && item.calendar[currentRegion]) || '该地区暂无推荐种植时间';
             const regionName = regions.find(r => r.id === currentRegion).name;
             
             const gardenItem = myGarden.find(g => g.vegId === item.id);
@@ -877,18 +877,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // Build province groups
             let provMap = {};
             cities.forEach(c => {
-                const p = c.province || '鍏朵粬';
+                const p = c.province || '其他';
                 if(!provMap[p]) provMap[p] = [];
                 provMap[p].push(c);
             });
             
-            let defaultCityName = '鍖椾含';
+            let defaultCityName = '北京';
             let initialCityId = defaultCity || 'beijing';
             const fCity = cities.find(c => c.id === initialCityId);
             if (fCity) defaultCityName = fCity.name;
             
             let cityOptionsHtml = `<div class="city-search-container" style="position: relative; display: inline-block;">
-                <input type="text" id="garden-city-search" value="${defaultCityName}" placeholder="鎼滅储鍩庡競(鎷奸煶/姹夊瓧)..." autocomplete="off" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit; width: 150px; cursor: pointer;" readonly onfocus="this.removeAttribute('readonly');">
+                <input type="text" id="garden-city-search" value="${defaultCityName}" placeholder="搜索城市(拼音/汉字)..." autocomplete="off" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit; width: 150px; cursor: pointer;" readonly onfocus="this.removeAttribute('readonly');">
                 <input type="hidden" id="garden-city-input" value="${initialCityId}">
                 <div id="city-dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto; width: 220px; z-index: 1000; padding: 5px 0;">`;
             
@@ -906,38 +906,38 @@ document.addEventListener('DOMContentLoaded', () => {
             contentHtml += `
                 <div class="modal-body">
                     <div class="modal-section garden-control-section" style="margin-top: 0; margin-bottom: 20px; background: #f0fdf4; border-color: #bbf7d0;">
-                        <h3 style="color: #166534; display: flex; align-items: center; gap: 8px;">馃彙 铏氭嫙鑿滃洯涓撳睘鎺у埗鍙?/h3>
+                        <h3 style="color: #166534; display: flex; align-items: center; gap: 8px;">🏡 虚拟菜园专属控制台</h3>
                         <div class="garden-control-flex" style="flex-wrap: wrap; gap: 15px;">
                             <div class="date-picker-group">
-                                <label style="color: #166534; font-size: 1rem;">鎾鍩庡競锛?/label>
+                                <label style="color: #166534; font-size: 1rem;">播种城市：</label>
                                 ${cityOptionsHtml}
                             </div>
                             <div class="date-picker-group">
-                                <label style="color: #166534; font-size: 1rem;">绉嶆鏂瑰紡锛?/label>
+                                <label style="color: #166534; font-size: 1rem;">种植方式：</label>
                                 <select id="garden-method-input" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
-                                    <option value="sow" ${defaultMethod !== 'transplant' ? 'selected' : ''}>馃尡 鎾绉嶅瓙</option>
-                                    <option value="transplant" ${defaultMethod === 'transplant' ? 'selected' : ''}>馃 涔拌嫍绉绘牻</option>
+                                    <option value="sow" ${defaultMethod !== 'transplant' ? 'selected' : ''}>🌱 播种种子</option>
+                                    <option value="transplant" ${defaultMethod === 'transplant' ? 'selected' : ''}>🪴 买苗移栽</option>
                                 </select>
                             </div>
                             <div class="date-picker-group">
-                                <label style="color: #166534; font-size: 1rem;" id="garden-date-label">${defaultMethod === 'transplant' ? '绉绘牻鏃ユ湡锛? : '鎾鏃ユ湡锛?}</label>
+                                <label style="color: #166534; font-size: 1rem;" id="garden-date-label">${defaultMethod === 'transplant' ? '移栽日期：' : '播种日期：'}</label>
                                 <input type="date" id="garden-date-input" value="${defaultDate}" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;">
                             </div>
                             <button id="toggle-garden-btn" class="add-btn">
-                                馃尡 鍔犲叆鎴戠殑鑿滃洯
+                                🌱 加入我的菜园
                             </button>
                         </div>
                     </div>
                     <div class="modal-section">
-                        <h3>馃摉 绠€浠嬭儗鏅?/h3>
+                        <h3>📖 简介背景</h3>
                         <p style="line-height: 1.6; color: #555;">${item.description}</p>
                     </div>
                     <div class="modal-section">
-                        <h3>馃搷 ${regionName} 绉嶆鏃堕棿瀹夋帓</h3>
-                        <p>${calendarText}</p>
+                        <h3>📍 ${regionName} 种植时间安排</h3>
+                        <p id="modal-cal-desc">${calendarText}</p>
                     </div>
                     <div class="modal-section">
-                        <h3>馃搵 鏍藉煿瑕佺偣涓庣敓闀垮懆鏈?/h3>
+                        <h3>📋 栽培要点与生长周期</h3>
                         <div class="stage-list">
                             ${item.stages.map((stage, index) => {
                                 const hasNewStructure = stage.water_fertilizer || stage.pest_management || stage.pruning_trellising;
@@ -945,26 +945,26 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="stage-item">
                                     <div class="stage-icon">${stageIcons[index % stageIcons.length]}</div>
                                     <div class="stage-content">
-                                        <h4 style="color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">闃舵 ${index + 1}: ${stage.name}</h4>
+                                        <h4 style="color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">阶段 ${index + 1}: ${stage.name}</h4>
                                         
                                         ${hasNewStructure ? `
                                             <div class="stage-details" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; flex-wrap: wrap;">
                                                 ${stage.water_fertilizer ? `
                                                     <div class="stage-detail-item">
-                                                        <strong>馃挧 姘磋偉绠＄悊锛?/strong>${stage.water_fertilizer}
-                                                        ${stage.water_image ? `<img loading="lazy" src="${stage.water_image}" alt="姘磋偉绠＄悊" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                        <strong>💧 水肥管理：</strong>${stage.water_fertilizer}
+                                                        ${stage.water_image ? `<img loading="lazy" src="${stage.water_image}" alt="水肥管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                                     </div>` : ''}
                                                 ${stage.pruning_trellising ? `
                                                     <div class="stage-detail-item">
-                                                        <strong>鉁傦笍 鏁存灊鎼灦锛?/strong>${stage.pruning_trellising}
-                                                        ${stage.pruning_image ? `<img loading="lazy" src="${stage.pruning_image}" alt="鏁存灊鎼灦" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                        <strong>✂️ 整枝搭架：</strong>${stage.pruning_trellising}
+                                                        ${stage.pruning_image ? `<img loading="lazy" src="${stage.pruning_image}" alt="整枝搭架" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                                     </div>` : ''}
                                                 ${stage.pest_management ? `
                                                     <div class="stage-detail-item">
-                                                        <strong>馃洝锔?鐥呰櫕瀹崇鐞嗭細</strong>${stage.pest_management}
-                                                        ${stage.pest_image ? `<img loading="lazy" src="${stage.pest_image}" alt="鐥呰櫕瀹崇鐞? style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
+                                                        <strong>🛡️ 病虫害管理：</strong>${stage.pest_management}
+                                                        ${stage.pest_image ? `<img loading="lazy" src="${stage.pest_image}" alt="病虫害管理" style="width: 50%; max-width: 300px; display: block; margin: 10px 0 5px 0; border-radius: 8px; box-shadow: var(--shadow-sm);">` : ''}
                                                     </div>` : ''}
-                                                ${stage.content ? `<div class="stage-detail-item"><strong>馃搶 鍏朵粬瑕佺偣锛?/strong>${stage.content}</div>` : ''}
+                                                ${stage.content ? `<div class="stage-detail-item"><strong>📌 其他要点：</strong>${stage.content}</div>` : ''}
                                             </div>
                                         ` : `<p>${stage.content}</p>`}
                                         
@@ -979,7 +979,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.pests && item.pests.length > 0) {
                 contentHtml += `
                     <div class="pest-section">
-                        <h3><span class="icon">馃洝锔?/span> 鐥呰櫕瀹充笌鐢熸€侀槻娌?/h3>
+                        <h3><span class="icon">🛡️</span> 病虫害与生态防治</h3>
                         <div class="pest-list">
                             ${item.pests.map(pest => `
                                 <div class="pest-item">
@@ -988,12 +988,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="pest-header">
                                             <h4>${pest.name}</h4>
                                             <div class="pest-tags">
-                                                <span class="pest-tag env-${pest.environment || 'universal'}">${pest.environment === 'greenhouse' ? '澶ф楂樺彂' : (pest.environment === 'open_field' ? '闇插ぉ楂樺彂' : '鏅亶澶氬彂')}</span>
-                                                <span class="pest-tag type-${pest.type || (pest.name.includes('鐥?) ? 'disease' : 'pest')}">${(pest.type === 'disease' || pest.name.includes('鐥?)) ? '鐥呭' : '铏'}</span>
+                                                <span class="pest-tag env-${pest.environment || 'universal'}">${pest.environment === 'greenhouse' ? '大棚高发' : (pest.environment === 'open_field' ? '露天高发' : '普遍多发')}</span>
+                                                <span class="pest-tag type-${pest.type || (pest.name.includes('病') ? 'disease' : 'pest')}">${(pest.type === 'disease' || pest.name.includes('病')) ? '病害' : '虫害'}</span>
                                             </div>
                                         </div>
-                                        ${pest.cause ? `<p class="pest-cause"><strong>馃毃 鍙戠敓鍘熷洜锛?/strong>${pest.cause}</p>` : ''}
-                                        <p class="pest-prevent"><strong>馃尡 鐢熸€侀槻娌伙細</strong>${pest.prevention}</p>
+                                        ${pest.cause ? `<p class="pest-cause"><strong>🚨 发生原因：</strong>${pest.cause}</p>` : ''}
+                                        <p class="pest-prevent"><strong>🌱 生态防治：</strong>${pest.prevention}</p>
                                     </div>
                                 </div>
                             `).join('')}
@@ -1008,7 +1008,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dateLabel = document.getElementById('garden-date-label');
         if (methodInput && dateLabel) {
             methodInput.addEventListener('change', (e) => {
-                dateLabel.innerText = e.target.value === 'transplant' ? '绉绘牻鏃ユ湡锛? : '鎾鏃ユ湡锛?;
+                dateLabel.innerText = e.target.value === 'transplant' ? '移栽日期：' : '播种日期：';
             });
         }
         
@@ -1030,9 +1030,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     
                     const originalText = toggleFertBtn.innerHTML;
-                    toggleFertBtn.innerHTML = '鉁?娣诲姞鎴愬姛锛?;
+                    toggleFertBtn.innerHTML = '✅ 添加成功！';
                     setTimeout(() => {
-                        toggleFertBtn.innerHTML = '+ 鍐嶆娣诲姞鏂版壒娆?;
+                        toggleFertBtn.innerHTML = '+ 再次添加新批次';
                     }, 1500);
 
                     saveGarden();
@@ -1123,7 +1123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Prevent duplicate addition
                     const isDuplicate = myGarden.some(g => !g.isHarvested && !g.harvestDate && g.vegId === item.id && g.cityId === cityVal && g.plantDate === dateVal && g.method === methodVal);
                     if (isDuplicate) {
-                        alert('鎮ㄥ凡缁忓湪杩欎釜鍩庡競銆佽繖涓棩鏈熶娇鐢ㄧ浉鍚屾柟寮忕妞嶄簡璇ヤ綔鐗╋紝璇峰嬁閲嶅娣诲姞銆傚鏋滄兂鍐嶇涓€鎵癸紝璇烽€夋嫨涓嶅悓鐨勬棩鏈熴€?);
+                        alert('您已经在这个城市、这个日期使用相同方式种植了该作物，请勿重复添加。如果想再种一批，请选择不同的日期。');
                         return;
                     }
 
@@ -1141,10 +1141,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('tubutu_default_method', methodVal);
                     
                     const originalText = toggleBtn.innerHTML;
-                    toggleBtn.innerHTML = '鉁?娣诲姞鎴愬姛锛?;
+                    toggleBtn.innerHTML = '✅ 添加成功！';
 
                     setTimeout(() => {
-                        toggleBtn.innerHTML = '馃尡 鍐嶆娣诲姞鏂版壒娆?;
+                        toggleBtn.innerHTML = '🌱 再次添加新批次';
                     }, 1500);
 
                     saveGarden();
@@ -1178,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.toggleQuickAdd = (vegId) => {
         const existingIndex = myGarden.findIndex(g => g.vegId === vegId);
         if (existingIndex >= 0) {
-            if (!confirm('纭畾瑕佷粠铏氭嫙鑿滃洯涓Щ闄ゅ畠鍚楋紵鎮ㄧ殑绉嶆杩涘害灏嗘棤娉曟仮澶嶃€?)) return;
+            if (!confirm('确定要从虚拟菜园中移除它吗？您的种植进度将无法恢复。')) return;
             myGarden.splice(existingIndex, 1);
         } else {
             const dateVal = new Date().toISOString().split('T')[0];
@@ -1189,7 +1189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Prevent duplicate addition
             const isDuplicate = myGarden.some(g => !g.isHarvested && !g.harvestDate && g.vegId === vegId && g.cityId === cityVal && g.plantDate === dateVal && g.method === methodVal);
             if (isDuplicate) {
-                alert('宸插湪鑿滃洯涓紒濡傞渶澶氭壒娆＄妞嶈閫氳繃璇︽儏椤垫坊鍔犮€?);
+                alert('已在菜园中！如需多批次种植请通过详情页添加。');
                 return;
             }
 
@@ -1223,13 +1223,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const w = cityWeather[dateStr];
             if (w) {
                 if (w.code === 95 || w.code === 96 || w.code === 99) {
-                    alerts.push({ type: 'hail', text: `鈿狅笍 寮哄娴?鍐伴浌棰勮 (${dateStr})锛氬缓璁揣鎬ラ槻鎶ゆ垨绉诲叆瀹ゅ唴锛乣});
+                    alerts.push({ type: 'hail', text: `⚠️ 强对流/冰雹预警 (${dateStr})：建议紧急防护或移入室内！`});
                 } else if (w.precip && w.precip >= 25) {
-                    alerts.push({ type: 'rain', text: `鈿狅笍 鏆撮洦棰勮 (${dateStr})锛氶璁￠檷姘?${w.precip}mm锛屾敞鎰忛槻娑濇帓姘达紒`});
+                    alerts.push({ type: 'rain', text: `⚠️ 暴雨预警 (${dateStr})：预计降水 ${w.precip}mm，注意防涝排水！`});
                 } else if (w.max >= 35) {
-                    alerts.push({ type: 'heat', text: `鈿狅笍 楂樻俯棰勮 (${dateStr})锛氭渶楂樻俯 ${w.max}掳C锛屾敞鎰忛伄闃充繚姘达紒`});
+                    alerts.push({ type: 'heat', text: `⚠️ 高温预警 (${dateStr})：最高温 ${w.max}°C，注意遮阳保水！`});
                 } else if (w.min <= 12) {
-                    alerts.push({ type: 'cold', text: `鈿狅笍 闇滃喕棰勮 (${dateStr})锛氭渶浣庢俯 ${w.min}掳C锛屾敞鎰忚鑶滀繚娓╋紒`});
+                    alerts.push({ type: 'cold', text: `⚠️ 霜冻预警 (${dateStr})：最低温 ${w.min}°C，注意覆膜保温！`});
                 }
             }
         }
@@ -1270,7 +1270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let initialGdd = 0;
         if (method === 'transplant' && veg.growthSequence) {
-            let seedlingStageIndex = veg.growthSequence.findIndex(s => s.name.includes('骞艰嫍'));
+            let seedlingStageIndex = veg.growthSequence.findIndex(s => s.name.includes('幼苗'));
             if (seedlingStageIndex === -1) seedlingStageIndex = 1; 
             for (let i = 0; i < seedlingStageIndex; i++) {
                 if (veg.growthSequence[i]) {
@@ -1352,14 +1352,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getWeatherEmoji(code) {
         if (code < 0) return '';
-        if (code === 0) return '鈽€锔?;
-        if (code === 1 || code === 2 || code === 3) return '鉀?;
-        if (code >= 45 && code <= 48) return '馃尗锔?;
-        if (code >= 51 && code <= 67) return '馃導锔?;
-        if (code >= 71 && code <= 77) return '鉂勶笍';
-        if (code >= 80 && code <= 82) return '馃導锔?;
-        if (code >= 85 && code <= 86) return '鉂勶笍';
-        if (code >= 95 && code <= 99) return '鉀堬笍';
+        if (code === 0) return '☀️';
+        if (code === 1 || code === 2 || code === 3) return '⛅';
+        if (code >= 45 && code <= 48) return '🌫️';
+        if (code >= 51 && code <= 67) return '🌧️';
+        if (code >= 71 && code <= 77) return '❄️';
+        if (code >= 80 && code <= 82) return '🌧️';
+        if (code >= 85 && code <= 86) return '❄️';
+        if (code >= 95 && code <= 99) return '⛈️';
         return '';
     }
 
@@ -1390,7 +1390,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!veg) continue;
             
             const city = cities.find(c => c.id === gardenItem.cityId);
-            const cityName = city ? city.name : '鏈煡鍦板尯';
+            const cityName = city ? city.name : '未知地区';
             
             const dailyData = getWeatherDataForPlant(gardenItem.cityId, gardenItem.plantDate);
             const todayWeather = dailyData ? dailyData[todayStr] : null;
@@ -1427,8 +1427,8 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             const imgHtml = veg.image 
-                ? `<img loading="lazy" src="${veg.image}" alt="${veg.name}" class="mygarden-main-img" onclick="openTodoHarvestModal('${gardenItem.id}')" style="cursor: pointer;" title="鐐瑰嚮鏌ョ湅鏂借偉涓庨噰鏀舵竻鍗?>`
-                : `<div class="mygarden-main-img" onclick="openTodoHarvestModal('${gardenItem.id}')" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer;" title="鐐瑰嚮鏌ョ湅鏂借偉涓庨噰鏀舵竻鍗?>${veg.icon}</div>`;
+                ? `<img loading="lazy" src="${veg.image}" alt="${veg.name}" class="mygarden-main-img" onclick="openTodoHarvestModal('${gardenItem.id}')" style="cursor: pointer;" title="点击查看施肥与采收清单">`
+                : `<div class="mygarden-main-img" onclick="openTodoHarvestModal('${gardenItem.id}')" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer;" title="点击查看施肥与采收清单">${veg.icon}</div>`;
 
             let gddPercentage = Math.min(100, (status.accumulatedGdd / status.overallTotalGdd) * 100).toFixed(1);
 
@@ -1437,7 +1437,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentFert = veg.fertilizerSchedule.filter(f => f.stageIndex === status.currentStageIndex);
                 if (currentFert.length > 0) {
                     currentFert.forEach(f => {
-                        const stageName = veg.growthSequence[status.currentStageIndex] ? veg.growthSequence[status.currentStageIndex].name : '褰撳墠闃舵';
+                        const stageName = veg.growthSequence[status.currentStageIndex] ? veg.growthSequence[status.currentStageIndex].name : '当前阶段';
                         const todoKey = 'fert_' + f.stageIndex;
                         const isChecked = gardenItem.completedTodos && gardenItem.completedTodos[todoKey];
                         const checkedStyle = isChecked ? 'filter: grayscale(1); opacity: 0.5;' : '';
@@ -1445,19 +1445,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         reminderHtml += `
                         <div style="margin-top: 15px; background: #fdfbf7; border: 1px solid #f3e8d2; border-radius: 12px; padding: 12px;">
-                            <div style="color: #b45309; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">馃И 鏂借偉鎻愰啋娓呭崟 (寰呭姙)</div>
+                            <div style="color: #b45309; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">🧪 施肥提醒清单 (待办)</div>
                             <div style="display: flex; align-items: center; background: white; padding: 12px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; ${checkedStyle}">
                                 <div style="flex: 0 0 auto; display: flex; align-items: center;">
                                     <input type="checkbox" onchange="toggleFertTodo('${gardenItem.id}', ${f.stageIndex})" ${isChecked ? 'checked' : ''} style="margin-right: 10px; width: 18px; height: 18px; accent-color: #10b981; cursor: pointer; flex-shrink: 0;">
                                     <span style="font-weight: 500; color: #4b5563; white-space: nowrap;">${f.actionName}</span>
-                                    <span style="font-size: 0.85rem; color: #9ca3af; margin-left: 8px; white-space: nowrap;">(瀵瑰簲: ${stageName})</span>
+                                    <span style="font-size: 0.85rem; color: #9ca3af; margin-left: 8px; white-space: nowrap;">(对应: ${stageName})</span>
                                 </div>
                                 <div style="width: 1px; background: #e5e7eb; height: 30px; margin: 0 15px; flex-shrink: 0;"></div>
                                 <div style="flex: 1 1 auto; font-size: 0.9rem; color: #6b7280; line-height: 1.4; word-break: break-word;">
-                                    <span style="color: #ea580c; font-weight: bold; background: #fff7ed; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; border: 1px solid #ffedd5;">姣忔牚鐢ㄩ噺锛?{f.dosagePerPlant}</span><span style="margin-left: 6px;">${f.fertilizerType}</span><br>
-                                    <div style="margin-top: 4px;">鏈夋満鏇夸唬: ${f.organicAlternative}</div>
+                                    <span style="color: #ea580c; font-weight: bold; background: #fff7ed; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; border: 1px solid #ffedd5;">每株用量：${f.dosagePerPlant}</span><span style="margin-left: 6px;">${f.fertilizerType}</span><br>
+                                    <div style="margin-top: 4px;">有机替代: ${f.organicAlternative}</div>
                                     <div style="margin-top: 6px;">
-                                        <input type="text" placeholder="馃摑 娣诲姞澶囨敞..." value="${remarkText}" onchange="saveFertRemark('${gardenItem.id}', ${f.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
+                                        <input type="text" placeholder="📝 添加备注..." value="${remarkText}" onchange="saveFertRemark('${gardenItem.id}', ${f.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
                                     </div>
                                 </div>
                             </div>
@@ -1470,8 +1470,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentPrune.length > 0) {
                     currentPrune.forEach(p => {
                         reminderHtml += `<div style="background: #f0fdf4; border: 1px solid #dcfce7; border-left: 4px solid #16a34a; padding: 10px 15px; margin: 15px 0 5px 0; border-radius: 4px;">
-                            <div style="color: #166534; font-weight: bold; margin-bottom: 5px; font-size: 0.95rem;">鉁傦笍 鏁存灊鎻愰啋锛氬綋鍓嶅浜庛€?{(veg.growthSequence[status.currentStageIndex] ? veg.growthSequence[status.currentStageIndex].name : '褰撳墠闃舵')}銆?/div>
-                            <div style="color: #14532d; font-size: 0.9rem;">鎿嶄綔寤鸿锛?{p.instruction}</div>
+                            <div style="color: #166534; font-weight: bold; margin-bottom: 5px; font-size: 0.95rem;">✂️ 整枝提醒：当前处于【${(veg.growthSequence[status.currentStageIndex] ? veg.growthSequence[status.currentStageIndex].name : '当前阶段')}】</div>
+                            <div style="color: #14532d; font-size: 0.9rem;">操作建议：${p.instruction}</div>
                         </div>`;
                     });
                 }
@@ -1482,20 +1482,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '娴囨按' },
-                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '闄よ崏' },
-                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鏂借偉' },
-                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鏉€铏? },
-                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '淇壀' },
-                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鎼灦' },
-                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鎺堢矇' },
-                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">馃攧</div>', label: '缈诲爢' },
-                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">馃挩</div>', label: '鏀炬皵' },
-                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鍏朵粬' }
+                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
+                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
+                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
-                        <div class="operations-timeline-title">馃摑 鍐滀簨璁板綍</div>
+                        <div class="operations-timeline-title">📝 农事记录</div>
                         <div class="op-list">
                             ${sortedOps.map(op => {
                                 const t = typeMap[op.type] || typeMap['other'];
@@ -1513,19 +1513,19 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                  operationsHtml = `
                     <div class="operations-timeline">
-                        <div class="operations-timeline-title">馃摑 鍐滀簨璁板綍</div>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 5px;">鏆傛棤璁板綍锛岀偣鍑讳笅鏂规寜閽坊鍔犮€?/p>
+                        <div class="operations-timeline-title">📝 农事记录</div>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 5px;">暂无记录，点击下方按钮添加。</p>
                     </div>
                  `;
             }
             operationsHtml += `
                 <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-                    <button class="add-op-btn" onclick="openOperationModal('${gardenItem.id}')" style="flex: 1; min-width: 120px; width: auto;">鉃?娣诲姞鍐滀簨璁板綍</button>
+                    <button class="add-op-btn" onclick="openOperationModal('${gardenItem.id}')" style="flex: 1; min-width: 120px; width: auto;">➕ 添加农事记录</button>
                     <button class="harvest-record-btn" onclick="openHarvestModal('${gardenItem.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
-                        馃崜 璁板綍鍗曟閲囨敹
+                        🍓 记录单次采收
                     </button>
                     <button class="harvest-btn" data-id="${gardenItem.id}" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fef2f2'">
-                        馃洃 缁撴潫绉嶆(绉昏嚦鍘嗗彶)
+                        🛑 结束种植(移至历史)
                     </button>
                 </div>
             `;
@@ -1533,37 +1533,37 @@ document.addEventListener('DOMContentLoaded', () => {
             let harvestBadgeHtml = '';
             if (gardenItem.harvests && gardenItem.harvests.length > 0) {
                 let totalAmount = 0;
-                let unit = gardenItem.harvests[0].unit || '鍏枻';
+                let unit = gardenItem.harvests[0].unit || '公斤';
                 gardenItem.harvests.forEach(h => {
                     totalAmount += parseFloat(h.amount || 0);
                 });
                 harvestBadgeHtml = `
                     <span class="harvest-total-badge" onclick="openTodoHarvestModal('${gardenItem.id}')" style="background: #fff1f2; color: #be123c; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: transform 0.1s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                        馃摝 宸茬疮璁￠噰鏀? ${totalAmount.toFixed(1)} ${unit} (鐐瑰嚮鏌ョ湅)
+                        📦 已累计采收: ${totalAmount.toFixed(1)} ${unit} (点击查看)
                     </span>
                 `;
             }
 
             const cardHtml = `
                 <div class="mygarden-card" style="position: relative;">
-                    <button class="remove-garden-item-btn" title="绉诲嚭鑿滃洯" data-id="${gardenItem.id}" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #ef4444; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">鉂?/button>
+                    <button class="remove-garden-item-btn" title="移出菜园" data-id="${gardenItem.id}" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #ef4444; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">❌</button>
                     <div class="row-number">${index + 1}</div>
                     ${imgHtml}
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
-                            <span style="font-size: 0.9rem; color: #555;">馃搷 ${cityName}${weatherDisplay} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '绉绘牻' : '鎾'}</span>
+                            <span style="font-size: 0.9rem; color: #555;">📍 ${cityName}${weatherDisplay} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-                            <span class="days-badge">宸?{gardenItem.method === 'transplant' ? '绉绘牻' : '鎾'} ${status.diffDays} 澶?/span>
+                            <span class="days-badge">已${gardenItem.method === 'transplant' ? '移栽' : '播种'} ${status.diffDays} 天</span>
                             <span class="gdd-badge" style="background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
-                                馃尅锔?鐢熺墿瀛﹁捣鐐? ${status.baseTemp}掳C
+                                🌡️ 生物学起点: ${status.baseTemp}°C
                             </span>
                             <span class="gdd-badge" style="background: ${status.apiFailed ? '#fee2e2' : '#fffedd'}; color: ${status.apiFailed ? '#991b1b' : '#854d0e'}; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
-                                鈽€锔?绉俯: ${Math.floor(status.accumulatedGdd)} / ${status.overallTotalGdd}掳C (${gddPercentage}%) ${status.apiFailed ? '<span style="font-size: 0.75rem; opacity: 0.8;">(姘旇薄鎺ュ彛寮傚父锛屼娇鐢ㄤ及绠?</span>' : ''}
+                                ☀️ 积温: ${Math.floor(status.accumulatedGdd)} / ${status.overallTotalGdd}°C (${gddPercentage}%) ${status.apiFailed ? '<span style="font-size: 0.75rem; opacity: 0.8;">(气象接口异常，使用估算)</span>' : ''}
                             </span>
                             <span class="gdd-badge" style="background: ${status.remainingDays === 0 ? '#dcfce7' : '#fee2e2'}; color: ${status.remainingDays === 0 ? '#166534' : '#991b1b'}; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
-                                鈴?${status.remainingDays === 0 ? '宸插畬鍏ㄦ垚鐔? : `棰勪及鍓╀綑: 绾?${status.remainingDays} 澶ー}
+                                ⏳ ${status.remainingDays === 0 ? '已完全成熟' : `预估剩余: 约 ${status.remainingDays} 天`}
                             </span>
                             ${harvestBadgeHtml}
                         </div>
@@ -1585,7 +1585,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (removeBtn) {
                 removeBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    if (confirm('纭畾瑕佺Щ鍑鸿繖涓挱鏈熺殑璁板綍鍚楋紵鐩稿叧鍐滀簨璁板綍灏嗚涓€璧峰垹闄ゃ€?)) {
+                    if (confirm('确定要移出这个播期的记录吗？相关农事记录将被一起删除。')) {
                         const targetId = removeBtn.dataset.id;
                         myGarden = myGarden.filter(g => g.id !== targetId);
                         saveGarden();
@@ -1605,7 +1605,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (harvestBtn) {
                 harvestBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    if (confirm('纭畾杩欐壒浣滅墿宸茬粡閲囨敹瀹屾瘯浜嗗悧锛熷畠灏嗚绉诲叆鏀惰幏鍘嗗彶璁板綍涓€?)) {
+                    if (confirm('确定这批作物已经采收完毕了吗？它将被移入收获历史记录中。')) {
                         const targetId = harvestBtn.dataset.id;
                         const item = myGarden.find(g => g.id === targetId);
                         if (item) {
@@ -1624,7 +1624,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     window.deleteFertRecord = function(id) {
-        if(confirm('纭畾鍒犻櫎姝ゅ埗浣滆褰曞悧锛?)) {
+        if(confirm('确定删除此制作记录吗？')) {
             const idx = myGarden.findIndex(g => g.id === id);
             if(idx !== -1) {
                 myGarden.splice(idx, 1);
@@ -1635,7 +1635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     window.finishFertRecord = function(id) {
-        if(confirm('鎭枩锛佽偉鏂欏埗浣滃畬鎴愪簡锛岃褰掓。鍚楋紵')) {
+        if(confirm('恭喜！肥料制作完成了，要归档吗？')) {
             const idx = myGarden.findIndex(g => g.id === id);
             if(idx !== -1) {
                 myGarden[idx].isHarvested = true;
@@ -1668,7 +1668,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fert = fertilizers.find(f => f.id === (record.fertId || record.vegId));
             if (!fert) continue;
             
-            const startDateStr = record.startDate ? record.startDate.split('T')[0] : '鏈煡鏃堕棿';
+            const startDateStr = record.startDate ? record.startDate.split('T')[0] : '未知时间';
             const daysPassed = record.startDate ? Math.floor((new Date() - new Date(record.startDate)) / (1000 * 60 * 60 * 24)) : 0;
             
 
@@ -1686,15 +1686,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const progressHtml = `
                 <div style="background: #f1f5f9; border-radius: 8px; padding: 12px; margin: 15px 0;">
                     <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; margin-bottom: 5px;">
-                        <span>鍙戦叺鐔熸垚杩涘害</span>
+                        <span>发酵熟成进度</span>
                         <span>${Math.round(progressPercent)}%</span>
                     </div>
                     <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
                         <div class="progress-bar-fill" style="height: 100%; width: ${progressPercent}%; background: var(--primary); transition: width 1s ease-out;"></div>
                     </div>
                     <div style="margin-top: 8px; font-size: 0.85rem; color: #64748b; display: flex; justify-content: space-between;">
-                        <span>褰撳墠鐘舵€? ${displaySequence[currentStageIndex].name}</span>
-                        <span style="color: var(--primary-dark); font-weight: 500;">鈴?棰勪及璺濈啛鎴愮害 ${remainingDays} 澶?/span>
+                        <span>当前状态: ${displaySequence[currentStageIndex].name}</span>
+                        <span style="color: var(--primary-dark); font-weight: 500;">⏳ 预估距熟成约 ${remainingDays} 天</span>
                     </div>
                 </div>
             `;
@@ -1720,20 +1720,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '娴囨按' },
-                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '闄よ崏' },
-                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鏂借偉' },
-                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鏉€铏? },
-                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '淇壀' },
-                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鎼灦' },
-                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鎺堢矇' },
-                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">馃攧</div>', label: '缈诲爢' },
-                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">馃挩</div>', label: '鏀炬皵' },
-                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鍏朵粬' }
+                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
+                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
+                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
-                        <div class="operations-timeline-title">馃摑 鍐滀簨璁板綍</div>
+                        <div class="operations-timeline-title">📝 农事记录</div>
                         <div class="op-list">
                             ${sortedOps.map(op => {
                                 const t = typeMap[op.type] || typeMap['other'];
@@ -1751,16 +1751,16 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                  operationsHtml = `
                     <div class="operations-timeline">
-                        <div class="operations-timeline-title">馃摑 鍐滀簨璁板綍</div>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 5px;">鏆傛棤璁板綍锛岀偣鍑讳笅鏂规寜閽坊鍔犮€?/p>
+                        <div class="operations-timeline-title">📝 农事记录</div>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 5px;">暂无记录，点击下方按钮添加。</p>
                     </div>
                  `;
             }
             operationsHtml += `
                 <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-                    <button class="add-op-btn" onclick="openOperationModal('${record.id}')" style="flex: 1; min-width: 120px; width: auto;">鉃?娣诲姞鍐滀簨璁板綍</button>
+                    <button class="add-op-btn" onclick="openOperationModal('${record.id}')" style="flex: 1; min-width: 120px; width: auto;">➕ 添加农事记录</button>
                     <button class="harvest-btn" onclick="finishFertRecord('${record.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
-                        鉁?鏍囪涓哄埗浣滃畬鎴?
+                        ✅ 标记为制作完成
                     </button>
                 </div>
             `;
@@ -1771,19 +1771,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cardsHtml += `
                 <div class="mygarden-card" style="position: relative;">
-                    <button class="remove-garden-item-btn" title="鍒犻櫎璁板綍" onclick="deleteFertRecord('${record.id}')" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #ef4444; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">鉂?/button>
+                    <button class="remove-garden-item-btn" title="删除记录" onclick="deleteFertRecord('${record.id}')" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #ef4444; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">❌</button>
                     <div class="row-number">${i + 1}</div>
                     ${imgHtml}
                     
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${fert.name}</h3>
-                            <span style="font-size: 0.9rem; color: #555;">馃搷 寮€濮嬪埗浣? ${startDateStr}</span>
+                            <span style="font-size: 0.9rem; color: #555;">📍 开始制作: ${startDateStr}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-                            <span class="days-badge">宸茶繘琛?${daysPassed} 澶?/span>
+                            <span class="days-badge">已进行 ${daysPassed} 天</span>
                             <span class="gdd-badge" style="background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
-                                馃尅锔?閫傚疁鍙戦叺娓╁害: 15-25掳C
+                                🌡️ 适宜发酵温度: 15-25°C
                             </span>
                         </div>
                         
@@ -1824,7 +1824,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!veg) continue;
             
             const city = cities.find(c => c.id === gardenItem.cityId);
-            const cityName = city ? city.name : '鏈煡鍦板尯';
+            const cityName = city ? city.name : '未知地区';
             
             const categoryGradients = {
                 leafy: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)',
@@ -1843,20 +1843,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ops.length > 0) {
                 const sortedOps = [...ops].sort((a, b) => new Date(b.date) - new Date(a.date));
                 const typeMap = {
-                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '娴囨按' },
-                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '闄よ崏' },
-                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鏂借偉' },
-                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鏉€铏? },
-                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '淇壀' },
-                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鎼灦' },
-                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鎺堢矇' },
-                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">馃攧</div>', label: '缈诲爢' },
-                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">馃挩</div>', label: '鏀炬皵' },
-                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=1" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '鍏朵粬' }
+                    'water': { icon: '<img loading="lazy" src="assets/icons/op_water.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '浇水' },
+                    'weed': { icon: '<img loading="lazy" src="assets/icons/op_weed.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '除草' },
+                    'fertilize': { icon: '<img loading="lazy" src="assets/icons/op_fertilize.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '施肥' },
+                    'pest': { icon: '<img loading="lazy" src="assets/icons/op_pest.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '杀虫' },
+                    'prune': { icon: '<img loading="lazy" src="assets/icons/op_prune.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '修剪' },
+                    'trellis': { icon: '<img loading="lazy" src="assets/icons/op_trellis.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '搭架' },
+                    'pollinate': { icon: '<img loading="lazy" src="assets/icons/op_pollinate.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '授粉' },
+                    'turn': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">🔄</div>', label: '翻堆' },
+                    'vent': { icon: '<div style="display:inline-block; width:16px; height:16px; line-height:16px; text-align:center; margin-right:2px; vertical-align:middle; font-size:14px;">💨</div>', label: '放气' },
+                    'other': { icon: '<img loading="lazy" src="assets/icons/op_other.png?v=4" style="width:16px;height:16px;vertical-align:middle;margin-right:2px;border-radius:2px;">', label: '其他' }
                 };
                 operationsHtml = `
                     <div class="operations-timeline">
-                        <div class="operations-timeline-title">馃摑 鍘嗗彶鍐滀簨璁板綍</div>
+                        <div class="operations-timeline-title">📝 历史农事记录</div>
                         <div class="op-list">
                             ${sortedOps.map(op => {
                                 const t = typeMap[op.type] || typeMap['other'];
@@ -1875,15 +1875,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const cardHtml = `
                 <div class="mygarden-card" style="position: relative; opacity: 0.9;">
-                    <div class="row-number">馃弳</div>
+                    <div class="row-number">🏆</div>
                     ${imgHtml}
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
-                            <span style="font-size: 0.9rem; color: #555;">馃搷 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '绉绘牻' : '鎾'}</span>
+                            <span style="font-size: 0.9rem; color: #555;">📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-                            <span class="days-badge" style="background: #f3f4f6; color: #374151;">宸蹭簬 ${gardenItem.harvestDate} 閲囨敹瀹屾瘯</span>
+                            <span class="days-badge" style="background: #f3f4f6; color: #374151;">已于 ${gardenItem.harvestDate} 采收完毕</span>
                         </div>
                         ${operationsHtml}
                     </div>
@@ -1927,20 +1927,20 @@ document.addEventListener('DOMContentLoaded', () => {
             let opTypes = [];
             if (isFert) {
                 opTypes = [
-                    { id: 'turn', name: '缈诲爢', icon: '馃攧' },
-                    { id: 'vent', name: '鏀炬皵', icon: '馃挩' },
-                    { id: 'other', name: '鍏朵粬', img: 'assets/icons/op_other.png?v=1' }
+                    { id: 'turn', name: '翻堆', icon: '🔄' },
+                    { id: 'vent', name: '放气', icon: '💨' },
+                    { id: 'other', name: '其他', img: 'assets/icons/op_other.png?v=4' }
                 ];
             } else {
                 opTypes = [
-                    { id: 'water', name: '娴囨按', img: 'assets/icons/op_water.png?v=1' },
-                    { id: 'weed', name: '闄よ崏', img: 'assets/icons/op_weed.png?v=1' },
-                    { id: 'fertilize', name: '鏂借偉', img: 'assets/icons/op_fertilize.png?v=1' },
-                    { id: 'pest', name: '鏉€铏?, img: 'assets/icons/op_pest.png?v=1' },
-                    { id: 'prune', name: '淇壀', img: 'assets/icons/op_prune.png?v=1' },
-                    { id: 'trellis', name: '鎼灦', img: 'assets/icons/op_trellis.png?v=1' },
-                    { id: 'pollinate', name: '鎺堢矇', img: 'assets/icons/op_pollinate.png?v=1' },
-                    { id: 'other', name: '鍏朵粬', img: 'assets/icons/op_other.png?v=1' }
+                    { id: 'water', name: '浇水', img: 'assets/icons/op_water.png?v=4' },
+                    { id: 'weed', name: '除草', img: 'assets/icons/op_weed.png?v=4' },
+                    { id: 'fertilize', name: '施肥', img: 'assets/icons/op_fertilize.png?v=4' },
+                    { id: 'pest', name: '杀虫', img: 'assets/icons/op_pest.png?v=4' },
+                    { id: 'prune', name: '修剪', img: 'assets/icons/op_prune.png?v=4' },
+                    { id: 'trellis', name: '搭架', img: 'assets/icons/op_trellis.png?v=4' },
+                    { id: 'pollinate', name: '授粉', img: 'assets/icons/op_pollinate.png?v=4' },
+                    { id: 'other', name: '其他', img: 'assets/icons/op_other.png?v=4' }
                 ];
             }
             
@@ -1986,7 +1986,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tag.classList.add('active');
                 }
                 tag.dataset.id = g.id;
-                tag.innerHTML = `<span class="checkmark">鉁?/span> ${displayName} (${g.plantDate})`;
+                tag.innerHTML = `<span class="checkmark">✓</span> ${displayName} (${g.plantDate})`;
                 tag.addEventListener('click', () => {
                     tag.classList.toggle('active');
                     if (cropSelector.querySelectorAll('.crop-select-tag.active').length === 0) {
@@ -2009,7 +2009,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const typeVal = activeBtn ? activeBtn.dataset.type : 'other';
 
             if (!dateVal) {
-                alert('璇烽€夋嫨鎿嶄綔鏃ユ湡');
+                alert('请选择操作日期');
                 return;
             }
 
@@ -2088,7 +2088,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Auto select unit based on previous harvest if exists
         const item = myGarden.find(i => i.id === gardenId);
         if (item && item.harvests && item.harvests.length > 0) {
-            document.getElementById('harvest-unit').value = item.harvests[0].unit || '鍏枻';
+            document.getElementById('harvest-unit').value = item.harvests[0].unit || '公斤';
         }
         
         document.getElementById('harvest-amount').value = '';
@@ -2106,7 +2106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const unit = document.getElementById('harvest-unit').value;
 
         if (!date || isNaN(amount) || amount <= 0) {
-            alert('璇峰～鍐欐纭殑鏃ユ湡鍜屾暟閲忥紒');
+            alert('请填写正确的日期和数量！');
             return;
         }
 
@@ -2158,7 +2158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const vegInfo = vegetables.find(v => v.id === item.vegId);
         if (!vegInfo) return;
 
-        document.getElementById('todo-harvest-title').innerHTML = `${vegInfo.icon || '馃尡'} ${vegInfo.name} - 寰呭姙娓呭崟涓庝骇閲廯;
+        document.getElementById('todo-harvest-title').innerHTML = `${vegInfo.icon || '🌱'} ${vegInfo.name} - 待办清单与产量`;
 
         // Calculate current status for fertilizer checks
         const dailyData = getWeatherDataForPlant(item.cityId, item.plantDate);
@@ -2168,7 +2168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const todoList = document.getElementById('todo-fertilizer-list');
         if (vegInfo.fertilizerSchedule && vegInfo.fertilizerSchedule.length > 0) {
             todoList.innerHTML = vegInfo.fertilizerSchedule.map(fert => {
-                const stageName = vegInfo.growthSequence[fert.stageIndex]?.name || '鐗瑰畾闃舵';
+                const stageName = vegInfo.growthSequence[fert.stageIndex]?.name || '特定阶段';
                 const todoKey = 'fert_' + fert.stageIndex;
                 const isChecked = item.completedTodos && item.completedTodos[todoKey];
                 const checkedStyle = isChecked ? 'filter: grayscale(1); opacity: 0.5;' : '';
@@ -2178,21 +2178,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div style="flex: 0 0 auto; display: flex; align-items: center;">
                             <input type="checkbox" onchange="toggleFertTodo('${item.id}', ${fert.stageIndex})" ${isChecked ? 'checked' : ''} style="margin-right: 10px; width: 18px; height: 18px; accent-color: #10b981; cursor: pointer; flex-shrink: 0;">
                             <span style="font-weight: 500; color: #4b5563; white-space: nowrap;">${fert.actionName}</span>
-                            <span style="font-size: 0.85rem; color: #9ca3af; margin-left: 8px; white-space: nowrap;">(瀵瑰簲: ${stageName})</span>
+                            <span style="font-size: 0.85rem; color: #9ca3af; margin-left: 8px; white-space: nowrap;">(对应: ${stageName})</span>
                         </div>
                         <div style="width: 1px; background: #e5e7eb; height: 30px; margin: 0 15px; flex-shrink: 0;"></div>
                         <div style="flex: 1 1 auto; font-size: 0.9rem; color: #6b7280; line-height: 1.4; word-break: break-word;">
                             ${fert.dosagePerPlant} ${fert.fertilizerType}<br>
-                            鏈夋満鏇夸唬: ${fert.organicAlternative}
+                            有机替代: ${fert.organicAlternative}
                             <div style="margin-top: 6px;">
-                                <input type="text" placeholder="馃摑 娣诲姞澶囨敞..." value="${remarkText}" onchange="saveFertRemark('${item.id}', ${fert.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
+                                <input type="text" placeholder="📝 添加备注..." value="${remarkText}" onchange="saveFertRemark('${item.id}', ${fert.stageIndex}, this.value)" style="width: 100%; padding: 4px 8px; border: 1px dashed #d1d5db; border-radius: 6px; font-size: 0.8rem; color: #4b5563; background: transparent; transition: all 0.2s; outline: none;" onfocus="this.style.border='1px dashed #10b981'; this.style.background='white';" onblur="this.style.border='1px dashed #d1d5db'; this.style.background='transparent';">
                             </div>
                         </div>
                     </div>
                 `;
             }).join('');
         } else {
-            todoList.innerHTML = '<div style="color:#9ca3af;font-size:0.9rem;">鏆傛棤鐗瑰畾鐨勬柦鑲ユ彁閱掕鍒?/div>';
+            todoList.innerHTML = '<div style="color:#9ca3af;font-size:0.9rem;">暂无特定的施肥提醒计划</div>';
         }
 
         // 2. Harvest Render
@@ -2208,7 +2208,7 @@ document.addEventListener('DOMContentLoaded', () => {
             emptyMsg.style.display = 'none';
 
             let total = 0;
-            const unit = item.harvests[0].unit || '鍏枻';
+            const unit = item.harvests[0].unit || '公斤';
             let maxAmount = 0;
             const aggregated = {};
             item.harvests.forEach(h => {
@@ -2223,12 +2223,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const count = item.harvests.length;
             const avg = (total / count).toFixed(1);
-            
-            const calDesc = (item.calendar && item.calendar[currentRegion]) || '鏆傛棤鏁版嵁';
+            const calDesc = (vegInfo.calendar && vegInfo.calendar[currentRegion]) || '暂无数据';
             document.getElementById('modal-cal-desc').textContent = calDesc;
 
             document.getElementById('todo-harvest-total-val').innerText = total.toFixed(1) + ' ' + unit;
-            document.getElementById('todo-harvest-count-val').innerText = count + ' 娆?;
+            document.getElementById('todo-harvest-count-val').innerText = count + ' 次';
             document.getElementById('todo-harvest-avg-val').innerText = avg + ' ' + unit;
 
             const chartEl = document.getElementById('todo-harvest-chart');
@@ -2249,8 +2248,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             listContainer.innerHTML = item.harvests.map(h => `
                 <div class="harvest-list-item">
-                    <span style="color: #64748b;">馃搮 ${h.date}</span>
-                    <span style="font-weight: 600; color: #0f172a;">${parseFloat(h.amount).toFixed(1)} ${h.unit || '鍏枻'}</span>
+                    <span style="color: #64748b;">📅 ${h.date}</span>
+                    <span style="font-weight: 600; color: #0f172a;">${parseFloat(h.amount).toFixed(1)} ${h.unit || '公斤'}</span>
                 </div>
             `).join('');
         } else {
@@ -2281,10 +2280,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!item || !item.harvests || item.harvests.length === 0) return;
         
         const vegInfo = vegetables.find(v => v.id === item.vegId);
-        document.getElementById('harvest-viz-title').innerHTML = `${vegInfo ? vegInfo.icon : '馃崜'} ${vegInfo ? vegInfo.name : '鏈煡'} - 浜ч噺缁熻`;
+        document.getElementById('harvest-viz-title').innerHTML = `${vegInfo ? vegInfo.icon : '🍓'} ${vegInfo ? vegInfo.name : '未知'} - 产量统计`;
         
         let total = 0;
-        const unit = item.harvests[0].unit || '鍏枻';
+        const unit = item.harvests[0].unit || '公斤';
         let maxAmount = 0;
         
         // Aggregate by date (in case multiple harvests per day)
@@ -2306,7 +2305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const avg = (total / count).toFixed(1);
 
         document.getElementById('harvest-total-val').innerText = total.toFixed(1) + ' ' + unit;
-        document.getElementById('harvest-count-val').innerText = count + ' 娆?;
+        document.getElementById('harvest-count-val').innerText = count + ' 次';
         document.getElementById('harvest-avg-val').innerText = avg + ' ' + unit;
 
         const chartContainer = document.getElementById('harvest-chart');
@@ -2330,8 +2329,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const listContainer = document.getElementById('harvest-list');
         listContainer.innerHTML = item.harvests.map(h => `
             <div class="harvest-list-item">
-                <span style="color: #64748b;">馃搮 ${h.date}</span>
-                <span style="font-weight: 600; color: #0f172a;">${parseFloat(h.amount).toFixed(1)} ${h.unit || '鍏枻'}</span>
+                <span style="color: #64748b;">📅 ${h.date}</span>
+                <span style="font-weight: 600; color: #0f172a;">${parseFloat(h.amount).toFixed(1)} ${h.unit || '公斤'}</span>
             </div>
         `).join('');
 
