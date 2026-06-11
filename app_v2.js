@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         filteredVegs.forEach(veg => {
             const cat = categories.find(c => c.id === veg.categoryId);
-            const calendarText = veg.calendar[currentRegion] || '该地区暂无推荐种植时间';
+            const calendarText = (veg.calendar && veg.calendar[currentRegion]) || '该地区暂无推荐种植时间';
             const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
 
             const imgHtml = veg.image 
@@ -773,7 +773,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const matchedVegs = vegetables.filter(veg => {
-                const text = veg.calendar[currentRegion];
+                const text = veg.calendar && veg.calendar[currentRegion];
                 const validMonths = parseMonths(text);
                 return validMonths.includes(month);
             });
@@ -864,7 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
         } else {
             const cat = categories.find(c => c.id === item.categoryId);
-            const calendarText = item.calendar[currentRegion] || '该地区暂无推荐种植时间';
+            const calendarText = (item.calendar && item.calendar[currentRegion]) || '该地区暂无推荐种植时间';
             const regionName = regions.find(r => r.id === currentRegion).name;
             
             const gardenItem = myGarden.find(g => g.vegId === item.id);
@@ -2223,6 +2223,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const count = item.harvests.length;
             const avg = (total / count).toFixed(1);
+            
+            const calDesc = (item.calendar && item.calendar[currentRegion]) || '暂无数据';
+            document.getElementById('modal-cal-desc').textContent = calDesc;
 
             document.getElementById('todo-harvest-total-val').innerText = total.toFixed(1) + ' ' + unit;
             document.getElementById('todo-harvest-count-val').innerText = count + ' 次';
