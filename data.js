@@ -3961,6 +3961,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_wheat.png',
     name: '小麦',
     categoryId: 'field_crops',
+    calendar: {
+      north: '3月~4月，9月~10月',
+      south: '10月~11月',
+      east: '10月~11月',
+      west: '3月~4月，9月~10月'
+    },
     image: 'images/wheat_farm_bg.png',
     description: '全球最重要的粮食作物之一，喜冷凉，长日照作物。',
     difficulty: '★★★☆☆',
@@ -4042,6 +4048,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_rice.png',
     name: '水稻',
     categoryId: 'field_crops',
+    calendar: {
+      north: '4月~5月',
+      south: '3月~4月，6月~7月',
+      east: '5月~6月',
+      west: '4月~5月'
+    },
     image: 'images/rice_farm_bg.png',
     description: '亚洲主要粮食作物，喜高温多湿，短日照作物。',
     difficulty: '★★★★☆',
@@ -4114,6 +4126,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_corn.png',
     name: '大田玉米',
     categoryId: 'field_crops',
+    calendar: {
+      north: '4月~5月',
+      south: '3月~4月',
+      east: '4月~5月',
+      west: '4月~5月'
+    },
     image: 'images/field_corn_bg.png',
     description: '重要的粮食和饲料作物，光合效率高（C4植物）。',
     difficulty: '★★☆☆☆',
@@ -4186,6 +4204,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_soybean.png',
     name: '大豆',
     categoryId: 'field_crops',
+    calendar: {
+      north: '5月~6月',
+      south: '3月~4月，6月~7月',
+      east: '5月~6月',
+      west: '5月~6月'
+    },
     image: 'images/soybean_farm_bg.png',
     description: '重要的优质蛋白和油料来源，具有根瘤固氮能力。',
     difficulty: '★★★☆☆',
@@ -4249,6 +4273,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_cotton.png',
     name: '棉花',
     categoryId: 'field_crops',
+    calendar: {
+      north: '4月~5月',
+      south: '4月~5月',
+      east: '4月~5月',
+      west: '4月~5月'
+    },
     image: 'images/cotton_farm_bg.png',
     description: '重要的经济作物和纺织原料，喜温好光，生长期长。',
     difficulty: '★★★★☆',
@@ -4312,6 +4342,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_peanut.png',
     name: '花生',
     categoryId: 'field_crops',
+    calendar: {
+      north: '4月~5月',
+      south: '3月~4月',
+      east: '3月~4月',
+      west: '3月~4月'
+    },
     image: 'images/peanut_farm_bg.png',
     description: '地上开花、地下结果的经济油料作物，忌连作。',
     difficulty: '★★★☆☆',
@@ -4375,6 +4411,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_rapeseed.png',
     name: '油菜',
     categoryId: 'field_crops',
+    calendar: {
+      north: '4月~5月',
+      south: '9月~10月',
+      east: '9月~10月',
+      west: '9月~10月'
+    },
     image: 'images/rapeseed_farm_bg.png',
     description: '重要的冬春油料作物，花期极具观赏价值。',
     difficulty: '★★☆☆☆',
@@ -4438,6 +4480,12 @@ export const pestControls = [
     avatar: 'assets/icons/icon_sorghum.png',
     name: '高粱',
     categoryId: 'field_crops',
+    calendar: {
+      north: '4月~5月',
+      south: '3月~4月',
+      east: '3月~4月',
+      west: '3月~4月'
+    },
     image: 'images/sorghum_farm_bg.png',
     description: '抗旱耐涝耐盐碱，是酿酒和饲料的重要原料。',
     difficulty: '★☆☆☆☆',
