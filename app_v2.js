@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000024';
-import { weatherData } from './weather_data.js?v=1786000000024';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000025';
+import { weatherData } from './weather_data.js?v=1786000000025';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
 const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
