@@ -1814,7 +1814,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emptyMsg = document.getElementById('history-empty-msg');
         if (!grid) return;
         
-        const historyGarden = myGarden.filter(g => g.isHarvested && g.type !== 'fertilizer');
+        const historyGarden = myGarden.filter(g => g.isHarvested);
         
         if (historyGarden.length === 0) {
             grid.innerHTML = '';
@@ -1831,20 +1831,28 @@ document.addEventListener('DOMContentLoaded', () => {
         
         for (let index = 0; index < filteredHistory.length; index++) {
             const gardenItem = filteredHistory[index];
-            const veg = vegetables.find(v => v.id === gardenItem.vegId);
+            let veg;
+            let bgGradient;
+            
+            if (gardenItem.type === 'fertilizer') {
+                veg = fertilizers.find(f => f.id === gardenItem.vegId);
+                bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
+            } else {
+                veg = vegetables.find(v => v.id === gardenItem.vegId);
+                const categoryGradients = {
+                    leafy: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)',
+                    root: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+                    fruit: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)',
+                    legume: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+                    allium: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)'
+                };
+                bgGradient = categoryGradients[veg?.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
+            }
             if (!veg) continue;
             
             const city = cities.find(c => c.id === gardenItem.cityId);
-            const cityName = city ? city.name : '未知地区';
+            const cityName = city ? city.name : (gardenItem.type === 'fertilizer' ? '自制肥料' : '未知地区');
             
-            const categoryGradients = {
-                leafy: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)',
-                root: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
-                fruit: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)',
-                legume: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
-                allium: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)'
-            };
-            const bgGradient = categoryGradients[veg.categoryId] || 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             const imgHtml = veg.image 
                 ? `<img loading="lazy" src="${veg.image}" alt="${veg.name}" class="mygarden-main-img" style="filter: grayscale(30%);">`
                 : `<div class="mygarden-main-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 5rem; text-shadow: 0 10px 20px rgba(0,0,0,0.1); filter: grayscale(30%);">${veg.icon}</div>`;
@@ -1884,6 +1892,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }
 
+            const infoText = gardenItem.type === 'fertilizer' 
+                ? `📍 ${cityName} | ${gardenItem.plantDate} 开始制作` 
+                : `📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}`;
+                
+            const endText = gardenItem.type === 'fertilizer'
+                ? `已于 ${gardenItem.endDate || gardenItem.harvestDate || '未知时间'} 制作完成`
+                : `已于 ${gardenItem.harvestDate || '未知时间'} 采收完毕`;
+
             const cardHtml = `
                 <div class="mygarden-card" style="position: relative; opacity: 0.9;">
                     <div class="row-number">🏆</div>
@@ -1891,10 +1907,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                             <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
-                            <span style="font-size: 0.9rem; color: #555;">📍 ${cityName} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
+                            <span style="font-size: 0.9rem; color: #555;">${infoText}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-                            <span class="days-badge" style="background: #f3f4f6; color: #374151;">已于 ${gardenItem.harvestDate} 采收完毕</span>
+                            <span class="days-badge" style="background: #f3f4f6; color: #374151;">${endText}</span>
                         </div>
                         ${operationsHtml}
                     </div>
