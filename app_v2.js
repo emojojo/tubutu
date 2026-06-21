@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000023';
-import { weatherData } from './weather_data.js?v=1786000000023';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000024';
+import { weatherData } from './weather_data.js?v=1786000000024';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
 const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
@@ -1400,6 +1400,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const veg = vegetables.find(v => v.id === gardenItem.vegId);
             if (!veg) continue;
             
+            const allSameVeg = myGarden.filter(g => g.vegId === gardenItem.vegId).sort((a, b) => new Date(a.plantDate) - new Date(b.plantDate));
+            const batchIndex = allSameVeg.findIndex(g => g.id === gardenItem.id);
+            const batchNumber = batchIndex + 1;
+            const batchSuffix = allSameVeg.length > 1 ? ` <span style="font-size: 0.9rem; color: #888; font-weight: normal; margin-left: 8px;">(第${batchNumber}批)</span>` : '';
+            
             const city = cities.find(c => c.id === gardenItem.cityId);
             const cityName = city ? city.name : '未知地区';
             
@@ -1562,7 +1567,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${imgHtml}
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-                            <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
+                            <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}${batchSuffix}</h3>
                             <span style="font-size: 0.9rem; color: #555;">📍 ${cityName}${weatherDisplay} | ${gardenItem.plantDate} ${gardenItem.method === 'transplant' ? '移栽' : '播种'}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
@@ -1850,6 +1855,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (!veg) continue;
             
+            const allSameVeg = myGarden.filter(g => g.vegId === gardenItem.vegId).sort((a, b) => new Date(a.plantDate) - new Date(b.plantDate));
+            const batchIndex = allSameVeg.findIndex(g => g.id === gardenItem.id);
+            const batchNumber = batchIndex + 1;
+            const batchSuffix = allSameVeg.length > 1 ? ` <span style="font-size: 0.9rem; color: #888; font-weight: normal; margin-left: 8px;">(第${batchNumber}批)</span>` : '';
+            
             const city = cities.find(c => c.id === gardenItem.cityId);
             const cityName = city ? city.name : (gardenItem.type === 'fertilizer' ? '自制肥料' : '未知地区');
             
@@ -1906,7 +1916,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${imgHtml}
                     <div class="veg-info">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-                            <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}</h3>
+                            <h3 style="margin: 0; font-size: 1.3rem;">${veg.name}${batchSuffix}</h3>
                             <span style="font-size: 0.9rem; color: #555;">${infoText}</span>
                         </div>
                         <div class="garden-status" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
