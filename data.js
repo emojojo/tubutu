@@ -371,8 +371,8 @@ export const vegetables = [
     name: '西瓜',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍉',
-    image: 'images/crop_watermelon.png',
-    description: '喜温耐热，需强光照。西北地区露天种植糖度极高，有机种植需注意轮作防枯萎病。',
+    image: 'images/crop_watermelon_ground.png',
+    description: '喜温耐热，需强光照。西北地区露天种植糖度极高，适合地栽匍匐生长。',
     calendar: {
       north: '4月中下旬地膜覆盖直播，或5月露地直播。',
       south: '2-3月春播，7-8月秋播。',
@@ -468,8 +468,8 @@ export const vegetables = [
     name: '甜瓜',
     baseTemp: 12, categoryId: 'fruit',
     icon: '🍈',
-    image: 'images/crop_melon.png',
-    description: '薄皮甜瓜，香甜多汁，喜光耐旱，极不耐涝。',
+    image: 'images/crop_melon_ground.png',
+    description: '薄皮甜瓜，香甜多汁，喜光耐旱，极不耐涝，适合地爬种植。',
     calendar: {
       north: '晚霜后4月下旬至5月露天播种。',
       south: '2-4月春播（夏季高温多雨易裂果病害）。',
