@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000025';
-import { weatherData } from './weather_data.js?v=1786000000025';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000026';
+import { weatherData } from './weather_data.js?v=1786000000026';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
 const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
@@ -1776,7 +1776,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
                     <button class="add-op-btn" onclick="openOperationModal('${record.id}')" style="flex: 1; min-width: 120px; width: auto;">➕ 添加农事记录</button>
                     <button class="harvest-btn" onclick="finishFertRecord('${record.id}')" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 120px; transition: all 0.2s ease;" onmouseover="this.style.background='#dcfce7'" onmouseout="this.style.background='#f0fdf4'">
-                        ✅ 标记为制作完成
+                        ✅ 标记为制作完成 (移至历史)
                     </button>
                 </div>
             `;
