@@ -391,15 +391,15 @@ export const vegetables = [
         name: '幼苗期 (定植与蹲苗)',
         water_fertilizer: '定植缓苗后浇一次稀薄缓苗水。之后严格控水“蹲苗”，促进根系深扎。',
         pest_management: '预防蚜虫传播病毒病，可悬挂黄板。',
-        pruning_trellising: '定植可地爬（株距0.8-1m）或搭架（立体种植，节约空间，搭设1.5-2m高人字架）。',
-        pruning_image: 'images/stages/stage_watermelon_plant.png'
+        pruning_trellising: '采用地爬种植（株距0.8-1m），让藤蔓自然匍匐生长，需预留充足的地面空间。',
+        pruning_image: 'images/stages/watermelon_ground_1.png'
       },
       {
         name: '抽蔓期',
         water_fertilizer: '蔓长30cm左右时，追施一次促蔓肥（以氮钾为主），并配合浇水。之后再次控水。',
         pest_management: '重点预防蔓枯病，注意田间通风，发现病斑可用草木灰涂抹。',
-        pruning_trellising: '【地爬】采用“三蔓整枝”（主蔓+2侧蔓）；【搭架】采用“双蔓整枝”（主蔓+1侧蔓）。多余侧蔓尽早剪除。搭架需及时绑蔓。',
-        pruning_image: 'images/stages/stage_watermelon_prune.png'
+        pruning_trellising: '地爬常采用“三蔓整枝”（主蔓+2侧蔓），多余侧蔓尽早剪除。也可在瓜下垫草防止地雷瓜。',
+        pruning_image: 'images/stages/watermelon_ground_2.png'
       },
       {
         name: '开花结果期',
@@ -482,15 +482,15 @@ export const vegetables = [
         name: '幼苗期 (定植与缓苗)',
         water_fertilizer: '定植后浇透水，缓苗后适当控水促进根系下扎。',
         pest_management: '防范苗期立枯病，预防蚜虫。',
-        pruning_trellising: '推荐搭架吊蔓种植（1.8-2m高铁丝/尼龙绳），采光好且防烂瓜；也可地爬种植（需铺草防地雷瓜）。',
-        pruning_image: 'images/stages/melon_0_v3_1779513847521.png'
+        pruning_trellising: '采用地爬种植，任由瓜蔓在地面横向生长。建议铺设稻草或地膜，防止瓜果直接接触泥土而腐烂（防地雷瓜）。',
+        pruning_image: 'images/stages/melon_ground_1.png'
       },
       {
         name: '抽蔓期',
         water_fertilizer: '伸蔓期追施一次伸蔓肥（均衡型复混肥），保持土壤见干见湿。',
         pest_management: '重点防范白粉病、蔓枯病。',
-        pruning_trellising: '【吊蔓单干整枝】：主蔓向上牵引，摘除10节以下所有侧枝；11-15节留侧枝结果，果前留1-2叶摘心。主蔓至25节左右打顶。【地爬】：常采用“双蔓或三蔓整枝”。',
-        pruning_image: 'images/stages/melon_1_v3_1779513861324.png'
+        pruning_trellising: '地爬常采用“双蔓或三蔓整枝”：保留主蔓和1-2根强壮侧蔓，其余弱小侧蔓摘除，促进养分集中供应果实发育。',
+        pruning_image: 'images/stages/melon_ground_2.png'
       },
       {
         name: '开花结果期',
