@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000026';
-import { weatherData } from './weather_data.js?v=1786000000026';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000027';
+import { weatherData } from './weather_data.js?v=1786000000027';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
 const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
@@ -1687,6 +1687,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const startDateStr = record.startDate ? record.startDate.split('T')[0] : '未知时间';
             const daysPassed = record.startDate ? Math.floor((new Date() - new Date(record.startDate)) / (1000 * 60 * 60 * 24)) : 0;
             
+            const targetId = record.fertId || record.vegId;
+            const allSameFert = myGarden.filter(g => g.type === 'fertilizer' && (g.fertId || g.vegId) === targetId)
+                                        .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+            const batchIndex = allSameFert.findIndex(g => g.id === record.id);
+            const batchNumber = batchIndex + 1;
+            const batchSuffix = allSameFert.length > 1 ? ` <span style="font-size: 0.9rem; color: #888; font-weight: normal; margin-left: 8px;">(第${batchNumber}批)</span>` : '';
+
 
             let currentStageIndex = 0;
             const totalDays = fert.id === 'eco_enzyme' ? 90 : (fert.id === 'aerobic_compost' ? 60 : 45);
@@ -1840,7 +1847,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let bgGradient;
             
             if (gardenItem.type === 'fertilizer') {
-                veg = fertilizers.find(f => f.id === gardenItem.vegId);
+                veg = fertilizers.find(f => f.id === (gardenItem.fertId || gardenItem.vegId));
                 bgGradient = 'linear-gradient(135deg, #f5f7fa, #c3cfe2)';
             } else {
                 veg = vegetables.find(v => v.id === gardenItem.vegId);
@@ -1855,7 +1862,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (!veg) continue;
             
-            const allSameVeg = myGarden.filter(g => g.vegId === gardenItem.vegId).sort((a, b) => new Date(a.plantDate) - new Date(b.plantDate));
+            let allSameVeg;
+            if (gardenItem.type === 'fertilizer') {
+                const targetId = gardenItem.fertId || gardenItem.vegId;
+                allSameVeg = myGarden.filter(g => g.type === 'fertilizer' && (g.fertId || g.vegId) === targetId).sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+            } else {
+                allSameVeg = myGarden.filter(g => g.type !== 'fertilizer' && g.vegId === gardenItem.vegId).sort((a, b) => new Date(a.plantDate) - new Date(b.plantDate));
+            }
             const batchIndex = allSameVeg.findIndex(g => g.id === gardenItem.id);
             const batchNumber = batchIndex + 1;
             const batchSuffix = allSameVeg.length > 1 ? ` <span style="font-size: 0.9rem; color: #888; font-weight: normal; margin-left: 8px;">(第${batchNumber}批)</span>` : '';
