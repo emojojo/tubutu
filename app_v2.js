@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return Array.from(months);
         }
 
-        const rangeRegex = /([1-9]|1[0-2])\s*[-至~到]\s*([1-9]|1[0-2])/g;
+        const rangeRegex = /(1[0-2]|[1-9])\s*[-至~到]\s*(1[0-2]|[1-9])/g;
         let match;
         let hasExplicitMonths = false;
         
@@ -748,7 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        const singleRegex = /([1-9]|1[0-2])\s*月/g;
+        const singleRegex = /(1[0-2]|[1-9])\s*月/g;
         while ((match = singleRegex.exec(text)) !== null) {
             hasExplicitMonths = true;
             months.add(parseInt(match[1]));
