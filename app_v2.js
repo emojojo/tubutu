@@ -1,5 +1,5 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000028';
-import { weatherData } from './weather_data.js?v=1786000000028';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000029';
+import { weatherData } from './weather_data.js?v=1786000000029';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
 const fieldCrops = pestControls.filter(item => item.categoryId === 'field_crops');
@@ -724,20 +724,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function parseMonths(text) {
-        if (!text) return [];
         let months = new Set();
-        if (text.includes('全年') || text.includes('四季')) {
+        if (!text) return Array.from(months);
+        
+        if (text.includes('全年')) {
             for(let i=1; i<=12; i++) months.add(i);
             return Array.from(months);
         }
-        if (text.includes('春')) { months.add(3); months.add(4); months.add(5); }
-        if (text.includes('夏')) { months.add(6); months.add(7); months.add(8); }
-        if (text.includes('秋')) { months.add(8); months.add(9); months.add(10); }
-        if (text.includes('冬')) { months.add(11); months.add(12); months.add(1); }
 
-        const rangeRegex = /([1-9]|1[0-2])\s*[-至~]\s*([1-9]|1[0-2])/g;
+        const rangeRegex = /([1-9]|1[0-2])\s*[-至~到]\s*([1-9]|1[0-2])/g;
         let match;
+        let hasExplicitMonths = false;
+        
         while ((match = rangeRegex.exec(text)) !== null) {
+            hasExplicitMonths = true;
             let start = parseInt(match[1]);
             let end = parseInt(match[2]);
             if (start <= end) {
@@ -750,7 +750,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const singleRegex = /([1-9]|1[0-2])\s*月/g;
         while ((match = singleRegex.exec(text)) !== null) {
+            hasExplicitMonths = true;
             months.add(parseInt(match[1]));
+        }
+
+        if (!hasExplicitMonths || text.match(/春秋两季/)) {
+            if (text.includes('春')) { months.add(3); months.add(4); months.add(5); }
+            if (text.includes('夏')) { months.add(6); months.add(7); months.add(8); }
+            if (text.includes('秋')) { months.add(8); months.add(9); months.add(10); }
+            if (text.includes('冬')) { months.add(11); months.add(12); months.add(1); }
         }
 
         return Array.from(months).sort((a,b)=>a-b);
