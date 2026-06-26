@@ -4127,9 +4127,9 @@ export const pestControls = [
     name: '大田玉米',
     categoryId: 'field_crops',
     calendar: {
-      north: '4月~5月',
-      south: '3月~4月',
-      east: '4月~5月',
+      north: '4月~5月（春玉米），6月（夏玉米）',
+      south: '3月~4月（春播），7月~8月（秋播）',
+      east: '4月~5月（春播），7月~8月（秋播）',
       west: '4月~5月'
     },
     image: 'images/field_corn_bg.png',
