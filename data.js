@@ -1407,7 +1407,7 @@ export const vegetables = [
         pruning_trellising: '及时摘除底部接触土壤的老叶、病叶，增加通风透光。适时打顶（一般留3-5穗果后掐去主茎顶端）。',
       },
       {
-        name: '采收期',
+        name: '连续采收',
         water_fertilizer: '采收前适度控水，可提高果实糖度。',
         pest_management: '停用一切化学药剂。',
         pruning_trellising: '分批采收，红熟一个采一个，减轻植株负担。',
@@ -1421,7 +1421,7 @@ export const vegetables = [
       { days: 15, gdd: 225, name: '开花期', image: 'images/tomato_v3_stage_4_1779705506448.png' },
       { days: 20, gdd: 300, name: '结果期', image: 'images/tomato_v3_stage_5_1779705522180.png' },
       { days: 20, gdd: 300, name: '转色期', image: 'images/tomato_v3_stage_6_1779705537599.png' },
-      { days: 20, gdd: 300, name: '采收期', image: 'images/tomato_v3_stage_7_1779705551649.png' }
+      { days: 20, gdd: 300, name: '连续采收', image: 'images/tomato_v3_stage_7_1779705551649.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '5-8g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟羊粪 100g 或 蚯蚓粪 150g', foliarAlternative: '0.2% 尿素水溶液喷叶' },
@@ -1528,7 +1528,7 @@ export const vegetables = [
         pruning_image: 'images/stages/stage_okra_pruning.png',
       },
       {
-        name: '采收期',
+        name: '连续采收',
         water_fertilizer: '持续追肥供水。',
         pest_management: '停药。',
         pruning_trellising: '花谢后3-5天，嫩荚长约8-10厘米时必须采收！过晚采收会导致纤维化（变木头一样硬）无法食用。需带手套采收以防刺痒。',
@@ -1541,8 +1541,8 @@ export const vegetables = [
       { days: 8, gdd: 120, name: '幼苗期', image: 'images/okra_v3_stage_3_1779705598566.png' },
       { days: 15, gdd: 225, name: '开花期', image: 'images/okra_v3_stage_4_1779705628923.png' },
       { days: 20, gdd: 300, name: '结果期', image: 'images/okra_v3_stage_5_1779705643996.png' },
-      { days: 20, gdd: 300, name: '成熟期', image: 'images/okra_v3_stage_6_1779705658766.png' },
-      { days: 20, gdd: 300, name: '采收期', image: 'images/okra_v3_stage_7_1779705673427.png' }
+      { days: 20, gdd: 300, name: '嫩荚期', image: 'images/okra_v3_stage_6_1779705658766.png' },
+      { days: 20, gdd: 300, name: '连续采收', image: 'images/okra_v3_stage_7_1779705673427.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -1629,7 +1629,7 @@ export const vegetables = [
         pruning_image: 'images/stages/stage_eggplant_pruning.png',
       },
       {
-        name: '采收期',
+        name: '连续采收',
         water_fertilizer: '采收期间每隔10-15天追肥一次。',
         pest_management: '采收前停止施药。',
         pruning_trellising: '看果实萼片与果实连接处（茄眼），白色部分变窄时即可采收。',
@@ -1642,8 +1642,8 @@ export const vegetables = [
       { days: 8, gdd: 120, name: '幼苗期', image: 'images/eggplant_v3_stage_3_1779705715339.png' },
       { days: 15, gdd: 225, name: '开花期', image: 'images/eggplant_v3_stage_4_1779705731023.png' },
       { days: 20, gdd: 300, name: '结果期', image: 'images/eggplant_v3_stage_5_1779705745318.png' },
-      { days: 20, gdd: 300, name: '转色期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
-      { days: 20, gdd: 300, name: '采收期', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
+      { days: 20, gdd: 300, name: '初收期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
+      { days: 20, gdd: 300, name: '连续采收', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -1742,7 +1742,7 @@ export const vegetables = [
         pruning_trellising: '植株过高且挂果多时，可插竹竿支撑防倒伏。',
       },
       {
-        name: '采收期',
+        name: '连续采收',
         water_fertilizer: '青椒可随时采收，红椒需等转色完全。采收期间配合追肥。',
         pest_management: '停药。',
         pruning_trellising: '采摘时注意不要拉断脆嫩的枝条。',
@@ -1755,8 +1755,8 @@ export const vegetables = [
       { days: 8, gdd: 120, name: '幼苗期', image: 'images/pepper_v3_stage_3_1779705838528.png' },
       { days: 15, gdd: 225, name: '开花期', image: 'images/pepper_v3_stage_4_1779705854911.png' },
       { days: 20, gdd: 300, name: '结果期', image: 'images/pepper_v3_stage_5_1779705877174.png' },
-      { days: 20, gdd: 300, name: '转色期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
-      { days: 20, gdd: 300, name: '采收期', image: 'images/pepper_v3_stage_7_1779705905171.png' }
+      { days: 20, gdd: 300, name: '青果期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
+      { days: 20, gdd: 300, name: '连续采收', image: 'images/pepper_v3_stage_7_1779705905171.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3633,7 +3633,7 @@ export const vegetables = [
       { name: '出苗', image: 'images/edamame_stage_2.png', days: 8, gdd: 120 },
       { name: '分枝期', image: 'images/edamame_stage_3.png', days: 20, gdd: 300 },
       { name: '开花结荚', image: 'images/edamame_stage_4.png', days: 15, gdd: 225 },
-      { name: '鼓粒期', image: 'images/edamame_stage_5.png', days: 20, gdd: 300 },
+      { name: '嫩荚期', image: 'images/edamame_stage_5.png', days: 20, gdd: 300 },
       { name: '青荚采收', image: 'images/edamame_stage_6.png', days: 10, gdd: 150 }
     ],
     fertilizerSchedule: [
