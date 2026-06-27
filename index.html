@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>土不土生态农�?| 开启种植生�?/title>
-    <meta name="description" content="告别繁琐的农业术语，根据你所在的城市，定制最轻松的从种子到餐桌的种植计划�?>
+    <title>土不土生态农场 | 开启种植生活</title>
+    <meta name="description" content="告别繁琐的农业术语，根据你所在的城市，定制最轻松的从种子到餐桌的种植计划。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1782520722000">
+    <link rel="stylesheet" href="styles.css?v=1786000000001">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -19,7 +19,7 @@
                 <div class="custom-select" id="custom-region-select">
                     <div class="select-trigger" id="region-select-trigger">
                         <span class="trigger-text">请选择地区</span>
-                        <span class="arrow">�?/span>
+                        <span class="arrow">▼</span>
                     </div>
                     <div class="custom-options" id="region-options">
                         <!-- populated by js -->
@@ -47,17 +47,17 @@
             <div id="user-info" style="display:none; align-items:center; gap:10px;">
                 <img id="user-avatar" src="" alt="Avatar" style="width:32px; height:32px; border-radius:50%; border:2px solid white;">
                 <span id="user-name" style="color:white; font-size:0.9rem; font-weight:500;"></span>
-                <button id="logout-btn" class="auth-btn" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:15px; cursor:pointer;">退�?/button>
+                <button id="logout-btn" class="auth-btn" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:15px; cursor:pointer;">退出</button>
             </div>
         </div>
 
         <div class="hero-content">
             <div class="logo-container">
-                <img src="images/logo_tubutu_premium.png" alt="土不�? class="site-logo">
+                <img src="images/logo_tubutu_premium.png" alt="土不土" class="site-logo">
             </div>
             
             <div class="search-container">
-                <input type="text" id="main-search" class="search-input" placeholder="🔍 搜索蔬菜或病虫害 (�? 白菜、蚜�?...">
+                <input type="text" id="main-search" class="search-input" placeholder="🔍 搜索蔬菜或病虫害 (如: 白菜、蚜虫)...">
             </div>
             
             <div id="region-desc" class="region-desc" style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
@@ -67,7 +67,7 @@
     <main class="container">
         <!-- Main Tabs -->
         <div class="main-tabs">
-            <button class="main-tab-btn" data-target="mygarden-section"><span class="tab-icon">🧑‍�?/span><span class="tab-text">我的菜园</span></button>
+            <button class="main-tab-btn" data-target="mygarden-section"><span class="tab-icon">🧑‍🌾</span><span class="tab-text">我的菜园</span></button>
             <button class="main-tab-btn active" data-target="veg-section"><span class="tab-icon">🥬</span><span class="tab-text">蔬果种植</span></button>
             <button class="main-tab-btn" data-target="fert-section"><span class="tab-icon">🪱</span><span class="tab-text">堆肥制作</span></button>
             <button class="main-tab-btn" data-target="protection-section"><span class="tab-icon">🐞</span><span class="tab-text">病虫防护</span></button>
@@ -91,7 +91,7 @@
         <!-- Fertilizer Section -->
         <div id="fert-section" class="tab-content" style="display: none;">
             <section class="fertilizer-section">
-                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">自给自足的生态循环体系，让你的植物更健康�?/p>
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">自给自足的生态循环体系，让你的植物更健康。</p>
                 <div class="vegetable-grid" id="fert-grid">
                     <!-- Fertilizer cards will be populated by JS -->
                 </div>
@@ -116,7 +116,7 @@
         <div id="calendar-section" class="tab-content" style="display: none;">
             <section class="calendar-wrapper">
                 <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px;">
-                    根据当前选择的地�?<strong id="calendar-region-name"></strong>，生成全年月历�?
+                    根据当前选择的地区 <strong id="calendar-region-name"></strong>，生成全年月历。
                 </p>
                 <div class="calendar-grid" id="calendar-grid">
                     <!-- Calendar months will be populated by JS -->
@@ -130,7 +130,7 @@
                 <div class="garden-view-toggle">
                     <button class="toggle-btn active" id="btn-show-active">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
-                        种植�?
+                        种植中
                     </button>
                     <button class="toggle-btn" id="btn-show-fert">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M14 16H5.3"/></svg>
@@ -161,7 +161,7 @@
                 <section class="fert-wrapper" style="padding: 10px 0;">
                     
                     <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="fert-empty-msg">
-                        暂无制作中的肥料，去“自制肥料”栏目开始制作吧�?
+                        暂无制作中的肥料，去“自制肥料”栏目开始制作吧！
                     </p>
                     <div class="vegetable-grid" id="mygarden-fert-grid">
                         <!-- Fertilizer cards will be populated by JS -->
@@ -172,7 +172,7 @@
             <div id="mygarden-history-view" style="display: none;">
                 <section class="history-wrapper" style="padding: 10px 0;">
                     <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 1.1rem;" id="history-empty-msg">
-                        暂无收获历史，继续努力种植吧�?
+                        暂无收获历史，继续努力种植吧！
                     </p>
                     <div class="vegetable-grid" id="history-grid">
                         <!-- History cards will be populated by JS -->
@@ -192,7 +192,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 土不土生态农�?| 种下种子，收获生�?/p>
+        <p>&copy; 2024 土不土生态农场 | 种下种子，收获生活</p>
     </footer>
 
     <!-- Login Modal -->
@@ -203,17 +203,17 @@
             
             <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
                 <input type="email" id="auth-email" placeholder="邮箱地址" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
-                <input type="password" id="auth-password" placeholder="密码 (最�?�?" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+                <input type="password" id="auth-password" placeholder="密码 (最少6位)" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
             </div>
             
             <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <button type="button" id="email-login-btn" class="primary-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px;">�?�?/button>
-                <button type="button" id="email-register-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px; background: #f0f0f0; color: #333; border: 1px solid #ccc; cursor: pointer;">�?�?/button>
+                <button type="button" id="email-login-btn" class="primary-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px;">登 录</button>
+                <button type="button" id="email-register-btn" style="flex: 1; padding: 12px; font-size: 1rem; border-radius: 8px; background: #f0f0f0; color: #333; border: 1px solid #ccc; cursor: pointer;">注 册</button>
             </div>
 
             <div style="display: flex; align-items: center; margin: 20px 0;">
                 <div style="flex: 1; height: 1px; background: #eee;"></div>
-                <div style="padding: 0 10px; color: #999; font-size: 0.9rem;">�?/div>
+                <div style="padding: 0 10px; color: #999; font-size: 0.9rem;">或</div>
                 <div style="flex: 1; height: 1px; background: #eee;"></div>
             </div>
 
@@ -230,14 +230,14 @@
             <button class="close-btn" id="op-close-btn">&times;</button>
             <div class="op-modal-header">
                 <h3>添加农事记录</h3>
-                <p>记录植物成长的点�?/p>
+                <p>记录植物成长的点滴</p>
             </div>
             
             <div class="op-form-content">
                 <div class="op-form-group">
                     <label>应用到作物（可多选）</label>
                     <div class="op-crop-selector-container" id="op-crop-selector">
-                        <!-- JS将在此处动态生成作物标�?-->
+                        <!-- JS将在此处动态生成作物标签 -->
                     </div>
                 </div>
 
@@ -288,10 +288,10 @@
                         <label>单位</label>
                         <select id="harvest-unit" class="op-input">
                             <option value="公斤">公斤</option>
-                            <option value="�?>�?/option>
-                            <option value="�?>�?/option>
-                            <option value="�?>�?/option>
-                            <option value="�?>�?/option>
+                            <option value="斤">斤</option>
+                            <option value="克">克</option>
+                            <option value="个">个</option>
+                            <option value="把">把</option>
                         </select>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
         <div class="modal op-glass-modal" id="todo-harvest-modal" style="max-width: 800px;">
             <button class="close-btn" id="todo-harvest-close-btn">&times;</button>
             <div class="op-modal-header" style="padding-bottom: 10px;">
-                <h3 id="todo-harvest-title">待办清单与产量统�?/h3>
+                <h3 id="todo-harvest-title">待办清单与产量统计</h3>
             </div>
             
             <div class="op-form-content" style="gap: 15px; max-height: 70vh; overflow-y: auto;">
@@ -322,7 +322,7 @@
                 <div class="operations-timeline-title" style="color: #be123c; margin-top: 15px;">📦 产量统计</div>
                 <div class="harvest-stats-dashboard" id="todo-harvest-stats" style="display:none;">
                     <div class="harvest-stat-box">
-                        <div class="stat-label">总产�?/div>
+                        <div class="stat-label">总产量</div>
                         <div class="stat-value" id="todo-harvest-total-val">-</div>
                     </div>
                     <div class="harvest-stat-box">
@@ -359,7 +359,7 @@
             <div class="op-form-content" style="gap: 15px;">
                 <div class="harvest-stats-dashboard">
                     <div class="harvest-stat-box">
-                        <div class="stat-label">总产�?/div>
+                        <div class="stat-label">总产量</div>
                         <div class="stat-value" id="harvest-total-val">-</div>
                     </div>
                     <div class="harvest-stat-box">
@@ -393,7 +393,6 @@
         </div>
     </div>
 
-    <script type="module" src="app_v2.js?v=1782520722000"></script>
+    <script type="module" src="app_v2.js?v=1786000000030"></script>
 </body>
 </html>
-
