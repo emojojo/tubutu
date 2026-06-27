@@ -2282,7 +2282,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const count = item.harvests.length;
             const avg = (total / count).toFixed(1);
             const calDesc = (vegInfo.calendar && vegInfo.calendar[currentRegion]) || '暂无数据';
-            document.getElementById('modal-cal-desc').textContent = calDesc;
+            const calDescEl = document.getElementById('modal-cal-desc');
+            if (calDescEl) calDescEl.textContent = calDesc;
 
             document.getElementById('todo-harvest-total-val').innerText = total.toFixed(1) + ' ' + unit;
             document.getElementById('todo-harvest-count-val').innerText = count + ' 次';
