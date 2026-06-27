@@ -51,6 +51,43 @@ if (myGarden.length > 0) {
     myGarden = deduplicateGarden(myGarden);
 }
 
+function mergeGardenItems(localItem, cloudItem) {
+    const merged = JSON.parse(JSON.stringify(cloudItem));
+    if (localItem.harvests) {
+        merged.harvests = merged.harvests || [];
+        localItem.harvests.forEach(lh => {
+            const exists = merged.harvests.find(ch => ch.date === lh.date && ch.amount === lh.amount && ch.unit === lh.unit);
+            if (!exists) merged.harvests.push(lh);
+        });
+        merged.harvests.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+    if (localItem.completedTodos) {
+        merged.completedTodos = Object.assign({}, localItem.completedTodos, merged.completedTodos);
+    }
+    if (localItem.remarks) {
+        merged.remarks = Object.assign({}, localItem.remarks, merged.remarks);
+    }
+    merged.isHarvested = cloudItem.isHarvested || localItem.isHarvested;
+    if (!merged.harvestDate && localItem.harvestDate) {
+        merged.harvestDate = localItem.harvestDate;
+    }
+    return merged;
+}
+
+function mergeGardens(localGarden, cloudGarden) {
+    const mergedMap = new Map();
+    (localGarden || []).forEach(item => mergedMap.set(item.id, JSON.parse(JSON.stringify(item))));
+    (cloudGarden || []).forEach(cloudItem => {
+        if (mergedMap.has(cloudItem.id)) {
+            const localItem = mergedMap.get(cloudItem.id);
+            mergedMap.set(cloudItem.id, mergeGardenItems(localItem, cloudItem));
+        } else {
+            mergedMap.set(cloudItem.id, JSON.parse(JSON.stringify(cloudItem)));
+        }
+    });
+    return deduplicateGarden(Array.from(mergedMap.values()));
+}
+
 async function saveGarden() {
     myGarden = deduplicateGarden(myGarden);
     localStorage.setItem('tubutu_my_garden', JSON.stringify(myGarden));
@@ -306,12 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                     
-                    // Merge local and cloud
-                    const mergedMap = new Map();
-                    myGarden.forEach(item => mergedMap.set(item.id, item));
-                    cloudGarden.forEach(item => mergedMap.set(item.id, item));
-                    myGarden = Array.from(mergedMap.values());
-                    myGarden = deduplicateGarden(myGarden);
+                    // Merge local and cloud robustly
+                    myGarden = mergeGardens(myGarden, cloudGarden);
                     
                     saveGarden();
                 } else {
@@ -335,8 +368,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         });
                         // Check if different to avoid infinite loop
-                        if (JSON.stringify(newGarden) !== JSON.stringify(myGarden)) {
-                            myGarden = newGarden;
+                        const mergedSnapshot = mergeGardens(myGarden, newGarden);
+                        if (JSON.stringify(mergedSnapshot) !== JSON.stringify(myGarden)) {
+                            myGarden = mergedSnapshot;
                             localStorage.setItem('tubutu_my_garden', JSON.stringify(myGarden));
                             window.myGarden = myGarden;
                             generateNotifications();
@@ -2192,7 +2226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (item) {
             item.remarks = item.remarks || {};
             item.remarks['fert_' + stageIndex] = remark;
-            saveMyGarden();
+            saveGarden();
         }
     };
 
@@ -2201,7 +2235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (item) {
             item.completedTodos = item.completedTodos || {};
             item.completedTodos['fert_' + stageIndex] = !item.completedTodos['fert_' + stageIndex];
-            saveMyGarden();
+            saveGarden();
             renderMyGarden();
             // Re-render modal list if open
             if (document.getElementById('todo-harvest-overlay').classList.contains('active')) {
