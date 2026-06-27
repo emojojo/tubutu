@@ -375,7 +375,7 @@ export const vegetables = [
     description: '喜温耐热，需强光照。西北地区露天种植糖度极高，适合地栽匍匐生长。',
     calendar: {
       north: '4月中下旬地膜覆盖直播，或5月露地直播。',
-      south: '2-3月春播，7-8月秋播。',
+      south: '2-3月3-5月播，7-8月9-11月播。',
       east: '3月下旬至4月上旬露天播种。',
       southwest: '3-4月播种。',
       northwest: '4月下旬至5月上旬（昼夜温差大，极佳）。'
@@ -472,7 +472,7 @@ export const vegetables = [
     description: '薄皮甜瓜，香甜多汁，喜光耐旱，极不耐涝，适合地爬种植。',
     calendar: {
       north: '晚霜后4月下旬至5月露天播种。',
-      south: '2-4月春播（夏季高温多雨易裂果病害）。',
+      south: '2-4月3-5月播（6-8月高温多雨易裂果病害）。',
       east: '4月上中旬播种。',
       southwest: '3-5月播种。',
       northwest: '4-5月（气候最适宜甜瓜生长）。'
@@ -567,10 +567,10 @@ export const vegetables = [
     image: 'images/crop_strawberry.png',
     description: '喜温凉，不耐高温。露天有机种植香气浓郁，但需注意防鸟和防灰霉病。',
     calendar: {
-      north: '8-9月秋季定植，次年春末夏初收获。',
-      south: '9-10月定植，冬春季收获。',
+      north: '8-9月9-11月定植，次年3-5月末6-8月初收获。',
+      south: '9-10月定植，12-5月收获。',
       east: '9-10月定植，次年4-5月采收。',
-      southwest: '秋季定植。',
+      southwest: '9-11月定植。',
       northwest: '8月下旬定植。'
     },
     stages: [
@@ -669,10 +669,10 @@ export const vegetables = [
     image: 'images/crop_broccoli.png',
     description: '喜冷凉，不耐高温干旱，营养极高，有机防虫是关键。',
     calendar: {
-      north: '3-4月春播，或7月夏播秋收。',
+      north: '3-4月3-5月播，或7月6-8月播9-11月收。',
       south: '9月至次年1月均可播种。',
-      east: '7-8月秋播，或1-2月春播。',
-      southwest: '春秋两季。',
+      east: '7-8月9-11月播，或1-2月3-5月播。',
+      southwest: '3-5月,9-11月。',
       northwest: '5-6月播种。'
     },
     stages: [
@@ -779,10 +779,10 @@ export const vegetables = [
     image: 'images/crop_cabbage.png',
     description: '极耐寒耐储运，适应性极强，露天种植的优良十字花科作物。',
     calendar: {
-      north: '春甘蓝2-3月育苗，秋甘蓝6-7月育苗。',
+      north: '3-5月甘蓝2-3月育苗，9-11月甘蓝6-7月育苗。',
       south: '8月至次年2月均可播种。',
-      east: '春秋两季均可。',
-      southwest: '高海拔夏季可种，盆地秋冬春。',
+      east: '3-5月,9-11月均可。',
+      southwest: '高海拔6-8月可种，盆地9-5月。',
       northwest: '5-6月播种。'
     },
     stages: [
@@ -889,10 +889,10 @@ export const vegetables = [
     image: 'images/crop_cauliflower.png',
     description: '对温度敏感，需在适宜温度下才能结出紧实洁白的花球。',
     calendar: {
-      north: '春季或秋季，避开炎夏。',
-      south: '秋播为主，冬春收获。',
+      north: '3-5月或9-11月，避开炎6-8月。',
+      south: '9-11月播为主，12-5月收获。',
       east: '7-8月播种。',
-      southwest: '春秋两季。',
+      southwest: '3-5月,9-11月。',
       northwest: '4-5月播种。'
     },
     stages: [
@@ -1001,7 +1001,7 @@ export const vegetables = [
     image: 'images/jingjie_v3_banner_1780922026494.png',
     description: '河南人的灵魂香草！喜温暖湿润，香气浓郁，不仅可以做面条伴侣，还有驱虫功效。',
     calendar: {
-      north: '4-5月春播，或夏季播种。',
+      north: '4-5月3-5月播，或6-8月播种。',
       south: '3-9月均可播种。',
       east: '4-8月。',
       southwest: '3-8月。',
@@ -1040,10 +1040,10 @@ export const vegetables = [
     image: 'images/main_leek_realistic.png',
     description: '多年生宿根蔬菜，一次种植多年采收。露天适应性极强。',
     calendar: {
-      north: '4-5月春播，或秋季播种。',
-      south: '四季均可，春秋最佳。',
-      east: '春秋两季。',
-      southwest: '春秋两季。',
+      north: '4-5月3-5月播，或9-11月播种。',
+      south: '1-12月，3-5月,9-11月最佳。',
+      east: '3-5月,9-11月。',
+      southwest: '3-5月,9-11月。',
       northwest: '5-6月播种。'
     },
     stages: [
@@ -1123,7 +1123,7 @@ export const vegetables = [
     image: 'images/crop_waterspinach.png',
     description: '极度喜高温多湿，极不耐寒。夏季露天生长极快。',
     calendar: {
-      north: '晚霜后5-6月播种，夏秋收获。',
+      north: '晚霜后5-6月播种，6-11月收获。',
       south: '3-9月均可播种。',
       east: '4-8月。',
       southwest: '4-8月。',
@@ -1287,10 +1287,10 @@ export const vegetables = [
     image: 'images/crop_crowndaisy.png',
     description: '半耐寒，喜冷凉，有特异气味，病虫极少。',
     calendar: {
-      north: '4-5月春播，8-9月秋播。',
+      north: '4-5月3-5月播，8-9月9-11月播。',
       south: '9月至次年3月。',
-      east: '春秋两季。',
-      southwest: '春秋两季。',
+      east: '3-5月,9-11月。',
+      southwest: '3-5月,9-11月。',
       northwest: '5-7月。'
     },
     stages: [
@@ -1371,10 +1371,10 @@ export const vegetables = [
     image: 'images/crop_tomato.png',
     description: '喜温性蔬菜，对光照要求高，有机种植需注意防范早疫病和晚疫病。',
     calendar: {
-      north: '3-4月温室育苗，5月露地定植；秋季7月育苗。',
-      south: '8-10月秋播（主力），或1-2月春播，避开6-7月高温暴雨。',
-      east: '2-3月育苗，4月定植；秋季7-8月播种。',
-      southwest: '2-4月春播，或8-9月秋播。',
+      north: '3-4月温室育苗，5月露地定植；9-11月7月育苗。',
+      south: '8-10月9-11月播（主力），或1-2月3-5月播，避开6-7月高温暴雨。',
+      east: '2-3月育苗，4月定植；9-11月7-8月播种。',
+      southwest: '2-4月3-5月播，或8-9月9-11月播。',
       northwest: '4-5月播种，利用光热优势品质佳。'
     },
     stages: [
@@ -1594,9 +1594,9 @@ export const vegetables = [
     description: '耐热性好，生长期长，需肥量大。有机种植中需特别防范黄萎病。',
     calendar: {
       north: '晚霜后5月定植。',
-      south: '春播1-2月，秋播7-8月。',
+      south: '3-5月播1-2月，9-11月播7-8月。',
       east: '4月下旬定植。',
-      southwest: '春季3-4月定植。',
+      southwest: '3-5月3-4月定植。',
       northwest: '5月定植。'
     },
     stages: [
@@ -1707,7 +1707,7 @@ export const vegetables = [
     description: '喜温，不耐涝。根系较浅，需保持土壤疏松湿润。',
     calendar: {
       north: '5月中旬露地定植。',
-      south: '7-8月秋播，或春季。',
+      south: '7-8月9-11月播，或3-5月。',
       east: '4月定植。',
       southwest: '2-4月播种。',
       northwest: '5月定植。'
@@ -1820,7 +1820,7 @@ export const vegetables = [
     icon: '🥕',
     image: 'images/crop_radish.png',
     description: '半耐寒性蔬菜，直根类，要求土层深厚、疏松。',
-    calendar: { north: '7-8月播种', south: '9-11月为主', east: '8-9月播种', southwest: '夏秋或秋冬', northwest: '6-7月播种' },
+    calendar: { north: '7-8月播种', south: '9-11月为主', east: '8-9月播种', southwest: '6-11月或9-2月', northwest: '6-7月播种' },
     stages: [
 
       {
@@ -1918,7 +1918,7 @@ export const vegetables = [
     icon: '🥕',
     image: 'images/crop_carrot.png',
     description: '喜凉爽，耐寒。肉质根营养丰富。',
-    calendar: { north: '5-6月或7月夏播', south: '8-10月秋播', east: '7-8月', southwest: '8-9月', northwest: '4-5月' },
+    calendar: { north: '5-6月或7月6-8月播', south: '8-10月9-11月播', east: '7-8月', southwest: '8-9月', northwest: '4-5月' },
     stages: [
 
       {
@@ -2005,7 +2005,7 @@ export const vegetables = [
     icon: '🥔',
     image: 'images/crop_potato.png',
     description: '喜冷凉，不耐高温。块茎形成需黑暗和疏松土壤。',
-    calendar: { north: '4-5月一季作', south: '11月至次年1月冬作', east: '2-3月春作或8月秋作', southwest: '1-3月春作', northwest: '4-5月' },
+    calendar: { north: '4-5月一季作', south: '11月至次年1月12-2月作', east: '2-3月3-5月作或8月9-11月作', southwest: '1-3月3-5月作', northwest: '4-5月' },
     stages: [
 
       {
@@ -2248,11 +2248,11 @@ export const vegetables = [
     image: 'images/crop_onion.png',
     description: '二年生长日照植物，耐寒。形成鳞茎需长日照和较高温度。',
     calendar: {
-      north: '秋季9月播种育苗，次年春季定植；或早春直播。',
-      south: '9-10月秋播育苗，11-12月定植，次年5月收获。',
+      north: '9-11月9月播种育苗，次年3-5月定植；或早3-5月直播。',
+      south: '9-10月9-11月播育苗，11-12月定植，次年5月收获。',
       east: '9月中下旬播种育苗，11月定植。',
-      southwest: '秋播为主。',
-      northwest: '春季播种，秋季收获（长日照品种）。'
+      southwest: '9-11月播为主。',
+      northwest: '3-5月播种，9-11月收获（长日照品种）。'
     },
     stages: [
       { name: '水分管理', content: '苗期忌水大防徒长。鳞茎膨大期需水最多，必须保持湿润。但在采收前7-10天必须彻底停止浇水，以利于鳞茎收口和长期耐储藏。' , image: 'images/stages/onion_water_v3.png' },
@@ -2501,7 +2501,7 @@ export const vegetables = [
     icon: '🥒',
     image: 'images/crop_zucchini.png',
     description: '矮生半蔓性，生长快，结果多。',
-    calendar: { north: '4-5月春播', south: '9月至次年2月', east: '3-4月或8-9月', southwest: '春秋两季', northwest: '5月' },
+    calendar: { north: '4-5月3-5月播', south: '9月至次年2月', east: '3-4月或8-9月', southwest: '3-5月,9-11月', northwest: '5月' },
     stages: [
       { name: '整枝打叶', content: '西葫芦一般不搭架，呈丛生状。生长中后期，极易因密闭导致化瓜或白粉病，需及时用剪刀贴秆剪除下部触地的老叶、病叶和不结果的盲枝。' , image: 'images/stages/zucchini_0_v3_1779514185320.png' },
       { name: '人工授粉', content: '早春或高密度种植时昆虫少，必须在早晨8-10点采摘雄花，剥去花瓣后将花粉轻轻涂抹在雌花柱头上。' , image: 'images/stages/zucchini_1_v3_1779514204593.png' },
@@ -2645,7 +2645,7 @@ export const vegetables = [
     description: '喜温耐热，果实极大，需肥水量大，耐储藏。',
     calendar: {
       north: '4-5月播种。',
-      south: '2-3月春播，7月秋播。',
+      south: '2-3月3-5月播，7月9-11月播。',
       east: '3-4月播种。',
       southwest: '3-5月。',
       northwest: '5月。'
@@ -2941,10 +2941,10 @@ export const vegetables = [
     image: 'images/crop_green_bean.png',
     description: '喜温暖，不耐酷热和霜冻。对光照要求中等。',
     calendar: {
-      north: '5月春播，或7-8月秋播。',
-      south: '2-4月春播，8-10月秋播（避开盛夏酷暑）。',
-      east: '4-5月春播，8月秋播。',
-      southwest: '春秋两季。',
+      north: '5月3-5月播，或7-8月9-11月播。',
+      south: '2-4月3-5月播，8-10月9-11月播（避开盛6-8月酷暑）。',
+      east: '4-5月3-5月播，8月9-11月播。',
+      southwest: '3-5月,9-11月。',
       northwest: '5月播种。'
     },
     stages: [
@@ -3017,11 +3017,11 @@ export const vegetables = [
     image: 'images/crop_broad_bean.png',
     description: '极耐寒，不耐热。长日照植物，冬季闲田极佳的绿肥与经济作物。',
     calendar: {
-      north: '3-4月早春播种（春蚕豆）。',
-      south: '10-11月秋播越冬（秋蚕豆）。',
-      east: '10-11月秋播。',
-      southwest: '10月秋播。',
-      northwest: '3-4月春播。'
+      north: '3-4月早3-5月播种（3-5月蚕豆）。',
+      south: '10-11月9-11月播越12-2月（9-11月蚕豆）。',
+      east: '10-11月9-11月播。',
+      southwest: '10月9-11月播。',
+      northwest: '3-4月3-5月播。'
     },
     stages: [
       { name: '整地播种', content: '耐寒不耐热，常作为越冬作物秋播（南方）或早春播种（北方）。每穴播种2-3粒。' , image: 'images/stages/broad_bean_0_v3_1779514092160.png' },
@@ -3088,7 +3088,7 @@ export const vegetables = [
     icon: '🧄',
     image: 'images/crop_garlic.png',
     description: '耐寒，具有强烈杀菌作用，有机农场不可缺少的伴生植物。',
-    calendar: { north: '3月春播或8-9月秋播', south: '9-11月秋播', east: '9-10月秋播', southwest: '9-10月秋播', northwest: '3-4月春播' },
+    calendar: { north: '3月3-5月播或8-9月9-11月播', south: '9-11月9-11月播', east: '9-10月9-11月播', southwest: '9-10月9-11月播', northwest: '3-4月3-5月播' },
     stages: [
       {
         name: '幼苗越冬期',
@@ -3164,7 +3164,7 @@ export const vegetables = [
     icon: '🧅',
     image: 'images/crop_greenonion.png',
     description: '适应性强，大葱需培土软化，小葱生长快速。',
-    calendar: { north: '秋播育苗次年夏定植', south: '四季均可', east: '春秋均可', southwest: '四季', northwest: '春季' },
+    calendar: { north: '9-11月播育苗次年6-8月定植', south: '1-12月', east: '3-5月,9-11月', southwest: '1-12月', northwest: '3-5月' },
     stages: [
       {
         name: '幼苗期',
@@ -3235,9 +3235,9 @@ export const vegetables = [
     description: '日照中性草莓，只要温度合适（15-25℃）就可以在春、夏、秋季连续不断地开花结果。不仅产量稳定，更能在很长的一段时间内源源不断地提供鲜果，非常适合阳台或庭院种植。',
     calendar: {
       north: '3-10月',
-      south: '全年均可（夏季需遮阴）',
+      south: '1-12月（6-8月需遮阴）',
       east: '2-11月',
-      southwest: '全年均可',
+      southwest: '1-12月',
       northwest: '4-10月'
     },
     stages: [
@@ -3296,7 +3296,7 @@ export const vegetables = [
     icon: '🥬',
     image: 'images/crop_napacabbage.png',
     description: '北方冬储菜主力，生长周期长，包心紧实。',
-    calendar: { north: '秋季', south: '秋冬季', east: '秋季', southwest: '秋冬季', northwest: '秋季' },
+    calendar: { north: '9-11月', south: '9-2月', east: '9-11月', southwest: '9-2月', northwest: '9-11月' },
     stages: [
       {
         name: '播种与幼苗期',
@@ -3346,7 +3346,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_bokchoy.png',
     image: 'images/crop_bokchoy.png',
     description: '南方四季常青，生长迅速，叶柄宽厚肥嫩。',
-    calendar: { north: '春夏秋', south: '全年', east: '春夏秋', southwest: '全年', northwest: '春秋' },
+    calendar: { north: '3-11月', south: '1-12月', east: '3-11月', southwest: '1-12月', northwest: '3-5月,9-11月' },
     stages: [
       {
         name: '播种与幼苗期',
@@ -3392,7 +3392,7 @@ export const vegetables = [
     icon: '🥬',
     image: 'images/crop_spinach.png',
     description: '极耐寒的绿叶菜，富含铁元素，喜冷凉。',
-    calendar: { north: '春秋', south: '秋冬', east: '秋冬', southwest: '秋冬', northwest: '春秋' },
+    calendar: { north: '3-5月,9-11月', south: '9-2月', east: '9-2月', southwest: '9-2月', northwest: '3-5月,9-11月' },
     stages: [
       {
         name: '播种与出苗期',
@@ -3439,7 +3439,7 @@ export const vegetables = [
     icon: '🥬',
     image: 'images/crop_lettuce.png',
     description: '菊科蔬菜，生菜食叶，莴笋食茎，喜冷凉忌高温。',
-    calendar: { north: '春秋', south: '秋冬', east: '春秋', southwest: '四季', northwest: '春秋' },
+    calendar: { north: '3-5月,9-11月', south: '9-2月', east: '3-5月,9-11月', southwest: '1-12月', northwest: '3-5月,9-11月' },
     stages: [
       {
         name: '播种与幼苗期',
@@ -3487,7 +3487,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_celery.png',
     image: 'images/crop_celery.png',
     description: '伞形科蔬菜，带有特殊芳香，喜冷凉湿润。',
-    calendar: { north: '春秋', south: '秋冬', east: '秋冬', southwest: '四季', northwest: '春秋' },
+    calendar: { north: '3-5月,9-11月', south: '9-2月', east: '9-2月', southwest: '1-12月', northwest: '3-5月,9-11月' },
     stages: [
       {
         name: '播种与幼苗期',
@@ -3533,7 +3533,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_coriander.png',
     image: 'images/crop_coriander.png',
     description: '带有特殊香气的提味蔬菜，喜冷凉，不耐热。',
-    calendar: { north: '春秋', south: '秋冬', east: '春秋', southwest: '四季', northwest: '春秋' },
+    calendar: { north: '3-5月,9-11月', south: '9-2月', east: '3-5月,9-11月', southwest: '1-12月', northwest: '3-5月,9-11月' },
     stages: [
       {
         name: '播种与出苗期',
@@ -3577,7 +3577,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_corn.png',
     image: 'images/crop_corn.png',
     description: '喜温喜光的禾本科作物，甜玉米/糯玉米风味极佳。',
-    calendar: { north: '春夏季', south: '春夏秋', east: '春夏季', southwest: '春夏', northwest: '春季' },
+    calendar: { north: '3-8月', south: '3-11月', east: '3-8月', southwest: '3-8月', northwest: '3-5月' },
     stages: [
       {
         name: '苗期',
@@ -3623,7 +3623,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_edamame.png',
     image: 'images/crop_edamame.png',
     description: '营养丰富的豆类，根系有根瘤菌可固氮。',
-    calendar: { north: '春夏季', south: '春夏秋', east: '春夏季', southwest: '春夏', northwest: '春季' },
+    calendar: { north: '3-8月', south: '3-11月', east: '3-8月', southwest: '3-8月', northwest: '3-5月' },
     stages: [
       { name: '根瘤固氮', content: '毛豆根部有根瘤菌共生，能将空气中的氮转化为氮肥。因此前期少施氮肥，多施磷钾肥。', image: 'images/stages/edamame_0.png' },
       { name: '鼓粒期水肥', content: '开花结荚后进入鼓粒期，此时是决定产量的关键，需保证水分充足，防止落花落荚。', image: 'images/stages/edamame_1.png' }
@@ -3654,7 +3654,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_pea.png',
     image: 'images/crop_pea.png',
     description: '喜冷凉的攀缘豆类，可食豆粒或嫩荚。',
-    calendar: { north: '春季', south: '秋冬季', east: '秋冬季', southwest: '秋冬季', northwest: '春季' },
+    calendar: { north: '3-5月', south: '9-2月', east: '9-2月', southwest: '9-2月', northwest: '3-5月' },
     stages: [
       { name: '搭架引蔓', content: '蔓生豌豆长至20厘米时，需搭设树枝或网架供其攀爬，保证通风透光。', image: 'images/stages/pea_0.png' },
       { name: '忌连作', content: '豌豆根系分泌物对自身有毒害，必须实行3-4年轮作，不可重茬。', image: 'images/stages/pea_1.png' }
@@ -3687,7 +3687,7 @@ export const vegetables = [
     avatar: 'assets/icons/icon_taro.png',
     image: 'images/crop_taro.png',
     description: '喜高温高湿的根茎类蔬菜，极不耐旱。',
-    calendar: { north: '春夏季', south: '春夏季', east: '春夏季', southwest: '春夏', northwest: '不宜种植' },
+    calendar: { north: '3-8月', south: '3-8月', east: '3-8月', southwest: '3-8月', northwest: '不宜种植' },
     stages: [
 
       {
@@ -3740,7 +3740,7 @@ export const fertilizers = [
     image: 'images/eco_enzyme.png',
     description: '利用鲜垃圾发酵而成的全能营养液，能有效改良土壤、促进生根并抑制病菌。',
     calendar: {
-      default: '全年均可制作，夏季发酵快（约3个月），冬季发酵慢（约6个月）。'
+      default: '1-12月制作，6-8月发酵快（约3个月），12-2月发酵慢（约6个月）。'
     },
     stages: [
       { name: '准备材料', content: '黄金比例 1:3:10 ➡️ 1份红糖 : 3份鲜果皮/菜叶 : 10份清水。准备一个可密封的塑料大桶（勿用玻璃瓶以免发酵胀气爆裂）。', image: 'images/enz_step1_v2.png' },
@@ -3763,7 +3763,7 @@ export const fertilizers = [
     image: 'images/aerobic_compost.png',
     description: '模拟自然界的落叶归根过程，将有机废弃物转化为富含腐殖质的极品“黑金土”。',
     calendar: {
-      default: '春、夏、秋季最佳（温度高于20℃时发酵极快）。'
+      default: '3-5月、6-8月、9-11月最佳（温度高于20℃时发酵极快）。'
     },
     stages: [
       { name: '准备材料', content: '需要“绿料”（富含氮：如鲜菜叶、青草、咖啡渣，占比约1/3）和“褐料”（富含碳：如干树叶、枯草、碎纸板，占比约2/3），以及少量普通泥土作为菌种。', image: 'images/comp_step1_1779289874567.png' },
@@ -3787,7 +3787,7 @@ export const fertilizers = [
     image: 'images/verm_main.png',
     description: '利用红蚯蚓消化厨余垃圾产生的“黑金”，是最天然、温和且富含微生物的有益基肥。<br><br>💡 <b>多层箱运作原理（新手必读）：</b><br>多层饲养箱的每一层底部都布满小孔。当底层厨余被吃完且上面一层放入新鲜食物时，蚯蚓会基于“向上觅食”的本能，通过小孔自动爬向上一层。这样不仅免去了人工分离蚯蚓的麻烦，还实现了极具巧思的“无接触式”自动收肥。',
     calendar: {
-      default: '全年均可（室内或阴凉处养殖，蚯蚓适宜温度为15-25℃）。'
+      default: '1-12月（室内或阴凉处养殖，蚯蚓适宜温度为15-25℃）。'
     },
     stages: [
       { name: '准备饲养箱', content: '准备一个透气的多层饲养箱（带沥水层）。底层铺上湿润的椰糠、撕碎的硬纸板或报纸作为垫料。', image: 'images/verm_step1.png' },
@@ -4127,9 +4127,9 @@ export const pestControls = [
     name: '大田玉米',
     categoryId: 'field_crops',
     calendar: {
-      north: '4月~5月（春玉米），6月（夏玉米）',
-      south: '3月~4月（春播），7月~8月（秋播）',
-      east: '4月~5月（春播），7月~8月（秋播）',
+      north: '4月~5月（3-5月玉米），6月（6-8月玉米）',
+      south: '3月~4月（3-5月播），7月~8月（9-11月播）',
+      east: '4月~5月（3-5月播），7月~8月（9-11月播）',
       west: '4月~5月'
     },
     image: 'images/field_corn_bg.png',
