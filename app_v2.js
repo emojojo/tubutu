@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000037';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000038';
 import { weatherData } from './weather_data.js?v=1786000000029';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
@@ -1894,9 +1894,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let statsHtml = '';
         const statKeys = Object.keys(harvestStats).sort((a,b) => harvestStats[b].total - harvestStats[a].total);
         if (statKeys.length > 0) {
-            statsHtml += <div class="harvest-stats-container">;
-            statsHtml += <h3 class="harvest-stats-title" style="margin-bottom: 24px; color: #065f46; font-size: 1.35rem; font-weight: 700; border-bottom: 2px solid #a7f3d0; padding-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.5rem;">📊</span>  年度收获统计</h3>;
-            statsHtml += <div class="harvest-stats-list">;
+            statsHtml += `<div class="harvest-stats-container">`;
+            statsHtml += `<h3 class="harvest-stats-title" style="margin-bottom: 24px; color: #065f46; font-size: 1.35rem; font-weight: 700; border-bottom: 2px solid #a7f3d0; padding-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.5rem;">📊</span> ${currentYear} 年度收获统计</h3>`;
+            statsHtml += `<div class="harvest-stats-list">`;
             
             statKeys.forEach(vegId => {
                 const stat = harvestStats[vegId];
@@ -1912,45 +1912,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 const bgGradient = categoryGradients[stat.veg?.categoryId] || 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)';
                 const imgHtml = stat.veg.image
-                    ? <img loading="lazy" src="" alt="" class="stat-main-img">
-                    : <div class="stat-main-img" style="background: ;"></div>;
+                    ? `<img loading="lazy" src="${stat.veg.image}" alt="${stat.veg.name}" class="stat-main-img">`
+                    : `<div class="stat-main-img" style="background: ${bgGradient};">${stat.veg.icon}</div>`;
                 
                 let barsHtml = '';
                 for (let m = 0; m < 12; m++) {
                     const val = stat.months[m];
                     const heightPct = Math.max((val / maxMonth) * 100, val > 0 ? 5 : 0);
-                    const tooltip = ${m+1}月: ;
+                    const tooltip = `${m+1}月: ${val > 0 ? parseFloat(val.toFixed(1)) + ' ' + stat.unit : '0'}`;
                     
-                    barsHtml += 
-                        <div class="stat-bar-col" title="">
-                            <div class="stat-bar-val"></div>
+                    barsHtml += `
+                        <div class="stat-bar-col" title="${tooltip}">
+                            <div class="stat-bar-val">${val > 0 ? parseFloat(val.toFixed(1)) : ''}</div>
                             <div class="stat-bar-track">
-                                <div class="stat-bar-fill " style="height: %;"></div>
+                                <div class="stat-bar-fill ${val > 0 ? 'active' : ''}" style="height: ${heightPct}%;"></div>
                             </div>
-                            <div class="stat-month-lbl">月</div>
+                            <div class="stat-month-lbl">${m+1}月</div>
                         </div>
-                    ;
+                    `;
                 }
 
-                statsHtml += 
+                statsHtml += `
                     <div class="harvest-stat-card">
                         <div class="stat-left">
-                            
+                            ${imgHtml}
                             <div class="stat-info">
-                                <div class="stat-name"></div>
-                                <div class="stat-total-badge">总产出: <strong></strong> </div>
+                                <div class="stat-name">${stat.veg.name}</div>
+                                <div class="stat-total-badge">总产出: <strong>${parseFloat(stat.total.toFixed(1))}</strong> ${stat.unit}</div>
                             </div>
                         </div>
                         <div class="stat-right">
                             <div class="stat-chart">
-                                
+                                ${barsHtml}
                             </div>
                         </div>
                     </div>
-                ;
+                `;
             });
-            statsHtml += </div></div>;
-            statsHtml += <h3 class="harvest-history-title" style="margin-top: 40px; margin-bottom: 24px; color: #1f2937; font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.5rem;">📜</span> 历史采收/施肥明细</h3>;
+            statsHtml += `</div></div>`;
+            statsHtml += `<h3 class="harvest-history-title" style="margin-top: 40px; margin-bottom: 24px; color: #1f2937; font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.5rem;">📜</span> 历史采收/施肥明细</h3>`;
         }
 
         const historyGarden = myGarden.filter(g => g.isHarvested);
