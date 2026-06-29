@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000036';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000037';
 import { weatherData } from './weather_data.js?v=1786000000029';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
@@ -1867,20 +1867,104 @@ document.addEventListener('DOMContentLoaded', () => {
         const grid = document.getElementById('history-grid');
         const emptyMsg = document.getElementById('history-empty-msg');
         if (!grid) return;
+
+        const currentYear = new Date().getFullYear().toString();
+        const harvestStats = {}; // { vegId: { unit, months: [0,0,0...], total: 0, max: 0, veg } }
         
+        myGarden.forEach(item => {
+            if (item.type === 'fertilizer' || !item.harvests) return;
+            item.harvests.forEach(h => {
+                if (h.date && h.date.startsWith(currentYear)) {
+                    const month = parseInt(h.date.split('-')[1], 10) - 1; // 0-11
+                    if (!harvestStats[item.vegId]) {
+                        harvestStats[item.vegId] = {
+                            veg: vegetables.find(v => v.id === item.vegId),
+                            unit: h.unit || '公斤',
+                            months: Array(12).fill(0),
+                            total: 0
+                        };
+                    }
+                    const amount = parseFloat(h.amount) || 0;
+                    harvestStats[item.vegId].months[month] += amount;
+                    harvestStats[item.vegId].total += amount;
+                }
+            });
+        });
+
+        let statsHtml = '';
+        const statKeys = Object.keys(harvestStats).sort((a,b) => harvestStats[b].total - harvestStats[a].total);
+        if (statKeys.length > 0) {
+            statsHtml += <div class="harvest-stats-container">;
+            statsHtml += <h3 class="harvest-stats-title" style="margin-bottom: 24px; color: #065f46; font-size: 1.35rem; font-weight: 700; border-bottom: 2px solid #a7f3d0; padding-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.5rem;">📊</span>  年度收获统计</h3>;
+            statsHtml += <div class="harvest-stats-list">;
+            
+            statKeys.forEach(vegId => {
+                const stat = harvestStats[vegId];
+                if (!stat.veg) return;
+                const maxMonth = Math.max(...stat.months, 0.1);
+                
+                const categoryGradients = {
+                    leafy: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)',
+                    root: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+                    fruit: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)',
+                    legume: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+                    allium: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)'
+                };
+                const bgGradient = categoryGradients[stat.veg?.categoryId] || 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)';
+                const imgHtml = stat.veg.image
+                    ? <img loading="lazy" src="" alt="" class="stat-main-img">
+                    : <div class="stat-main-img" style="background: ;"></div>;
+                
+                let barsHtml = '';
+                for (let m = 0; m < 12; m++) {
+                    const val = stat.months[m];
+                    const heightPct = Math.max((val / maxMonth) * 100, val > 0 ? 5 : 0);
+                    const tooltip = ${m+1}月: ;
+                    
+                    barsHtml += 
+                        <div class="stat-bar-col" title="">
+                            <div class="stat-bar-val"></div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill " style="height: %;"></div>
+                            </div>
+                            <div class="stat-month-lbl">月</div>
+                        </div>
+                    ;
+                }
+
+                statsHtml += 
+                    <div class="harvest-stat-card">
+                        <div class="stat-left">
+                            
+                            <div class="stat-info">
+                                <div class="stat-name"></div>
+                                <div class="stat-total-badge">总产出: <strong></strong> </div>
+                            </div>
+                        </div>
+                        <div class="stat-right">
+                            <div class="stat-chart">
+                                
+                            </div>
+                        </div>
+                    </div>
+                ;
+            });
+            statsHtml += </div></div>;
+            statsHtml += <h3 class="harvest-history-title" style="margin-top: 40px; margin-bottom: 24px; color: #1f2937; font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.5rem;">📜</span> 历史采收/施肥明细</h3>;
+        }
+
         const historyGarden = myGarden.filter(g => g.isHarvested);
-        
-        if (historyGarden.length === 0) {
+
+        if (historyGarden.length === 0 && statKeys.length === 0) {
             grid.innerHTML = '';
             emptyMsg.style.display = 'block';
             return;
         }
-        
+
         emptyMsg.style.display = 'none';
-        grid.innerHTML = '';
-        
+        grid.innerHTML = statsHtml;
+
         const filteredHistory = historyGarden;
-        
         const cardsHtml = [];
         
         for (let index = 0; index < filteredHistory.length; index++) {
