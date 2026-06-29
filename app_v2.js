@@ -1,4 +1,4 @@
-import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000035';
+import { cities, vegetables, farmingModels, pestControls, fertilizers, regions, categories } from './data.js?v=1786000000036';
 import { weatherData } from './weather_data.js?v=1786000000029';
 
 // Temporary runtime fix: Field crops were accidentally appended to pestControls instead of vegetables in data.js
