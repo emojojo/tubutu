@@ -2278,6 +2278,23 @@ export const vegetables = [
       southwest: '9-11月',
       northwest: '3-5月'
     },
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '提苗肥',
+        dosagePerPlant: '每平米约 15-20g',
+        fertilizerType: '尿素或高氮复合肥',
+        organicAlternative: '腐熟有机肥水或沼液'
+      },
+      {
+        stageIndex: 4,
+        actionName: '鳞茎膨大肥',
+        dosagePerPlant: '每平米约 30-40g',
+        fertilizerType: '高钾复合肥 (忌氯)',
+        organicAlternative: '草木灰混合腐熟饼肥'
+      }
+    ],
     stages: [
       { name: '水分管理', content: '苗期忌水大防徒长。鳞茎膨大期需水最多，必须保持湿润。但在采收前7-10天必须彻底停止浇水，以利于鳞茎收口和长期耐储藏。' , image: 'images/stages/onion_water_v3.png' },
       { name: '特殊追肥 🌟', content: '春季返青后追施提苗肥。当鳞茎开始膨大（长至3cm）时，重施高钾膨大肥，切忌此时偏施氮肥，否则会导致“贪青徒长”且不长葱头。' , image: 'images/stages/onion_fertilize_v3.png' }
@@ -2329,6 +2346,23 @@ export const vegetables = [
       southwest: '3-9月',
       northwest: '4-6月'
     },
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '发棵肥',
+        dosagePerPlant: '每株约 15-20g',
+        fertilizerType: '高氮复合肥',
+        organicAlternative: '腐熟牛羊粪便'
+      },
+      {
+        stageIndex: 4,
+        actionName: '块茎膨大肥',
+        dosagePerPlant: '每株约 30-50g',
+        fertilizerType: '高钾复合肥 (忌氯)',
+        organicAlternative: '大量草木灰混合发酵饼肥'
+      }
+    ],
     stages: [
       { name: '定植与搭架', content: '山药藤蔓极长且细弱，出苗后需迅速搭设1.5-2m高的结实人字架或拉网架供其攀爬，否则藤蔓缠绕在地极易感染病害。' , image: 'images/stages/yam_trellis_v3.png' },
       { name: '培土与排涝', content: '地下块茎极度怕水涝，田间必须开挖深排水沟。' , image: 'images/stages/yam_drain_v3.png' },
@@ -4102,6 +4136,23 @@ export const pestControls = [
     water: '中等，拔节至孕穗期需水量大',
     baseTemp: '0',
     targetGDD: '2000',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '返青拔节肥',
+        dosagePerPlant: '每平米约 15-20g',
+        fertilizerType: '尿素',
+        organicAlternative: '腐熟稀粪水'
+      },
+      {
+        stageIndex: 3,
+        actionName: '孕穗肥',
+        dosagePerPlant: '每平米约 10-15g',
+        fertilizerType: '复合肥',
+        organicAlternative: '叶面喷施腐殖酸液肥'
+      }
+    ],
     stages: [
       {
         name: '播种期',
@@ -4189,6 +4240,23 @@ export const pestControls = [
     water: '极高，需水层管理',
     baseTemp: '10',
     targetGDD: '3000',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '分蘖肥',
+        dosagePerPlant: '每平米约 10-15g',
+        fertilizerType: '尿素',
+        organicAlternative: '腐熟饼肥或绿肥'
+      },
+      {
+        stageIndex: 3,
+        actionName: '促花保花肥 (穗肥)',
+        dosagePerPlant: '每平米约 15-20g',
+        fertilizerType: '钾肥及复合肥',
+        organicAlternative: '草木灰或海藻肥'
+      }
+    ],
     stages: [
       {
         name: '播种/育秧',
@@ -4267,6 +4335,23 @@ export const pestControls = [
     water: '中等，抽雄吐丝期需水敏感',
     baseTemp: '10',
     targetGDD: '2600',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '拔节肥',
+        dosagePerPlant: '每株约 10-15g',
+        fertilizerType: '高氮复合肥',
+        organicAlternative: '腐熟农家肥'
+      },
+      {
+        stageIndex: 3,
+        actionName: '穗肥 (大喇叭口期)',
+        dosagePerPlant: '每株约 20-30g',
+        fertilizerType: '尿素与钾肥',
+        organicAlternative: '充分腐熟的鸡粪或饼肥'
+      }
+    ],
     stages: [
       {
         name: '播种期',
@@ -4345,6 +4430,23 @@ export const pestControls = [
     water: '中等，开花结荚期需水量大',
     baseTemp: '10',
     targetGDD: '2400',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '提苗肥',
+        dosagePerPlant: '每株约 3-5g',
+        fertilizerType: '少量尿素',
+        organicAlternative: '稀薄沼液'
+      },
+      {
+        stageIndex: 4,
+        actionName: '花荚肥',
+        dosagePerPlant: '每株约 10-15g',
+        fertilizerType: '磷钾复合肥及微肥 (钼、硼)',
+        organicAlternative: '草木灰混合骨粉'
+      }
+    ],
     stages: [
       {
         name: '播种期',
@@ -4414,6 +4516,30 @@ export const pestControls = [
     water: '中等，花铃期需水最多',
     baseTemp: '12',
     targetGDD: '3500',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '轻施苗肥',
+        dosagePerPlant: '每株约 5-10g',
+        fertilizerType: '氮磷复合肥',
+        organicAlternative: '腐熟牛粪'
+      },
+      {
+        stageIndex: 3,
+        actionName: '稳施蕾肥',
+        dosagePerPlant: '每株约 10-15g',
+        fertilizerType: '复合肥',
+        organicAlternative: '腐熟饼肥'
+      },
+      {
+        stageIndex: 4,
+        actionName: '重施花铃肥',
+        dosagePerPlant: '每株约 20-30g',
+        fertilizerType: '尿素与高钾复合肥',
+        organicAlternative: '大量优质有机肥'
+      }
+    ],
     stages: [
       {
         name: '播种期',
@@ -4483,6 +4609,23 @@ export const pestControls = [
     water: '中等，结荚期需水较多',
     baseTemp: '12',
     targetGDD: '2800',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '苗期追肥',
+        dosagePerPlant: '每株约 5-10g',
+        fertilizerType: '氮肥及钙肥',
+        organicAlternative: '石膏及腐熟家禽粪'
+      },
+      {
+        stageIndex: 4,
+        actionName: '结荚肥',
+        dosagePerPlant: '每株约 10-15g',
+        fertilizerType: '磷钾复合肥 (防早衰)',
+        organicAlternative: '草木灰和骨粉'
+      }
+    ],
     stages: [
       {
         name: '播种期',
@@ -4552,6 +4695,23 @@ export const pestControls = [
     water: '中等，花期怕渍水',
     baseTemp: '5',
     targetGDD: '2200',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '苗肥及腊肥',
+        dosagePerPlant: '每株约 5-10g',
+        fertilizerType: '尿素',
+        organicAlternative: '腐熟人畜粪尿或堆肥'
+      },
+      {
+        stageIndex: 3,
+        actionName: '苔肥',
+        dosagePerPlant: '每株约 10-15g',
+        fertilizerType: '复合肥加硼肥',
+        organicAlternative: '草木灰混合微量元素液肥'
+      }
+    ],
     stages: [
       {
         name: '播种育苗期',
@@ -4623,6 +4783,23 @@ export const pestControls = [
       { name: '现蕾', image: 'images/stages/sunflower_bud.png', days: 20, gdd: 300 },
       { name: '开花', image: 'images/stages/sunflower_flower.png', days: 15, gdd: 250 },
       { name: '成熟', image: 'images/stages/sunflower_harvest.png', days: 30, gdd: 450 }
+    ],
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '提苗肥',
+        dosagePerPlant: '每株约 5-10g',
+        fertilizerType: '尿素或高氮复合肥',
+        organicAlternative: '腐熟牛羊粪便或沼液'
+      },
+      {
+        stageIndex: 3,
+        actionName: '花盘肥 (现蕾期)',
+        dosagePerPlant: '每株约 15-20g',
+        fertilizerType: '高钾复合肥',
+        organicAlternative: '草木灰混合腐熟饼肥'
+      }
     ],
     stages: [
       {
@@ -4699,6 +4876,23 @@ export const pestControls = [
     water: '极少，极其耐旱',
     baseTemp: '10',
     targetGDD: '2500',
+
+    fertilizerSchedule: [
+      {
+        stageIndex: 2,
+        actionName: '拔节肥',
+        dosagePerPlant: '每株约 10-15g',
+        fertilizerType: '高氮复合肥',
+        organicAlternative: '腐熟农家肥'
+      },
+      {
+        stageIndex: 3,
+        actionName: '挑旗肥 (穗肥)',
+        dosagePerPlant: '每株约 15-20g',
+        fertilizerType: '尿素',
+        organicAlternative: '速效有机液肥'
+      }
+    ],
     stages: [
       {
         name: '播种期',
