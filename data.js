@@ -4617,24 +4617,32 @@ export const pestControls = [
     description: '喜阳耐旱，适应性强。其花盘向日，具有较高的观赏和经济价值，常用于榨油或食用葵花籽。',
     baseTemp: 10,
     growthSequence: [
-      { name: '播种', image: 'images/stages/sunflower_seed.png', days: 10, gdd: 150 },
-      { name: '幼苗', image: 'images/stages/sunflower_seedling.png', days: 25, gdd: 350 },
+      { name: '种子', image: 'images/stages/sunflower_seed.png', days: 7, gdd: 105 },
+      { name: '出苗', image: 'images/stages/sunflower_seedling.png', days: 7, gdd: 105 },
+      { name: '幼苗', image: 'images/stages/sunflower_true_seedling.png', days: 21, gdd: 290 },
       { name: '现蕾', image: 'images/stages/sunflower_bud.png', days: 20, gdd: 300 },
       { name: '开花', image: 'images/stages/sunflower_flower.png', days: 15, gdd: 250 },
       { name: '成熟', image: 'images/stages/sunflower_harvest.png', days: 30, gdd: 450 }
     ],
     stages: [
       {
-        name: '播种期',
+        name: '种子期',
         water_fertilizer: '施足底肥，播种后浇透水。',
         pest_management: '注意防治地下害虫如地老虎。',
+        pruning_trellising: ''
+      },
+      {
+        name: '出苗期',
+        water_fertilizer: '保持土壤湿润，不宜积水。',
+        pest_management: '注意防范苗期猝倒病。',
         pruning_trellising: ''
       },
       {
         name: '幼苗期',
         water_fertilizer: '适当控水蹲苗，促进根系深扎。',
         pest_management: '防蚜虫和斑枯病。',
-        pruning_trellising: '间苗、定苗。'
+        pruning_trellising: '间苗、定苗。',
+        pruning_image: 'images/stages/sunflower_op_thinning.png'
       },
       {
         name: '现蕾期',
