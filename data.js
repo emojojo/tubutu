@@ -4600,6 +4600,76 @@ export const pestControls = [
       }
     ]
   },
+  // ================= 向日葵 (Sunflower) =================
+  {
+    id: 'sunflower',
+    avatar: 'assets/icons/icon_sunflower.png',
+    name: '向日葵',
+    categoryId: 'field_crops',
+    icon: '🌻',
+    calendar: {
+      north: '4月~6月',
+      south: '3月~7月',
+      east: '3月~6月',
+      west: '3月~6月'
+    },
+    image: 'images/sunflower_bg.png',
+    description: '喜阳耐旱，适应性强。其花盘向日，具有较高的观赏和经济价值，常用于榨油或食用葵花籽。',
+    baseTemp: 10,
+    growthSequence: [
+      { name: '播种', image: 'images/stages/sunflower_seed.png', days: 10, gdd: 150 },
+      { name: '幼苗', image: 'images/stages/sunflower_seedling.png', days: 25, gdd: 350 },
+      { name: '现蕾', image: 'images/stages/sunflower_bud.png', days: 20, gdd: 300 },
+      { name: '开花', image: 'images/stages/sunflower_flower.png', days: 15, gdd: 250 },
+      { name: '成熟', image: 'images/stages/sunflower_harvest.png', days: 30, gdd: 450 }
+    ],
+    stages: [
+      {
+        name: '播种期',
+        water_fertilizer: '施足底肥，播种后浇透水。',
+        pest_management: '注意防治地下害虫如地老虎。',
+        pruning_trellising: ''
+      },
+      {
+        name: '幼苗期',
+        water_fertilizer: '适当控水蹲苗，促进根系深扎。',
+        pest_management: '防蚜虫和斑枯病。',
+        pruning_trellising: '间苗、定苗。'
+      },
+      {
+        name: '现蕾期',
+        water_fertilizer: '进入水分和养分需求高峰，需追施氮钾肥。',
+        pest_management: '重点防治向日葵螟。',
+        pruning_trellising: ''
+      },
+      {
+        name: '开花期',
+        water_fertilizer: '保持土壤湿润，不能缺水，否则影响结实率。',
+        pest_management: '注意防治菌核病。',
+        pruning_trellising: '可通过人工辅助授粉提高结实率。'
+      },
+      {
+        name: '成熟期',
+        water_fertilizer: '籽粒灌浆后逐渐减少浇水，成熟前停止浇水。',
+        pest_management: '防止鸟类啄食籽粒，必要时可加防鸟网。',
+        pruning_trellising: '花盘背面变黄，苞叶变褐时即可采收。'
+      }
+    ],
+    pests: [
+      {
+        name: '菌核病',
+        cause: '土壤湿度大、通风不良时易发，是向日葵的主要病害。',
+        prevention: '实行轮作，避免连作；发现病株及时拔除并销毁。',
+        image: 'images/pest_sunflower_sclerotinia.png'
+      },
+      {
+        name: '向日葵螟',
+        cause: '成虫产卵于花盘，幼虫蛀食花盘和籽粒。',
+        prevention: '开花期喷洒针对性生物农药（如Bt），或使用赤眼蜂等天敌。',
+        image: 'images/pest_sunflower_moth.png'
+      }
+    ]
+  },
   // ================= 高粱 (sorghum) =================
   {
     id: 'sorghum',
