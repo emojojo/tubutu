@@ -411,13 +411,13 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/watermelon_v3_stage_1_1779709382535.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/watermelon_v3_stage_2_1779709396968.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/watermelon_v3_stage_3_1779709410977.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/watermelon_v3_stage_4_1779709428276.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/watermelon_v3_stage_5_1779709444492.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/watermelon_v3_stage_6_1779709460924.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/watermelon_v3_stage_7_1779709474087.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/watermelon_v3_stage_1_1779709382535.png', days: 7, gdd: 74  },
+      { name: '出苗', image: 'images/watermelon_v3_stage_2_1779709396968.png', days: 7, gdd: 74  },
+      { name: '幼苗', image: 'images/watermelon_v3_stage_3_1779709410977.png', days: 20, gdd: 212  },
+      { name: '抽蔓', image: 'images/watermelon_v3_stage_4_1779709428276.png', days: 20, gdd: 212  },
+      { name: '开花', image: 'images/watermelon_v3_stage_5_1779709444492.png', days: 15, gdd: 159  },
+      { name: '结瓜', image: 'images/watermelon_v3_stage_6_1779709460924.png', days: 25, gdd: 264  },
+      { name: '采收', image: 'images/watermelon_v3_stage_7_1779709474087.png', days: 10, gdd: 105  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -502,13 +502,13 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/melon_v3_stage_1_1779710563597.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/melon_v3_stage_2_1779710579005.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/melon_v3_stage_3_1779710594269.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/melon_v3_stage_4_1779710611647.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/melon_v3_stage_5_1779710627545.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/melon_v3_stage_6_1779710642557.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/melon_v3_stage_7_1779710660882.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/melon_v3_stage_1_1779710563597.png', days: 7, gdd: 74  },
+      { name: '出苗', image: 'images/melon_v3_stage_2_1779710579005.png', days: 7, gdd: 74  },
+      { name: '幼苗', image: 'images/melon_v3_stage_3_1779710594269.png', days: 20, gdd: 212  },
+      { name: '抽蔓', image: 'images/melon_v3_stage_4_1779710611647.png', days: 20, gdd: 212  },
+      { name: '开花', image: 'images/melon_v3_stage_5_1779710627545.png', days: 15, gdd: 159  },
+      { name: '结瓜', image: 'images/melon_v3_stage_6_1779710642557.png', days: 25, gdd: 264  },
+      { name: '采收', image: 'images/melon_v3_stage_7_1779710660882.png', days: 10, gdd: 105  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -598,13 +598,13 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/strawberry_v3_stage_1_1779710715671.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/strawberry_v3_stage_2_1779710729785.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/strawberry_v3_stage_3_1779710744355.png', days: 20, gdd: 300  },
-      { name: '展叶', image: 'images/strawberry_v3_stage_4_1779710755820.png', days: 15, gdd: 225  },
-      { name: '开花', image: 'images/strawberry_v3_stage_5_1779710769883.png', days: 15, gdd: 225  },
-      { name: '结果', image: 'images/strawberry_v3_stage_6_1779710785239.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/strawberry_v3_stage_7_1779710805797.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/strawberry_v3_stage_1_1779710715671.png', days: 7, gdd: 71  },
+      { name: '出苗', image: 'images/strawberry_v3_stage_2_1779710729785.png', days: 7, gdd: 71  },
+      { name: '幼苗', image: 'images/strawberry_v3_stage_3_1779710744355.png', days: 20, gdd: 202  },
+      { name: '展叶', image: 'images/strawberry_v3_stage_4_1779710755820.png', days: 15, gdd: 152  },
+      { name: '开花', image: 'images/strawberry_v3_stage_5_1779710769883.png', days: 15, gdd: 152  },
+      { name: '结果', image: 'images/strawberry_v3_stage_6_1779710785239.png', days: 25, gdd: 253  },
+      { name: '采收', image: 'images/strawberry_v3_stage_7_1779710805797.png', days: 10, gdd: 99  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -712,13 +712,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/broccoli_v3_stage_1_1779704201963.png' },
-      { days: 5, gdd: 75, name: '出苗期', image: 'images/broccoli_v3_stage_2_1779704217121.png' },
-      { days: 10, gdd: 150, name: '幼苗期', image: 'images/broccoli_v3_stage_3_1779704230584.png' },
-      { days: 20, gdd: 300, name: '莲座期', image: 'images/broccoli_v3_stage_4_1779704248062.png' },
-      { days: 20, gdd: 300, name: '现蕾期', image: 'images/broccoli_v3_stage_5_1779704266920.png' },
-      { days: 15, gdd: 225, name: '膨大期', image: 'images/broccoli_v3_stage_6_1779704281851.png' },
-      { days: 15, gdd: 225, name: '采收期', image: 'images/broccoli_v3_stage_7_1779704297567.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/broccoli_v3_stage_1_1779704201963.png' },
+      { days: 5, gdd: 59, name: '出苗期', image: 'images/broccoli_v3_stage_2_1779704217121.png' },
+      { days: 10, gdd: 118, name: '幼苗期', image: 'images/broccoli_v3_stage_3_1779704230584.png' },
+      { days: 20, gdd: 235, name: '莲座期', image: 'images/broccoli_v3_stage_4_1779704248062.png' },
+      { days: 20, gdd: 235, name: '现蕾期', image: 'images/broccoli_v3_stage_5_1779704266920.png' },
+      { days: 15, gdd: 176, name: '膨大期', image: 'images/broccoli_v3_stage_6_1779704281851.png' },
+      { days: 15, gdd: 167, name: '采收期', image: 'images/broccoli_v3_stage_7_1779704297567.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -822,13 +822,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/cabbage_head_v3_stage_1_1779704310656.png' },
-      { days: 5, gdd: 75, name: '出苗期', image: 'images/cabbage_head_v3_stage_2_1779704323314.png' },
-      { days: 10, gdd: 150, name: '幼苗期', image: 'images/cabbage_head_v3_stage_3_1779704336903.png' },
-      { days: 20, gdd: 300, name: '莲座期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png' },
-      { days: 20, gdd: 300, name: '结球初期', image: 'images/cabbage_head_v3_stage_5_1779704364071.png' },
-      { days: 20, gdd: 300, name: '结球盛期', image: 'images/cabbage_head_v3_stage_6_1779704378100.png' },
-      { days: 15, gdd: 225, name: '采收期', image: 'images/cabbage_head_v3_stage_7_1779704391362.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/cabbage_head_v3_stage_1_1779704310656.png' },
+      { days: 5, gdd: 50, name: '出苗期', image: 'images/cabbage_head_v3_stage_2_1779704323314.png' },
+      { days: 10, gdd: 100, name: '幼苗期', image: 'images/cabbage_head_v3_stage_3_1779704336903.png' },
+      { days: 20, gdd: 200, name: '莲座期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png' },
+      { days: 20, gdd: 200, name: '结球初期', image: 'images/cabbage_head_v3_stage_5_1779704364071.png' },
+      { days: 20, gdd: 200, name: '结球盛期', image: 'images/cabbage_head_v3_stage_6_1779704378100.png' },
+      { days: 15, gdd: 140, name: '采收期', image: 'images/cabbage_head_v3_stage_7_1779704391362.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -932,13 +932,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/cauliflower_v3_stage_1_1779704407223.png' },
-      { days: 5, gdd: 75, name: '出苗期', image: 'images/cauliflower_v3_stage_2_1779704421992.png' },
-      { days: 10, gdd: 150, name: '幼苗期', image: 'images/cauliflower_v3_stage_3_1779704437834.png' },
-      { days: 20, gdd: 300, name: '莲座期', image: 'images/cauliflower_v3_stage_4_1779704451766.png' },
-      { days: 20, gdd: 300, name: '现蕾期', image: 'images/cauliflower_v3_stage_5_1779704466832.png' },
-      { days: 20, gdd: 300, name: '膨大期', image: 'images/cauliflower_v3_stage_6_1779704487261.png' },
-      { days: 15, gdd: 225, name: '采收期', image: 'images/cauliflower_v3_stage_7_1779704502215.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/cauliflower_v3_stage_1_1779704407223.png' },
+      { days: 5, gdd: 50, name: '出苗期', image: 'images/cauliflower_v3_stage_2_1779704421992.png' },
+      { days: 10, gdd: 100, name: '幼苗期', image: 'images/cauliflower_v3_stage_3_1779704437834.png' },
+      { days: 20, gdd: 200, name: '莲座期', image: 'images/cauliflower_v3_stage_4_1779704451766.png' },
+      { days: 20, gdd: 200, name: '现蕾期', image: 'images/cauliflower_v3_stage_5_1779704466832.png' },
+      { days: 20, gdd: 200, name: '膨大期', image: 'images/cauliflower_v3_stage_6_1779704487261.png' },
+      { days: 15, gdd: 140, name: '采收期', image: 'images/cauliflower_v3_stage_7_1779704502215.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -1415,13 +1415,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/tomato_v3_stage_1_1779705453496.png' },
-      { days: 7, gdd: 105, name: '出苗期', image: 'images/tomato_v3_stage_2_1779705477910.png' },
-      { days: 8, gdd: 120, name: '幼苗期', image: 'images/tomato_v3_stage_3_1779705490626.png' },
-      { days: 15, gdd: 225, name: '开花期', image: 'images/tomato_v3_stage_4_1779705506448.png' },
-      { days: 20, gdd: 300, name: '结果期', image: 'images/tomato_v3_stage_5_1779705522180.png' },
-      { days: 20, gdd: 300, name: '转色期', image: 'images/tomato_v3_stage_6_1779705537599.png' },
-      { days: 20, gdd: 300, name: '连续采收', image: 'images/tomato_v3_stage_7_1779705551649.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/tomato_v3_stage_1_1779705453496.png' },
+      { days: 7, gdd: 86, name: '出苗期', image: 'images/tomato_v3_stage_2_1779705477910.png' },
+      { days: 8, gdd: 98, name: '幼苗期', image: 'images/tomato_v3_stage_3_1779705490626.png' },
+      { days: 15, gdd: 183, name: '开花期', image: 'images/tomato_v3_stage_4_1779705506448.png' },
+      { days: 20, gdd: 244, name: '结果期', image: 'images/tomato_v3_stage_5_1779705522180.png' },
+      { days: 20, gdd: 244, name: '转色期', image: 'images/tomato_v3_stage_6_1779705537599.png' },
+      { days: 20, gdd: 235, name: '连续采收', image: 'images/tomato_v3_stage_7_1779705551649.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '5-8g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟羊粪 100g 或 蚯蚓粪 150g', foliarAlternative: '0.2% 尿素水溶液喷叶' },
@@ -1637,13 +1637,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/eggplant_v3_stage_1_1779705685700.png' },
-      { days: 7, gdd: 105, name: '出苗期', image: 'images/eggplant_v3_stage_2_1779705700567.png' },
-      { days: 8, gdd: 120, name: '幼苗期', image: 'images/eggplant_v3_stage_3_1779705715339.png' },
-      { days: 15, gdd: 225, name: '开花期', image: 'images/eggplant_v3_stage_4_1779705731023.png' },
-      { days: 20, gdd: 300, name: '结果期', image: 'images/eggplant_v3_stage_5_1779705745318.png' },
-      { days: 20, gdd: 300, name: '初收期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
-      { days: 20, gdd: 300, name: '连续采收', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/eggplant_v3_stage_1_1779705685700.png' },
+      { days: 7, gdd: 86, name: '出苗期', image: 'images/eggplant_v3_stage_2_1779705700567.png' },
+      { days: 8, gdd: 98, name: '幼苗期', image: 'images/eggplant_v3_stage_3_1779705715339.png' },
+      { days: 15, gdd: 183, name: '开花期', image: 'images/eggplant_v3_stage_4_1779705731023.png' },
+      { days: 20, gdd: 244, name: '结果期', image: 'images/eggplant_v3_stage_5_1779705745318.png' },
+      { days: 20, gdd: 244, name: '初收期', image: 'images/eggplant_v3_stage_6_1779705777204.png' },
+      { days: 20, gdd: 235, name: '连续采收', image: 'images/eggplant_v3_stage_7_1779705792604.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -1750,13 +1750,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/pepper_v3_stage_1_1779705805513.png' },
-      { days: 7, gdd: 105, name: '出苗期', image: 'images/pepper_v3_stage_2_1779705824916.png' },
-      { days: 8, gdd: 120, name: '幼苗期', image: 'images/pepper_v3_stage_3_1779705838528.png' },
-      { days: 15, gdd: 225, name: '开花期', image: 'images/pepper_v3_stage_4_1779705854911.png' },
-      { days: 20, gdd: 300, name: '结果期', image: 'images/pepper_v3_stage_5_1779705877174.png' },
-      { days: 20, gdd: 300, name: '青果期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
-      { days: 20, gdd: 300, name: '连续采收', image: 'images/pepper_v3_stage_7_1779705905171.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/pepper_v3_stage_1_1779705805513.png' },
+      { days: 7, gdd: 86, name: '出苗期', image: 'images/pepper_v3_stage_2_1779705824916.png' },
+      { days: 8, gdd: 98, name: '幼苗期', image: 'images/pepper_v3_stage_3_1779705838528.png' },
+      { days: 15, gdd: 183, name: '开花期', image: 'images/pepper_v3_stage_4_1779705854911.png' },
+      { days: 20, gdd: 244, name: '结果期', image: 'images/pepper_v3_stage_5_1779705877174.png' },
+      { days: 20, gdd: 244, name: '青果期', image: 'images/pepper_v3_stage_6_1779705890009.png' },
+      { days: 20, gdd: 235, name: '连续采收', image: 'images/pepper_v3_stage_7_1779705905171.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -1861,13 +1861,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/radish_v3_stage_1_1779706393814.png' },
-      { days: 7, gdd: 105, name: '出苗期', image: 'images/radish_v3_stage_2_1779706407294.png' },
-      { days: 8, gdd: 120, name: '幼苗期', image: 'images/radish_v3_stage_3_1779706420221.png' },
-      { days: 15, gdd: 225, name: '生长期', image: 'images/radish_v3_stage_4_1779706432672.png' },
-      { days: 20, gdd: 300, name: '破肚期', image: 'images/radish_v3_stage_5_1779706449343.png' },
-      { days: 20, gdd: 300, name: '成熟期', image: 'images/radish_v3_stage_6_1779706465141.png' },
-      { days: 20, gdd: 300, name: '采收期', image: 'images/radish_v3_stage_7_1779706479462.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/radish_v3_stage_1_1779706393814.png' },
+      { days: 7, gdd: 54, name: '出苗期', image: 'images/radish_v3_stage_2_1779706407294.png' },
+      { days: 8, gdd: 62, name: '幼苗期', image: 'images/radish_v3_stage_3_1779706420221.png' },
+      { days: 15, gdd: 117, name: '生长期', image: 'images/radish_v3_stage_4_1779706432672.png' },
+      { days: 20, gdd: 156, name: '破肚期', image: 'images/radish_v3_stage_5_1779706449343.png' },
+      { days: 20, gdd: 156, name: '成熟期', image: 'images/radish_v3_stage_6_1779706465141.png' },
+      { days: 20, gdd: 145, name: '采收期', image: 'images/radish_v3_stage_7_1779706479462.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
@@ -1965,13 +1965,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/carrot_v3_stage_1_1779706498016.png' },
-      { days: 10, gdd: 150, name: '出苗期', image: 'images/carrot_v3_stage_2_1779706512570.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/carrot_v3_stage_3_1779706543981.png' },
-      { days: 20, gdd: 300, name: '生长期', image: 'images/carrot_v3_stage_4_1779706557811.png' },
-      { days: 20, gdd: 300, name: '膨大期', image: 'images/carrot_v3_stage_5_1779706572486.png' },
-      { days: 20, gdd: 300, name: '成熟期', image: 'images/carrot_v3_stage_6_1779706588699.png' },
-      { days: 15, gdd: 225, name: '采收期', image: 'images/carrot_v3_stage_7_1779706602273.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/carrot_v3_stage_1_1779706498016.png' },
+      { days: 10, gdd: 110, name: '出苗期', image: 'images/carrot_v3_stage_2_1779706512570.png' },
+      { days: 15, gdd: 165, name: '幼苗期', image: 'images/carrot_v3_stage_3_1779706543981.png' },
+      { days: 20, gdd: 220, name: '生长期', image: 'images/carrot_v3_stage_4_1779706557811.png' },
+      { days: 20, gdd: 220, name: '膨大期', image: 'images/carrot_v3_stage_5_1779706572486.png' },
+      { days: 20, gdd: 220, name: '成熟期', image: 'images/carrot_v3_stage_6_1779706588699.png' },
+      { days: 15, gdd: 155, name: '采收期', image: 'images/carrot_v3_stage_7_1779706602273.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2058,13 +2058,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '播种期', image: 'images/potato_v3_stage_1_1779706615894.png' },
-      { days: 15, gdd: 225, name: '出苗期', image: 'images/potato_v3_stage_2_1779706630208.png' },
-      { days: 15, gdd: 225, name: '幼苗期', image: 'images/potato_v3_stage_3_1779706644009.png' },
-      { days: 20, gdd: 300, name: '生长期', image: 'images/potato_v3_stage_4_1779706658922.png' },
-      { days: 20, gdd: 300, name: '结薯期', image: 'images/potato_v3_stage_5_1779706691490.png' },
-      { days: 20, gdd: 300, name: '成熟期', image: 'images/potato_v3_stage_6_1779706708840.png' },
-      { days: 10, gdd: 150, name: '采收期', image: 'images/potato_v3_stage_7_1779706725798.png' }
+      { days: 0, gdd: 10, name: '播种期', image: 'images/potato_v3_stage_1_1779706615894.png' },
+      { days: 15, gdd: 180, name: '出苗期', image: 'images/potato_v3_stage_2_1779706630208.png' },
+      { days: 15, gdd: 180, name: '幼苗期', image: 'images/potato_v3_stage_3_1779706644009.png' },
+      { days: 20, gdd: 240, name: '生长期', image: 'images/potato_v3_stage_4_1779706658922.png' },
+      { days: 20, gdd: 240, name: '结薯期', image: 'images/potato_v3_stage_5_1779706691490.png' },
+      { days: 20, gdd: 240, name: '成熟期', image: 'images/potato_v3_stage_6_1779706708840.png' },
+      { days: 10, gdd: 110, name: '采收期', image: 'images/potato_v3_stage_7_1779706725798.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
@@ -2150,13 +2150,13 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { days: 0, gdd: 0, name: '育苗期', image: 'images/sweetpotato_v3_stage_1_1779706740376.png' },
-      { days: 15, gdd: 225, name: '缓苗期', image: 'images/sweetpotato_v3_stage_2_1779706755034.png' },
-      { days: 20, gdd: 300, name: '伸蔓期', image: 'images/sweetpotato_v3_stage_3_1779706771127.png' },
-      { days: 25, gdd: 375, name: '封垄期', image: 'images/sweetpotato_v3_stage_4_1779706783146.png' },
-      { days: 30, gdd: 450, name: '膨大期', image: 'images/sweetpotato_v3_stage_5_1779706796967.png' },
-      { days: 30, gdd: 450, name: '成熟期', image: 'images/sweetpotato_v3_stage_6_1779706834735.png' },
-      { days: 30, gdd: 450, name: '采收期', image: 'images/sweetpotato_v3_stage_7_1779706851167.png' }
+      { days: 0, gdd: 10, name: '育苗期', image: 'images/sweetpotato_v3_stage_1_1779706740376.png' },
+      { days: 15, gdd: 180, name: '缓苗期', image: 'images/sweetpotato_v3_stage_2_1779706755034.png' },
+      { days: 20, gdd: 240, name: '伸蔓期', image: 'images/sweetpotato_v3_stage_3_1779706771127.png' },
+      { days: 25, gdd: 300, name: '封垄期', image: 'images/sweetpotato_v3_stage_4_1779706783146.png' },
+      { days: 30, gdd: 360, name: '膨大期', image: 'images/sweetpotato_v3_stage_5_1779706796967.png' },
+      { days: 30, gdd: 360, name: '成熟期', image: 'images/sweetpotato_v3_stage_6_1779706834735.png' },
+      { days: 30, gdd: 350, name: '采收期', image: 'images/sweetpotato_v3_stage_7_1779706851167.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 0, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2220,11 +2220,11 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '立秋前后进入姜块“暴长”阶段，此时必须重施“秋里肥”（大量腐熟饼肥和硫酸钾）。生姜极度忌氯，绝对不能施用氯化钾。' , image: 'images/stages/ginger_fertilize_v3.png' }
     ],
     growthSequence: [
-      { name: '种姜催芽', image: 'images/stages/ginger_0_v3.png?v=1780159650000', days: 20, gdd: 300 },
-      { name: '幼苗期', image: 'images/stages/stage_ginger_0.png?v=1780159650000', days: 40, gdd: 600 },
-      { name: '旺盛生长期', image: 'images/stages/stage_ginger_1.png?v=1780159650000', days: 60, gdd: 900 },
-      { name: '根茎膨大', image: 'images/stages/ginger_2_v3.png', days: 30, gdd: 450 },
-      { name: '成熟采收', image: 'images/stages/stage_ginger_2.png', days: 10, gdd: 150 }
+      { name: '种姜催芽', image: 'images/stages/ginger_0_v3.png?v=1780159650000', days: 20, gdd: 250 },
+      { name: '幼苗期', image: 'images/stages/stage_ginger_0.png?v=1780159650000', days: 40, gdd: 500 },
+      { name: '旺盛生长期', image: 'images/stages/stage_ginger_1.png?v=1780159650000', days: 60, gdd: 750 },
+      { name: '根茎膨大', image: 'images/stages/ginger_2_v3.png', days: 30, gdd: 375 },
+      { name: '成熟采收', image: 'images/stages/stage_ginger_2.png', days: 10, gdd: 125 }
     ],
     fertilizerSchedule: [
       { stageIndex: 1, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2423,13 +2423,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '黄瓜根系浅且需肥量极大，原则是“少吃多餐”。结瓜盛期每隔7-10天追施一次腐熟有机液肥，重点补充钾肥和微量元素。' , image: 'images/stages/cucumber_2_v3_1779514111532.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/cucumber_v3_stage_1_1779707113594.png', days: 5, gdd: 75  },
-      { name: '出苗', image: 'images/cucumber_v3_stage_2_1779707126513.png', days: 5, gdd: 75  },
-      { name: '幼苗', image: 'images/cucumber_v3_stage_3_1779707142900.png', days: 15, gdd: 225  },
-      { name: '抽蔓', image: 'images/cucumber_v3_stage_4_1779707157524.png', days: 10, gdd: 150  },
-      { name: '开花', image: 'images/cucumber_v3_stage_5_1779707172655.png', days: 10, gdd: 150  },
-      { name: '结瓜', image: 'images/cucumber_v3_stage_6_1779707187264.png', days: 10, gdd: 150  },
-      { name: '连续采收', image: 'images/cucumber_v3_stage_7_1779707200995.png', days: 45, gdd: 675  }
+      { name: '种子', image: 'images/cucumber_v3_stage_1_1779707113594.png', days: 5, gdd: 40  },
+      { name: '出苗', image: 'images/cucumber_v3_stage_2_1779707126513.png', days: 5, gdd: 40  },
+      { name: '幼苗', image: 'images/cucumber_v3_stage_3_1779707142900.png', days: 15, gdd: 120  },
+      { name: '抽蔓', image: 'images/cucumber_v3_stage_4_1779707157524.png', days: 10, gdd: 80  },
+      { name: '开花', image: 'images/cucumber_v3_stage_5_1779707172655.png', days: 10, gdd: 80  },
+      { name: '结瓜', image: 'images/cucumber_v3_stage_6_1779707187264.png', days: 10, gdd: 80  },
+      { name: '连续采收', image: 'images/cucumber_v3_stage_7_1779707200995.png', days: 45, gdd: 360  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2507,13 +2507,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '前期严格控肥控水防徒长（只长藤不结瓜）；当第一个瓜坐稳并长至网球大小时，在距根部30cm处开深沟，重施一次腐熟膨瓜有机肥。' , image: 'images/stages/pumpkin_3_v3_1779514170519.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/pumpkin_v3_stage_1_1779707215394.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/pumpkin_v3_stage_2_1779707232265.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/pumpkin_v3_stage_3_1779708662984.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/pumpkin_v3_stage_4_1779708678634.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/pumpkin_v3_stage_5_1779708694512.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/pumpkin_v3_stage_6_1779708708298.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/pumpkin_v3_stage_7_1779708720195.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/pumpkin_v3_stage_1_1779707215394.png', days: 7, gdd: 74  },
+      { name: '出苗', image: 'images/pumpkin_v3_stage_2_1779707232265.png', days: 7, gdd: 74  },
+      { name: '幼苗', image: 'images/pumpkin_v3_stage_3_1779708662984.png', days: 20, gdd: 212  },
+      { name: '抽蔓', image: 'images/pumpkin_v3_stage_4_1779708678634.png', days: 20, gdd: 212  },
+      { name: '开花', image: 'images/pumpkin_v3_stage_5_1779708694512.png', days: 15, gdd: 159  },
+      { name: '结瓜', image: 'images/pumpkin_v3_stage_6_1779708708298.png', days: 25, gdd: 264  },
+      { name: '采收', image: 'images/pumpkin_v3_stage_7_1779708720195.png', days: 10, gdd: 105  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2584,13 +2584,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '根瓜（第一个瓜）坐住后开始追肥。结果盛期采摘频繁，每采收1-2次就需要追施一次速效有机肥。' , image: 'images/stages/zucchini_2_v3_1779514220389.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/zucchini_v3_stage_1_1779708733871.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/zucchini_v3_stage_2_1779708748752.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/zucchini_v3_stage_3_1779708763405.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/zucchini_v3_stage_4_1779708781897.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/zucchini_v3_stage_5_1779708819694.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/zucchini_v3_stage_6_1779708834395.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/zucchini_v3_stage_7_1779708847887.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/zucchini_v3_stage_1_1779708733871.png', days: 7, gdd: 50  },
+      { name: '出苗', image: 'images/zucchini_v3_stage_2_1779708748752.png', days: 7, gdd: 50  },
+      { name: '幼苗', image: 'images/zucchini_v3_stage_3_1779708763405.png', days: 20, gdd: 144  },
+      { name: '抽蔓', image: 'images/zucchini_v3_stage_4_1779708781897.png', days: 20, gdd: 144  },
+      { name: '开花', image: 'images/zucchini_v3_stage_5_1779708819694.png', days: 15, gdd: 108  },
+      { name: '结瓜', image: 'images/zucchini_v3_stage_6_1779708834395.png', days: 25, gdd: 180  },
+      { name: '采收', image: 'images/zucchini_v3_stage_7_1779708847887.png', days: 10, gdd: 74  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2661,13 +2661,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '苦瓜结瓜期长达数月。从第一批瓜收获起，每半个月左右追施一次腐熟饼肥水或三元复合有机肥，确保持续不断的高产。' , image: 'images/stages/bittermelon_2_v3_1779514261187.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/bittermelon_v3_stage_1_1779708860950.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/bittermelon_v3_stage_2_1779708874089.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/bittermelon_v3_stage_3_1779708887824.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/bittermelon_v3_stage_4_1779708906072.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/bittermelon_v3_stage_5_1779708922373.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/bittermelon_v3_stage_6_1779708940274.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/bittermelon_v3_stage_7_1779708956561.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/bittermelon_v3_stage_1_1779708860950.png', days: 7, gdd: 74  },
+      { name: '出苗', image: 'images/bittermelon_v3_stage_2_1779708874089.png', days: 7, gdd: 74  },
+      { name: '幼苗', image: 'images/bittermelon_v3_stage_3_1779708887824.png', days: 20, gdd: 212  },
+      { name: '抽蔓', image: 'images/bittermelon_v3_stage_4_1779708906072.png', days: 20, gdd: 212  },
+      { name: '开花', image: 'images/bittermelon_v3_stage_5_1779708922373.png', days: 15, gdd: 159  },
+      { name: '结瓜', image: 'images/bittermelon_v3_stage_6_1779708940274.png', days: 25, gdd: 264  },
+      { name: '采收', image: 'images/bittermelon_v3_stage_7_1779708956561.png', days: 10, gdd: 105  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2738,13 +2738,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '施肥口诀：“两头轻、中间重”。定植缓苗后轻施提苗肥，果实长到1-2斤开始急速膨大时，重施膨瓜肥（有机水肥灌根，配合高钾）。' , image: 'images/stages/winter_melon_2_v3_1779513902911.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/winter_melon_v3_stage_1_1779709136816.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/winter_melon_v3_stage_2_1779709150757.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/winter_melon_v3_stage_3_1779709165281.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/winter_melon_v3_stage_4_1779709179777.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/winter_melon_v3_stage_5_1779709193266.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/winter_melon_v3_stage_6_1779709207513.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/winter_melon_v3_stage_7_1779709220552.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/winter_melon_v3_stage_1_1779709136816.png', days: 7, gdd: 81  },
+      { name: '出苗', image: 'images/winter_melon_v3_stage_2_1779709150757.png', days: 7, gdd: 81  },
+      { name: '幼苗', image: 'images/winter_melon_v3_stage_3_1779709165281.png', days: 20, gdd: 231  },
+      { name: '抽蔓', image: 'images/winter_melon_v3_stage_4_1779709179777.png', days: 20, gdd: 231  },
+      { name: '开花', image: 'images/winter_melon_v3_stage_5_1779709193266.png', days: 15, gdd: 173  },
+      { name: '结瓜', image: 'images/winter_melon_v3_stage_6_1779709207513.png', days: 25, gdd: 288  },
+      { name: '采收', image: 'images/winter_melon_v3_stage_7_1779709220552.png', days: 10, gdd: 115  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2809,13 +2809,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '丝瓜极度喜水喜肥，“水瓜”之名由此而来。结果期必须保持土壤始终湿润，每隔10天必须追施一次腐熟的农家液肥。' , image: 'images/stages/luffa_2_v3_1779513945812.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/luffa_v3_stage_1_1779709267005.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/luffa_v3_stage_2_1779709281391.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/luffa_v3_stage_3_1779709294412.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/luffa_v3_stage_4_1779709309284.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/luffa_v3_stage_5_1779709323570.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/luffa_v3_stage_6_1779709337906.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/luffa_v3_stage_7_1779709353231.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/luffa_v3_stage_1_1779709267005.png', days: 7, gdd: 67  },
+      { name: '出苗', image: 'images/luffa_v3_stage_2_1779709281391.png', days: 7, gdd: 67  },
+      { name: '幼苗', image: 'images/luffa_v3_stage_3_1779709294412.png', days: 20, gdd: 192  },
+      { name: '抽蔓', image: 'images/luffa_v3_stage_4_1779709309284.png', days: 20, gdd: 192  },
+      { name: '开花', image: 'images/luffa_v3_stage_5_1779709323570.png', days: 15, gdd: 144  },
+      { name: '结瓜', image: 'images/luffa_v3_stage_6_1779709337906.png', days: 25, gdd: 240  },
+      { name: '采收', image: 'images/luffa_v3_stage_7_1779709353231.png', days: 10, gdd: 98  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2886,13 +2886,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '定植缓苗后追一次提苗肥。当幼瓜坐稳并开始下垂膨大时，连续追施2-3次高钾有机肥，切忌前期氮肥过多引起徒长。' , image: 'images/stages/calabash_2_v3_1779513989834.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/calabash_v3_stage_1_1779709543250.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/calabash_v3_stage_2_1779709559878.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/calabash_v3_stage_3_1779709576783.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/calabash_v3_stage_4_1779709590404.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/calabash_v3_stage_5_1779709605073.png', days: 15, gdd: 225  },
-      { name: '结瓜', image: 'images/calabash_v3_stage_6_1779709619259.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/calabash_v3_stage_7_1779709633898.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/calabash_v3_stage_1_1779709543250.png', days: 7, gdd: 67  },
+      { name: '出苗', image: 'images/calabash_v3_stage_2_1779709559878.png', days: 7, gdd: 67  },
+      { name: '幼苗', image: 'images/calabash_v3_stage_3_1779709576783.png', days: 20, gdd: 192  },
+      { name: '抽蔓', image: 'images/calabash_v3_stage_4_1779709590404.png', days: 20, gdd: 192  },
+      { name: '开花', image: 'images/calabash_v3_stage_5_1779709605073.png', days: 15, gdd: 144  },
+      { name: '结瓜', image: 'images/calabash_v3_stage_6_1779709619259.png', days: 25, gdd: 240  },
+      { name: '采收', image: 'images/calabash_v3_stage_7_1779709633898.png', days: 10, gdd: 98  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -2965,13 +2965,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '施肥口诀：“控苗促荚”。开花前严格控水控肥防徒长（只长藤不结豆）；当第一批豆荚长至3-4cm时开始重施追肥，多施磷钾肥，防止落花落荚。' , image: 'images/stages/cowpea_2_v3_1779514037417.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/cowpea_v3_stage_1_1779709990943.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/cowpea_v3_stage_2_1779710004356.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/cowpea_v3_stage_3_1779710021642.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/cowpea_v3_stage_4_1779710039132.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/cowpea_v3_stage_5_1779710053877.png', days: 15, gdd: 225  },
-      { name: '结荚', image: 'images/cowpea_v3_stage_6_1779710067725.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/cowpea_v3_stage_7_1779710084293.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/cowpea_v3_stage_1_1779709990943.png', days: 7, gdd: 54  },
+      { name: '出苗', image: 'images/cowpea_v3_stage_2_1779710004356.png', days: 7, gdd: 54  },
+      { name: '幼苗', image: 'images/cowpea_v3_stage_3_1779710021642.png', days: 20, gdd: 154  },
+      { name: '抽蔓', image: 'images/cowpea_v3_stage_4_1779710039132.png', days: 20, gdd: 154  },
+      { name: '开花', image: 'images/cowpea_v3_stage_5_1779710053877.png', days: 15, gdd: 115  },
+      { name: '结荚', image: 'images/cowpea_v3_stage_6_1779710067725.png', days: 25, gdd: 192  },
+      { name: '采收', image: 'images/cowpea_v3_stage_7_1779710084293.png', days: 10, gdd: 77  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3041,13 +3041,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '初花期“见花浇水”，严禁在花未开齐前大水漫灌（极易引起落花）；荚长3-4厘米时进入需肥水高峰期，结合浇水追施腐熟的磷钾肥液。' , image: 'images/stages/green_bean_2_v3_1779514078677.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/green_bean_v3_stage_1_1779710114076.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/green_bean_v3_stage_2_1779710127617.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/green_bean_v3_stage_3_1779710141411.png', days: 20, gdd: 300  },
-      { name: '抽蔓', image: 'images/green_bean_v3_stage_4_1779710154094.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/green_bean_v3_stage_5_1779710169318.png', days: 15, gdd: 225  },
-      { name: '结荚', image: 'images/green_bean_v3_stage_6_1779710184514.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/green_bean_v3_stage_7_1779710199289.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/green_bean_v3_stage_1_1779710114076.png', days: 7, gdd: 50  },
+      { name: '出苗', image: 'images/green_bean_v3_stage_2_1779710127617.png', days: 7, gdd: 50  },
+      { name: '幼苗', image: 'images/green_bean_v3_stage_3_1779710141411.png', days: 20, gdd: 144  },
+      { name: '抽蔓', image: 'images/green_bean_v3_stage_4_1779710154094.png', days: 20, gdd: 144  },
+      { name: '开花', image: 'images/green_bean_v3_stage_5_1779710169318.png', days: 15, gdd: 108  },
+      { name: '结荚', image: 'images/green_bean_v3_stage_6_1779710184514.png', days: 25, gdd: 180  },
+      { name: '采收', image: 'images/green_bean_v3_stage_7_1779710199289.png', days: 10, gdd: 74  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3117,13 +3117,13 @@ export const vegetables = [
       { name: '特殊追肥 🌟', content: '蚕豆根部具有根瘤菌，有较强的自主固氮作用，故应【少施氮肥，多施磷钾肥】。开花初荚期追施一次草木灰或过磷酸钙。' , image: 'images/stages/broad_bean_2_v3_1779514126248.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/broad_bean_v3_stage_1_1779710227938.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/broad_bean_v3_stage_2_1779710241993.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/broad_bean_v3_stage_3_1779710257413.png', days: 20, gdd: 300  },
-      { name: '分枝', image: 'images/broad_bean_v3_stage_4_1779710270707.png', days: 20, gdd: 300  },
-      { name: '开花', image: 'images/broad_bean_v3_stage_5_1779710289138.png', days: 15, gdd: 225  },
-      { name: '结荚', image: 'images/broad_bean_v3_stage_6_1779710304316.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/broad_bean_v3_stage_7_1779710318701.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/broad_bean_v3_stage_1_1779710227938.png', days: 7, gdd: 54  },
+      { name: '出苗', image: 'images/broad_bean_v3_stage_2_1779710241993.png', days: 7, gdd: 54  },
+      { name: '幼苗', image: 'images/broad_bean_v3_stage_3_1779710257413.png', days: 20, gdd: 154  },
+      { name: '分枝', image: 'images/broad_bean_v3_stage_4_1779710270707.png', days: 20, gdd: 154  },
+      { name: '开花', image: 'images/broad_bean_v3_stage_5_1779710289138.png', days: 15, gdd: 115  },
+      { name: '结荚', image: 'images/broad_bean_v3_stage_6_1779710304316.png', days: 25, gdd: 192  },
+      { name: '采收', image: 'images/broad_bean_v3_stage_7_1779710318701.png', days: 10, gdd: 77  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3206,13 +3206,13 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/garlic_v3_stage_1_1779711272689.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/garlic_v3_stage_2_1779711289560.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/garlic_v3_stage_3_1779711304533.png', days: 20, gdd: 300  },
-      { name: '营养生长', image: 'images/garlic_v3_stage_4_1779711319322.png', days: 30, gdd: 450  },
-      { name: '抽薹', image: 'images/garlic_v3_stage_5_1779711337521.png', days: 15, gdd: 225  },
-      { name: '膨大', image: 'images/garlic_v3_stage_6_1779711352709.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/garlic_v3_stage_7_1779711365719.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/garlic_v3_stage_1_1779711272689.png', days: 7, gdd: 74  },
+      { name: '出苗', image: 'images/garlic_v3_stage_2_1779711289560.png', days: 7, gdd: 74  },
+      { name: '幼苗', image: 'images/garlic_v3_stage_3_1779711304533.png', days: 20, gdd: 211  },
+      { name: '营养生长', image: 'images/garlic_v3_stage_4_1779711319322.png', days: 30, gdd: 316  },
+      { name: '抽薹', image: 'images/garlic_v3_stage_5_1779711337521.png', days: 15, gdd: 158  },
+      { name: '膨大', image: 'images/garlic_v3_stage_6_1779711352709.png', days: 25, gdd: 263  },
+      { name: '采收', image: 'images/garlic_v3_stage_7_1779711365719.png', days: 10, gdd: 104  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3282,13 +3282,13 @@ export const vegetables = [
         }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/greenonion_v3_stage_1_1779711395154.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/greenonion_v3_stage_2_1779711410876.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/greenonion_v3_stage_3_1779711423569.png', days: 20, gdd: 300  },
-      { name: '展叶', image: 'images/greenonion_v3_stage_4_1779711436693.png', days: 15, gdd: 225  },
-      { name: '培土', image: 'images/greenonion_v3_stage_5_1779711450339.png', days: 10, gdd: 150  },
-      { name: '伸长', image: 'images/greenonion_v3_stage_6.png', days: 20, gdd: 300  },
-      { name: '收获', image: 'images/greenonion_v3_stage_7.png', days: 15, gdd: 225  }
+      { name: '种子', image: 'images/greenonion_v3_stage_1_1779711395154.png', days: 7, gdd: 67  },
+      { name: '出苗', image: 'images/greenonion_v3_stage_2_1779711410876.png', days: 7, gdd: 67  },
+      { name: '幼苗', image: 'images/greenonion_v3_stage_3_1779711423569.png', days: 20, gdd: 191  },
+      { name: '展叶', image: 'images/greenonion_v3_stage_4_1779711436693.png', days: 15, gdd: 144  },
+      { name: '培土', image: 'images/greenonion_v3_stage_5_1779711450339.png', days: 10, gdd: 96  },
+      { name: '伸长', image: 'images/greenonion_v3_stage_6.png', days: 20, gdd: 191  },
+      { name: '收获', image: 'images/greenonion_v3_stage_7.png', days: 15, gdd: 144  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
@@ -3363,13 +3363,13 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/everbearing_strawberry_v3_stage_1_1779710841859.png', days: 7, gdd: 105  },
-      { name: '出苗', image: 'images/everbearing_strawberry_v3_stage_2_1779710854016.png', days: 7, gdd: 105  },
-      { name: '幼苗', image: 'images/everbearing_strawberry_v3_stage_3_1779710866404.png', days: 20, gdd: 300  },
-      { name: '展叶', image: 'images/everbearing_strawberry_v3_stage_4_1779710879583.png', days: 15, gdd: 225  },
-      { name: '开花', image: 'images/everbearing_strawberry_v3_stage_5_1779710895334.png', days: 15, gdd: 225  },
-      { name: '结果', image: 'images/everbearing_strawberry_v3_stage_6_1779710908481.png', days: 25, gdd: 375  },
-      { name: '采收', image: 'images/everbearing_strawberry_v3_stage_7_1779710924843.png', days: 10, gdd: 150  }
+      { name: '种子', image: 'images/everbearing_strawberry_v3_stage_1_1779710841859.png', days: 7, gdd: 71  },
+      { name: '出苗', image: 'images/everbearing_strawberry_v3_stage_2_1779710854016.png', days: 7, gdd: 71  },
+      { name: '幼苗', image: 'images/everbearing_strawberry_v3_stage_3_1779710866404.png', days: 20, gdd: 202  },
+      { name: '展叶', image: 'images/everbearing_strawberry_v3_stage_4_1779710879583.png', days: 15, gdd: 152  },
+      { name: '开花', image: 'images/everbearing_strawberry_v3_stage_5_1779710895334.png', days: 15, gdd: 152  },
+      { name: '结果', image: 'images/everbearing_strawberry_v3_stage_6_1779710908481.png', days: 25, gdd: 253  },
+      { name: '采收', image: 'images/everbearing_strawberry_v3_stage_7_1779710924843.png', days: 10, gdd: 99  }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3428,12 +3428,12 @@ export const vegetables = [
         }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/napacabbage_stage_1.png', days: 5, gdd: 80 },
-      { name: '出苗', image: 'images/napacabbage_stage_2.png', days: 5, gdd: 80 },
-      { name: '幼苗', image: 'images/napacabbage_stage_3.png', days: 15, gdd: 220 },
-      { name: '莲座', image: 'images/napacabbage_stage_4.png', days: 20, gdd: 300 },
-      { name: '结球', image: 'images/napacabbage_stage_5.png', days: 25, gdd: 350 },
-      { name: '采收', image: 'images/napacabbage_stage_6.png', days: 10, gdd: 100 }
+      { name: '种子', image: 'images/napacabbage_stage_1.png', days: 5, gdd: 64 },
+      { name: '出苗', image: 'images/napacabbage_stage_2.png', days: 5, gdd: 64 },
+      { name: '幼苗', image: 'images/napacabbage_stage_3.png', days: 15, gdd: 175 },
+      { name: '莲座', image: 'images/napacabbage_stage_4.png', days: 20, gdd: 239 },
+      { name: '结球', image: 'images/napacabbage_stage_5.png', days: 25, gdd: 279 },
+      { name: '采收', image: 'images/napacabbage_stage_6.png', days: 10, gdd: 79 }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3482,11 +3482,11 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/bokchoy_stage_1.png', days: 3, gdd: 50 },
-      { name: '出苗', image: 'images/bokchoy_stage_2.png', days: 4, gdd: 60 },
-      { name: '幼苗', image: 'images/bokchoy_stage_3.png', days: 10, gdd: 150 },
-      { name: '旺盛生长', image: 'images/bokchoy_stage_4.png', days: 15, gdd: 200 },
-      { name: '采收', image: 'images/bokchoy_stage_5.png', days: 10, gdd: 120 }
+      { name: '种子', image: 'images/bokchoy_stage_1.png', days: 3, gdd: 39 },
+      { name: '出苗', image: 'images/bokchoy_stage_2.png', days: 4, gdd: 47 },
+      { name: '幼苗', image: 'images/bokchoy_stage_3.png', days: 10, gdd: 116 },
+      { name: '旺盛生长', image: 'images/bokchoy_stage_4.png', days: 15, gdd: 155 },
+      { name: '采收', image: 'images/bokchoy_stage_5.png', days: 10, gdd: 93 }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3534,11 +3534,11 @@ export const vegetables = [
         }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/spinach_stage_1.png', days: 7, gdd: 70 },
-      { name: '出苗', image: 'images/spinach_stage_2.png', days: 7, gdd: 70 },
-      { name: '真叶期', image: 'images/spinach_stage_3.png', days: 15, gdd: 150 },
-      { name: '叶片膨大', image: 'images/spinach_stage_4.png', days: 15, gdd: 150 },
-      { name: '采收', image: 'images/spinach_stage_5.png', days: 10, gdd: 100 }
+      { name: '种子', image: 'images/spinach_stage_1.png', days: 7, gdd: 58 },
+      { name: '出苗', image: 'images/spinach_stage_2.png', days: 7, gdd: 58 },
+      { name: '真叶期', image: 'images/spinach_stage_3.png', days: 15, gdd: 125 },
+      { name: '叶片膨大', image: 'images/spinach_stage_4.png', days: 15, gdd: 125 },
+      { name: '采收', image: 'images/spinach_stage_5.png', days: 10, gdd: 84 }
     ],
     fertilizerSchedule: [
       { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
@@ -3589,11 +3589,11 @@ export const vegetables = [
         }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/lettuce_stage_1.png', days: 4, gdd: 60 },
-      { name: '出苗', image: 'images/lettuce_stage_2.png', days: 6, gdd: 90 },
-      { name: '幼苗', image: 'images/lettuce_stage_3.png', days: 15, gdd: 200 },
-      { name: '发棵/肉质茎膨大', image: 'images/lettuce_stage_4.png', days: 20, gdd: 300 },
-      { name: '采收', image: 'images/lettuce_stage_5.png', days: 15, gdd: 200 }
+      { name: '种子', image: 'images/lettuce_stage_1.png', days: 4, gdd: 42 },
+      { name: '出苗', image: 'images/lettuce_stage_2.png', days: 6, gdd: 64 },
+      { name: '幼苗', image: 'images/lettuce_stage_3.png', days: 15, gdd: 141 },
+      { name: '发棵/肉质茎膨大', image: 'images/lettuce_stage_4.png', days: 20, gdd: 212 },
+      { name: '采收', image: 'images/lettuce_stage_5.png', days: 15, gdd: 141 }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
@@ -3643,11 +3643,11 @@ export const vegetables = [
         }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/celery_stage_1.png', days: 10, gdd: 120 },
-      { name: '出苗', image: 'images/celery_stage_2.png', days: 10, gdd: 120 },
-      { name: '幼苗', image: 'images/celery_stage_3.png', days: 25, gdd: 300 },
-      { name: '心叶生长期', image: 'images/celery_stage_4.png', days: 30, gdd: 400 },
-      { name: '采收', image: 'images/celery_stage_5.png', days: 15, gdd: 150 }
+      { name: '种子', image: 'images/celery_stage_1.png', days: 10, gdd: 88 },
+      { name: '出苗', image: 'images/celery_stage_2.png', days: 10, gdd: 88 },
+      { name: '幼苗', image: 'images/celery_stage_3.png', days: 25, gdd: 220 },
+      { name: '心叶生长期', image: 'images/celery_stage_4.png', days: 30, gdd: 294 },
+      { name: '采收', image: 'images/celery_stage_5.png', days: 15, gdd: 110 }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' }
@@ -3693,11 +3693,11 @@ export const vegetables = [
         }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/coriander_stage_1.png', days: 10, gdd: 120 },
-      { name: '出苗', image: 'images/coriander_stage_2.png', days: 7, gdd: 90 },
-      { name: '幼叶展开', image: 'images/coriander_stage_3.png', days: 15, gdd: 180 },
-      { name: '旺盛生长', image: 'images/coriander_stage_4.png', days: 20, gdd: 250 },
-      { name: '采收', image: 'images/coriander_stage_5.png', days: 10, gdd: 120 }
+      { name: '种子', image: 'images/coriander_stage_1.png', days: 10, gdd: 79 },
+      { name: '出苗', image: 'images/coriander_stage_2.png', days: 7, gdd: 59 },
+      { name: '幼叶展开', image: 'images/coriander_stage_3.png', days: 15, gdd: 118 },
+      { name: '旺盛生长', image: 'images/coriander_stage_4.png', days: 20, gdd: 164 },
+      { name: '采收', image: 'images/coriander_stage_5.png', days: 10, gdd: 80 }
     ],
     fertilizerSchedule: [
       { stageIndex: 3, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
@@ -3794,12 +3794,12 @@ export const vegetables = [
       { name: '鼓粒期水肥', content: '开花结荚后进入鼓粒期，此时是决定产量的关键，需保证水分充足，防止落花落荚。', image: 'images/stages/edamame_1.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/edamame_stage_1.png', days: 6, gdd: 90 },
-      { name: '出苗', image: 'images/edamame_stage_2.png', days: 8, gdd: 120 },
-      { name: '分枝期', image: 'images/edamame_stage_3.png', days: 20, gdd: 300 },
-      { name: '开花结荚', image: 'images/edamame_stage_4.png', days: 15, gdd: 225 },
-      { name: '嫩荚期', image: 'images/edamame_stage_5.png', days: 20, gdd: 300 },
-      { name: '青荚采收', image: 'images/edamame_stage_6.png', days: 10, gdd: 150 }
+      { name: '种子', image: 'images/edamame_stage_1.png', days: 6, gdd: 61 },
+      { name: '出苗', image: 'images/edamame_stage_2.png', days: 8, gdd: 81 },
+      { name: '分枝期', image: 'images/edamame_stage_3.png', days: 20, gdd: 203 },
+      { name: '开花结荚', image: 'images/edamame_stage_4.png', days: 15, gdd: 152 },
+      { name: '嫩荚期', image: 'images/edamame_stage_5.png', days: 20, gdd: 203 },
+      { name: '青荚采收', image: 'images/edamame_stage_6.png', days: 10, gdd: 100 }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
@@ -3831,12 +3831,12 @@ export const vegetables = [
       { name: '忌连作', content: '豌豆根系分泌物对自身有毒害，必须实行3-4年轮作，不可重茬。', image: 'images/stages/pea_1.png' }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/pea_stage_1.png', days: 7, gdd: 70 },
-      { name: '出苗', image: 'images/pea_stage_2.png', days: 10, gdd: 100 },
-      { name: '抽蔓分枝', image: 'images/pea_stage_3.png', days: 25, gdd: 250 },
-      { name: '开花', image: 'images/pea_stage_4.png', days: 15, gdd: 150 },
-      { name: '结荚鼓粒', image: 'images/pea_stage_5.png', days: 20, gdd: 200 },
-      { name: '采收', image: 'images/pea_stage_6.png', days: 10, gdd: 100 }
+      { name: '种子', image: 'images/pea_stage_1.png', days: 7, gdd: 56 },
+      { name: '出苗', image: 'images/pea_stage_2.png', days: 10, gdd: 80 },
+      { name: '抽蔓分枝', image: 'images/pea_stage_3.png', days: 25, gdd: 201 },
+      { name: '开花', image: 'images/pea_stage_4.png', days: 15, gdd: 121 },
+      { name: '结荚鼓粒', image: 'images/pea_stage_5.png', days: 20, gdd: 161 },
+      { name: '采收', image: 'images/pea_stage_6.png', days: 10, gdd: 81 }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
@@ -3893,11 +3893,11 @@ export const vegetables = [
       },
     ],
     growthSequence: [
-      { name: '种芋', image: 'images/taro_stage_1.png?v=2', days: 15, gdd: 200 },
-      { name: '发芽出苗', image: 'images/taro_stage_2.png', days: 15, gdd: 250 },
-      { name: '展叶期', image: 'images/taro_stage_3.png', days: 30, gdd: 450 },
-      { name: '球茎膨大', image: 'images/taro_stage_4.png', days: 40, gdd: 700 },
-      { name: '成熟采收', image: 'images/taro_stage_5.png', days: 20, gdd: 250 }
+      { name: '种芋', image: 'images/taro_stage_1.png?v=2', days: 15, gdd: 151 },
+      { name: '发芽出苗', image: 'images/taro_stage_2.png', days: 15, gdd: 189 },
+      { name: '展叶期', image: 'images/taro_stage_3.png', days: 30, gdd: 341 },
+      { name: '球茎膨大', image: 'images/taro_stage_4.png', days: 40, gdd: 530 },
+      { name: '成熟采收', image: 'images/taro_stage_5.png', days: 20, gdd: 189 }
     ],
     fertilizerSchedule: [
       { stageIndex: 3, actionName: '膨大肥/结果肥', dosagePerPlant: '15-20g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水 200ml + 腐熟饼肥 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，防止早衰' }
