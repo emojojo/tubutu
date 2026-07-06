@@ -3756,8 +3756,8 @@ export const vegetables = [
       { name: '出苗期', image: 'images/stages/corn_seed.png', days: 10, gdd: 150 },
       { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 20, gdd: 350 },
       { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
-      { name: '抽雄吐丝期', image: 'images/stages/corn_flowering.png', days: 15, gdd: 250 },
-      { name: '乳熟鲜收期', image: 'images/stages/corn_filling.png', days: 25, gdd: 300 }
+      { name: '抽雄吐丝期', image: 'images/stages/corn_flowering_v2.png', days: 15, gdd: 250 },
+      { name: '乳熟鲜收期', image: 'images/stages/corn_filling_v2.png', days: 25, gdd: 300 }
     ],
     fertilizerSchedule: [
       { stageIndex: 1, actionName: '拔节肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
@@ -4366,9 +4366,9 @@ export const pestControls = [
       { name: '出苗期', image: 'images/stages/corn_seed.png', days: 10, gdd: 150 },
       { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 25, gdd: 350 },
       { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
-      { name: '抽雄吐丝期', image: 'images/stages/corn_flowering.png', days: 15, gdd: 250 },
-      { name: '乳熟采收期', image: 'images/stages/corn_filling.png', days: 30, gdd: 500 },
-      { name: '完熟期', image: 'images/stages/corn_harvest.png', days: 30, gdd: 1000 }
+      { name: '抽雄吐丝期', image: 'images/stages/corn_flowering_v2.png', days: 15, gdd: 250 },
+      { name: '乳熟采收期', image: 'images/stages/corn_filling_v2.png', days: 30, gdd: 500 },
+      { name: '完熟期', image: 'images/stages/corn_harvest_v2.png', days: 30, gdd: 1000 }
     ],
     stages: [
       {
