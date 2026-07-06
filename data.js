@@ -3722,36 +3722,46 @@ export const vegetables = [
     },
     stages: [
       {
-        name: '苗期',
-        water_fertilizer: '播种后保持土壤湿润。出苗后至拔节前，控制浇水，促根下扎。',
+        name: '出苗期',
+        water_fertilizer: '播种后保持土壤湿润。出苗后至拔节前，适当控水促根。',
         pest_management: '防范地老虎、蝼蛄等地下害虫。',
-        pruning_trellising: null,
-        image: null
+        pruning_trellising: '及时间苗定苗。'
       },
       {
-        name: '拔节孕穗期 (大喇叭口期)',
-        water_fertilizer: '当长到第11-12片叶时（顶部呈喇叭口状），是需水需肥高峰期，需重施氮肥，并充足浇水。',
-        water_image: 'images/stages/corn_fertilize_v3.png',
-        pest_management: '玉米螟幼虫极易钻入心叶啃食，需在大喇叭口期向心叶内撒施Bt颗粒剂防治。',
-        pruning_trellising: null
+        name: '拔节期',
+        water_fertilizer: '需水量逐渐增加，轻施拔节肥。',
+        pest_management: '防玉米螟。',
+        pruning_trellising: ''
       },
       {
-        name: '抽雄开花与灌浆期',
-        water_fertilizer: '保持土壤湿润，不可缺水，防止花粉枯萎或灌浆不足。后期防涝。',
-        pest_management: '防范黏虫、草地贪夜蛾。',
-        pruning_trellising: null,
-        }
+        name: '大喇叭口期',
+        water_fertilizer: '需水需肥高峰期，重施氮肥，充足浇水。',
+        pest_management: '玉米螟极易钻入心叶啃食，需撒施Bt颗粒剂。',
+        pruning_trellising: '培土防倒。'
+      },
+      {
+        name: '抽雄吐丝期',
+        water_fertilizer: '保持土壤湿润，不可缺水，防止花粉枯萎。',
+        pest_management: '防范草地贪夜蛾及蚜虫。',
+        pruning_trellising: '辅助授粉提高结实率，减少秃尖。'
+      },
+      {
+        name: '乳熟鲜收期',
+        water_fertilizer: '保持适度湿润，采收前几天停止浇水以提高甜度。',
+        pest_management: '防玉米螟钻蛀果穗。',
+        pruning_trellising: '花丝变黑枯萎，挤压籽粒有乳白汁液时即可采收鲜食。'
+      }
     ],
     growthSequence: [
-      { name: '种子', image: 'images/corn_stage_1.png', days: 5, gdd: 75 },
-      { name: '出苗', image: 'images/corn_stage_2.png', days: 7, gdd: 100 },
-      { name: '拔节期', image: 'images/corn_stage_3.png', days: 20, gdd: 350 },
-      { name: '抽穗开花', image: 'images/corn_stage_4.png', days: 15, gdd: 250 },
-      { name: '乳熟(鲜食采收)', image: 'images/corn_stage_5.png', days: 20, gdd: 225 }
+      { name: '出苗期', image: 'images/stages/corn_seed.png', days: 10, gdd: 150 },
+      { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 20, gdd: 350 },
+      { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
+      { name: '抽雄吐丝期', image: 'images/stages/corn_flowering.png', days: 15, gdd: 250 },
+      { name: '乳熟鲜收期', image: 'images/stages/corn_filling.png', days: 25, gdd: 300 }
     ],
     fertilizerSchedule: [
-      { stageIndex: 2, actionName: '促生肥/发棵肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
-      { stageIndex: 3, actionName: '促花肥', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' }
+      { stageIndex: 1, actionName: '拔节肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 2, actionName: '穗肥 (大喇叭口期)', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' }
     ],
     pests: [
       { name: '玉米螟', cause: '幼虫钻入心叶或茎秆、果穗中啃食。', prevention: '在大喇叭口期向心叶内撒施Bt颗粒剂。', image: 'images/pest_corn_borer.png' },
