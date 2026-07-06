@@ -3753,7 +3753,7 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '出苗期', image: 'images/stages/corn_seed.png', days: 10, gdd: 150 },
+      { name: '出苗期', image: 'images/stages/sweet_corn_seed.png', days: 10, gdd: 150 },
       { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 20, gdd: 350 },
       { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
       { name: '抽雄吐丝期', image: 'images/stages/corn_flowering_v2.png', days: 15, gdd: 250 },
