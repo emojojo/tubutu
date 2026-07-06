@@ -4338,74 +4338,64 @@ export const pestControls = [
 
     fertilizerSchedule: [
       {
-        stageIndex: 2,
+        stageIndex: 1,
         actionName: '拔节肥',
         dosagePerPlant: '每株约 10-15g',
         fertilizerType: '高氮复合肥',
         organicAlternative: '腐熟农家肥'
       },
       {
-        stageIndex: 3,
+        stageIndex: 2,
         actionName: '穗肥 (大喇叭口期)',
         dosagePerPlant: '每株约 20-30g',
         fertilizerType: '尿素与钾肥',
         organicAlternative: '充分腐熟的鸡粪或饼肥'
       }
     ],
+    growthSequence: [
+      { name: '出苗期', image: 'images/stages/corn_seed.png', days: 10, gdd: 150 },
+      { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 25, gdd: 350 },
+      { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
+      { name: '抽雄吐丝期', image: 'images/stages/corn_flowering.png', days: 15, gdd: 250 },
+      { name: '乳熟采收期', image: 'images/stages/corn_filling.png', days: 30, gdd: 500 },
+      { name: '完熟期', image: 'images/stages/corn_harvest.png', days: 30, gdd: 1000 }
+    ],
     stages: [
       {
-        name: '播种期',
-        days: 7,
-        gdd: 150,
-        water_fertilizer: '施足底肥（含锌肥）。',
-        pest_management: '包衣种子防地下害虫及丝黑穗病。',
-        pruning_trellising: '',
-        image: 'images/stages/corn_seed.png'
-      },
-      {
-        name: '苗期',
-        days: 20,
-        gdd: 400,
-        water_fertilizer: '蹲苗促根，适当控水。',
+        name: '出苗期',
+        water_fertilizer: '施足底肥（含锌肥）。蹲苗促根，适当控水。',
         pest_management: '防地老虎、二点委夜蛾及杂草。',
-        pruning_trellising: '及时间苗定苗。',
-        image: 'images/stages/corn_seedling.png'
+        pruning_trellising: '及时间苗定苗。'
       },
       {
-        name: '拔节大喇叭口期',
-        days: 30,
-        gdd: 700,
-        water_fertilizer: '重施穗肥（尿素），需水量剧增。',
+        name: '拔节期',
+        water_fertilizer: '需水量剧增，轻施拔节肥。',
+        pest_management: '防玉米螟。',
+        pruning_trellising: ''
+      },
+      {
+        name: '大喇叭口期',
+        water_fertilizer: '重施穗肥（尿素），保持充足水分。',
         pest_management: '心叶内撒施颗粒剂防玉米螟。',
-        pruning_trellising: '遇大风可培土防倒。',
-        image: 'images/stages/corn_jointing.png'
+        pruning_trellising: '遇大风可培土防倒。'
       },
       {
         name: '抽雄吐丝期',
-        days: 15,
-        gdd: 450,
         water_fertilizer: '保持充足土壤水分，防旱防涝。',
         pest_management: '防蚜虫及南方锈病。',
-        pruning_trellising: '辅助授粉提高结实率。',
-        image: 'images/stages/corn_flowering.png'
+        pruning_trellising: '辅助授粉提高结实率。'
       },
       {
-        name: '灌浆期',
-        days: 35,
-        gdd: 700,
+        name: '乳熟采收期',
         water_fertilizer: '酌施粒肥，防早衰。',
         pest_management: '防玉米螟钻蛀果穗。',
-        pruning_trellising: '',
-        image: 'images/stages/corn_filling.png'
+        pruning_trellising: '此时可收获鲜食玉米。'
       },
       {
-        name: '成熟采收期',
-        days: 15,
-        gdd: 200,
+        name: '完熟期',
         water_fertilizer: '停止灌水。',
         pest_management: '',
-        pruning_trellising: '籽粒乳线消失，黑层出现即可机收。',
-        image: 'images/stages/corn_harvest.png'
+        pruning_trellising: '籽粒乳线消失，黑层出现即可机收。'
       }
     ]
   },
