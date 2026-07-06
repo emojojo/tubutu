@@ -3722,7 +3722,13 @@ export const vegetables = [
     },
     stages: [
       {
-        name: '出苗期',
+        name: '种子',
+        water_fertilizer: '播种前精细整地，施足底肥。',
+        pest_management: '种子包衣防地下害虫。',
+        pruning_trellising: ''
+      },
+      {
+        name: '出苗',
         water_fertilizer: '播种后保持土壤湿润。出苗后至拔节前，适当控水促根。',
         pest_management: '防范地老虎、蝼蛄等地下害虫。',
         pruning_trellising: '及时间苗定苗。'
@@ -3753,15 +3759,16 @@ export const vegetables = [
       }
     ],
     growthSequence: [
-      { name: '出苗期', image: 'images/stages/sweet_corn_seed_real.png', days: 10, gdd: 150 },
-      { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 20, gdd: 350 },
+      { name: '种子', image: 'images/stages/sweet_corn_seed_cluster.png', days: 5, gdd: 75 },
+      { name: '出苗', image: 'images/stages/corn_seedling.png', days: 5, gdd: 75 },
+      { name: '拔节期', image: 'images/stages/corn_jointing_v3.png', days: 20, gdd: 350 },
       { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
       { name: '抽雄吐丝期', image: 'images/stages/corn_flowering_v2.png', days: 15, gdd: 250 },
       { name: '乳熟鲜收期', image: 'images/stages/corn_filling_v2.png', days: 25, gdd: 300 }
     ],
     fertilizerSchedule: [
-      { stageIndex: 1, actionName: '拔节肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
-      { stageIndex: 2, actionName: '穗肥 (大喇叭口期)', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' }
+      { stageIndex: 2, actionName: '拔节肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' },
+      { stageIndex: 3, actionName: '穗肥 (大喇叭口期)', dosagePerPlant: '10-15g', fertilizerType: '高磷钾复合肥', organicAlternative: '骨粉 30g + 草木灰 50g', foliarAlternative: '0.2% 磷酸二氢钾溶液喷叶，促进花芽分化' }
     ],
     pests: [
       { name: '玉米螟', cause: '幼虫钻入心叶或茎秆、果穗中啃食。', prevention: '在大喇叭口期向心叶内撒施Bt颗粒剂。', image: 'images/pest_corn_borer.png' },
@@ -4348,14 +4355,14 @@ export const pestControls = [
 
     fertilizerSchedule: [
       {
-        stageIndex: 1,
+        stageIndex: 2,
         actionName: '拔节肥',
         dosagePerPlant: '每株约 10-15g',
         fertilizerType: '高氮复合肥',
         organicAlternative: '腐熟农家肥'
       },
       {
-        stageIndex: 2,
+        stageIndex: 3,
         actionName: '穗肥 (大喇叭口期)',
         dosagePerPlant: '每株约 20-30g',
         fertilizerType: '尿素与钾肥',
@@ -4363,8 +4370,9 @@ export const pestControls = [
       }
     ],
     growthSequence: [
-      { name: '出苗期', image: 'images/stages/corn_seed.png', days: 10, gdd: 150 },
-      { name: '拔节期', image: 'images/stages/corn_seedling.png', days: 25, gdd: 350 },
+      { name: '种子', image: 'images/stages/field_corn_seed.png', days: 5, gdd: 75 },
+      { name: '出苗', image: 'images/stages/corn_seedling.png', days: 5, gdd: 75 },
+      { name: '拔节期', image: 'images/stages/corn_jointing_v3.png', days: 25, gdd: 350 },
       { name: '大喇叭口期', image: 'images/stages/corn_jointing.png', days: 20, gdd: 350 },
       { name: '抽雄吐丝期', image: 'images/stages/corn_flowering_v2.png', days: 15, gdd: 250 },
       { name: '乳熟采收期', image: 'images/stages/corn_filling_v2.png', days: 30, gdd: 500 },
@@ -4372,7 +4380,13 @@ export const pestControls = [
     ],
     stages: [
       {
-        name: '出苗期',
+        name: '种子',
+        water_fertilizer: '播种前精细整地，施足底肥。',
+        pest_management: '种子包衣防地下害虫。',
+        pruning_trellising: ''
+      },
+      {
+        name: '出苗',
         water_fertilizer: '施足底肥（含锌肥）。蹲苗促根，适当控水。',
         pest_management: '防地老虎、二点委夜蛾及杂草。',
         pruning_trellising: '及时间苗定苗。'
