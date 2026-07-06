@@ -5011,6 +5011,157 @@ export const farmingModels = [
        { name: '林下养殖 (Silvopasture)', content: '在果园或树林下散养鸡鸭猪羊。家禽家畜吃林间虫草，粪便肥林，树木为动物提供果实和遮阴。', image: 'images/aquaponics_silvopasture.png' }
     ]
   },
+
+  { id: 'broccolini',
+    avatar: 'images/crop_broccolini.png',
+    name: '西兰苔',
+    baseTemp: 5, categoryId: 'brassica',
+    icon: '🥦',
+    image: 'images/crop_broccolini.png',
+    description: '由西兰花和芥蓝杂交而成，茎干细长脆嫩，顶端带有小花球。',
+    calendar: {
+      north: '3-4月, 7-8月',
+      south: '8月至次年2月',
+      east: '2-3月, 8-10月',
+      southwest: '2-4月, 8-11月',
+      northwest: '4-6月'
+    },
+    stages: [
+      {
+        name: '幼苗期',
+        water_fertilizer: '保持土壤湿润。',
+        pest_management: '防地老虎等地下害虫。',
+        pruning_trellising: null
+      },
+      {
+        name: '生长期',
+        water_fertilizer: '需水量逐渐增加。',
+        pest_management: '防范菜青虫。',
+        pruning_trellising: null
+      },
+      {
+        name: '现蕾期',
+        water_fertilizer: '重施氮钾肥，保持充足水分。',
+        pest_management: '防治蚜虫。',
+        pruning_trellising: null
+      },
+      {
+        name: '采收期',
+        water_fertilizer: '停止施肥。',
+        pest_management: '停止用药。',
+        pruning_trellising: '主薹采收后，侧薹会继续生长，可多次采收。'
+      }
+    ],
+    targetGDD: 1000,
+    growthSequence: [
+      { name: '种子', image: 'images/cabbage_head_v3_stage_1_1779704310656.png', days: 7, gdd: 100 },
+      { name: '出苗', image: 'images/cabbage_head_v3_stage_2_1779704323314.png', days: 7, gdd: 100 },
+      { name: '幼苗', image: 'images/cabbage_head_v3_stage_3_1779704336903.png', days: 15, gdd: 200 },
+      { name: '生长期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png', days: 20, gdd: 300 },
+      { name: '现蕾', image: 'images/cabbage_head_v3_stage_5_1779704364071.png', days: 10, gdd: 150 },
+      { name: '采收', image: 'images/crop_broccolini.png', days: 10, gdd: 150 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '促生肥', dosagePerPlant: '8-10g', fertilizerType: '高氮钾复合肥', organicAlternative: '腐熟羊粪 100g', foliarAlternative: '海藻酸叶面肥 800倍液' }
+    ]
+  },
+  { id: 'celtuce',
+    avatar: 'images/crop_celtuce.png',
+    name: '莴笋',
+    baseTemp: 4, categoryId: 'leafy',
+    icon: '🥬',
+    image: 'images/crop_celtuce.png',
+    description: '莴苣的一种，主要食用肉质嫩茎，也可食用嫩叶，清脆爽口。',
+    calendar: {
+      north: '3-4月, 7-8月',
+      south: '9月至次年2月',
+      east: '8-10月, 2-3月',
+      southwest: '8-11月, 2-4月',
+      northwest: '4-6月'
+    },
+    stages: [
+      { name: '幼苗期', water_fertilizer: '适度控水，防徒长。', pest_management: '防猝倒病。', pruning_trellising: null },
+      { name: '莲座期', water_fertilizer: '增加浇水，施氮肥。', pest_management: '防蚜虫。', pruning_trellising: null },
+      { name: '茎部膨大期', water_fertilizer: '重施钾肥，保持水分充足。', pest_management: '防霜霉病。', pruning_trellising: null },
+      { name: '采收期', water_fertilizer: '停止追肥，适时采收。', pest_management: '无。', pruning_trellising: '顶端与最高叶片的叶尖相平时为最佳采收期。' }
+    ],
+    targetGDD: 900,
+    growthSequence: [
+      { name: '种子', image: 'images/cabbage_head_v3_stage_1_1779704310656.png', days: 5, gdd: 75 },
+      { name: '出苗', image: 'images/cabbage_head_v3_stage_2_1779704323314.png', days: 10, gdd: 150 },
+      { name: '幼苗', image: 'images/cabbage_head_v3_stage_3_1779704336903.png', days: 15, gdd: 225 },
+      { name: '莲座期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png', days: 15, gdd: 225 },
+      { name: '膨大期', image: 'images/cabbage_head_v3_stage_5_1779704364071.png', days: 15, gdd: 225 },
+      { name: '采收', image: 'images/crop_celtuce.png', days: 5, gdd: 75 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '莲座肥', dosagePerPlant: '10g', fertilizerType: '平衡型复合肥', organicAlternative: '腐熟饼肥' },
+      { stageIndex: 4, actionName: '膨大肥', dosagePerPlant: '15g', fertilizerType: '高钾型水溶肥', organicAlternative: '草木灰水' }
+    ]
+  },
+  { id: 'indian_lettuce',
+    avatar: 'images/crop_indian_lettuce.png',
+    name: '油麦菜',
+    baseTemp: 4, categoryId: 'leafy',
+    icon: '🥬',
+    image: 'images/crop_indian_lettuce.png',
+    description: '叶用莴苣的一个变种，叶片细长，质地脆嫩，有特殊的清香。',
+    calendar: {
+      north: '4-9月',
+      south: '全年可种',
+      east: '3-11月',
+      southwest: '全年可种',
+      northwest: '5-8月'
+    },
+    stages: [
+      { name: '幼苗期', water_fertilizer: '保持湿润。', pest_management: '防蚜虫。', pruning_trellising: null },
+      { name: '旺盛生长期', water_fertilizer: '多施氮肥，勤浇水。', pest_management: '防霜霉病。', pruning_trellising: null },
+      { name: '采收期', water_fertilizer: '采收前控水。', pest_management: '无。', pruning_trellising: '可一次性拔除，也可剥取外叶多次采收。' }
+    ],
+    targetGDD: 700,
+    growthSequence: [
+      { name: '种子', image: 'images/cabbage_head_v3_stage_1_1779704310656.png', days: 5, gdd: 80 },
+      { name: '出苗', image: 'images/cabbage_head_v3_stage_2_1779704323314.png', days: 10, gdd: 150 },
+      { name: '幼苗', image: 'images/cabbage_head_v3_stage_3_1779704336903.png', days: 15, gdd: 235 },
+      { name: '旺盛期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png', days: 15, gdd: 235 },
+      { name: '采收', image: 'images/crop_indian_lettuce.png', days: 5, gdd: 75 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '追肥', dosagePerPlant: '5g', fertilizerType: '尿素或高氮肥', organicAlternative: '腐熟鸡粪水' }
+    ]
+  },
+  { id: 'tatsoi',
+    avatar: 'images/crop_tatsoi.png',
+    name: '乌塌菜',
+    baseTemp: 5, categoryId: 'brassica',
+    icon: '🥬',
+    image: 'images/crop_tatsoi.png',
+    description: '极耐寒的十字花科蔬菜，叶片墨绿，呈玫瑰花座状平铺地面，经霜打后更加甜糯。',
+    calendar: {
+      north: '8-10月',
+      south: '9月至次年2月',
+      east: '8-11月',
+      southwest: '9-12月',
+      northwest: '8-9月'
+    },
+    stages: [
+      { name: '幼苗期', water_fertilizer: '适度浇水。', pest_management: '防菜青虫。', pruning_trellising: null },
+      { name: '莲座生长期', water_fertilizer: '勤施薄肥，以氮肥为主。', pest_management: '防蚜虫。', pruning_trellising: null },
+      { name: '采收期', water_fertilizer: '遇霜冻风味更佳。', pest_management: '无。', pruning_trellising: '整株割取。' }
+    ],
+    targetGDD: 700,
+    growthSequence: [
+      { name: '种子', image: 'images/cabbage_head_v3_stage_1_1779704310656.png', days: 5, gdd: 80 },
+      { name: '出苗', image: 'images/cabbage_head_v3_stage_2_1779704323314.png', days: 10, gdd: 150 },
+      { name: '幼苗', image: 'images/cabbage_head_v3_stage_3_1779704336903.png', days: 10, gdd: 150 },
+      { name: '塌地生长期', image: 'images/cabbage_head_v3_stage_4_1779704350154.png', days: 15, gdd: 240 },
+      { name: '采收', image: 'images/crop_tatsoi.png', days: 5, gdd: 80 }
+    ],
+    fertilizerSchedule: [
+      { stageIndex: 3, actionName: '促长肥', dosagePerPlant: '5g', fertilizerType: '高氮水溶肥', organicAlternative: '发酵饼肥水' }
+    ]
+  }
+,
   { id: 'pc_regenerative',
     name: '再生农业 (Regenerative)',
     type: 'model',
