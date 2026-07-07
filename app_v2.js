@@ -421,6 +421,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update active state
             mainTabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            
+            if (searchInput) {
+                searchInput.value = '';
+                currentSearchQuery = '';
+            }
 
             // Toggle sections
             vegSection.style.display = 'none';
@@ -534,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnShowActive && btnShowHistory) {
         btnShowActive.addEventListener('click', () => {
+            if (searchInput) { searchInput.value = ''; currentSearchQuery = ''; }
             btnShowActive.classList.add('active');
             btnShowHistory.classList.remove('active');
             if(btnShowFert) btnShowFert.classList.remove('active');
@@ -544,6 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         btnShowHistory.addEventListener('click', () => {
+            if (searchInput) { searchInput.value = ''; currentSearchQuery = ''; }
             btnShowHistory.classList.add('active');
             btnShowActive.classList.remove('active');
             if(btnShowFert) btnShowFert.classList.remove('active');
@@ -555,6 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (btnShowFert) {
             btnShowFert.addEventListener('click', () => {
+                if (searchInput) { searchInput.value = ''; currentSearchQuery = ''; }
                 btnShowFert.classList.add('active');
                 btnShowActive.classList.remove('active');
                 btnShowHistory.classList.remove('active');
@@ -578,8 +586,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             currentSearchQuery = e.target.value.toLowerCase().trim();
-            renderGrid();
-            renderFertilizers();
+            
+            const activeTabBtn = document.querySelector('.main-tab-btn.active');
+            if (activeTabBtn) {
+                const targetId = activeTabBtn.dataset.target;
+                if (targetId === 'veg-section') renderGrid();
+                else if (targetId === 'fert-section') renderFertilizers();
+                else if (targetId === 'protection-section') renderProtections();
+                else if (targetId === 'model-section') renderFarmingModels();
+                else if (targetId === 'calendar-section') renderCalendar();
+                else if (targetId === 'mygarden-section') {
+                    const btnActive = document.getElementById('btn-show-active');
+                    const btnHistory = document.getElementById('btn-show-history');
+                    const btnFert = document.getElementById('btn-show-fert');
+                    if (btnActive && btnActive.classList.contains('active')) renderMyGarden();
+                    else if (btnHistory && btnHistory.classList.contains('active')) renderHistory();
+                    else if (btnFert && btnFert.classList.contains('active')) renderMyFertilizers();
+                    else renderMyGarden();
+                }
+            } else {
+                renderGrid();
+                renderFertilizers();
+            }
         });
     }
 
@@ -710,7 +738,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!protectionGrid) return;
         protectionGrid.innerHTML = '';
         
-        pestControls.forEach(pc => {
+        let filteredPests = pestControls;
+        if (currentSearchQuery) {
+            filteredPests = filteredPests.filter(pc => 
+                (pc.name && pc.name.toLowerCase().includes(currentSearchQuery)) ||
+                (pc.description && pc.description.toLowerCase().includes(currentSearchQuery))
+            );
+        }
+        filteredPests.forEach(pc => {
             const card = document.createElement('div');
             card.className = 'veg-card fade-in';
             card.innerHTML = `
@@ -736,7 +771,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!modelGrid) return;
         modelGrid.innerHTML = '';
         
-        farmingModels.forEach(model => {
+        let filteredModels = farmingModels;
+        if (currentSearchQuery) {
+            filteredModels = filteredModels.filter(m => 
+                (m.name && m.name.toLowerCase().includes(currentSearchQuery)) ||
+                (m.description && m.description.toLowerCase().includes(currentSearchQuery))
+            );
+        }
+        filteredModels.forEach(model => {
             const card = document.createElement('div');
             card.className = 'veg-card fade-in';
             card.innerHTML = `
@@ -825,11 +867,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 monthCard.classList.add('current-month');
             }
             
-            const matchedVegs = vegetables.filter(veg => {
+            let matchedVegs = vegetables.filter(veg => {
                 const text = veg.calendar && veg.calendar[currentRegion];
                 const validMonths = parseMonths(text);
                 return validMonths.includes(month);
             });
+            if (currentSearchQuery) {
+                matchedVegs = matchedVegs.filter(veg => 
+                    (veg.name && veg.name.toLowerCase().includes(currentSearchQuery)) || 
+                    (veg.description && veg.description.toLowerCase().includes(currentSearchQuery))
+                );
+            }
 
             monthCard.innerHTML = `
                 <div class="month-card-header">
@@ -1422,7 +1470,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const emptyMsg = document.getElementById('mygarden-empty-msg');
         if (!grid) return;
         
-        const activeGarden = myGarden.filter(g => !g.isHarvested && g.type !== 'fertilizer');
+        let activeGarden = myGarden.filter(g => !g.isHarvested && g.type !== 'fertilizer');
+        if (currentSearchQuery) {
+            activeGarden = activeGarden.filter(g => {
+                const veg = vegetables.find(v => v.id === g.vegId);
+                return veg && (
+                    (veg.name && veg.name.toLowerCase().includes(currentSearchQuery)) || 
+                    (veg.description && veg.description.toLowerCase().includes(currentSearchQuery))
+                );
+            });
+        }
         
         if (activeGarden.length === 0) {
             grid.innerHTML = '';
@@ -1709,7 +1766,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const emptyMsg = document.getElementById('fert-empty-msg');
         if (!grid) return;
         
-        const activeFerts = myGarden.filter(g => g.type === 'fertilizer' && !g.isHarvested);
+        let activeFerts = myGarden.filter(g => g.type === 'fertilizer' && !g.isHarvested);
+        if (currentSearchQuery) {
+            activeFerts = activeFerts.filter(g => {
+                const fert = fertilizers.find(f => f.id === (g.fertId || g.vegId));
+                return fert && (
+                    (fert.name && fert.name.toLowerCase().includes(currentSearchQuery)) || 
+                    (fert.description && fert.description.toLowerCase().includes(currentSearchQuery))
+                );
+            });
+        }
         
         if (activeFerts.length === 0) {
             grid.innerHTML = '';
@@ -1871,7 +1937,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentYear = new Date().getFullYear().toString();
         const harvestStats = {}; // { vegId: { unit, months: [0,0,0...], total: 0, max: 0, veg } }
         
-        myGarden.forEach(item => {
+        let itemsToProcess = myGarden;
+        if (currentSearchQuery) {
+            itemsToProcess = itemsToProcess.filter(item => {
+                if (item.type === 'fertilizer') return false;
+                const veg = vegetables.find(v => v.id === item.vegId);
+                return veg && (
+                    (veg.name && veg.name.toLowerCase().includes(currentSearchQuery)) || 
+                    (veg.description && veg.description.toLowerCase().includes(currentSearchQuery))
+                );
+            });
+        }
+        itemsToProcess.forEach(item => {
             if (item.type === 'fertilizer' || !item.harvests) return;
             item.harvests.forEach(h => {
                 if (h.date && h.date.startsWith(currentYear)) {
