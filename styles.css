@@ -2482,3 +2482,72 @@ footer {
         margin-right: 4px !important;
     }
 }
+
+/* --- 3-Column Grid Mobile Fixes --- */
+@media (max-width: 768px) {
+    /* Force 3 columns on all main grids */
+    .vegetable-grid, 
+    #fert-grid, 
+    #protection-grid, 
+    #model-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+        padding: 5px !important;
+    }
+    
+    /* Shrink the card to look like a small app icon tile */
+    .veg-card {
+        border-radius: 12px !important;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .veg-img {
+        height: 100px !important;
+    }
+    
+    .veg-content {
+        padding: 8px 4px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .veg-header {
+        flex-direction: column;
+        margin-bottom: 2px !important;
+        width: 100%;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .veg-title {
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        gap: 2px !important;
+        justify-content: center;
+        line-height: 1.2;
+        margin: 0;
+    }
+    
+    /* Hide extra info to keep the 3-column layout clean */
+    .veg-category {
+        display: none !important; 
+    }
+    
+    .veg-desc {
+        display: none !important; 
+    }
+    
+    .veg-calendar {
+        font-size: 0.65rem !important;
+        margin-top: 4px !important;
+        justify-content: center !important;
+        opacity: 0.8;
+    }
+    
+    .veg-calendar-icon {
+        display: none !important; /* Hide hourglass icon to save horizontal space */
+    }
+}
