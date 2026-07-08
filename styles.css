@@ -2490,20 +2490,20 @@ footer {
     #fert-grid, 
     #protection-grid, 
     #model-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px !important;
-        padding: 5px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 10px !important;
     }
     
     /* Shrink the card to look like a small app icon tile */
     .veg-card {
-        border-radius: 12px !important;
+        border-radius: 16px !important;
         display: flex;
         flex-direction: column;
     }
     
     .veg-img {
-        height: 100px !important;
+        height: 140px !important;
     }
     
     .veg-content {
@@ -2531,9 +2531,12 @@ footer {
         margin: 0;
     }
     
-    /* Hide extra info to keep the 3-column layout clean */
+    /* Hide extra info to keep the 2-column layout clean */
     .veg-category {
-        display: none !important; 
+        display: inline-block !important;
+        margin-top: 4px;
+        font-size: 0.7rem !important;
+        padding: 2px 6px !important;
     }
     
     .veg-desc {
