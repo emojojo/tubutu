@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tubutu-garden-v1';
+const CACHE_NAME = 'tubutu-garden-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -36,36 +36,22 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Use Stale-While-Revalidate strategy
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        if (response) {
-          return response; // Return from cache
-        }
-        return fetch(event.request).then(
-          (response) => {
-            // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
+    caches.match(event.request).then((cachedResponse) => {
+      const fetchPromise = fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+          caches.open(CACHE_NAME).then((cache) => {
+            if (event.request.url.startsWith(self.location.origin)) {
+              cache.put(event.request, networkResponse.clone());
             }
-
-            // IMPORTANT: Clone the response. A response is a stream
-            // and because we want the browser to consume the response
-            // as well as the cache consuming the response, we need
-            // to clone it so we have two streams.
-            var responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                // Do not cache api calls or external resources for now
-                if (event.request.url.startsWith(self.location.origin)) {
-                    cache.put(event.request, responseToCache);
-                }
-              });
-
-            return response;
-          }
-        );
-      })
+          });
+        }
+        return networkResponse;
+      }).catch(() => {
+        // Fallback for offline if network fails
+      });
+      return cachedResponse || fetchPromise;
+    })
   );
 });
