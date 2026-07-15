@@ -4956,62 +4956,7 @@ export const pestControls = [
     ]
   }
 
-];
-
-export const farmingModels = [
-  { id: 'model_permaculture',
-    type: 'model',
-    name: '朴门农学 (Permaculture)',
-    baseTemp: 10, categoryId: 'ecology',
-    icon: '🏡',
-    image: 'images/model_permaculture.png',
-    description: '核心理念是“顺应自然而非对抗自然”。通过观察自然生态系统的运作方式，设计出具备高度多样性、自我循环、低维护的农业系统。',
-    stages: [
-       { name: '螺旋香草园 (Herb Spiral)', content: '利用石头堆砌成立体螺旋结构，在最小面积内创造不同微气候，顶部干旱阳光充足种迷迭香，底部阴凉湿润种薄荷。', image: 'images/permaculture_herb_spiral.png' },
-       { name: '食物森林 (Food Forest)', content: '模仿森林的七层结构（高大乔木、矮树、灌木、草本、地被、根系、藤本），实现空间的极致利用和物种共生。', image: 'images/permaculture_food_forest.png' },
-       { name: '锁水微地形 (Swales)', content: '沿等高线挖掘浅沟，用来拦截和蓄集雨水，沟旁种植树木，让水分缓慢渗入地下，防旱保水。', image: 'images/permaculture_swales.png' }
-    ]
-  },
-  { id: 'model_notill',
-    type: 'model',
-    name: '免耕法 (No-Till Farming)',
-    baseTemp: 10, categoryId: 'ecology',
-    icon: '🍂',
-    image: 'images/model_notill.png',
-    description: '联合国粮农组织(FAO)极力推广的保护性农业模式。核心是最大限度减少对土壤的物理翻耕，保护土壤微生物群落和结构。',
-    stages: [
-       { name: '永久覆盖物 (Mulching)', content: '利用秸秆、落叶、干草等永久覆盖土壤表面，防止水分蒸发，抑制杂草，并在腐烂后转化为有机质。', image: 'images/notill_mulching.png' },
-       { name: '覆盖作物 (Cover Crops)', content: '在主粮作物收获后或行间种植豆科或禾本科植物（如紫云英、三叶草、黑麦），不以收获为目的，主要用于绿肥还田、固氮和固土。', image: 'images/notill_cover_crops.png' },
-       { name: '免耕播种', content: '不需要深翻土地，直接在覆盖层下开一条窄缝播下种子，最大程度保持土壤原本的孔隙和蚯蚓通道。', image: 'images/notill_seeding.png' }
-    ]
-  },
-  { id: 'model_biodynamic',
-    type: 'model',
-    name: '生物动力农法 (Biodynamic)',
-    baseTemp: 10, categoryId: 'ecology',
-    icon: '🌙',
-    image: 'images/model_biodynamic.png',
-    description: '源于鲁道夫·斯坦纳，把整个农场视为一个独立的、自给自足的“生命体”，强调宇宙节律对植物生长的影响，是目前最高标准的有机认证体系之一(Demeter)。',
-    stages: [
-       { name: '生物动力配方 (BD Preparations)', content: '使用特定的天然配方（如牛角粪、牛角硅、蓍草、洋甘菊等）制作特殊的堆肥和喷洒剂，激发土壤和植物的活力。', image: 'images/biodynamic_prep.png' },
-       { name: '遵循宇宙节律 (Lunar Calendar)', content: '根据月相、星座运行的规律来安排播种、修剪、采收等农事活动（如根日、叶日、花日、果日），顺应自然能量。', image: 'images/biodynamic_lunar.png' },
-       { name: '农场闭环 (Closed Loop)', content: '极其强调农场内部的物质循环，饲料、肥料必须主要来源于农场自身，尽量不依赖外部购入。', image: 'images/biodynamic_loop.png' }
-    ]
-  },
-  { id: 'model_aquaponics',
-    type: 'model',
-    name: '共生农业 (Integrated Farming)',
-    baseTemp: 10, categoryId: 'ecology',
-    icon: '🦆',
-    image: 'images/model_aquaponics.png',
-    description: '将动物养殖和植物种植在同一个空间内有机结合，利用物种间的互补关系，形成生态闭环，实现物质的循环利用。',
-    stages: [
-       { name: '鱼菜共生 (Aquaponics)', content: '将水产养殖与水培蔬菜结合。鱼类的排泄物在水中经过微生物分解转化为硝酸盐，成为蔬菜的天然营养液，蔬菜吸收养分的同时净化水质。', image: 'images/aquaponics_system.png' },
-       { name: '稻鸭/稻鱼共作', content: '中国传统的农业智慧，在水稻田中养鸭或养鱼。鸭子和鱼吃杂草和害虫，其粪便肥田，且它们的活动能疏松土壤、增加水中溶氧量，稻田也为它们提供了遮蔽。', image: 'images/aquaponics_rice_duck.png' },
-       { name: '林下养殖 (Silvopasture)', content: '在果园或树林下散养鸡鸭猪羊。家禽家畜吃林间虫草，粪便肥林，树木为动物提供果实和遮阴。', image: 'images/aquaponics_silvopasture.png' }
-    ]
-  },
-
+,
   { id: 'broccolini',
     avatar: 'images/crop_broccolini.png',
     name: '西兰苔',
@@ -5161,8 +5106,63 @@ export const farmingModels = [
       { stageIndex: 3, actionName: '促长肥', dosagePerPlant: '5g', fertilizerType: '高氮水溶肥', organicAlternative: '发酵饼肥水' }
     ]
   }
-,
-  { id: 'pc_regenerative',
+];
+
+export const farmingModels = [
+  { id: 'model_permaculture',
+    type: 'model',
+    name: '朴门农学 (Permaculture)',
+    baseTemp: 10, categoryId: 'ecology',
+    icon: '🏡',
+    image: 'images/model_permaculture.png',
+    description: '核心理念是“顺应自然而非对抗自然”。通过观察自然生态系统的运作方式，设计出具备高度多样性、自我循环、低维护的农业系统。',
+    stages: [
+       { name: '螺旋香草园 (Herb Spiral)', content: '利用石头堆砌成立体螺旋结构，在最小面积内创造不同微气候，顶部干旱阳光充足种迷迭香，底部阴凉湿润种薄荷。', image: 'images/permaculture_herb_spiral.png' },
+       { name: '食物森林 (Food Forest)', content: '模仿森林的七层结构（高大乔木、矮树、灌木、草本、地被、根系、藤本），实现空间的极致利用和物种共生。', image: 'images/permaculture_food_forest.png' },
+       { name: '锁水微地形 (Swales)', content: '沿等高线挖掘浅沟，用来拦截和蓄集雨水，沟旁种植树木，让水分缓慢渗入地下，防旱保水。', image: 'images/permaculture_swales.png' }
+    ]
+  },
+  { id: 'model_notill',
+    type: 'model',
+    name: '免耕法 (No-Till Farming)',
+    baseTemp: 10, categoryId: 'ecology',
+    icon: '🍂',
+    image: 'images/model_notill.png',
+    description: '联合国粮农组织(FAO)极力推广的保护性农业模式。核心是最大限度减少对土壤的物理翻耕，保护土壤微生物群落和结构。',
+    stages: [
+       { name: '永久覆盖物 (Mulching)', content: '利用秸秆、落叶、干草等永久覆盖土壤表面，防止水分蒸发，抑制杂草，并在腐烂后转化为有机质。', image: 'images/notill_mulching.png' },
+       { name: '覆盖作物 (Cover Crops)', content: '在主粮作物收获后或行间种植豆科或禾本科植物（如紫云英、三叶草、黑麦），不以收获为目的，主要用于绿肥还田、固氮和固土。', image: 'images/notill_cover_crops.png' },
+       { name: '免耕播种', content: '不需要深翻土地，直接在覆盖层下开一条窄缝播下种子，最大程度保持土壤原本的孔隙和蚯蚓通道。', image: 'images/notill_seeding.png' }
+    ]
+  },
+  { id: 'model_biodynamic',
+    type: 'model',
+    name: '生物动力农法 (Biodynamic)',
+    baseTemp: 10, categoryId: 'ecology',
+    icon: '🌙',
+    image: 'images/model_biodynamic.png',
+    description: '源于鲁道夫·斯坦纳，把整个农场视为一个独立的、自给自足的“生命体”，强调宇宙节律对植物生长的影响，是目前最高标准的有机认证体系之一(Demeter)。',
+    stages: [
+       { name: '生物动力配方 (BD Preparations)', content: '使用特定的天然配方（如牛角粪、牛角硅、蓍草、洋甘菊等）制作特殊的堆肥和喷洒剂，激发土壤和植物的活力。', image: 'images/biodynamic_prep.png' },
+       { name: '遵循宇宙节律 (Lunar Calendar)', content: '根据月相、星座运行的规律来安排播种、修剪、采收等农事活动（如根日、叶日、花日、果日），顺应自然能量。', image: 'images/biodynamic_lunar.png' },
+       { name: '农场闭环 (Closed Loop)', content: '极其强调农场内部的物质循环，饲料、肥料必须主要来源于农场自身，尽量不依赖外部购入。', image: 'images/biodynamic_loop.png' }
+    ]
+  },
+  { id: 'model_aquaponics',
+    type: 'model',
+    name: '共生农业 (Integrated Farming)',
+    baseTemp: 10, categoryId: 'ecology',
+    icon: '🦆',
+    image: 'images/model_aquaponics.png',
+    description: '将动物养殖和植物种植在同一个空间内有机结合，利用物种间的互补关系，形成生态闭环，实现物质的循环利用。',
+    stages: [
+       { name: '鱼菜共生 (Aquaponics)', content: '将水产养殖与水培蔬菜结合。鱼类的排泄物在水中经过微生物分解转化为硝酸盐，成为蔬菜的天然营养液，蔬菜吸收养分的同时净化水质。', image: 'images/aquaponics_system.png' },
+       { name: '稻鸭/稻鱼共作', content: '中国传统的农业智慧，在水稻田中养鸭或养鱼。鸭子和鱼吃杂草和害虫，其粪便肥田，且它们的活动能疏松土壤、增加水中溶氧量，稻田也为它们提供了遮蔽。', image: 'images/aquaponics_rice_duck.png' },
+       { name: '林下养殖 (Silvopasture)', content: '在果园或树林下散养鸡鸭猪羊。家禽家畜吃林间虫草，粪便肥林，树木为动物提供果实和遮阴。', image: 'images/aquaponics_silvopasture.png' }
+    ]
+  }
+
+{ id: 'pc_regenerative',
     name: '再生农业 (Regenerative)',
     type: 'model',
     icon: '🌱',
