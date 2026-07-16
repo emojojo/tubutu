@@ -3907,7 +3907,6 @@ export const vegetables = [
       { name: '疫病', cause: '高温多雨季节爆发，导致叶片腐烂。', prevention: '雨后注意排水防渍，喷施杀菌剂。', image: 'images/pest_tomato_blight.png' }
     ]
   },
-,
 // ================= 小麦 (wheat) =================
   {
     id: 'wheat',
