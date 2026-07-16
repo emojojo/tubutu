@@ -3907,232 +3907,8 @@ export const vegetables = [
       { name: '疫病', cause: '高温多雨季节爆发，导致叶片腐烂。', prevention: '雨后注意排水防渍，喷施杀菌剂。', image: 'images/pest_tomato_blight.png' }
     ]
   },
-];
-
-export const fertilizers = [
-  { id: 'eco_enzyme',
-    name: '环保酵素',
-    baseTemp: 10, categoryId: 'liquid_fertilizer',
-    icon: '🧪',
-    image: 'images/eco_enzyme.png',
-    description: '利用鲜垃圾发酵而成的全能营养液，能有效改良土壤、促进生根并抑制病菌。',
-    calendar: {
-      default: '1-12月制作，6-8月发酵快（约3个月），12-2月发酵慢（约6个月）。'
-    },
-    stages: [
-      { name: '准备材料', content: '黄金比例 1:3:10 ➡️ 1份红糖 : 3份鲜果皮/菜叶 : 10份清水。准备一个可密封的塑料大桶（勿用玻璃瓶以免发酵胀气爆裂）。', image: 'images/enz_step1_v2.png' },
-      { name: '混合装桶', content: '将红糖溶于水中，放入切碎的果皮菜叶。容器内需预留 20% 的空间给发酵产生的气体。', image: 'images/enz_step2_v2.png' },
-      { name: '发酵放气', content: '第一个月发酵最剧烈，需每天拧松瓶盖放气一次（闻到酒香或微酸味属正常）。', image: 'images/enz_step3_v2.png' },
-      { name: '静置熟成', content: '第二、三个月可盖紧密封静置。三个月后，液体呈棕黄色、散发清香酸气即为发酵成功。若发黑发臭则为失败，需补充红糖重新发酵。', image: 'images/enz_step4_v2.png' },
-      { name: '稀释使用 🌟', content: '【日常浇水】：1:1000 比例稀释；【叶面喷施】：1:500 比例稀释（防病虫害）；【土壤改良】：直接浇灌土壤底肥。', image: 'images/enz_step5_v2.png' }
-    ],
-    transformationSequence: [
-      { name: '鲜料与红糖', image: 'images/enz_trans_1.png' },
-      { name: '剧烈产气', image: 'images/enz_trans_2.png' },
-      { name: '静置沉淀', image: 'images/enz_trans_3.png' },
-      { name: '熟成酵素液', image: 'images/enz_trans_4.png' }
-    ]
-  },
-  { id: 'aerobic_compost',
-    name: '有机耗氧堆肥',
-    baseTemp: 10, categoryId: 'solid_fertilizer',
-    icon: '🍂',
-    image: 'images/aerobic_compost.png',
-    description: '模拟自然界的落叶归根过程，将有机废弃物转化为富含腐殖质的极品“黑金土”。',
-    calendar: {
-      default: '3-5月、6-8月、9-11月最佳（温度高于20℃时发酵极快）。'
-    },
-    stages: [
-      { name: '准备材料', content: '需要“绿料”（富含氮：如鲜菜叶、青草、咖啡渣，占比约1/3）和“褐料”（富含碳：如干树叶、枯草、碎纸板，占比约2/3），以及少量普通泥土作为菌种。', image: 'images/comp_step1_1779289874567.png' },
-      { name: '常见粪肥底料 (进阶)', content: '进阶玩家可以使用动物粪便（图示：鸡粪、羊粪、牛粪）或酒糟混合物等作为高含氮量的“绿料”替代品发酵，肥效极猛。注意：纯粪料发酵极易发臭，必须掺杂等体积以上的稻壳、锯末或枯草等“褐料”来调节碳氮比！', image: 'images/mat_combined.png' },
-      { name: '三明治叠放法', content: '底层铺10cm褐料垫底透气 ➡️ 撒一层绿料 ➡️ 撒一层薄土 ➡️ 再盖一层褐料。像做三明治一样层层堆叠，至少堆叠4到5组以上直至堆满，最上层务必用褐料或泥土封顶防虫。', image: 'images/comp_step2_v5.png' },
-      { name: '水分控制', content: '加水至堆肥材料“湿润但捏不出水滴”的状态（含水量约50-60%）。太干不发酵，太湿会发臭。', image: 'images/comp_step3_1779289907283.png' },
-      { name: '翻堆与供氧', content: '耗氧发酵需要氧气。每隔3-5天，用铁铲或叉子将底部和内部的材料翻到表面。翻堆时若中心温度达到50-60℃，说明发酵非常成功！', image: 'images/comp_step4_1779289922090.png' },
-      { name: '熟成与使用 🌟', content: '约1-2个月后，堆肥体积缩小一半，不再发热，变成黑褐色且散发泥土清香，即可作为极品底肥拌入土壤中使用。', image: 'images/comp_step5_1779289937708.png' }
-    ],
-    transformationSequence: [
-      { name: '混合生料', image: 'images/comp_trans_1.png' },
-      { name: '高温发酵', image: 'images/comp_trans_2.png' },
-      { name: '降温腐熟', image: 'images/comp_trans_3.png' },
-      { name: '极品黑金土', image: 'images/comp_trans_4.png' }
-    ]
-  },
-  { id: 'vermicompost',
-    name: '有机蚯蚓粪',
-    baseTemp: 10, categoryId: 'solid_fertilizer',
-    icon: '🪱',
-    image: 'images/verm_main.png',
-    description: '利用红蚯蚓消化厨余垃圾产生的“黑金”，是最天然、温和且富含微生物的有益基肥。<br><br>💡 <b>多层箱运作原理（新手必读）：</b><br>多层饲养箱的每一层底部都布满小孔。当底层厨余被吃完且上面一层放入新鲜食物时，蚯蚓会基于“向上觅食”的本能，通过小孔自动爬向上一层。这样不仅免去了人工分离蚯蚓的麻烦，还实现了极具巧思的“无接触式”自动收肥。',
-    calendar: {
-      default: '1-12月（室内或阴凉处养殖，蚯蚓适宜温度为15-25℃）。'
-    },
-    stages: [
-      { name: '准备饲养箱', content: '准备一个透气的多层饲养箱（带沥水层）。底层铺上湿润的椰糠、撕碎的硬纸板或报纸作为垫料。', image: 'images/verm_step1.png' },
-      { name: '投放蚯蚓', content: '放入适合堆肥的红蚯蚓（如太平2号红蚯蚓或Red wigglers）。不要使用普通菜园挖来的野生大蚯蚓。', image: 'images/verm_step2.png' },
-      { name: '投喂厨余', content: '定期投入果皮、菜叶、咖啡渣等切碎的素食厨余（切忌投入肉类、油脂或柑橘类）。表面覆盖一层薄土或纸片以防飞虫。', image: 'images/verm_step3.png' },
-      { name: '收获纯肥与“蚯蚓茶” 🌟', content: '几个月后，底层会充满黑褐色无异味的“泥土”——蚯蚓粪，可直接拌入土中作极品底肥。<br><br>💧 <b>高阶副产物“蚯蚓茶”：</b><br>从底部水龙头接出的浓缩渗液被称为“蚯蚓茶”，它是极佳的速效液体肥，富含有益微生物。<b>用法：</b>必须按 1:10 兑水稀释，用于日常浇根或叶面喷施，能显著增强叶片抗病驱虫能力！', image: 'images/verm_step4.png' }
-    ],
-    transformationSequence: [
-      { name: '生鲜厨余', image: 'images/verm_trans_1.png' },
-      { name: '蚯蚓采食', image: 'images/verm_trans_2.png' },
-      { name: '褐化堆积', image: 'images/verm_trans_3.png' },
-      { name: '纯正蚯蚓粪', image: 'images/verm_trans_4.png' }
-    ]
-  }
-];
-
-// ================= 生态植保工坊 =================
-export const pestControls = [
-  // 1
-  { id: 'pc_sticky_trap',
-    name: '黄板/蓝板诱杀',
-    baseTemp: 10, categoryId: 'physical',
-    icon: '🟨',
-    image: 'images/main_pest_sticky_trap.png',
-    description: '基础物理防护。利用昆虫的趋黄性（蚜虫、白粉虱、潜叶蝇）或趋蓝性（蓟马）进行物理粘捕，完全无毒无害。',
-    stages: [
-      { name: '准备与悬挂', content: '购买双面涂胶的黄板或蓝板。在作物上方10-15厘米处悬挂，随着植株长高而随时调整高度。' },
-      { name: '后期维护', content: '当粘虫板表面粘满害虫或失去粘性时，及时更换。' }
-    ]
-  },
-  // 2
-  { id: 'pc_insect_net',
-    name: '防虫网隔离',
-    baseTemp: 10, categoryId: 'physical',
-    icon: '🕸️',
-    image: 'images/main_pest_insect_net.png',
-    description: '最直接的物理护盾。覆盖细密网眼的防虫网，能有效阻挡菜青虫（蝴蝶）、跳甲成虫等飞虫产卵。',
-    stages: [
-      { name: '搭建骨架', content: '使用竹片、PVC管或铁丝在菜床上方弯成拱形骨架。' },
-      { name: '覆盖与固定', content: '将防虫网（一般推荐40-60目）严密覆盖在骨架上，四周必须用泥土或砖块压紧，不留任何缝隙。' }
-    ]
-  },
-  // 3
-  { id: 'pc_sugar_trap',
-    name: '糖醋酒液诱杀',
-    baseTemp: 10, categoryId: 'physical',
-    icon: '🍶',
-    image: 'images/main_pest_sugar_trap.png',
-    description: '自制酸甜陷阱。利用某些害虫（如果蝇、夜蛾类成虫、地老虎）对糖醋气味的偏好进行诱杀。',
-    stages: [
-      { name: '调配诱剂', content: '按照糖:醋:酒:水 = 3:4:1:2 的比例混合，可滴入2滴洗洁精破坏水面张力。' },
-      { name: '放置陷阱', content: '将混合液倒入浅盆或矿泉水瓶下半截中，悬挂或放置在作物附近，定期清理死虫并补充液体。' }
-    ]
-  },
-  // 4
-  { id: 'pc_chili_garlic',
-    name: '辣椒大蒜水',
-    baseTemp: 10, categoryId: 'homemade',
-    icon: '🌶️',
-    image: 'images/main_pest_chili_garlic_spray.png',
-    description: '强刺激性气味驱避。大蒜中的大蒜素和辣椒中的辣椒素能有效驱赶蚜虫、红蜘蛛幼虫等软体害虫。',
-    stages: [
-      { name: '捣碎与浸泡', content: '取大蒜50g、朝天椒50g，捣烂成泥。加入1升清水浸泡24小时。' },
-      { name: '过滤与喷洒', content: '用纱布过滤掉残渣（防止堵塞喷壶）。加入几滴洗洁精（增加附着力），在傍晚均匀喷洒在植物叶片正反面。' }
-    ]
-  },
-  // 5
-  { id: 'pc_wood_ash',
-    name: '草木灰撒施与水剂',
-    baseTemp: 10, categoryId: 'homemade',
-    icon: '🪵',
-    image: 'images/main_pest_wood_ash.png',
-    description: '强碱性杀菌防虫兼补钾。草木灰不仅是优质钾肥，其碱性还能抑制真菌（如灰霉病、根腐病），并能阻挡蜗牛爬行。',
-    stages: [
-      { name: '干撒防虫', content: '在干燥的天气，将草木灰撒在蔬菜根部周围的土壤表面，能有效防止蜗牛和鼻涕虫靠近。' },
-      { name: '浸水喷洒', content: '取草木灰1份加水5份，浸泡24小时后取上清液。喷洒在叶面可防治蚜虫，并兼作叶面肥。' }
-    ]
-  },
-  // 6
-  { id: 'pc_soap_spray',
-    name: '洗衣粉/皂液水',
-    baseTemp: 10, categoryId: 'homemade',
-    icon: '🧼',
-    image: 'images/main_pest_soap_spray.png',
-    description: '触杀型物理封堵气孔。肥皂水或洗洁精水可以溶解害虫体表的蜡质层，并堵塞气孔导致其窒息死亡。专治蚜虫、介壳虫、红蜘蛛。',
-    stages: [
-      { name: '配制皂液', content: '取中性肥皂液（最好是纯天然橄榄油皂液）或无残留洗洁精，按 1:300 的比例兑水。' },
-      { name: '喷洒与冲洗', content: '针对虫害密集处（多在叶背面）直接喷洒。<b>非常重要：</b>喷洒后1-2小时，必须用清水把植物叶片重新冲洗干净，避免皂液烧伤叶片！' }
-    ]
-  },
-  // 7
-  { id: 'pc_matrine',
-    name: '苦参碱',
-    baseTemp: 10, categoryId: 'extract',
-    icon: '🌿',
-    image: 'images/main_pest_matrine.png',
-    description: '广谱天然植物杀虫剂。从豆科植物苦参中提取的生物碱，对害虫具有触杀和胃毒作用，对菜青虫、蚜虫效果显著，且在自然界易降解。',
-    stages: [
-      { name: '按比例稀释', content: '购买0.3%或更高浓度的苦参碱水剂，按照说明书要求的倍数（通常为500-1000倍）兑水。' },
-      { name: '喷洒时机', content: '在害虫低龄幼虫期施药效果最好。应在傍晚或阴天喷洒，避免强光分解药效。' }
-    ]
-  },
-  // 8
-  { id: 'pc_neem_oil',
-    name: '印楝素',
-    baseTemp: 10, categoryId: 'extract',
-    icon: '🫒',
-    image: 'images/main_pest_neem_oil.png',
-    description: '强大的昆虫生长调节剂与拒食剂。从印楝树种子中提取，不会立刻杀死成虫，但能破坏其交配和蜕皮，并使它们绝食。对极多顽固虫害均有抑制作用。',
-    stages: [
-      { name: '乳化与稀释', content: '纯冷压印楝油在冷水中不溶。需先在温水中加入少许肥皂液或洗洁精作为乳化剂，再加入印楝油搅拌均匀，稀释至约 1:200。' },
-      { name: '预防为主', content: '印楝素更偏向于预防和长期控制。每隔7-10天喷洒一次全株，可长效保护植物。' }
-    ]
-  },
-  // 9
-  { id: 'pc_bt',
-    name: '苏云金杆菌 (Bt)',
-    baseTemp: 10, categoryId: 'biological',
-    icon: '🦠',
-    image: 'images/main_pest_bt.png',
-    description: '专杀鳞翅目幼虫的“细菌杀手”。这种神奇的细菌被菜青虫、吊丝虫吃下后，会在其肠道内释放毒素导致虫子肠穿孔死亡，但对人畜、蜜蜂绝对安全！',
-    stages: [
-      { name: '兑水喷洒', content: '按照说明书比例稀释 Bt 粉剂或水剂。必须均匀喷洒在叶片正反面（因为这是胃毒剂，必须让虫子吃下去才有效）。' },
-      { name: '注意事项', content: 'Bt 见效较慢（虫子吃后停止进食，约2-3天才死亡）。怕紫外线，必须在傍晚或阴天施药；不能与杀菌剂混用。' }
-    ]
-  },
-  // 10
-  { id: 'pc_bacillus',
-    name: '枯草芽孢杆菌',
-    baseTemp: 10, categoryId: 'biological',
-    icon: '🧫',
-    image: 'images/main_pest_bacillus.png',
-    description: '以菌抑菌的防病先锋。在植物表面大量繁殖，通过“空间占位”和分泌抗菌物质，把有害病菌（白粉病、霜霉病、枯萎病）挤走或杀死。',
-    stages: [
-      { name: '提前接种预防', content: '在病害高发期到来前，将枯草芽孢杆菌稀释后喷洒叶面或灌根，让有益菌提前在植物上“安家”。' },
-      { name: '安全无毒', content: '纯生物制剂，无安全间隔期，今天喷明天就能采摘吃。不能与铜制剂或其他杀菌剂混用。' }
-    ]
-  },
-  // 11
-  { id: 'pc_ladybug',
-    name: '释放天敌昆虫',
-    baseTemp: 10, categoryId: 'ecology',
-    icon: '🐞',
-    image: 'images/main_pest_ladybug.png',
-    description: '纯天然的“除虫雇佣兵”。通过购买和释放捕食螨（吃红蜘蛛）、异色瓢虫/草蛉（吃蚜虫）、赤眼蜂等天敌，建立微型生态平衡。',
-    stages: [
-      { name: '选购与释放', content: '确认你的主要虫害后购买对应的天敌。傍晚时分，在虫害集中的植物附近打开包装，让天敌自行爬出。' },
-      { name: '保护天敌', content: '释放天敌后，绝对不能使用任何广谱杀虫剂。可以种植一些蜜源植物（如莳萝、香菜开花）为天敌提供花粉和花蜜，吸引它们留下来定居。' }
-    ]
-  },
-  // 12
-  { id: 'pc_companion_planting',
-    name: '陪伴种植 (套种/混种)',
-    baseTemp: 10, categoryId: 'ecology',
-    icon: '🌻',
-    image: 'images/main_pest_companion_planting.png',
-    description: '利用植物间的相生相克建立生态屏障。混种不同气味或根系分泌物的植物，可以迷惑害虫、驱避害虫或吸引益虫。',
-    stages: [
-      { name: '经典“三姐妹”混种 🌽', content: '<b>玉米 + 豆类 + 南瓜</b>：这是最经典的印第安套种智慧。玉米高秆为豆类提供攀爬支架；豆类根部根瘤菌固定空气中的氮元素，为系统提供天然氮肥；南瓜在底层匍匐生长，巨大的叶片覆盖土表，既能保水又能抑制杂草，还能防止水土流失。', image: 'images/comp_plant_threesisters.png' },
-      { name: '气味驱避与隐蔽屏障 🌿', content: '<b>① 番茄 + 万寿菊</b>：万寿菊根系分泌的物质能有效杀灭土壤中的根结线虫，强烈的气味还能驱避白粉虱。<br><b>② 包菜/西兰花 + 芳香香草（薄荷/迷迭香/百里香）</b>：十字花科容易招惹菜粉蝶，香草的浓烈挥发油气味会干扰粉蝶的嗅觉，让它们找不到产卵目标。<br><b>③ 草莓/玫瑰 + 葱蒜类（大蒜/洋葱）</b>：葱蒜类散发的硫化物可以驱避蚜虫、红蜘蛛，还能预防真菌性病害。', image: 'images/comp_plant_marigold.png' },
-      { name: '牺牲植物与陷阱诱饵 🪤', content: '<b>① 旱金莲 + 瓜果/茄科</b>：在菜地外围种一圈旱金莲，它们会像磁铁一样把附近的黑蚜虫全吸引过去，充当“人体盾牌”，从而保护了主栽蔬菜不受侵害。<br><b>② 芥菜 + 卷心菜</b>：黄条跳甲更喜欢吃芥菜，通过提前在边缘种一排芥菜，能将害虫引诱过去后集中消灭。', image: 'images/comp_plant_nasturtium.png' },
-      { name: '招引益虫与传粉助手 🐝', content: '<b>① 伞形科香料（莳萝/香菜/茴香） + 各种蔬菜</b>：让香菜或莳萝开出细小的伞形白花，能吸引大量食蚜蝇、寄生蜂和瓢虫，它们会主动消灭菜地里的蚜虫和青虫。<br><b>② 琉璃苣 + 草莓/番茄/瓜类</b>：琉璃苣是顶级的蜜源植物，能吸引海量蜜蜂前来授粉，大幅提高果实产量，还能改善草莓的口感。', image: 'images/comp_plant_umbel.png' },
-      { name: '促进生长与风味提升 🍅', content: '<b>① 番茄 + 罗勒</b>：经典的灵魂伴侣，同生同长。罗勒不仅能驱避番茄天蛾等害虫，根系的微环境互作还能让结出的番茄风味更加浓郁鲜甜。<br><b>② 土豆 + 辣根/万寿菊</b>：辣根可以提高土豆的抗病性，抵御马铃薯甲虫；万寿菊则防止地下害虫啃食薯块。', image: 'images/comp_plant_basil.png' },
-      { name: '立体空间与遮阴互补 ⛅', content: '<b>高秆作物（玉米/向日葵/搭架番茄） + 喜阴矮秆叶菜（生菜/菠菜/香菜）</b>：在炎热的夏季，叶菜极易被晒伤或高温抽薹（开花变老）。高秆作物在中午时分为矮秆叶菜提供半遮阴环境，不仅延长了叶菜的采收期，还让同一块土地的产出翻倍。', image: 'images/comp_plant_shade.png' }
-    ]
-  }
 ,
-  // ================= 小麦 (wheat) =================
+// ================= 小麦 (wheat) =================
   {
     id: 'wheat',
     avatar: 'assets/icons/icon_wheat.png',
@@ -5104,6 +4880,230 @@ export const pestControls = [
     ],
     fertilizerSchedule: [
       { stageIndex: 3, actionName: '促长肥', dosagePerPlant: '5g', fertilizerType: '高氮水溶肥', organicAlternative: '发酵饼肥水' }
+    ]
+  }
+];
+
+export const fertilizers = [
+  { id: 'eco_enzyme',
+    name: '环保酵素',
+    baseTemp: 10, categoryId: 'liquid_fertilizer',
+    icon: '🧪',
+    image: 'images/eco_enzyme.png',
+    description: '利用鲜垃圾发酵而成的全能营养液，能有效改良土壤、促进生根并抑制病菌。',
+    calendar: {
+      default: '1-12月制作，6-8月发酵快（约3个月），12-2月发酵慢（约6个月）。'
+    },
+    stages: [
+      { name: '准备材料', content: '黄金比例 1:3:10 ➡️ 1份红糖 : 3份鲜果皮/菜叶 : 10份清水。准备一个可密封的塑料大桶（勿用玻璃瓶以免发酵胀气爆裂）。', image: 'images/enz_step1_v2.png' },
+      { name: '混合装桶', content: '将红糖溶于水中，放入切碎的果皮菜叶。容器内需预留 20% 的空间给发酵产生的气体。', image: 'images/enz_step2_v2.png' },
+      { name: '发酵放气', content: '第一个月发酵最剧烈，需每天拧松瓶盖放气一次（闻到酒香或微酸味属正常）。', image: 'images/enz_step3_v2.png' },
+      { name: '静置熟成', content: '第二、三个月可盖紧密封静置。三个月后，液体呈棕黄色、散发清香酸气即为发酵成功。若发黑发臭则为失败，需补充红糖重新发酵。', image: 'images/enz_step4_v2.png' },
+      { name: '稀释使用 🌟', content: '【日常浇水】：1:1000 比例稀释；【叶面喷施】：1:500 比例稀释（防病虫害）；【土壤改良】：直接浇灌土壤底肥。', image: 'images/enz_step5_v2.png' }
+    ],
+    transformationSequence: [
+      { name: '鲜料与红糖', image: 'images/enz_trans_1.png' },
+      { name: '剧烈产气', image: 'images/enz_trans_2.png' },
+      { name: '静置沉淀', image: 'images/enz_trans_3.png' },
+      { name: '熟成酵素液', image: 'images/enz_trans_4.png' }
+    ]
+  },
+  { id: 'aerobic_compost',
+    name: '有机耗氧堆肥',
+    baseTemp: 10, categoryId: 'solid_fertilizer',
+    icon: '🍂',
+    image: 'images/aerobic_compost.png',
+    description: '模拟自然界的落叶归根过程，将有机废弃物转化为富含腐殖质的极品“黑金土”。',
+    calendar: {
+      default: '3-5月、6-8月、9-11月最佳（温度高于20℃时发酵极快）。'
+    },
+    stages: [
+      { name: '准备材料', content: '需要“绿料”（富含氮：如鲜菜叶、青草、咖啡渣，占比约1/3）和“褐料”（富含碳：如干树叶、枯草、碎纸板，占比约2/3），以及少量普通泥土作为菌种。', image: 'images/comp_step1_1779289874567.png' },
+      { name: '常见粪肥底料 (进阶)', content: '进阶玩家可以使用动物粪便（图示：鸡粪、羊粪、牛粪）或酒糟混合物等作为高含氮量的“绿料”替代品发酵，肥效极猛。注意：纯粪料发酵极易发臭，必须掺杂等体积以上的稻壳、锯末或枯草等“褐料”来调节碳氮比！', image: 'images/mat_combined.png' },
+      { name: '三明治叠放法', content: '底层铺10cm褐料垫底透气 ➡️ 撒一层绿料 ➡️ 撒一层薄土 ➡️ 再盖一层褐料。像做三明治一样层层堆叠，至少堆叠4到5组以上直至堆满，最上层务必用褐料或泥土封顶防虫。', image: 'images/comp_step2_v5.png' },
+      { name: '水分控制', content: '加水至堆肥材料“湿润但捏不出水滴”的状态（含水量约50-60%）。太干不发酵，太湿会发臭。', image: 'images/comp_step3_1779289907283.png' },
+      { name: '翻堆与供氧', content: '耗氧发酵需要氧气。每隔3-5天，用铁铲或叉子将底部和内部的材料翻到表面。翻堆时若中心温度达到50-60℃，说明发酵非常成功！', image: 'images/comp_step4_1779289922090.png' },
+      { name: '熟成与使用 🌟', content: '约1-2个月后，堆肥体积缩小一半，不再发热，变成黑褐色且散发泥土清香，即可作为极品底肥拌入土壤中使用。', image: 'images/comp_step5_1779289937708.png' }
+    ],
+    transformationSequence: [
+      { name: '混合生料', image: 'images/comp_trans_1.png' },
+      { name: '高温发酵', image: 'images/comp_trans_2.png' },
+      { name: '降温腐熟', image: 'images/comp_trans_3.png' },
+      { name: '极品黑金土', image: 'images/comp_trans_4.png' }
+    ]
+  },
+  { id: 'vermicompost',
+    name: '有机蚯蚓粪',
+    baseTemp: 10, categoryId: 'solid_fertilizer',
+    icon: '🪱',
+    image: 'images/verm_main.png',
+    description: '利用红蚯蚓消化厨余垃圾产生的“黑金”，是最天然、温和且富含微生物的有益基肥。<br><br>💡 <b>多层箱运作原理（新手必读）：</b><br>多层饲养箱的每一层底部都布满小孔。当底层厨余被吃完且上面一层放入新鲜食物时，蚯蚓会基于“向上觅食”的本能，通过小孔自动爬向上一层。这样不仅免去了人工分离蚯蚓的麻烦，还实现了极具巧思的“无接触式”自动收肥。',
+    calendar: {
+      default: '1-12月（室内或阴凉处养殖，蚯蚓适宜温度为15-25℃）。'
+    },
+    stages: [
+      { name: '准备饲养箱', content: '准备一个透气的多层饲养箱（带沥水层）。底层铺上湿润的椰糠、撕碎的硬纸板或报纸作为垫料。', image: 'images/verm_step1.png' },
+      { name: '投放蚯蚓', content: '放入适合堆肥的红蚯蚓（如太平2号红蚯蚓或Red wigglers）。不要使用普通菜园挖来的野生大蚯蚓。', image: 'images/verm_step2.png' },
+      { name: '投喂厨余', content: '定期投入果皮、菜叶、咖啡渣等切碎的素食厨余（切忌投入肉类、油脂或柑橘类）。表面覆盖一层薄土或纸片以防飞虫。', image: 'images/verm_step3.png' },
+      { name: '收获纯肥与“蚯蚓茶” 🌟', content: '几个月后，底层会充满黑褐色无异味的“泥土”——蚯蚓粪，可直接拌入土中作极品底肥。<br><br>💧 <b>高阶副产物“蚯蚓茶”：</b><br>从底部水龙头接出的浓缩渗液被称为“蚯蚓茶”，它是极佳的速效液体肥，富含有益微生物。<b>用法：</b>必须按 1:10 兑水稀释，用于日常浇根或叶面喷施，能显著增强叶片抗病驱虫能力！', image: 'images/verm_step4.png' }
+    ],
+    transformationSequence: [
+      { name: '生鲜厨余', image: 'images/verm_trans_1.png' },
+      { name: '蚯蚓采食', image: 'images/verm_trans_2.png' },
+      { name: '褐化堆积', image: 'images/verm_trans_3.png' },
+      { name: '纯正蚯蚓粪', image: 'images/verm_trans_4.png' }
+    ]
+  }
+];
+
+// ================= 生态植保工坊 =================
+export const pestControls = [
+  // 1
+  { id: 'pc_sticky_trap',
+    name: '黄板/蓝板诱杀',
+    baseTemp: 10, categoryId: 'physical',
+    icon: '🟨',
+    image: 'images/main_pest_sticky_trap.png',
+    description: '基础物理防护。利用昆虫的趋黄性（蚜虫、白粉虱、潜叶蝇）或趋蓝性（蓟马）进行物理粘捕，完全无毒无害。',
+    stages: [
+      { name: '准备与悬挂', content: '购买双面涂胶的黄板或蓝板。在作物上方10-15厘米处悬挂，随着植株长高而随时调整高度。' },
+      { name: '后期维护', content: '当粘虫板表面粘满害虫或失去粘性时，及时更换。' }
+    ]
+  },
+  // 2
+  { id: 'pc_insect_net',
+    name: '防虫网隔离',
+    baseTemp: 10, categoryId: 'physical',
+    icon: '🕸️',
+    image: 'images/main_pest_insect_net.png',
+    description: '最直接的物理护盾。覆盖细密网眼的防虫网，能有效阻挡菜青虫（蝴蝶）、跳甲成虫等飞虫产卵。',
+    stages: [
+      { name: '搭建骨架', content: '使用竹片、PVC管或铁丝在菜床上方弯成拱形骨架。' },
+      { name: '覆盖与固定', content: '将防虫网（一般推荐40-60目）严密覆盖在骨架上，四周必须用泥土或砖块压紧，不留任何缝隙。' }
+    ]
+  },
+  // 3
+  { id: 'pc_sugar_trap',
+    name: '糖醋酒液诱杀',
+    baseTemp: 10, categoryId: 'physical',
+    icon: '🍶',
+    image: 'images/main_pest_sugar_trap.png',
+    description: '自制酸甜陷阱。利用某些害虫（如果蝇、夜蛾类成虫、地老虎）对糖醋气味的偏好进行诱杀。',
+    stages: [
+      { name: '调配诱剂', content: '按照糖:醋:酒:水 = 3:4:1:2 的比例混合，可滴入2滴洗洁精破坏水面张力。' },
+      { name: '放置陷阱', content: '将混合液倒入浅盆或矿泉水瓶下半截中，悬挂或放置在作物附近，定期清理死虫并补充液体。' }
+    ]
+  },
+  // 4
+  { id: 'pc_chili_garlic',
+    name: '辣椒大蒜水',
+    baseTemp: 10, categoryId: 'homemade',
+    icon: '🌶️',
+    image: 'images/main_pest_chili_garlic_spray.png',
+    description: '强刺激性气味驱避。大蒜中的大蒜素和辣椒中的辣椒素能有效驱赶蚜虫、红蜘蛛幼虫等软体害虫。',
+    stages: [
+      { name: '捣碎与浸泡', content: '取大蒜50g、朝天椒50g，捣烂成泥。加入1升清水浸泡24小时。' },
+      { name: '过滤与喷洒', content: '用纱布过滤掉残渣（防止堵塞喷壶）。加入几滴洗洁精（增加附着力），在傍晚均匀喷洒在植物叶片正反面。' }
+    ]
+  },
+  // 5
+  { id: 'pc_wood_ash',
+    name: '草木灰撒施与水剂',
+    baseTemp: 10, categoryId: 'homemade',
+    icon: '🪵',
+    image: 'images/main_pest_wood_ash.png',
+    description: '强碱性杀菌防虫兼补钾。草木灰不仅是优质钾肥，其碱性还能抑制真菌（如灰霉病、根腐病），并能阻挡蜗牛爬行。',
+    stages: [
+      { name: '干撒防虫', content: '在干燥的天气，将草木灰撒在蔬菜根部周围的土壤表面，能有效防止蜗牛和鼻涕虫靠近。' },
+      { name: '浸水喷洒', content: '取草木灰1份加水5份，浸泡24小时后取上清液。喷洒在叶面可防治蚜虫，并兼作叶面肥。' }
+    ]
+  },
+  // 6
+  { id: 'pc_soap_spray',
+    name: '洗衣粉/皂液水',
+    baseTemp: 10, categoryId: 'homemade',
+    icon: '🧼',
+    image: 'images/main_pest_soap_spray.png',
+    description: '触杀型物理封堵气孔。肥皂水或洗洁精水可以溶解害虫体表的蜡质层，并堵塞气孔导致其窒息死亡。专治蚜虫、介壳虫、红蜘蛛。',
+    stages: [
+      { name: '配制皂液', content: '取中性肥皂液（最好是纯天然橄榄油皂液）或无残留洗洁精，按 1:300 的比例兑水。' },
+      { name: '喷洒与冲洗', content: '针对虫害密集处（多在叶背面）直接喷洒。<b>非常重要：</b>喷洒后1-2小时，必须用清水把植物叶片重新冲洗干净，避免皂液烧伤叶片！' }
+    ]
+  },
+  // 7
+  { id: 'pc_matrine',
+    name: '苦参碱',
+    baseTemp: 10, categoryId: 'extract',
+    icon: '🌿',
+    image: 'images/main_pest_matrine.png',
+    description: '广谱天然植物杀虫剂。从豆科植物苦参中提取的生物碱，对害虫具有触杀和胃毒作用，对菜青虫、蚜虫效果显著，且在自然界易降解。',
+    stages: [
+      { name: '按比例稀释', content: '购买0.3%或更高浓度的苦参碱水剂，按照说明书要求的倍数（通常为500-1000倍）兑水。' },
+      { name: '喷洒时机', content: '在害虫低龄幼虫期施药效果最好。应在傍晚或阴天喷洒，避免强光分解药效。' }
+    ]
+  },
+  // 8
+  { id: 'pc_neem_oil',
+    name: '印楝素',
+    baseTemp: 10, categoryId: 'extract',
+    icon: '🫒',
+    image: 'images/main_pest_neem_oil.png',
+    description: '强大的昆虫生长调节剂与拒食剂。从印楝树种子中提取，不会立刻杀死成虫，但能破坏其交配和蜕皮，并使它们绝食。对极多顽固虫害均有抑制作用。',
+    stages: [
+      { name: '乳化与稀释', content: '纯冷压印楝油在冷水中不溶。需先在温水中加入少许肥皂液或洗洁精作为乳化剂，再加入印楝油搅拌均匀，稀释至约 1:200。' },
+      { name: '预防为主', content: '印楝素更偏向于预防和长期控制。每隔7-10天喷洒一次全株，可长效保护植物。' }
+    ]
+  },
+  // 9
+  { id: 'pc_bt',
+    name: '苏云金杆菌 (Bt)',
+    baseTemp: 10, categoryId: 'biological',
+    icon: '🦠',
+    image: 'images/main_pest_bt.png',
+    description: '专杀鳞翅目幼虫的“细菌杀手”。这种神奇的细菌被菜青虫、吊丝虫吃下后，会在其肠道内释放毒素导致虫子肠穿孔死亡，但对人畜、蜜蜂绝对安全！',
+    stages: [
+      { name: '兑水喷洒', content: '按照说明书比例稀释 Bt 粉剂或水剂。必须均匀喷洒在叶片正反面（因为这是胃毒剂，必须让虫子吃下去才有效）。' },
+      { name: '注意事项', content: 'Bt 见效较慢（虫子吃后停止进食，约2-3天才死亡）。怕紫外线，必须在傍晚或阴天施药；不能与杀菌剂混用。' }
+    ]
+  },
+  // 10
+  { id: 'pc_bacillus',
+    name: '枯草芽孢杆菌',
+    baseTemp: 10, categoryId: 'biological',
+    icon: '🧫',
+    image: 'images/main_pest_bacillus.png',
+    description: '以菌抑菌的防病先锋。在植物表面大量繁殖，通过“空间占位”和分泌抗菌物质，把有害病菌（白粉病、霜霉病、枯萎病）挤走或杀死。',
+    stages: [
+      { name: '提前接种预防', content: '在病害高发期到来前，将枯草芽孢杆菌稀释后喷洒叶面或灌根，让有益菌提前在植物上“安家”。' },
+      { name: '安全无毒', content: '纯生物制剂，无安全间隔期，今天喷明天就能采摘吃。不能与铜制剂或其他杀菌剂混用。' }
+    ]
+  },
+  // 11
+  { id: 'pc_ladybug',
+    name: '释放天敌昆虫',
+    baseTemp: 10, categoryId: 'ecology',
+    icon: '🐞',
+    image: 'images/main_pest_ladybug.png',
+    description: '纯天然的“除虫雇佣兵”。通过购买和释放捕食螨（吃红蜘蛛）、异色瓢虫/草蛉（吃蚜虫）、赤眼蜂等天敌，建立微型生态平衡。',
+    stages: [
+      { name: '选购与释放', content: '确认你的主要虫害后购买对应的天敌。傍晚时分，在虫害集中的植物附近打开包装，让天敌自行爬出。' },
+      { name: '保护天敌', content: '释放天敌后，绝对不能使用任何广谱杀虫剂。可以种植一些蜜源植物（如莳萝、香菜开花）为天敌提供花粉和花蜜，吸引它们留下来定居。' }
+    ]
+  },
+  // 12
+  { id: 'pc_companion_planting',
+    name: '陪伴种植 (套种/混种)',
+    baseTemp: 10, categoryId: 'ecology',
+    icon: '🌻',
+    image: 'images/main_pest_companion_planting.png',
+    description: '利用植物间的相生相克建立生态屏障。混种不同气味或根系分泌物的植物，可以迷惑害虫、驱避害虫或吸引益虫。',
+    stages: [
+      { name: '经典“三姐妹”混种 🌽', content: '<b>玉米 + 豆类 + 南瓜</b>：这是最经典的印第安套种智慧。玉米高秆为豆类提供攀爬支架；豆类根部根瘤菌固定空气中的氮元素，为系统提供天然氮肥；南瓜在底层匍匐生长，巨大的叶片覆盖土表，既能保水又能抑制杂草，还能防止水土流失。', image: 'images/comp_plant_threesisters.png' },
+      { name: '气味驱避与隐蔽屏障 🌿', content: '<b>① 番茄 + 万寿菊</b>：万寿菊根系分泌的物质能有效杀灭土壤中的根结线虫，强烈的气味还能驱避白粉虱。<br><b>② 包菜/西兰花 + 芳香香草（薄荷/迷迭香/百里香）</b>：十字花科容易招惹菜粉蝶，香草的浓烈挥发油气味会干扰粉蝶的嗅觉，让它们找不到产卵目标。<br><b>③ 草莓/玫瑰 + 葱蒜类（大蒜/洋葱）</b>：葱蒜类散发的硫化物可以驱避蚜虫、红蜘蛛，还能预防真菌性病害。', image: 'images/comp_plant_marigold.png' },
+      { name: '牺牲植物与陷阱诱饵 🪤', content: '<b>① 旱金莲 + 瓜果/茄科</b>：在菜地外围种一圈旱金莲，它们会像磁铁一样把附近的黑蚜虫全吸引过去，充当“人体盾牌”，从而保护了主栽蔬菜不受侵害。<br><b>② 芥菜 + 卷心菜</b>：黄条跳甲更喜欢吃芥菜，通过提前在边缘种一排芥菜，能将害虫引诱过去后集中消灭。', image: 'images/comp_plant_nasturtium.png' },
+      { name: '招引益虫与传粉助手 🐝', content: '<b>① 伞形科香料（莳萝/香菜/茴香） + 各种蔬菜</b>：让香菜或莳萝开出细小的伞形白花，能吸引大量食蚜蝇、寄生蜂和瓢虫，它们会主动消灭菜地里的蚜虫和青虫。<br><b>② 琉璃苣 + 草莓/番茄/瓜类</b>：琉璃苣是顶级的蜜源植物，能吸引海量蜜蜂前来授粉，大幅提高果实产量，还能改善草莓的口感。', image: 'images/comp_plant_umbel.png' },
+      { name: '促进生长与风味提升 🍅', content: '<b>① 番茄 + 罗勒</b>：经典的灵魂伴侣，同生同长。罗勒不仅能驱避番茄天蛾等害虫，根系的微环境互作还能让结出的番茄风味更加浓郁鲜甜。<br><b>② 土豆 + 辣根/万寿菊</b>：辣根可以提高土豆的抗病性，抵御马铃薯甲虫；万寿菊则防止地下害虫啃食薯块。', image: 'images/comp_plant_basil.png' },
+      { name: '立体空间与遮阴互补 ⛅', content: '<b>高秆作物（玉米/向日葵/搭架番茄） + 喜阴矮秆叶菜（生菜/菠菜/香菜）</b>：在炎热的夏季，叶菜极易被晒伤或高温抽薹（开花变老）。高秆作物在中午时分为矮秆叶菜提供半遮阴环境，不仅延长了叶菜的采收期，还让同一块土地的产出翻倍。', image: 'images/comp_plant_shade.png' }
     ]
   }
 ];
