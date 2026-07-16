@@ -5160,9 +5160,8 @@ export const farmingModels = [
        { name: '稻鸭/稻鱼共作', content: '中国传统的农业智慧，在水稻田中养鸭或养鱼。鸭子和鱼吃杂草和害虫，其粪便肥田，且它们的活动能疏松土壤、增加水中溶氧量，稻田也为它们提供了遮蔽。', image: 'images/aquaponics_rice_duck.png' },
        { name: '林下养殖 (Silvopasture)', content: '在果园或树林下散养鸡鸭猪羊。家禽家畜吃林间虫草，粪便肥林，树木为动物提供果实和遮阴。', image: 'images/aquaponics_silvopasture.png' }
     ]
-  }
-
-{ id: 'pc_regenerative',
+  },
+  { id: 'pc_regenerative',
     name: '再生农业 (Regenerative)',
     type: 'model',
     icon: '🌱',
