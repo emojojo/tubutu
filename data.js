@@ -1964,14 +1964,15 @@ export const vegetables = [
         pruning_trellising: null,
       },
     ],
+    targetGDD: 1500,
     growthSequence: [
-      { days: 0, gdd: 10, name: '播种期', image: 'images/carrot_v3_stage_1_1779706498016.png' },
-      { days: 10, gdd: 110, name: '出苗期', image: 'images/carrot_v3_stage_2_1779706512570.png' },
-      { days: 15, gdd: 165, name: '幼苗期', image: 'images/carrot_v3_stage_3_1779706543981.png' },
-      { days: 20, gdd: 220, name: '生长期', image: 'images/carrot_v3_stage_4_1779706557811.png' },
-      { days: 20, gdd: 220, name: '膨大期', image: 'images/carrot_v3_stage_5_1779706572486.png' },
-      { days: 20, gdd: 220, name: '成熟期', image: 'images/carrot_v3_stage_6_1779706588699.png' },
-      { days: 15, gdd: 155, name: '采收期', image: 'images/carrot_v3_stage_7_1779706602273.png' }
+      { days: 14, gdd: 190, name: '种子萌发', image: 'images/carrot_v3_stage_1_1779706498016.png' },
+      { days: 12, gdd: 160, name: '破土出苗', image: 'images/carrot_v3_stage_2_1779706512570.png' },
+      { days: 16, gdd: 220, name: '幼苗生长', image: 'images/carrot_v3_stage_3_1779706543981.png' },
+      { days: 22, gdd: 300, name: '叶丛旺长', image: 'images/carrot_v3_stage_4_1779706557811.png' },
+      { days: 26, gdd: 360, name: '肉质根膨大', image: 'images/carrot_v3_stage_5_1779706572486.png' },
+      { days: 15, gdd: 200, name: '充实成熟', image: 'images/carrot_v3_stage_6_1779706588699.png' },
+      { days: 5, gdd: 70, name: '适时采收', image: 'images/carrot_v3_stage_7_1779706602273.png' }
     ],
     fertilizerSchedule: [
       { stageIndex: 2, actionName: '提苗肥', dosagePerPlant: '3-5g', fertilizerType: '平衡型复合肥 (如 NPK 15-15-15)', organicAlternative: '腐熟饼肥水 50ml', foliarAlternative: '0.2% 尿素溶液喷叶' },
